@@ -47,13 +47,3 @@ note-site/
 ├─ dist/           # 构建产物（可直接双击 index.html 使用）
 └─ deploy/         # 本仓库内容（dist 的镜像 + .nojekyll + README）
 ```
-
-## 本地构建与更新
-
-```powershell
-cd note-site/src
-npm install   # 仅首次
-node build.mjs
-```
-
-日常更新：改完笔记后运行 `note-site/deploy.bat`，自动完成「构建 → 同步 deploy/ → 推送」，GitHub Pages 约 1 分钟后更新。
