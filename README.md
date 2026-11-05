@@ -30,7 +30,6 @@
 - **语法高亮**：highlight.js
 - **检索**：构建期生成按科目分片的索引脚本（`window.__SEARCH` 注入），绕开 `file://` 下 fetch 限制，客户端打分
 - **样式**：手写 CSS，Noto Serif SC（子集化裁剪至约 270KB/字重）+ EB Garamond + IBM Plex Mono，纸纹 SVG 噪点，CSS 变量切换明暗主题
-- **部署**：GitHub Pages（Deploy from branch / main）
 
 ## 目录结构
 
