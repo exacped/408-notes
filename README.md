@@ -1,6 +1,6 @@
 # 22408 备考笔记
 
-复旦大学 22408 考研笔记网站：数学（一）+ 专业课 408。Obsidian Markdown 笔记经自建静态生成器渲染为纯 HTML，线上与本地双击均可使用。
+22408 考研笔记网站：数学 + 专业课 408。Obsidian Markdown 笔记经自建静态生成器渲染为纯 HTML，线上与本地双击均可使用。
 
 **在线访问**：https://exacped.github.io/408-notes/
 
