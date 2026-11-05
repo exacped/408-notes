@@ -196,7 +196,7 @@ img { max-width: 100%; }
 .tool--rail { display: inline-block; }
 
 body.rail-off .rail { display: none; }
-body.rail-off .paper { margin-left: 0; }
+body.rail-off .paper { margin-left: auto; margin-right: auto; }
 
 /* ── 侧栏目录 ─────────────────────────── */
 
@@ -396,10 +396,11 @@ body.rail-off .paper { margin-left: 0; }
 /* ── 科目页 / 正文骨架 ────────────────── */
 
 .paper { margin-left: var(--rail-w); }
-.paper--hub { padding: 3.4rem 4rem 6rem; max-width: 1180px; }
+.paper--hub { padding: 3.4rem 4rem 6rem; max-width: 1180px; margin-left: max(var(--rail-w), calc((100vw + var(--rail-w) - 1180px) / 2)); }
 .paper--doc {
   display: grid; grid-template-columns: minmax(0, 1fr) 186px;
   gap: 4rem; padding: 3.2rem 3.4rem 6rem; max-width: 1120px;
+  margin-left: max(var(--rail-w), calc((100vw + var(--rail-w) - 1120px) / 2));
 }
 body[data-no-rail] .paper { margin-left: 0; }
 body[data-no-rail] .paper--hub { margin: 0 auto; }
