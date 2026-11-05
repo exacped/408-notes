@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>知识速查 · 22408 备考笔记</title>
+<meta name="description" content="知识速查 树，森林，二叉树的转换 树如何转换成二叉树？ 对于树中的每一个结点，左指针指向自己的 第一个儿子 ，右指针指向自己的兄弟，即左儿子右兄弟 森林如何转换成二叉树？ 二叉树如何恢复成树？ 二叉树如何恢复成森林？ 图的基本概念 图的定义">
+<link rel="icon" href="../../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../../" data-note-id="c006">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../../math/index.html">数学</a><a href="../../../major/index.html" class="is-active">专业课</a><a href="../../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note is-active" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../../major/index.html">专业课 408</a><i>/</i><span>408强化与真题</span><i>/</i><span class="crumb__no">08</span></div>
+    <h1 class="doc__title">知识速查</h1>
+    <div class="doc__meta"><span>8,690 字</span><span>约 21 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose">
+<h2 id="sec-3">树，森林，二叉树的转换</h2>
+<h3 id="sec-6">树如何转换成二叉树？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910120429.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>对于树中的每一个结点，左指针指向自己的<strong>第一个儿子</strong>，右指针指向自己的兄弟，即左儿子右兄弟</p>
+<h3 id="sec-15">森林如何转换成二叉树？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910120702.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-21">二叉树如何恢复成树？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251022160322.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-27">二叉树如何恢复成森林？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251022160357.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-33">图的基本概念</h2>
+<h3 id="sec-36">图的定义，图的顶点集和边集的特点（空或者非空）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910122031.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+顶点集不能为空，但是边集可以为空</p>
+<h3 id="sec-42">有向图和无向图</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910122001.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-48">弧尾和弧头的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910122126.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>弧头就是箭头方向</p>
+<h3 id="sec-57">简单图和多重图的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910122139.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-63">无向图顶点的度，顶点的入度和出度的概念，有向图顶点的度</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910122155.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在无向图中，按照边来分析，一个边贡献了两个度，所以总度数就是边的两倍</p>
+<p>在有向图中，按照边来分析，一个边贡献了一个入度和一个出度，所以总入度 = 总出度 = 边的个数</p>
+<h3 id="sec-75">无向图和有向图中顶点的度之和与边的条数的关系</h3>
+<p>在无向图中，按照边来分析，一个边贡献了两个度，所以总度数就是边的两倍</p>
+<p>在有向图中，按照边来分析，一个边贡献了一个入度和一个出度，所以总入度 = 总出度 = 边的个数</p>
+<h3 id="sec-84">路径和回路、简单路径和简单回路，路径长度，点到点之间的路径的概念，连通与强连通</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910122828.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>连通是无向图中的概念，强连通是有向图中的概念</p>
+<h3 id="sec-93">连通图和强连通图的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910122858.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-99">连通图最少边的个数</h3>
+<p>连通图 N 个顶点，最少的边个数是 N - 1 条</p>
+<h3 id="sec-105">非连通图最多边的个数</h3>
+<p>隔离一个顶点出去，剩下的顶点两两之间都有边</p>
+<p>所以边最多就是 :</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910123112.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-117">n 个顶点的有向图，保证强连通最少边数是多少？</h3>
+<p>要形成一个环，所以是 n 条边</p>
+<h3 id="sec-123">子图的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251024192346.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251024192442.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-129">生成子图的概念</h3>
+<p>生成子图就是保证顶点和原来的图顶点一样，边是原来的图的子集</p>
+<h3 id="sec-135">连通分量的概念（包含两点）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251024192506.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<pre><code>是一个连通的子图
+这个子图尽可能的大
+</code></pre>
+<h3 id="sec-142">强连通分量的概念（包含两点）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251024192530.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<pre><code>是一个强连通的子图
+这个子图尽可能的大
+</code></pre>
+<h3 id="sec-149">连通图的生成树的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251024192614.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<pre><code>包含全部顶点
+是连通的
+边尽可能的少（固定个数）
+</code></pre>
+<p>连通图的生产树的边的个数固定是 n - 1</p>
+<h3 id="sec-159">连通图生成树的边的个数</h3>
+<p>固定是 n - 1</p>
+<h3 id="sec-165">生成森林的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251024192712.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<pre><code>由非连通图的各个连通分量生成的生成树构成
+</code></pre>
+<h3 id="sec-172">边的权和带权图</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251024192737.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-178">图的带权路径长度概念</h3>
+<p>一条路径上的所有边的权值之和</p>
+<h3 id="sec-184">无向完全图的概念，边的个数</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251024192821.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-190">有向完全图的概念，边的个数</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251024192838.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-196">稀疏图和稠密图的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250930170450.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>稀疏和稠密是在顶点个数一定，考察的边的情况下的概念，稀疏就是边很少</p>
+<h3 id="sec-205">树和图的关系，n 个结点的树的边的个数</h3>
+<p>树是没有回路而且连通的无向图</p>
+<p>n 个顶点的树，它的边的个数必为 n - 1</p>
+<h3 id="sec-214">图的边数大于什么了有回路？</h3>
+<p>因此对于一个无向图来说，如果边的个数 &gt; n- 1，则一定会出现回路</p>
+<h2 id="sec-220">B 树定义和性质</h2>
+<h3 id="sec-223">m 叉查找树的概念和结构</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910131111.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910131133.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-229">B 树的定义（三个方面）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910131228.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里之所以不包括根结点是因为 B 树可以只有一个关键字，此时根结点不可能有上取整（m/2) 个子树，所以不包含根结点，只有一个关键字的情况高度就是 1，不影响什么，所以将根结点排除在外；但是注意根结点也可以至多 m - 1 个关键字</p>
+<p>这里除了根结点之外所有非叶结点至少有 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">⌈</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">⌉</span></span></span></span></span></span> 颗子树，或者说至少有 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">⌈</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">⌉</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个关键字是继承了m叉查找树的性质</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910131235.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>主要归纳就是：<br>
+（1）根结点和非根非叶结点的关键字个数限制和子树限制<br>
+（2）叶结点的结构和位置<br>
+（3）非叶结点的结构，包括关键字之间关系和子树指向的关键字之间的关系</p>
+<p>（1）根结点的关键字个数是 <code>[1, m-1]</code>，非根非叶结点关键字个数是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">[</span></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">⌈</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">⌉</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">]</span></span></span></span></span></span><br>
+（2）根结点的子树个数是 <code>[2, m]</code>，非根非叶节点子树个数是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">[</span></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">⌈</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">⌉</span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">m</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">]</span></span></span></span></span></span><br>
+（3）叶结点在最后一层，并且在同一层，叶结点相当于外部的结点，不带信息<br>
+（4）非叶结点中的关键字有序排列，且指向的子树的关键字与结点内部关键字也是有序排列的，这里可以降序也可以升序</p>
+<h3 id="sec-250">B 树种叶子结点和终端结点的定义（外部结点也会当作 B 树中的结点）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251022162624.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251022162647.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>终端结点是最后一层的结点，这一层结点没有子树，他们关键字之间的指针指向叶子结点（空结点）</p>
+<h3 id="sec-262">B 树的阶是什么</h3>
+<p>就是m阶B树的m</p>
+<h3 id="sec-268">B 树中非叶结点的结构</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251022162857.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-274">B 树的核心特性 (4点) B 树的定义</h3>
+<h4 id="sec-277"><strong>根结点的子树个数范围，关键字的个数范围</strong></h4>
+<p>根结点的关键字可以只有一个，关键字最多m - 1个，所以关键字的范围是 <code>[1, m - 1]</code>，所以子树个数的范围是 <code>[2, m]</code></p>
+<h4 id="sec-283"><strong>其他非叶结点的子树个数范围，关键字数的范围</strong></h4>
+<p>其他非叶节点的关键最多限制和根结点一样，最多m - 1个，但是要求关键字最少是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">⌈</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">⌉</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251022163124.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h4 id="sec-292"><strong>任意结点的子树高度</strong></h4>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251022163136.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h4 id="sec-298"><strong>每个结点的关键字的值与子树的值的关系</strong></h4>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251022163147.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-304">n 个关键字，m 阶 b 树的最小高度和最大高度（按照表格进行推导）</h3>
+<p>最小高度就是让关键字尽可能填满B树的每个结点，从根结点开始，每个结点都有m - 1个关键字，在这种情况下 h 不能再小了，再小就填不下 n 个固定的关键字了，所以 h &gt;= 这个高度</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251022163221.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>最大高度就是让关键字尽可能少填结点，即每个结点的关键字尽可能少，此时根结点只有一个关键字，引出2个分叉，其他结点有 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">⌈</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">⌉</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个关键字，引出 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">⌈</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">⌉</span></span></span></span></span></span> 个分叉，这种情况下 h 不能再高了，再高完全没有意义了，所以 h &lt;= 这个高度</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251022163609.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251022165721.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的思想就是假如高度为h，每个结点的关键字尽可能填的少，这样分叉就尽可能的少，这样算出高度h在这种情况下的关键字个数<br>
+然后n个关键字 &gt;= 这个个数从而解得h &lt;= 上图的式子</p>
+<p>或者换一种思考方式按照每个结点的关键字尽可能填的少，这样分叉就尽可能的少的这种方式来填n个关键字，这样可以保证h最大，按照这种情况取等算出的h就是最大的h，然后h小于这个式子即可</p>
+<h3 id="sec-325">n 个关键字的 b 树的失败结点个数</h3>
+<p>B 树的叶子结点是失败的结点</p>
+<p>B 树的关键字简单理解来说是用来分割区间的，n 个关键字那就是将区间划分成了 n + 1 个区间，落在这 n  + 1 个区间种的数就是查找失败，就是落在叶子结点上，<strong>所以叶子结点的个数就是 n + 1 个</strong>：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250517092922.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-337">h 层 b 树的最少结点个数</h3>
+<p>h层b树的最少结点就是每个结点的分叉尽可能的少（根结点1个关键字，其他结点 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">⌈</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">⌉</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个关键字），按照这样的规律增长到h层</p>
+<h2 id="sec-343">堆排序</h2>
+<h3 id="sec-346">完全二叉树存储在数组中的下标关系</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910132215.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>从下标 1 开始，对于一个下标 i 的结点，左儿子的下标是 2 i，右儿子的下标是 2 i + 1</p>
+<p>最后一个内部结点的下标是 n/2</p>
+<h3 id="sec-358">大根堆和小根堆的定义</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910132308.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910132317.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-364">大根堆中代码中 down (i) 操作的含义</h3>
+<p><code>down(i)</code> 操作其实就是将以编号 i 为根结点的堆调整为一个大根堆</p>
+<p>down (i) 其实就是将结点编号 i 的结点下移操作，比如下面的一个大根堆，根结点是 3，显然就不满足大根堆的定义，因此我们就需要进行 down (1) 操作：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20241129102409218.png" alt="image-20241129102409218" style="zoom:50%;" />
+<p>down (1) 操作就是以 3 结点为父节点的 3, 5, 4 这个三角结构，3 不满足大根堆定义，那就找到 3，5，4 中的最大值，然后 3 与 5 交换，这样这个三角结构就满足了大根堆定义，而右子树本来就满足定义，所以不用调整，然后再调整以 3 为根结点的 3，4，1 这个三角结构，这三者中的最大值是 4，因此 4 与 3 互换，这样从上到下，就满足了堆结构：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20241129102555155.png" alt="image-20241129102555155" style="zoom:50%;" />
+<p>由于堆的层数是 logn 层，而 down 操作每层是常数操作，因此 down 操作的最后的时间复杂度是 O (logn)</p>
+<p>这是一个大根堆，每次都将最大的元素放到父结点，当然小根堆也是一样的，每次将三角中最小的元素放到父结点就好了</p>
+<h3 id="sec-384">大根堆建立的原理和具体代码（筛法建立大根堆）</h3>
+<p>这里的建堆采用的是从下到上的方式进行，其中叶结点不用堆化，因为叶结点已经就满足堆的定义了，所以我们从最后一个非叶结点的结点开始向下堆化，在完全二叉树中，这个结点的下标就是 <code>n/2</code></p>
+<p>这样从下到上，第i层结点进行堆化的时候，第i层的每个结点的子树都已经满足堆的定义了，所以我们只需要对这个结点本身进行向下堆化让这个结点作为父节点的三角满足堆的定义就可以了：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20241129104543958.png" alt="image-20241129104543958" style="zoom:50%;" />
+<p>从下到上，一层层进行堆化操作，这样就可以依次将每层的子树调整成符合大根堆的形式，建堆的总的时间复杂度通过证明可以得到是O(n)的</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">
+<span class="hljs-comment">//从第一个非叶结点开始从下到上进行建堆操作</span>
+<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = n/<span class="hljs-number">2</span>; i ; i --) down(i);
+
+<span class="hljs-comment">//向下堆化down操作，这是一个递归的过程，对于大根堆来说，每次将三个元素中的最大的放在根结点，然后对交换后的元素继续向下down操作</span>
+<span class="hljs-comment">//比如一个三角结构中左儿子是最大的，那就让根结点与左儿子交换，然后再对左儿子结点下标进行down操作</span>
+<span class="hljs-comment">//down(i)就是将以i为根结点的子树调整成稳定的结构，但是每调用一次down函数其实只是将以i为根结点的三角结构调整成稳定的</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">down</span><span class="hljs-params">(<span class="hljs-type">int</span> u)</span></span>{
+    <span class="hljs-type">int</span> t = u;<span class="hljs-comment">//t用来记录最大的结点下标</span>
+    <span class="hljs-comment">//这两个if语句用来寻找三角中最大的下标</span>
+    <span class="hljs-keyword">if</span>(u * <span class="hljs-number">2</span> &lt;= st &amp;&amp; q[u * <span class="hljs-number">2</span>] &gt; q[t]) t = u * <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">if</span>(u * <span class="hljs-number">2</span> + <span class="hljs-number">1</span> &lt;= st &amp;&amp; q[u * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>] &gt; q[t]) t = u * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;
+    <span class="hljs-comment">//如果这个三角本身就是稳定的，因为我们是从下到上调整的，所以这个三角，加上这个三角形成的子树都是稳定的</span>
+    <span class="hljs-comment">//只有三角进行了调整，我们才继续往下</span>
+    <span class="hljs-keyword">if</span>(u != t){
+        <span class="hljs-comment">//将三角结构调整成稳定的，此时t记录的是结点最大的下标</span>
+        <span class="hljs-built_in">swap</span>(q[u], q[t]);
+        <span class="hljs-comment">//调整之后此时编号t的结点元素是原来的根结点元素，此时继续向下调整</span>
+        
+        <span class="hljs-comment">//由于是从下到上进行调整，原来根结点的三角结构中根结点u的两个子树都是稳定的，然后t指向两个儿子中的最大的儿子编号，将根结点u（根结点）与t结点进行交换之后，t结点元素变成原来的根结点元素，此时t结点的子树元素发生改变（变小），可能是不稳定的，所以需要调整t结点这个子树</span>
+        down(t);
+    }
+}
+</code></pre>
+<h3 id="sec-398">大根堆排序的原理和具体代码</h3>
+<p>每次都将一个建好的大根堆的根结点与最后一个叶结点进行互换，然后将最后一个叶结点从堆中剔除，然后从根结点开始从上到下调整大根堆</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">
+<span class="hljs-type">int</span> q[i]<span class="hljs-comment">//存放所有的元素</span>
+<span class="hljs-type">int</span> st = n<span class="hljs-comment">//元素的个数是n</span>
+<span class="hljs-comment">//堆排序，下标从1开始的</span>
+    
+<span class="hljs-comment">//向下堆化down操作，这是一个递归的过程，对于大根堆来说，每次将三个元素中的最大的放在根结点，然后对交换后的元素继续向下down操作</span>
+<span class="hljs-comment">//比如一个三角结构中左儿子是最大的，那就让根结点与左儿子交换，然后再对左儿子结点下标进行down操作</span>
+<span class="hljs-comment">//down(i)就是将以i为根结点的子树调整成稳定的结构，但是每调用一次down函数其实只是将以i为根结点的三角结构调整成稳定的</span>
+<span class="hljs-type">void</span> down(<span class="hljs-type">int</span> u){
+    <span class="hljs-type">int</span> t = u;<span class="hljs-comment">//t用来记录最大的结点下标</span>
+    <span class="hljs-comment">//这两个if语句用来寻找三角中最大的下标</span>
+    <span class="hljs-keyword">if</span>(u * <span class="hljs-number">2</span> &lt;= st &amp;&amp; q[u * <span class="hljs-number">2</span>] &gt; q[t]) t = u * <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">if</span>(u * <span class="hljs-number">2</span> + <span class="hljs-number">1</span> &lt;= st &amp;&amp; q[u * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>] &gt; q[t]) t = u * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;
+    <span class="hljs-comment">//如果这个三角本身就是稳定的，因为我们是从下到上调整的，所以这个三角，加上这个三角形成的子树都是稳定的</span>
+    <span class="hljs-comment">//只有三角进行了调整，我们才继续往下</span>
+    <span class="hljs-keyword">if</span>(u != t){
+        <span class="hljs-comment">//将三角结构调整成稳定的，此时t记录的是结点最大的下标</span>
+        <span class="hljs-built_in">swap</span>(q[u], q[t]);
+        <span class="hljs-comment">//调整之后此时编号t的结点元素是原来的根结点元素，此时继续向下调整</span>
+        
+        <span class="hljs-comment">//由于是从下到上进行调整，原来根结点的三角结构中根结点u的两个子树都是稳定的，然后t指向两个儿子中的最大的儿子编号，将根结点u（根结点）与t结点进行交换之后，t结点元素变成原来的根结点元素，此时t结点的子树元素发生改变，可能是不稳定的，所以需要调整t结点这个子树</span>
+        down(t);
+    }
+}
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">heap_sort</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-type">int</span> sz = n;<span class="hljs-comment">//整个堆的大小</span>
+    <span class="hljs-comment">//从第一个非叶结点开始从下到上进行建堆操作</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = n/<span class="hljs-number">2</span>; i ; i --) down(i);
+    <span class="hljs-comment">//这里每次都将堆顶元素放入到q[st]上，即堆顶元素与q[st]元素交换</span>
+    <span class="hljs-comment">////然后st--表示堆的元素减一，表示删除掉原来的堆顶元素，其实这时原来堆顶元素已经放入了q[st]中了，即q[]最后一个元素是最大的</span>
+    <span class="hljs-comment">//然后对新的堆顶进行down操作，此时的堆是1~st-1个元素的新堆了，q[]最后一个元素是原来的堆最大的，已经放入到了数组的末尾</span>
+    
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i ++){
+        <span class="hljs-built_in">swap</span>(q[st], q[<span class="hljs-number">1</span>]);
+        st --;
+        <span class="hljs-comment">//将根结点元素与数组的最后一个元素交换之后根结点的三角结构发生了破坏，需要从根结点开始调整</span>
+        down(<span class="hljs-number">1</span>);
+    }
+    <span class="hljs-comment">//这样结束后q[]数组中就是有序的从小到大的元素了</span>
+}
+</code></pre>
+<h3 id="sec-405">大根堆建堆过程的时间复杂度</h3>
+<p>建堆的过程的复杂度是 O (n)，从最后一个非叶结点开始调整，这是通过求和计算出来的</p>
+<h3 id="sec-411">大根堆排序的时间复杂度</h3>
+<p>排序的时候需要每次从根结点向下调整，每次调整的过程最多对比树的高度，所以总的复杂度就是 O (nlogn)</p>
+<h3 id="sec-417">大根堆的稳定性</h3>
+<p>堆排序是不稳定的</p>
+<h3 id="sec-423">（大）小根堆插入元素的过程</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910140224.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>比如插入一个元素 13 到数组的尾部，在逻辑上作为最后一个叶结点</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910140146.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>调整之后的结果是：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910140244.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>大根堆的插入操作也是这样，先将元素插入到堆的末尾，如果这个元素比父节点元素大，则一路上升，一直到无法继续上升</p>
+<h3 id="sec-444">（大）小根堆删除元素的过程</h3>
+<p>直接用最后一个元素替代这个元素的位置，然后从这个位置开始向下 down 操作：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910140400.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910140409.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910140429.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-450">（大）小根堆插入和删除元素的时间复杂度</h3>
+<p>插入和删除与down 操作差不多，最多比较树的高度级别的次数</p>
+<p>所以复杂度就是 O (log n)</p>
+<h2 id="sec-459">归并排序</h2>
+<h3 id="sec-462">归并排序的合并过程</h3>
+<p>其实就是经典的合并有序链表的过程</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910142716.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-471">2-路归并的含义</h3>
+<p>2 路归并就是在合并的时候一次合并的是两个链：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910142857.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>与之对应的是 4 路归并，每次合并的时候是合并 4 个段，选出一个最小的元素需要对比四次：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910142940.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-486">m -路归并选出一个合适的元素的比较次数</h3>
+<p>比较 m - 1 次如上图所示，并且是每选出一个元素都需要比较 m- 1 次</p>
+<h3 id="sec-492">2 路归并排序过程中一趟是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250910143203.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-498">归并排序的代码实现</h3>
+<pre class="code-block" data-lang="cpp"><code class="hljs">
+<span class="hljs-type">int</span> q[n];<span class="hljs-comment">//这里是待排的数组元素</span>
+<span class="hljs-type">int</span> w[n];<span class="hljs-comment">//这里是归并时候需要用到的辅助数组</span>
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">merge_sort</span><span class="hljs-params">(<span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r)</span></span>{
+    <span class="hljs-comment">//如果l &gt;= r说明此时递归到了只有一个元素，不用合并，直接返回即可</span>
+    <span class="hljs-keyword">if</span>(l &gt;= r) <span class="hljs-keyword">return</span>;
+    <span class="hljs-comment">//首先确定划分中点</span>
+    <span class="hljs-type">int</span> mid = l + r &gt;&gt; <span class="hljs-number">1</span>;
+    <span class="hljs-comment">//然后分别递归左右两边</span>
+    <span class="hljs-built_in">merge_sort</span>(l, mid);
+    <span class="hljs-built_in">merge_sort</span>(mid + <span class="hljs-number">1</span>, r);<span class="hljs-comment">//跟二分模板一样，如果mid = l + r &gt;&gt; 1则划分的区间是[l, mid], [mid + 1, r];</span>
+    <span class="hljs-comment">//左右两边排好序之后进行二路归并</span>
+    <span class="hljs-type">int</span> i = l;<span class="hljs-comment">//左指针，从左边区间的第一个元素开始</span>
+    <span class="hljs-type">int</span> j = mid + <span class="hljs-number">1</span>;<span class="hljs-comment">//右指针，从右边区间的第一个元素开始</span>
+    <span class="hljs-type">int</span> k = <span class="hljs-number">0</span>;<span class="hljs-comment">//这里的k是临时数组的下标</span>
+    
+    <span class="hljs-comment">//如果左边没有走完并且右边没有走完的时候进行合并</span>
+    <span class="hljs-keyword">while</span>(i &lt;= mid &amp;&amp; j &lt;= r)
+        <span class="hljs-keyword">if</span>(q[i] &lt;= q[j]) w[k ++] = q[i ++];<span class="hljs-comment">//这里左边小于等于的时候将这个元素放入到辅助数组中，保持稳定性</span>
+    	<span class="hljs-keyword">else</span> w[k ++] = q[j ++];
+    <span class="hljs-comment">//上述循环结束的时候必然是一部分走完了，然后另一部分剩下了</span>
+    <span class="hljs-comment">//此时剩下部分直接接到辅助数组的尾部即可</span>
+    <span class="hljs-keyword">while</span>(i &lt;= mid) w[k ++] = q[i ++];
+    <span class="hljs-keyword">while</span>(j &lt;= r) w[k ++] = q[j ++];
+    
+    <span class="hljs-comment">//接着将临时数组的元素复制到原来的数组中，此时合并完成</span>
+    <span class="hljs-comment">//注意我们临时数组合并的其实是q[l ~ r]部分，因此q的下标应该从l开始，然后将临时数组中的k个数据赋值回q的[l, r]部分</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = l, j = <span class="hljs-number">0</span>; j &lt; k; j ++, i ++) q[i] = w[j];
+    
+}
+</code></pre>
+<h3 id="sec-502">归并排序的的时空复杂度与稳定性</h3>
+<p>这里选择中间的数进行划分，一共需要递归 logn 层，每层合并的时候都是 n 的复杂度，因此不管是最好，平均还是最坏的复杂度都是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></span></div><p><mark>稳定性</mark></p>
+<p>归并排序的时候合并的是相邻两个区间部分</p>
+<p>合并的时候采用的是二路归并，合并两个有序区间的通用算法，左指针元素&lt;=右指针元素，此时将左指针元素放到辅助数组中，从而保持了相对顺序</p>
+<p>因此<strong>归并排序是稳定的</strong></p>
+<h2 id="sec-521">408中进行加减法的处理方法</h2>
+<p>（1）一种方法是直接转成十进制真值进行处理，算出来结果看有没有溢出，然后再转成二进制</p>
+<p>（2）另一种方法是按照计算机中的加法器硬件实现进行</p>
+<h2 id="sec-530">32位机器中int和short各占多少字节</h2>
+<p>32或者64位机器中int始终是32bit，4字节，short始终是16bit，2字节</p>
+<h2 id="sec-536">浮点数</h2>
+<h2 id="sec-539">RISC和CISC</h2>
+<p>主要是下面几个角度：</p>
+<p>访存限制</p>
+<p>通用寄存器数量</p>
+<p>控制方式（硬布线or微程序）</p>
+<p>流水线实现方式</p>
+<p>指令执行时间</p>
+<h2 id="sec-560">连续内存分配管理方式地址保护的两种方法</h2>
+<h2 id="sec-563">文件物理结构组织有哪些？分别支持什么访问方式（随机or不随机）</h2>
+<p>连续分配：支持随机读写</p>
+<p>隐式连接：不支持随机读写</p>
+<p>显式链接：支持随机读写（指不用一块块顺序访问磁盘，而是可以在内存中直接定位磁盘号）</p>
+<p>索引分配：单级索引支持随机访问，多级索引随着级数的增加访问外存磁盘的次数增大，没有必要说明，仍然支持随机读写</p>
+<h2 id="sec-578">文件目录的种类</h2>
+<h2 id="sec-581">文件的删除操作是什么？（delete系统调用的过程）</h2>
+<p>目录文件中的目录项一定会被释放</p>
+<p>至于inode以及inode文件指向的文件实体会不会释放要看硬链接计数，如果删除的时候发现连接计数 = 1，也就是只有一个目录项指向这个inode，那么inode以及磁盘中的文件实体全部会被释放，如果删除的时候发现连接计数 &gt; 1，则只会释放目录文件的目录项</p>
+<h2 id="sec-590">奈式准则和香农定理</h2>
+<h2 id="sec-593">GBN协议</h2>
+<p>是否采用累计确认？</p>
+<p>发送方重传的规则是什么？重传的是哪些帧？</p>
+<p>发送窗口和接收窗口的大小规定是什么？（数据帧编号是i个比特）</p>
+<p>当GBN协议的窗口太大出现问题的一个例子？</p>
+<h2 id="sec-608">TCP拥塞控制</h2>
+<p>慢开始算法和拥塞避免算法是什么？</p>
+<p>快重传和快恢复算法是什么？</p>
+<p>拥塞控制中超时重传之后会发生什么？</p>
+<p>拥塞控制中单个报文丢失会发生什么？</p>
+<p>这四种算法结合的一个图</p>
+<h2 id="sec-626">IP 数据报的转发与ARP协议</h2>
+<h2 id="sec-629">MAR 和 MDR 的位数处理，他们分别与什么有关？</h2>
+<p>与总线有关</p>
+<p>MAR = 地址线<br>
+MDR= 数据线</p>
+<p>题目一般设置数据线 = 存储字长 = MDR</p>
+<h2 id="sec-641">一些常见的 x 86 汇编语句的含义？（看看强化专题）</h2>
+<h2 id="sec-644">路由表的格式是什么？网络号，下一跳 IP 这些写的是网络号还是具体 IP？</h2>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250920094355.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+目的网络 IP 地址就写 CIDR 的网络号格式（主机号全 0 那种）</p>
+<p>子网掩码就是正常写</p>
+<p>下一条 IP，如果有下一条的话就写下一条的具体 IP 地址，如果没有可以空着</p>
+<p>接口就是转发的接口地址</p>
+<h2 id="sec-659">CIDR 的路由聚合方法？</h2>
+<p>（1）首先得先写出路由器根据路由算法（RIP 或者 OSPF）到达每一个网络的表项，即构造路由表</p>
+<p>（2）然后，只有两个表项的接口和下一条地址相同才能进行聚合</p>
+<p>（3）两个表项聚合成一个表项，这个表项的网络号是这两个表项网络号的公共最长前缀，然后下一跳和接口是不变的</p>
+<h2 id="sec-671">主机路由是什么？优先级是什么？</h2>
+<p>主机路由在路由表表项中的目的网络 IP 地址是一个具体的 IP 地址，它的子网掩码是全 1（指路由表项中用于匹配的子网掩码是全 1），它如果能够匹配的话优先级是最高的，也是最为精确的</p>
+<h2 id="sec-677">CIDR 的主机号全 0 和全 1 分别表示什么含义？</h2>
+<h2 id="sec-680">如何给一个路由器配置路由表项？</h2>
+<p>（1）对于普通的网络，写出它的网络号和子网掩码以及下一条 IP 和接口即可<br>
+（2）对于主机路由，写出具体的 IP，子网掩码是全 1，下一条 IP 和接口<br>
+（3）对于剩下的网络，别忘记使用默认路由（一般发往 internet 的会配置成主机路由）</p>
+<p>此外，对于某个网络如果路由器可以通过多个接口转发到达，我们配置的表项，即下一条的 IP 和接口应该是最短路径的下一条 IP 和接口，因此对于 RIP 算法来说转发接口可以让距离向量最短，对于 OSPF 来说转发接口可以让路径的代价最小</p>
+<h2 id="sec-689">以太网V2 MAC帧格式</h2>
+<h2 id="sec-692">以太网数据部分的最小和最大长度是多少？总长度最小和最大是多少？</h2>
+<h2 id="sec-695">以太网的争用期是什么？最短帧长和争用期有什么关系？</h2>
+<h2 id="sec-698">Cache映射方式</h2>
+<h2 id="sec-701">散列表的基本概念</h2>
+<p>主要就是装填因子</p>
+<h2 id="sec-707">处理冲突的方法  -  拉链法</h2>
+<h2 id="sec-710">处理冲突的方法 - 开放定址法</h2>
+<p>主要就是那个公式</p>
+<h2 id="sec-716">内存分配 - 动态分区分配</h2>
+<h1 id="sec-719">计组</h1>
+<h3 id="sec-722">43</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250916182427.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的数据传输速率是指 1 s 中 CPU 从执行其他工作，然后执行中断传数据，然后再执行其他工作这整个过程中一共传输的数据量，这里并不是指单纯某个外设的读取速率，它这是一个平均的综合的速率</p>
+<p><strong>（1）</strong></p>
+<p>这里将 1 s 当作整个 CPU 时间，使用时钟周期来做，这里就是中断负责传输数据，计算的核心思想就是看 1 s 中断花了多少个时钟周期</p>
+<p>一次中断所需的时钟周期个数为：<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">18</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">100</span></span></span></span></p>
+<p>一次中断传输数据 4 B，1 s 传输 0.5 MB 的数据，因此 1 s 应该中断：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0.5</span><span class="mord mathnormal" style="margin-right:0.109em;">M</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.125</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span><span class="mord cjk_fallback">次</span></span></span></span></span></div><p>所以 1 s 中用于中断的总的 CPU 时钟个数为：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">12.5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span><span class="mord cjk_fallback">个</span></span></span></span></span></div><p>因此 CPU 用于外设占整个 CPU 时间比率为：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">12.5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span><span class="mord">/500</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9197em;vertical-align:-0.0556em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span><span class="mord">%</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">500</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">12.5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord">%</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">2.5%</span></span></span></span></span></div><p><strong>（2）</strong></p>
+<p>一次 DMA 的所占用 CPU 的时钟周期个数为：500 个</p>
+<p>1 次 DMA 传送数据 5000 B，1 s 传送 5 MB 个，所以 1 s 有 1000 次 DMA 操作</p>
+<p>因此 1 s 中用于 DMA 的 CPU 时钟周期个数为：500000 个</p>
+<p>所以 DMA 方式 CPU 用于外设占总的 CPU 时间的比率就是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">500000000</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">500000</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">100%</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">0.1%</span></span></span></span></span></div><h3 id="sec-768">44</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919165106.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919165124.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919165132.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<pre class="code-block" data-lang="C"><code class="hljs">C5:	MAR &lt;- (R1)   R1out, MARin
+
+C6: MDR &lt;- M(MAR)	MemR, MDRinE
+	A &lt;- (R0)	R0out, Ain
+	
+C7:	AC &lt;- (A) + (MDR)	ADD, MDRout, ACin
+
+C8:	MDR &lt;- (AC)	ACout, MDRin
+
+C9:	M(MAR) &lt;- (MDR) MemW, MDRoutE
+
+</code></pre>
+<p>这里 C 6 的两个操作可以拆成两个时钟周期写，当然也可以放入一个时钟周期写，这里不会发生总线冲突</p>
+<p>这些控制信号看情况写即可</p>
+<h1 id="sec-781">OS</h1>
+<h3 id="sec-784">45</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919170843.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）空闲资源的存在，P 1 是消费者，P 2, P 3 是生产者<br>
+（2）偶数资源的存在，P 1 是生产者，P 3 是消费者<br>
+（3）奇数资源的存在，P 1 是生产者，P 2 是消费者<br>
+（4）互斥问题，P 1, P 2, P 3 不能同时访问临界资源</p>
+<p>定义信号量：</p>
+<pre class="code-block" data-lang="C"><code class="hljs">
+semaphore mutex = <span class="hljs-number">1</span>;<span class="hljs-comment">//互斥</span>
+semaphore empty = N;<span class="hljs-comment">//空闲资源，初始为N</span>
+semaphore full_odd = <span class="hljs-number">0</span>;<span class="hljs-comment">//奇数资源，初始为0</span>
+semaphore full_even = <span class="hljs-number">0</span>;<span class="hljs-comment">//偶数资源，初始为0</span>
+
+</code></pre>
+<p>进程 P 1:</p>
+<pre class="code-block"><code class="hljs">P1:{
+	while(1){
+		P(mutex);
+		
+		P(empty);
+		int num = produce();
+		put();
+		if(num % 2 == 1) V(full_odd);
+		else if(num % 2 == 0) V(full_even);
+		
+		V(mutex);
+	
+	}
+}
+</code></pre>
+<p>进程 P 2:</p>
+<pre class="code-block" data-lang="C"><code class="hljs">P2:{
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		P(mutex);
+		
+		P(full_odd):
+		getodd();
+		countodd();
+		
+		V(mutex);
+		V(empty);
+	
+	}
+}
+</code></pre>
+<p>进程 P 3:</p>
+<pre class="code-block" data-lang="C"><code class="hljs">P3:{
+
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		P(mutex);
+		
+		P(full_even);
+		geteven();
+		counteven();
+		
+		V(mutex);
+		V(empty);
+	}
+}
+</code></pre>
+<h3 id="sec-809">46</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919173346.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>（1）</mark></p>
+<p>首先物理地址的转换是将虚拟地址的页号直接替换成页框号，然后拼接页内偏移，所以首先得知道虚拟地址的页号是多少</p>
+<p>页号的计算，用虚拟地址除以页大小，余数部分是页内偏移，整数部分是页号，这里页面大小是4KB，所以低12bit就是页内偏移，高4bit就是页号</p>
+<p>2362H -&gt; 页号：2</p>
+<p>1565H -&gt; 页号：1</p>
+<p>25A5H -&gt; 页号：2</p>
+<p><strong>得到物理地址</strong></p>
+<p>（1）拿到虚拟地址 -&gt; 访问TLB命中 -&gt; 拼接页框号和页内偏移得到物理地址</p>
+<p>（2）拿到虚拟地址 -&gt; 访问TLB没有命中 -&gt; 访问页表命中 -&gt; 更新TLB -&gt; 拼接页框号页页内偏移得到物理地址</p>
+<p>（3）拿到虚拟地址 -&gt; 访问TLB没有命中 -&gt; 访问页表不命中（缺页异常）-&gt; 外存调页进入内存 -&gt; 修改页表和块表  -&gt; 重新执行 -&gt; 访问TLB命中 -&gt; 拼接页框号和页内偏移得到物理地址</p>
+<p><strong>后续访问Cache</strong></p>
+<p>这道题不考虑后续对Cache和内存的访问具体细节，统一按照访存处理</p>
+<p>首先是2362H</p>
+<p>访问TLB没有命中，10ns</p>
+<p>访问页表命中，100ns</p>
+<p>更新TLB，忽略</p>
+<p>转换成物理地址，101 362H</p>
+<p>（这里不考虑Cache访问）</p>
+<p>访问内存，100ns</p>
+<p>共计 100ns + 100ns + 10ns = 210ns</p>
+<p>然后是1565H</p>
+<p>访问TLB没有命中，10ns</p>
+<p>访问页表没有命中（缺页），100ns</p>
+<p>页面置换，将0号页置换出去，将1号页换入内存，同时更新TLB和页表，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mord mathnormal">n</span><span class="mord mathnormal">s</span></span></span></span></p>
+<p>重新执行，访问TLB命中，10ns</p>
+<p>转换成物理地址，由于是局部置换（局部淘汰），所以此时1号页调入内存的时候占据的是之前0号页的页框，所以此时1号页对应的物理页框号就是101H，所以物理地址就是101565H</p>
+<p>访问内存，100ns</p>
+<p>一共：220ns + 10^8ns</p>
+<p>最后是25A5H</p>
+<p>访问TLB命中，10ns</p>
+<p>转换物理地址，2545A5H</p>
+<p>访问内存，100ns</p>
+<p>一共就是110ns</p>
+<p>（2）</p>
+<p>根据（1），物理地址就是101565H</p>
+<h1 id="sec-920">CN</h1>
+<h3 id="sec-923">47</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919193127.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919193134.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）</p>
+<p>地址数不少于 120 个，因此主机号至少就是 7 位</p>
+<p>所以划分就是在 202.118.1.0/24 的基础上借 1 bit 作为子网号来区分两个子网</p>
+<p>因此划分结果就是 202.118.1.0/25 和 202.118.128/25</p>
+<p>（2）</p>
+<p>局域网 1 路由：</p>
+<table>
+<thead>
+<tr>
+<th>目的网络 IP 地址</th>
+<th>子网掩码</th>
+<th>下一条 IP 地址</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>202.118.1.0/25</td>
+<td>255.255.255.128</td>
+<td>无</td>
+<td>E 1</td>
+</tr>
+<tr>
+<td>202.118.128/25</td>
+<td>255.255.255.128</td>
+<td>无</td>
+<td>E 2</td>
+</tr>
+<tr>
+<td>202.118.3.2（主机路由）</td>
+<td>255.255.255.255</td>
+<td>202.118.2.2</td>
+<td>L 0</td>
+</tr>
+<tr>
+<td>0.0.0.0/0（默认路由）</td>
+<td>0.0.0.0</td>
+<td>202.118.2.2</td>
+<td>L 0</td>
+</tr>
+</tbody>
+</table>
+<p>（3）</p>
+<p>这里如果单纯在 R 2 的路由表中写出到局域网 1 和局域网 2 的路由如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919202152.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这两个表项的含义是：</p>
+<p>对于 202.118.1.0/25 这个网络中的所有 IP，下一条是 202.118.2.1，走接口 L 0<br>
+对于 202.118.1.128/25 这个网络中的所有 IP，下一条是 202.118.2.1，走接口 L 0</p>
+<p>202.118.1.0/25 这个网络中的所有 IP 与 202.118.1.128/25 这个网络中的所有 IP 构成了 202.118.1.0/24 网络中的所有 IP</p>
+<p>因此合并的话就是对于 202.118.1.0/24 网络中的所有 IP，下一条是 202.118.2.1，走接口 0</p>
+<p>路由聚合的方法就是找这两个子网的最长公共前缀</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html"><span class="pager__label">← 上一篇</span><span class="pager__title">408大题处理汇总</span></a>
+    <a class="pager__item pager__item--next" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html"><span class="pager__label">下一篇 →</span><span class="pager__title">2010年</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h2" href="#sec-3">树，森林，二叉树的转换</a><a class="margin__link margin__link--h3" href="#sec-6">树如何转换成二叉树？</a><a class="margin__link margin__link--h3" href="#sec-15">森林如何转换成二叉树？</a><a class="margin__link margin__link--h3" href="#sec-21">二叉树如何恢复成树？</a><a class="margin__link margin__link--h3" href="#sec-27">二叉树如何恢复成森林？</a><a class="margin__link margin__link--h2" href="#sec-33">图的基本概念</a><a class="margin__link margin__link--h3" href="#sec-36">图的定义，图的顶点集和边集的特点（空或者非空）</a><a class="margin__link margin__link--h3" href="#sec-42">有向图和无向图</a><a class="margin__link margin__link--h3" href="#sec-48">弧尾和弧头的概念</a><a class="margin__link margin__link--h3" href="#sec-57">简单图和多重图的概念</a><a class="margin__link margin__link--h3" href="#sec-63">无向图顶点的度，顶点的入度和出度的概念，有向图顶点的度</a><a class="margin__link margin__link--h3" href="#sec-75">无向图和有向图中顶点的度之和与边的条数的关系</a><a class="margin__link margin__link--h3" href="#sec-84">路径和回路、简单路径和简单回路，路径长度，点到点之间的路径的概念，连通与强连通</a><a class="margin__link margin__link--h3" href="#sec-93">连通图和强连通图的概念</a><a class="margin__link margin__link--h3" href="#sec-99">连通图最少边的个数</a><a class="margin__link margin__link--h3" href="#sec-105">非连通图最多边的个数</a><a class="margin__link margin__link--h3" href="#sec-117">n 个顶点的有向图，保证强连通最少边数是多少？</a><a class="margin__link margin__link--h3" href="#sec-123">子图的概念</a><a class="margin__link margin__link--h3" href="#sec-129">生成子图的概念</a><a class="margin__link margin__link--h3" href="#sec-135">连通分量的概念（包含两点）</a><a class="margin__link margin__link--h3" href="#sec-142">强连通分量的概念（包含两点）</a><a class="margin__link margin__link--h3" href="#sec-149">连通图的生成树的概念</a><a class="margin__link margin__link--h3" href="#sec-159">连通图生成树的边的个数</a><a class="margin__link margin__link--h3" href="#sec-165">生成森林的概念</a><a class="margin__link margin__link--h3" href="#sec-172">边的权和带权图</a><a class="margin__link margin__link--h3" href="#sec-178">图的带权路径长度概念</a><a class="margin__link margin__link--h3" href="#sec-184">无向完全图的概念，边的个数</a><a class="margin__link margin__link--h3" href="#sec-190">有向完全图的概念，边的个数</a><a class="margin__link margin__link--h3" href="#sec-196">稀疏图和稠密图的概念</a><a class="margin__link margin__link--h3" href="#sec-205">树和图的关系，n 个结点的树的边的个数</a><a class="margin__link margin__link--h3" href="#sec-214">图的边数大于什么了有回路？</a><a class="margin__link margin__link--h2" href="#sec-220">B 树定义和性质</a><a class="margin__link margin__link--h3" href="#sec-223">m 叉查找树的概念和结构</a><a class="margin__link margin__link--h3" href="#sec-229">B 树的定义（三个方面）</a><a class="margin__link margin__link--h3" href="#sec-250">B 树种叶子结点和终端结点的定义（外部结点也会当作 B 树中的结点）</a><a class="margin__link margin__link--h3" href="#sec-262">B 树的阶是什么</a><a class="margin__link margin__link--h3" href="#sec-268">B 树中非叶结点的结构</a><a class="margin__link margin__link--h3" href="#sec-274">B 树的核心特性 (4点) B 树的定义</a><a class="margin__link margin__link--h3" href="#sec-304">n 个关键字，m 阶 b 树的最小高度和最大高度（按照表格进行推导）</a><a class="margin__link margin__link--h3" href="#sec-325">n 个关键字的 b 树的失败结点个数</a><a class="margin__link margin__link--h3" href="#sec-337">h 层 b 树的最少结点个数</a><a class="margin__link margin__link--h2" href="#sec-343">堆排序</a><a class="margin__link margin__link--h3" href="#sec-346">完全二叉树存储在数组中的下标关系</a><a class="margin__link margin__link--h3" href="#sec-358">大根堆和小根堆的定义</a><a class="margin__link margin__link--h3" href="#sec-364">大根堆中代码中 down (i) 操作的含义</a><a class="margin__link margin__link--h3" href="#sec-384">大根堆建立的原理和具体代码（筛法建立大根堆）</a><a class="margin__link margin__link--h3" href="#sec-398">大根堆排序的原理和具体代码</a><a class="margin__link margin__link--h3" href="#sec-405">大根堆建堆过程的时间复杂度</a><a class="margin__link margin__link--h3" href="#sec-411">大根堆排序的时间复杂度</a><a class="margin__link margin__link--h3" href="#sec-417">大根堆的稳定性</a><a class="margin__link margin__link--h3" href="#sec-423">（大）小根堆插入元素的过程</a><a class="margin__link margin__link--h3" href="#sec-444">（大）小根堆删除元素的过程</a><a class="margin__link margin__link--h3" href="#sec-450">（大）小根堆插入和删除元素的时间复杂度</a><a class="margin__link margin__link--h2" href="#sec-459">归并排序</a><a class="margin__link margin__link--h3" href="#sec-462">归并排序的合并过程</a><a class="margin__link margin__link--h3" href="#sec-471">2-路归并的含义</a><a class="margin__link margin__link--h3" href="#sec-486">m -路归并选出一个合适的元素的比较次数</a><a class="margin__link margin__link--h3" href="#sec-492">2 路归并排序过程中一趟是指什么？</a><a class="margin__link margin__link--h3" href="#sec-498">归并排序的代码实现</a><a class="margin__link margin__link--h3" href="#sec-502">归并排序的的时空复杂度与稳定性</a><a class="margin__link margin__link--h2" href="#sec-521">408中进行加减法的处理方法</a><a class="margin__link margin__link--h2" href="#sec-530">32位机器中int和short各占多少字节</a><a class="margin__link margin__link--h2" href="#sec-536">浮点数</a><a class="margin__link margin__link--h2" href="#sec-539">RISC和CISC</a><a class="margin__link margin__link--h2" href="#sec-560">连续内存分配管理方式地址保护的两种方法</a><a class="margin__link margin__link--h2" href="#sec-563">文件物理结构组织有哪些？分别支持什么访问方式（随机or不随机）</a><a class="margin__link margin__link--h2" href="#sec-578">文件目录的种类</a><a class="margin__link margin__link--h2" href="#sec-581">文件的删除操作是什么？（delete系统调用的过程）</a><a class="margin__link margin__link--h2" href="#sec-590">奈式准则和香农定理</a><a class="margin__link margin__link--h2" href="#sec-593">GBN协议</a><a class="margin__link margin__link--h2" href="#sec-608">TCP拥塞控制</a><a class="margin__link margin__link--h2" href="#sec-626">IP 数据报的转发与ARP协议</a><a class="margin__link margin__link--h2" href="#sec-629">MAR 和 MDR 的位数处理，他们分别与什么有关？</a><a class="margin__link margin__link--h2" href="#sec-641">一些常见的 x 86 汇编语句的含义？（看看强化专题）</a><a class="margin__link margin__link--h2" href="#sec-644">路由表的格式是什么？网络号，下一跳 IP 这些写的是网络号还是具体 IP？</a><a class="margin__link margin__link--h2" href="#sec-659">CIDR 的路由聚合方法？</a><a class="margin__link margin__link--h2" href="#sec-671">主机路由是什么？优先级是什么？</a><a class="margin__link margin__link--h2" href="#sec-677">CIDR 的主机号全 0 和全 1 分别表示什么含义？</a><a class="margin__link margin__link--h2" href="#sec-680">如何给一个路由器配置路由表项？</a><a class="margin__link margin__link--h2" href="#sec-689">以太网V2 MAC帧格式</a><a class="margin__link margin__link--h2" href="#sec-692">以太网数据部分的最小和最大长度是多少？总长度最小和最大是多少？</a><a class="margin__link margin__link--h2" href="#sec-695">以太网的争用期是什么？最短帧长和争用期有什么关系？</a><a class="margin__link margin__link--h2" href="#sec-698">Cache映射方式</a><a class="margin__link margin__link--h2" href="#sec-701">散列表的基本概念</a><a class="margin__link margin__link--h2" href="#sec-707">处理冲突的方法 - 拉链法</a><a class="margin__link margin__link--h2" href="#sec-710">处理冲突的方法 - 开放定址法</a><a class="margin__link margin__link--h2" href="#sec-716">内存分配 - 动态分区分配</a><a class="margin__link margin__link--h3" href="#sec-722">43</a><a class="margin__link margin__link--h3" href="#sec-768">44</a><a class="margin__link margin__link--h3" href="#sec-784">45</a><a class="margin__link margin__link--h3" href="#sec-809">46</a><a class="margin__link margin__link--h3" href="#sec-923">47</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>梳理 · 22408 备考笔记</title>
+<meta name="description" content="梳理 CPU 的组成 CPU 的结构整体是什么？ 指令计数器 PC 是什么？ PC 的位数取决于什么？PC 使用字节地址和字地址有什么不同？ PC 的位数取决于存储容量和指令字长 无论主存按字编址还是按字节编址，PC 都可以选择使用的是字地">
+<link rel="icon" href="../../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../../" data-note-id="c043">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../../math/index.html">数学</a><a href="../../../major/index.html" class="is-active">专业课</a><a href="../../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note is-active" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../../major/index.html">专业课 408</a><i>/</i><span>计组</span><i>/</i><span class="crumb__no">05</span></div>
+    <h1 class="doc__title">梳理</h1>
+    <div class="doc__meta"><span>2.4 万字</span><span>约 56 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose">
+<h2 id="sec-3">CPU 的组成</h2>
+<h3 id="sec-6">CPU 的结构整体是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915160907.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-12">指令计数器 PC 是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915160955.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-18">PC 的位数取决于什么？PC 使用字节地址和字地址有什么不同？</h3>
+<p>PC 的位数取决于存储容量和指令字长</p>
+<p>无论主存按字编址还是按字节编址，PC 都可以选择使用的是字地址还是字节地址，<strong>这里的字地址，其实严格来说是指令字的意思</strong>，PC 使用指令字地址, CPU 每次取值之后 PC 加的是严格的数值 1，表示下一条指令</p>
+<p>比如：</p>
+<p>假设主存还是按字节编址，一个指令的长度是 4 个字节, 指令按照边界对齐存储的话应该是下面的存储方式。假如地址位数是 8 位<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620170956.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果 PC 使用的是字节地址，那么第一条指令的起始地址就是 0000 0000<br>
+第二条指令的起始地址就是 0000 0100，PC 也得是 8 位，表示的就是真实的指令的字节地址，每次取指之后 PC + 4</p>
+<p>如果 PC 使用指令字地址的话，一条指令字占 4 个字节，并且边界对齐，那么 <strong>PC 就不用存 8 位了，只用存高 6 位，然后自动乘 4 就是指令实际的字节地址了</strong>，这里第一条指令存放在 PC 中就是 0000 00，第二条指令存放在 PC 就是 0000 01；如果有第三条指令的话，其字节地址就是 0000 1000，PC 中只用存放 0000 10，然后乘 4  就是这个指令的实际字节地址</p>
+<p>如果 PC 使用指令字地址的话，这时一条指令字占 8 个字节，并且边界对齐，那么 PC 也不用存 8 位，只用存高 5 位，然后自动乘 8 就是实际指令的字节地址；比如连续的三条指令的字节地址为 0000 0000；0000 1000；0001 0000。并且 8 位字节地址的话，指令字长度 8 个字节，那么最多只能存放 32 条指令</p>
+<p>这样 PC 只用存放高 5 位，即分别存放 0000 0；0000 1；0001 0；然后乘 8 就是指令的实际字节地址了</p>
+<p>所以当 PC 使用的是指令字地址，的时候指令字长也会对 PC 的位数产生影响，PC 使用指令字地址其实是对 PC 的长度的一种优化，原因就是指令是边界对齐存放在存储器中的，那么指令的字节地址就一定是 4 或者 8 的整数倍，那么 PC 的一些位数就可以去掉，取指的时候直接扩大对应的位数即可</p>
+<h3 id="sec-48">指令寄存器 IR 是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915162310.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-54">指令译码器 ID 是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915162340.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-60">中断机构是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915162401.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-66">操作控制信号形成部件是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915162453.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-72">CPU 内部最主要由哪两个部分组成？</h3>
+<p>运算器和控制器：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915163137.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-81">CPU 功能有哪些?</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915163245.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-87">CPU 的寄存器</h2>
+<h3 id="sec-90">通用寄存器包括哪些？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915163333.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915163341.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-96">状态寄存器 PSW 是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915163412.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-102">指令的执行过程</h2>
+<h3 id="sec-105">指令周期是指什么？包括哪几个部分？（概况性的）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915163933.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里只有在中断周期才会检测中断</p>
+<p>间址周期与中断周期并不一定所有的指令都会进入执行<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915165213.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-117">机器周期是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915164327.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果当指令字长 = 2 倍存储字长，那么指令的取值周期就需要取两次才能将指令取出，这里取指周期就是 2 倍的机器周期，机器周期是早期引入的概念，反正机器周期就是取一次的时间</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915164549.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-129">指令的执行有哪五个步骤？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915165301.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-135">取指周期的数据流是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915165611.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-141">间址周期的数据流是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915165806.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915165826.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915165856.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>间址周期并不一定所有的指令都会有</p>
+<h3 id="sec-153">中断周期的数据流是什么？</h3>
+<p>首先，SP 需要 -1 指向堆栈上方一个空闲的区域</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915173749.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>然后将 SP 指针本身的内容送到 MAR 中，这一步是为了将 PC 中的内容即断点保存写入到栈中，这先将要写入的地址传给 CPU：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915173906.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>发出写信号：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915173957.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915174414.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>接着将被打断的指令断点压入到堆栈中：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915174446.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>然后将中断服务程序的地址传给 PC，开始执行中断服务处理程序：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915174529.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-186">数据通路</h2>
+<h3 id="sec-189">数据通路是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915174653.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-195">操作元件（组合逻辑元件）是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917171206.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-201">常见的操作元件有哪些？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917171559.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-207">存储元件是什么？有哪些？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917171652.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-213">单总线数据通路的基本结构是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917173640.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的 Y 和 Z 都是暂存器</p>
+<h3 id="sec-222">通用寄存器之间如何传送数据？控制信号有哪些？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917173806.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-228">ALU 执行加法操作的控制信号是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917174026.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917174220.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-237">从主存中读取一个数据的过程是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917174640.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>第一行，将 R 1 中的地址写入到 MAR 中</p>
+<p>第二行，根据 MAR 中的地址读取主存中的数据到 MDR 中</p>
+<p>第三行，将 MDR 中的数据写入到寄存器 R 2 中</p>
+<p>上述三行是三个操作的控制信号</p>
+<h3 id="sec-255">写入一个数据到主存的过程是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917174800.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>第一行，将 R 1 中的内容写入 MDR</p>
+<p>第二行，将 R 2 中的地址写入到 MAR 中</p>
+<p>第三行，将 MDR 中的数据写入主存</p>
+<h3 id="sec-270">三总线数据通路的结构是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917175204.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>三总线不需要设置暂存器，这里只用保证 ALU 计算完毕之后输出的总线 C 上面没有别的数据，那么就不会发生冲突</p>
+<p>同理 ALU 的两个输入端，只用保证不同的寄存器通过不同的总线流出，那么就可以同时输入到 ALU 的输入两端了，而不用再像单总线那样每个时钟周期只能用一次总线传一个数据到暂存器，然后另一个时钟周期再用这个总线传另一个数据到 ALU 与暂存器中的数据相加运算</p>
+<h3 id="sec-282">单周期数据通路是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917175537.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-288">RISC 架构与单周期 CPU 的关系是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250917175819.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>事实上 RISC 单个指令执行还是需要多个时钟周期</p>
+<p>只是 RISC 采用流水线技术，在一个比较长的时间中可以做到一个时钟周期执行完毕一条指令</p>
+<p>因此 RISC 可以做到在一个周期内执行完毕，一般就是指 RISC 采用了流水线技术，而不是使用了单周期 CPU</p>
+<p>而在单周期 CPU 中执行的指令集就只是单纯将一个时钟周期拉的很长，保证所有指令都在一个时钟周期内完成，单周期 CPU 和流水线 CPU是两个独立的东西，不会同时存在，单周期 CPU 就是单周期 CPU，这种 CPU不存在流水线技术</p>
+<h2 id="sec-306">控制器</h2>
+<h3 id="sec-309">指令，微程序，微指令，微命令，微操作以及各自的关系是什么？</h3>
+<p>计算机的控制命令的产生是由控制器决定的，比如组合逻辑控制器，其通过计算机的当前状态利用组合逻辑来产生一条指令的执行所需要的控制命令，很显然，这样的设计会导致硬件非常复杂，这时就有了微程序控制的概念，也就是微程序控制器</p>
+<p><strong>所谓微程序控制，就是给每一条指令编写一个程序，这个程序就称为微程序，指令执行其实就是不同的控制部件执行各种操作的过程，因此执行这个微程序，这个微程序产生了这条指令执行所需的所有的控制信号，就控制了所有部件执行的操作，因为就控制了整条指令的执行，这种方式就很偏软件，其执行过程很像指令的执行过程</strong></p>
+<p>这种方式的控制器就称为微程序控制器</p>
+<p>一条机器指令所需的所有控制信号用一个微程序执行来发出</p>
+<p>一个微程序包含多条微指令</p>
+<p>一条微指令浓缩了多个微命令，执行这条微指令也就产生了当前机器指令所需的微命令，逐条执行微指令也就产生了这条机器指令所需的所有微命令</p>
+<p>其实微命令就是控制信号，控制部件在执行一条微指令之后发出微命令给各种部件，部件接收到微命令执行的操作就是一个微操作，微操作就是部件执行的最基本操作了，微操作和微命令是一一对应的</p>
+<p>对于一条机器指令来说其对应一个微程序产生其执行过程所需的所有的控制命令</p>
+<p>而不同的机器指令其实有些阶段是一个的，比如取值阶段，那么所有的机器指令对应的微程序中就必然有完全一样的微指令</p>
+<p>我们可以将这些微指令取出来当作公共的微指令，这样可以省一些空间</p>
+<blockquote>
+<p>比如有 32 条机器指令，公共的取值微程序包含 2 条微指令，平均一条指令对应 4 条微指令，那么所有的指令所对应的微指令的条数就应该是 2 + 32 * 4 = 130 条<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919122436.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+</blockquote>
+<h3 id="sec-347">微程序控制器的组成结构是什么？</h3>
+<h4 id="sec-350">微地址形成部件</h4>
+<p>当机器指令的操作码被读入之后，这里的微地址形成部件就会自动形成这条指令所对应的微程序的入口地址，也就是微程序的第一条微指令的地址</p>
+<h4 id="sec-356">顺序逻辑</h4>
+<p>参考 CPU 中的标志以及时序，将微指令的地址放到 CMAR 中</p>
+<h4 id="sec-362">CMAR</h4>
+<p>存放微指令在 CM 中的地址</p>
+<h4 id="sec-368">CMDR（<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord mathnormal" style="margin-right:0.0785em;">I</span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span></span></span></span>）</h4>
+<p>存放从 CM 中取出的微指令<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919123137.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919123519.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-374">取值微程序共有情况下的微程序指令如何计算？</h3>
+<p>不同的机器指令其实有些阶段是一个的，比如取指阶段，那么所有的机器指令对应的微程序中就必然有完全一样的微指令</p>
+<p>我们可以将这些微指令取出来当作公共的微指令，这样可以省一些空间</p>
+<p>比如有 32 条机器指令，公共的取值微程序包含 2 条微指令，平均一条指令对应 4 条微指令，那么所有的指令所对应的微指令的条数就应该是 2 + 32 * 4 = 130 条</p>
+<h3 id="sec-386">微程序控制器的工作过程</h3>
+<p>（1）取机器指令：自动将取指令功能的微程序入口地址放到 CMAR，然后从 CM 中读取微指令，送入 CMDR 后发出取机器指令的控制信号<br>
+（2）机器指令执行：机器指令的 OP 经过译码之后送入控制器的微地址形成部件，形成机器指令对应微程序的入口地址，入口地址经过顺序逻辑送入 CMAR 后 CMAR 从 CM 中逐条取出微指令执行即可<br>
+（3）机器指令执行完毕：重复（1），继续取指令执行</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919142231.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>CMAR 经过译码可以指出微指令存放在控制存储器 CM 中的哪个位置</p>
+<p>然后将这条微指令取出放到 CMDR/uIR 中，这条微指令的操作码字段负责发出控制信号，下地址字段告诉取指方式或者下一条微指令的地址</p>
+<p>然后回到顺序逻辑，形成下一条微指令的地址，重复过程</p>
+<p>在取机器指令阶段发出的控制信号是微程序自动执行的，不需要机器指令的 OP 字段，由控制器自动发出取指的控制信号（取指公共微程序自动放入 CMDR 中），取指微程序执行完毕之后就可以将机器指令取出到了 IR 中了</p>
+<p>等到机器指令在 IR 中，此时就根据机器指令的 OP 字段，找到这个机器指令所对应的微程序在哪里，然后再按照上文所述的操作执行</p>
+<h3 id="sec-410">微指令的编码方式是什么？</h3>
+<p>其实就是如何根据微指令的字段发出控制信号的意思</p>
+<h3 id="sec-416">微指令的直接编码方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919142418.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-422">微指令的字段直接编码方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919142513.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>字段直接编码方式必须留出一个编码用于空操作，比如如果一段对应 8 个微命令，那么必然是 4 bit，而不是 3 bit，因为必须要有一个编码可以对应空操作</p>
+<h3 id="sec-431">微指令的字段间接编码方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919142635.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-437">微指令形成下一条指令地址的方式有哪些？</h3>
+<p>（1）断定方式：直接给出下一条微指令地址<br>
+（2）增量计数方式：CMAR 自动 + 1，当作 PC 功能<br>
+（3）经过机器指令 OP 译码，由微地址形成部件形成（机器指令刚开始执行的时候形成微程序入口地址）</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919143125.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-446">微指令的格式</h3>
+<p>水平型：<br>
+（1）上述的编码方式都是属于水平型微指令的操作控制字段，水平型的特点就是可以并行执行微操作<br>
+（2）顺序控制字段由判断测试字段和后继地址字段构成</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251216151721.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>垂直型：<br>
+（1）垂直型无法并行，一般题目中的微指令格式都是针对水平型的<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251216153241.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>一道例题：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251210130429.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里两个不互斥的外部条件就对应判断测试字段中 2 bit</p>
+<p>这里顺序控制字段的位数是 13 bit</p>
+<p>但是有两个不互斥的外部条件，意思是一个 bit 对应一个条件，bit = 1 表示外部条件存在，bit = 0 表示外部条件不存在</p>
+<p>因此需要 2 bit 来表示外部条件，所以剩下表示地址的只有 11 bit</p>
+<p>这里如果外部条件是互斥的，那么用 1 bit 就可以表示了，0 表示第一个条件，1 表示第 2 个条件</p>
+<p>所以 CM 最大容量是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">11</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">8</span><span class="mord mathnormal" style="margin-right:0.0715em;">K</span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span></span></div><h2 id="sec-480">指令流水线</h2>
+<h3 id="sec-483">指令流水段由哪几个部分组成？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919143624.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-489">流水线中的机器周期，时钟周期，指令周期的关系是什么？</h3>
+<p>（1）流水线中一般一个阶段花费一个时钟周期，即机器周期= 时钟周期（知道这个即可）<br>
+（2）流水线中稳定情况下一个时钟周期有一条指令执行完毕，所以逻辑上指令周期= 时钟周期<br>
+（3）指令字长=存储字长情况下，存取周期 = 时钟周期</p>
+<p>机器周期就是取指令一次的时间，流水线中默认指令字长= 存储字长，所以机器周期就是取指阶段的时间</p>
+<p>在流水线中，一般就考试最常考的就是 5 端式流水线，一个指令被划分为 5 个阶段，每个阶段规定花费一个时钟周期（这里是自己规定的）</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624152047.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>而机器周期规定是完成一个阶段操作的时间，这里设定为最长的取指操作时间，在这里 5 端流水线中，那么就有机器周期 = 时钟周期了</p>
+<p>并且在指令字长 = 存储字长的情况下，一次读取主存的操作就可以把指令取出来，所以就有机器周期 = 时钟周期 = 存取周期</p>
+<p>在流水线中，一条指令如果单独去看的话是需要花 5 个时钟周期才能执行完毕，但是在稳定以及理想状态下，每过一个时钟周期就有一条指令执行完毕，所以在逻辑上就是指令周期 = 时钟周期</p>
+<p>因此在稳定理想的情况下就有：</p>
+<p>机器周期 = 时钟周期 = 指令周期 = 取指周期</p>
+<h3 id="sec-519">流水线数据通路的设计原则是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919144938.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里与理想情况下不同，每个阶段不一定都是一个时钟周期就能完成</p>
+<h3 id="sec-528">流水线数据通路的基本结构是什么？</h3>
+<p>基本框架如下所示<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624194242.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这个结构需要注意：</p>
+<p>（1）每个流水段寄存器用来存放从前面功能部件传递的信息，所以<strong>每个流水段寄存器的长度</strong>并不是一样的</p>
+<p>（2）PC 和各个流水段寄存器在每个时钟周期都会被更改写入，所以他们<strong>不需要写使能信号</strong>，但是由于每个时钟周期都需要被写入更改，所以 PC 和流水段寄存器必须要响应时钟信号，所以<strong>必须有时钟信号接入</strong></p>
+<p>（3）<strong>前两个流水段</strong>是取指和译码，他们在每条指令的执行中都是相同的，所以<strong>不需要控制信号</strong>，只用硬件集成好了之后执行固定功能即可，但是<strong>后面的流水段就需要控制信号</strong>来根据指令执行不同的操作；在指令译码阶段反而会生成一些控制信号用于控制后面的功能部件</p>
+<p>（4）后面的流水段需要用到一些控制信号，这里先不多说，但是根据这个图可以发现，<strong>控制信号来自外面的控制部件</strong>，流水线的数据通路本身不包括控制部件</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919145309.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-552">适合流水线的指令特点是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624153953.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>关于第三点，采用 load/store 型指令风格的意思是指令中只有 load 和 store 指令才可以进行访存，其他的指令不能访存，只能从寄存器中取操作数（至于如何实现不用在意，这里是做规定）</p>
+<p>load 和 store 型指令特点如下：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624154111.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果强行理解的话，就是根据我们的规定，其他的指令在访存阶段是空操作，在执行阶段非常快，不用进行访存或者什么别的复杂操作，并且我们将 load 和 store 指令的地址计算放到执行阶段进行，这样就可以将 load 和 store 指令的地址计算与其他指令的执行规整在一起，因为各自执行阶段干的事很单纯，所以就容易规整在一起，是这个意思，至于其他指令的操作数是怎么到寄存器中的不用在意</p>
+<h3 id="sec-567">MIPS 指令的流水线实现分为哪几个阶段？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919150529.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-573">MIPS 的 R 型指令是如何通过流水线实现的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919145905.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+（1）IF：取指<br>
+（2）ID：译码，取寄存器数<br>
+（3）EXE：执行计算<br>
+（4）MEM：空操作<br>
+（5）WB：结果写回寄存器</p>
+<h3 id="sec-579">MIPS 的 I 型指令是如何通过流水线实现的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919150017.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）IF：取指<br>
+（2）ID：译码，取寄存器数<br>
+（3）EXE：执行计算<br>
+（4）MEM：空操作<br>
+（5）WB：结果写回寄存器</p>
+<h3 id="sec-588">MIPS 的 lw 型指令是如何通过流水线实现的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919150057.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）IF：取指<br>
+（2）ID：译码，取数<br>
+（3）EXE：执行计算存储地址<br>
+（4）MEM：从存储单元取出数据<br>
+（5）WB：结果写回寄存器</p>
+<h3 id="sec-597">MIPS 的 beq 型指令是如何通过流水线实现的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919150258.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图中的 imm 16 是转移了多少条指令的意思，PC + 4 是自增的意思，这里是自增 4 ，说明一条指令占了 4 个存储单元，这也是为什么 imm 16 也要乘 4 的含义</p>
+<p>当然还有另一种写法就是 PC + 4 + imm 16，这里的 imm 16 就是直接给出了偏移了多少个存储单元，而不是偏移了多少个指令了</p>
+<p>上图的访存阶段，如果判断正确，那么 PC 就会被直接刷新了，这里无论是否判断正确，写回阶段始终是空操作</p>
+<p>（1）IF：取指<br>
+（2）ID：译码，取寄存器数<br>
+（3）EXE：执行减法计算，同时计算转移地址<br>
+（4）MEM：根据计算结果判断是否将转移地址送到 PC<br>
+（5）WB：空操作</p>
+<h3 id="sec-615">流水线冒险总结</h3>
+<h4 id="sec-618">结构冒险</h4>
+<p>结构冒险是指硬件资源的冲突，也就是不同的指令在执行过程中用到了同一个硬件资源；比如 A 指令取数的时候要用到 Cache，但是 B 指令又处于取指令阶段，也要用到 Cache，这样就会出现冲突</p>
+<p><strong>解决方法：</strong></p>
+<p>（1）规定一个部件一个指令在执行的过程中只能使用一次，这样不同的指令在不同的阶段使用的部件就会错开，比如规定只能在指令取指阶段使用一次部件 A，那么某条指令处于取指阶段的时候其他指令都是别的阶段，所以就不会出现部件冲突</p>
+<p>（2）增加一些部件，进行冗余，比如数据 Cache 和指令 Cache</p>
+<h4 id="sec-633">数据冒险</h4>
+<p>数据冒险也就是后一条指令用到的数据来自前一条指令的结果，比如下图的例子：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624200943.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>第一条指令的结果 <code>$1</code> 寄存器会被后续四条不同的指令使用，但是只有第 5 条指令才能取到 <code>$1</code> 的值</p>
+<p><strong>解决方法：</strong></p>
+<p>（1）插入空操作，只要在第二条指令之前多执行几条空操作指令就好了，将后面的所有指令执行延后，这样就可以取到 <code>$1</code> 寄存器内容了</p>
+<p>（2）插入气泡，即硬件阻塞，将指令的阶段往后延迟，其实和第一个空操作差不多<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625111536.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+上图中第二条指令需要取第一条指令的执行结果 R 1，那么往后延迟就完事了，注意这里 IF 阶段不能延迟，这里只有将 IF 取到了之后才能发现是否阻塞</p>
+<p>（3）采用转发技术，也就是旁路，它的意思是，根据上图，第二条指令需要用到的 R 1 的结果，其实在第一条指令的 EX 阶段已经得出了，只是没有写回寄存器，这个时候可以在 EX 阶段的运算器啥的部件引出一条硬件线路，那么第二条指令的执行阶段就可以直接通过这个硬件旁路来获得数据，不同非得等到第一条指令执行完毕才能得到 R 1 的数据：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625112201.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h4 id="sec-657">控制冒险</h4>
+<p>控制冒险的原理如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625133610.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图中的 beq 指令，在 Ex 阶段执行操作得到结果，然后在 Mem 阶段根据结果决定是否跳转，并在 Mem 阶段结束的时候将跳转的值送到 PC，比如这里要跳转到 1000 存储单元处</p>
+<p>那么在 ID, Ex, Mem 阶段与 beq 指令相邻的指令仍然在执行比如上图中的 16, 20, 24 单元位置处的指令，如果就这样直接跳转，那么这些指令执行了一半当然就会出现问题（因为按照程序逻辑你应该执行 1000 处的指令得到结果，但是这里反而多执行了邻近的三条指令，那这样这些指令也会得到一些结果，或者改变一些寄存器的值，就会与原来的程序逻辑冲突，这个就是控制冒险），所以正确的执行顺序是执行完 beq 的 Mem 阶段之后 PC 取指开始执行 1000 单元处的 lw 指令</p>
+<p><strong>解决方法</strong></p>
+<p>（1）通过加入空指令或者阻塞，<strong>将 16, 20, 24 单元处的指令一直往后延，延到 Mem 阶段结束再开始执行</strong> 16 存储单元的指令，这个时候就知道是应该顺序执行还是跳转了，如果是跳转，那么 IF 取指取得就不是 16 存储单元处得 ori 指令，而是 1000 处的 lw 指令，<strong>这里阻塞是阻塞分支指令之后的指令，他们被阻塞的包括 IF 阶段</strong></p>
+<p>（2）进行预测；分为两种静态分支预测和动态分支预测；</p>
+<p>静态分支预测就是跟历史无关，一律认为所有的分支指令转或者不转，比如假设 CPU 认为所有的分支指令都不转，那么分支指令在执行的时候相邻的指令仍然会执行，但是如果分支指令的结果是转，那么根据下图，就有三条指令执行错误，所以必须得将这三条指令的控制信号清零，相当于将这三条指令延后了 3 个时钟周期，浪费了 3 个时间片（流水线阻塞损失的时钟个数称为时间片）；当然，如果预测对了，那就一个时钟周期也没浪费</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625133610.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>动态分支预测就是根据局部性的原理，根据前面的分支的结果来动态预测当前分支会不会跳，这种预测的准确度要高于静态分支预测</p>
+<h3 id="sec-690">load - use 冒险是什么？</h3>
+<p>load - use 冒险是一类特殊的数据冒险，它跟普通的数据冒险不一样，load -use 冒险是第二条指令要用的数据由上一条 load 指令从主存取出来而产生的冒险，如下所示：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625115001.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上述 beq 指令的 EX 阶段必须得用到上一条 load 指令的结果进行作差，这里与普通数据冒险的区别在于，普通的数据冒险上一条指令产生结果是在 EX 阶段之后就产生了，仍然在下一条指令必须用到数据的 EX 阶段前面，所以可以用一个数据旁路引到下一条指令的 EX 阶段</p>
+<p>但是 load - use 指令实际数据产生是在访存之后即 Mem 阶段，这个阶段与下一条指令的 EX 阶段是同时发生，所以这里下一条指令进行 EX 阶段要用到的数据上一条指令还没实际产生呢，当然就不可能通过旁路引过去</p>
+<p><mark>解决方法</mark></p>
+<p>load-use 指令可以完全采用阻塞来进行处理，即将 beq 指令往后延迟，但是这种方法不好</p>
+<p>所以 load - use 指令采用的方法是阻塞与旁路结合的方式，即 beq 在 ID 阶段检测到 load - use 冒险之后主动进行阻塞</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625115717.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>此时阻塞影响的指令是 beq 指令以及 beq 下面的一条指令（因为此时 CPU 的流水线中此时就只有 i 1, i 2, i 3, i 4 一共 4 条指令，i 3 进行阻塞当然影响它以及之后的一条指令，不阻塞前面的指令，因为只有它后移才能利用前面的指令访存之后的结果，它后移，那么它后面的指令必须同步后移，否则就会出现 i 3 和 i 4 处于同一阶段，出现硬件冲突，至于 i 3 前面的指令，如果阻塞后移... 这完全没有意义，所以要阻塞只能是影响 i 3 和 i 4）</p>
+<p>阻塞之后如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625122641.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这样 i 2 的 Mem 得到的结果就在 i 3 的 EX 之前，这样就可以用到硬件旁路了：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625123017.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这样用阻塞与硬件旁路的结合，就解决了 load - use 冲突，这里只用阻塞一个时钟周期</p>
+<h3 id="sec-732">流水线阻塞的具体操作是什么？</h3>
+<p>以上面的 load-use 冒险为例，指令 i 3 在 ID 阶段检测到了 Load-use 冒险，此时需要进行一次阻塞</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919153430.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>此时 i 3 和 i 4 一个正在译码，一个正在取指，它们此时都处在各自阶段的组合逻辑部分，它们此时都想将组合逻辑得到的结果写入到寄存器中，i 4 是想将 PC 取指的结果 i 4写入寄存器，并在下一个时钟周期输入 ID 进行译码；i 3 是想将译码得到的控制信号写入寄存器，并在下一个始终周期写入 EX 进行控制执行</p>
+<p>这里在第 4 个时钟周期我们进行如下操作：</p>
+<p><strong>（1）将 i 3 译码之后的控制信号结果清零，不让其写入寄存器</strong></p>
+<p>这个操作对于 i 3 来说相当于白干了，i 3 的控制信号不会进入第 5 个时钟周期，因此第 5 个时钟周期 i 3 不会进入 EX 阶段，即第 5 个时钟周期相当于 EX 阶段的组件空闲</p>
+<p><strong>（2）保持 IF 段的寄存器的值不变，仍然是第 3 个时钟周期结束的时候取出的 i 3 的指令</strong></p>
+<p>第 4 个时钟周期本来 IF 想要执行的操作就是取出 i 4，然后覆盖掉寄存器中的 i 3，这里我们不让其覆盖，仍然保持寄存器中是 i 3 的值；那么在第 5 个时钟周期的时候仍然是指令 i 3 进入 ID 译码阶段</p>
+<p><strong>（3）保持 PC 的值不变，不让其 + 1</strong></p>
+<p>第 4 个时钟周期开始的时候 PC 是 i 4 的地址，第 4 个时钟周期结束的时候 i 4 应该取出，然后 PC + 1 指向 i 5，那么我们强行不让 PC + 1，让 PC 在第 4 个时钟周期结束还是指向 i 4，那么在第 5 个时钟周期仍然是取出 i 4，然后 i 4 进入 IF 阶段</p>
+<p>阻塞之后如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625122641.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>阻塞之后只有 i 2 之前的指令在往后走，i 3 i 4 都会被暂停一个时钟周期，然后通过数据旁路将 i 2 访存得到的数据送到 i 3：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919155605.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-777">高级流水线技术</h3>
+<h4 id="sec-780">超标量处理器 (多发射技术)</h4>
+<p>（1）主要是部件复用，让多条指令并行执行，从而让 CPI &lt; 1</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625143151.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+超标量处理器意思就是每次取指，译码，执行，访存，写回的指令条数不止一条，其流水图像如下所示，简单理解的话就是有多套流水线处理部件</p>
+<p><mark>超标量处理器的动态调度技术（动态多发射技术）</mark></p>
+<p>就是，根据上图，超标量是将 3 条指令叠在一起执行的，即取指，译码，执行，访存，写回都是每次操作三条指令；但是这三条指令可能会出现数据冒险啥的；动态调度技术就是解决这样的问题，其通过调度将 3 条没啥关联的指令放在一起共同执行，这样来避免冒险</p>
+<h4 id="sec-795">超长指令字技术</h4>
+<p>（1）实际上就是让操作不冲突的指令一起译码执行</p>
+<p>这个技术是指假如有 A，B，C，D 等多条指令，编译器可以发现 ABCD 他们在执行阶段其实是可以并行操作的，那么就将 ABCD 的操作码放在一起，组成成一个长度超长的的新的指令，这样，这个指令在译码的时候译的是 ABCD 多条指令的操作码，那么执行的时候也是同时执行 ABCD 多条指令的操作</p>
+<p>由于指令长度被加长了，那么显然存放它的 Cache 容量就得变大才行，此外，由于操作码全都放在了一起，所以译码电路也得升级才行，所以这个技术是对硬件有要求的</p>
+<h4 id="sec-807">超流水线技术</h4>
+<p>（1）通过提高流水线的级数，从而缩短时钟周期，从而增加机器主频<br>
+（2）与超标量相比，时钟周期事实上缩短了，但是 CPI 还是 1</p>
+<p>这个技术其实是将流水段进一步划分，比如将取指 IF 流水段进一步划分为多个段，增加多组流水段寄存器，那么你后续的指令就不用等到上个指令的 IF 段结束再进入了，可以直接在 IF 段中间就直接取指：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625144243.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这样当一条指令执行完毕之后，后续稳定状态下小于一个时钟周期就可以完成一条指令的执行；</p>
+<p>这种技术其实是等价于一条指令的指令周期不变的情况下，划分更多的流水段，然后保证每个流水段是是一个时钟周期，其实等价于时钟周期变小了机器主频变高了</p>
+<p>但是这种技术不能无线划分流水段，因为你流水段寄存器越多，中间过程的缓存延迟时间就更多，反而影响效率</p>
+<h3 id="sec-828">CPU 的加速比与吞吐率</h3>
+<p><strong>吞吐率：</strong></p>
+<p>单位时间完成任务的数量，假设理想的 k 段流水线，完成 n 个任务，所花费的时钟周期个数是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span></span></p>
+<p>那么吞吐率就是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0436em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div><p><strong>加速比</strong></p>
+<p>不使用流水线完成 n 个任务所花时间，与使用流水线完成 n 个任务时间的比</p>
+<p>假设理想的 k 段流水线，完成 n 个任务，加速比 S 为：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.3074em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">Δ</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.1408em;vertical-align:-0.7693em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0315em;">nk</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div><p>当 n 足够大的时候 S = k 了</p>
+<h2 id="sec-854">多处理器</h2>
+<h3 id="sec-857">计算机体系可以分为哪四种？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919160214.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-863">SISD 是什么？</h3>
+<p>（1）任意时刻单个指令只能操作单个数据</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919160010.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-872">SIMD 是什么？</h3>
+<p>（1）单个指令可以操作多个数据<br>
+（2）非常适合用于执行重复的操作，比如 GPU</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919160045.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-881">MISD 是什么？</h3>
+<p>（1）多个指令操作同一个数据，难以实现</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919160117.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-890">MIMD 是什么？</h3>
+<p>（1）多个处理器执行不同的指令，处理不同的数据</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919160157.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-899">向量处理器是什么？</h3>
+<p>（1）是一种实现了 SIMD 指令集的处理器<br>
+（2）可以同时处理一组数据上的同一操作</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919162810.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-908">硬件多线程是什么？分为哪三种？</h3>
+<p>硬件多线程是指，在 CPU 的一个核中处理多个线程，涉及的是单核，而不是多核</p>
+<p>（1）细粒度多线程，每个时钟周期只执行单个线程，各个时钟周期轮换不同的线程<br>
+（2）粗粒度多线程，只有当线程受到阻塞的时候，才会发生切换<br>
+（3）同时多线程，同一个核心中，多个线程同时执行，通过部件复用和共享实现</p>
+<h3 id="sec-917">多核处理器是什么？</h3>
+<p>（1）多个处理单元集成到一个 CPU 中，每个处理单元称为一个核<br>
+（2）每个核有自己的中断系统和 Cache</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919163118.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里每个核都有自己的中断处理逻辑和 Cache</p>
+<h3 id="sec-929">共享内存多处理器 SMP 是指什么？与多核处理器的区别是什么？</h3>
+<p>又叫对称多处理器<br>
+（1）多个处理器共享物理内存，IO 等资源<br>
+（2）处理器之间通过总线等连接<br>
+（3）共享操作系统，操作系统可以运行在任意一个处理器上<br>
+（4）多核处理器是多个核心在一个处理器中，SMP 是有多个完整的处理器共享物理内存</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919163355.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>SMP 与多核处理器的区别在于，多核处理器实际上只有一个处理器，只是在处理器中包含了多个核，但是 SMP 实际上是一个计算机系统有多个完整的处理器</p>
+<p>UMA 和 NUMA 的区别在于 UMA 是共享了所有的内存</p>
+<p>NUMA 是共享了一部分内存</p>
+<h3 id="sec-947">SMP 分为哪两种？</h3>
+<p>（1）UMA，统一存储访问 UMA 多处理器，共享所有内存，访存时间都大致相同<br>
+（2）NUMA，非同一存储访问 UMA 多处理器，共享部分内存，处理器大多访问自身附近的内存</p>
+<h1 id="sec-953">理解</h1>
+<h3 id="sec-956">硬布线控制器是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250919121746.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-962">硬布线控制器与微程序控制器的区别是什么？</h3>
+<p>硬布线控制器的核心部分是一个组合逻辑电路，将当前状态码，机器指令的操作码译码，以及时序节拍信号当作这个组合逻辑电路的输入，直接输出需要的控制信号给 CPU 的各个部件，完成一个操作</p>
+<p>微程序控制器是在控制存储器中存放一堆微指令，机器指令执行就是对应一堆微指令的执行，即每条机器指令都对应一堆微指令形成的微程序，机器指令的执行就等价于微程序中这些微指令的执行，每执行一条微指令，通过对微指令的解释译码产生控制信号即微命令，从而控制 CPU 部件执行一个微操作；微程序控制器相当于对机器指令进行了更进一步的划分，通过更细化的编程方式来完了了机器指令对应的功能</p>
+<p>所以同样的一个操作，<strong>硬布线直接根据输入到组合逻辑得到输出结果的速度显然比微程序取微指令，再执行微指令要快；但是硬布线也没有微程序灵活，因为硬布线做好了之后里面的电路就很难更改了</strong>；但是微程序可以反复修改控存中的微指令来支持不同的机器指令，所以微程序比硬布线更灵活</p>
+<p>以上两点是硬布线和微程序最大的区别</p>
+<h3 id="sec-977">时钟周期</h3>
+<p>CPU 中会内置或者外接一个晶振，这个晶振会反复震动发出信号，那么我们可以对晶振进行分频选择合适长度的震动长度作为时钟信号</p>
+<p>时钟脉冲信号的倒数就是时钟周期，时钟周期的倒数就是机器主频</p>
+<p>时钟周期一般会会被处理设置为相邻状态元件之间的最大延迟</p>
+<p>这样做的目的是，现代计算机系统的数据传递其实可以抽象看作状态元件 - 组合逻辑 - 状态元件这样交替进行（这里与流水线中的流水寄存器不一样，这里的划分更细一些，比如从暂存器到 ALU，或者从 ALU 到暂存器）这里的状态元件更细化更广泛，一个时钟周期之内必须确保一个状态元件可以稳定传到下一个状态元件，这样下一个时钟周期的操作才能继续进行，所以时钟周期应该设置为延迟最大的两个状态元件之间的延迟，这样一个时钟周期之中就可以完成所有状态元件之间的操作了</p>
+<p>时钟周期因此有如下的性质：</p>
+<p>（1）是 CPU 的硬件结构决定，408 中认为不受到指令控制</p>
+<p>（2）数据从一个状态元件经过组合逻辑流入到另一个状态元件，这个是在一个时钟周期内完成的，并且只能在一个时钟周期内完成一次流动</p>
+<p>（3）在一个时钟周期内，CU 发出的控制信号不会发生改变，比如如果想要寄存器内容通过总线送到 MDR 中，那么在一个时钟周期中，数据完成寄存器到 MDR 的传送，那么 CU 发出的控制信号就是寄存器三态门读出有效，MDR 三态门写入有效，这个时钟周期完成数据传递，CU 的控制信号当然不能更改，改了就不一定能写进去了，数据就可能传递失败</p>
+<h3 id="sec-1004">机器周期与存取周期 + 时钟周期 + 总线周期</h3>
+<p>机器周期分为定长的机器周期和不定长的机器周期</p>
+<p>机器周期是指令执行中，某个完整阶段的时间，比如指令执行中的取指阶段</p>
+<p>对于定长的机器周期来说，由于是定长，意思就是所有的指令的某个阶段执行时间相同，为了保证这个时间内指令的执行操作都可以完成，所以定长的机器周期一般就取取指操作的时间，即从主存中取出一条指令的时间</p>
+<p>在这种情况下，如果一个指令的长度等于一个存储单元的长度，那么 CPU 一次访存就可以将指令取出来了，这个时候也可以说取指周期 = 机器周期 （这个情况很特殊）</p>
+<p>对于不定长的机器周期，此时机器周期就是指令完成一个基本操作的时间</p>
+<p>CPU 周期就是机器周期</p>
+<p>时钟周期是计算机主时钟的周期时间，是计算机运行的最基本时间单位，对应一个微操作的时间，时钟周期是计算机主频的倒数，一个机器周期可以包含多个时钟周期</p>
+<p>总线周期就是数据在总线上传输的时间，包括传地址和数据的时间</p>
+<h3 id="sec-1031">单周期 CPU 和多周期 CPU 的区别</h3>
+<p>单周期 CPU 即所有指令的执行都只在一个时钟周期中结束，因此时钟周期的长度与执行最慢的指令周期一样，那执行时间短的指令的时钟周期也会强制被延长，因此就会造成时间的浪费</p>
+<p>而多周期 CPU，即一条指令的执行被划分为多个时钟周期，一个指令包括多个操作，比如取值，寄存器读写，或者 ALU 操作，这里认定一个时钟周期进行一次操作，时钟周期的宽度以最复杂的操作为标准，这样多周期 CPU 的每条指令的执行时间会更加灵活一些，时间的浪费会更少</p>
+<p>单周期 CPU 不可能有部件共享，所谓部件共享就是在一个指令执行周期一个部件可以被多次使用，单周期 CPU 因为指令执行周期等于时钟周期，而一个部件在一个时钟周期中只能执行一次操作，因此一个部件在单周期 CPU 的一个指令执行周期中也只能进行一次操作，所以在单周期 CPU 中如果一个指令周期需要多次用到某个部件让其执行多次操作的话那就必须进行部件冗余</p>
+<p>而对于<strong>多周期 CPU，因为一个指令周期包含多个时钟周期，因此一个部件完全可以在两个不同的时钟周期中分别执行操作，可以实现部件共享</strong>，因此多周期 CPU 可以去掉单周期 CPU 中的冗余部件实现部件共享；同时由于多周期 CPU 的下一次时钟周期必须用到上一次时钟周期的数据，因此上一次时钟周期得到的数据必须进行缓存，如果不缓存，这些数据仍然在数据线上，那么下一次时钟周期万一制造这些数据的部件进行了别的操作，而这些数据又刚好被别的部件使用，这就会导致周期竞争，数据使用错误，因此这就<strong>需要增加一些临时的寄存器来存放上一次操作得到的数据</strong></p>
+<h3 id="sec-1046">组合逻辑和时序逻辑</h3>
+<p>组合逻辑电路的输出就是单纯是当前输入的函数，不包含触发器和时钟信号</p>
+<p>时序逻辑电路的输出不仅取决于当前的输入，还取决于过去的输入以及时钟信号，时序逻辑包含各种触发器之间的互联</p>
+<h3 id="sec-1055">硬布线控制器的构成以及控制信号产生基本原理</h3>
+<p>其结构如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250622175110.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>其组合逻辑单元用来产生一系列的控制信号，这个组合逻辑单元的输入主要包含：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250622175313.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）译码输出不多说<br>
+（2）反馈信号，比如一些标志位，比如 ZF 等标志位<br>
+（3）上述第三个部分，周期点位主要是区分指令是取值周期还是执行周期还是间址周期，节拍信号是这个周期，比如间址周期中的一次微操作时刻</p>
+<p>比如间址周期的微操作序列是：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250622175535.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里包含 4 个微操作，那么这 4 个微操作可以划分成 4 个节拍，那么时序发生器可以通过输入 M 2 周期点位表示是间址周期，以及 T 2 节拍信号表示是第二个微操作，这样组合逻辑电源就可以根据这些信号生成读存储器的控制信号了</p>
+<h3 id="sec-1079">垂直性微指令与水平型微指令</h3>
+<p>垂直型微指令的格式与机器指令类似，如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623151026.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+垂直型微指令相比机器指令更加细化，比如垂直型可以有将 PC 送到 MAR 的指令，但是这个操作只是机器指令的取指周期的一个微操作，这是垂直型微指令与机器指令的两者区别</p>
+<p>一条垂直型微指令只能定义并执行一种微命令；垂直型微指令相当于将机器指令进一步细分之后代码化；其优点在于微指令的格式固定，简单规整，便于编写；缺点在于由于一条微指令只能解释执行一个微命令，所以一条机器指令对应的垂直型微程序就很长，执行效率不高</p>
+<p>水平型微指令格式如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623151859.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1097">微操作控制字段</h3>
+<p>微操作控制字段这个字段产生全部的控制信号，注意这是一条微指令，一段时间的所有微命令组织在一起形成一个控制字，就是微指令</p>
+<p>设计控制字段的方式主要有三种：</p>
+<p><strong>（1）直接编码方式</strong></p>
+<p>就是微指令中的每一位都表示一个微命令，0 表示这个微命令无效，1 表示微命令有效</p>
+<p><strong>（2）字段直接编码方式</strong></p>
+<blockquote>
+<p>首先微命令其实有互斥与相容之分</p>
+<p>所谓互斥就是指不同同时出现的微命令，比如存储器的读和写就不能同时出现</p>
+<p>所谓相容就是指可以同时出现的微命令，比如寄存器写和加法操作等；显然直接编码方式不能体现互斥与相容</p>
+</blockquote>
+<p>所谓字段直接编码就是：</p>
+<p>用控制字段中的一小段来表示一组互斥的微命令，而不同的小端之间表示可以相容的微命令，比如 XXX YYY 这两组字段，XXX 三者在同一时间只能翻译成一个微命令，那 XXX 的二进制不同组合有 8 种，那就可以表示 8 种互斥的微命令，而 YYY 的编码可以与 XXX 共存，因此 XXX 和 YYY 分别表示的微命令就可以共存</p>
+<p>当一个字段短到只有一位的时候就认为是混合编码方式，即直接编码和字段直接编码相结合的编码方式</p>
+<p>注意每个字段除了表示互斥的一组微命令之外还应该留有一种编码表示无操作，因此一个字段如果有 n 位，则一般可以表示 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7477em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个微命令</p>
+<p><strong>（3）字段间接编码方式</strong></p>
+<p>字段直接编码方式的一个字段的一种编码就表示一个微命令，而间接编码则是一个字段还要兼容其他的字段来共同编码一个微命令，显然这种编码方式进一步压缩了微指令的长度，但是因为多个字段共同对应一个值才能确定一条微命令，这样多个字段可以对应的的微命令就更多了，因此同时能够并行的微命令就少了很多</p>
+<p><strong>（4）混合编码方式</strong></p>
+<p>可以改善编码的灵活性和执行速度</p>
+<h3 id="sec-1150">微指令的地址形成方式</h3>
+<p><mark>计数器法（增量法）</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623160343.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>计数器法是需要有一个 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span></span> 部件用来寻址，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span></span> 给出下一条微指令的地址，顺序执行的时候 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span></span> 自动加一</p>
+<p>当遇到需要转移的情况时，比如取指微程序执行完毕，该跳转到对应机器指令各自的微程序执行，或者某条机器指令的微程序执行完毕，该跳回取指微程序执行；这个时候会在当前微指令下下一条放一条转移微指令，这个微指令有一个转移控制字段，这个转移控制字段与当前机器指令译码结果，以及条件码共同作用生成需要转移的下一条微指令的地址，放到 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span></span> 中，这里的转移控制字段与条件码等东西可以实现多路分支转移</p>
+<p><mark>下地址法（断定方式）</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623161048.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>下地址法增加了微指令的长度，将下一条微指令的地址直接存放到微指令的下址字段中，这样就相当于下地址法中每条微指令都类似转移微指令了</p>
+<p>但是，这里仅仅给出了下一条地址字段是不够的，因为只有下址字段只能实现转到一个固定的微指令地址处，不能根据状态和指令操作码译码结果进行多分支转移，比如取指微程序结束之后该跳转到哪一段微程序的入口呢，这个就取决于机器指令译码结果了，这里就有多个可能的分支转移，所以这里只有下址字段是不够的</p>
+<p>所以这里还需要一个转移控制字段，这个字段用于控制下条微指令的地址生成，比如当其为 00 的时候，下一条微指令地址来自下址字段直接给出；如果是 01，那么就应该与主存 IR 的译码结果，状态条件一起根据微地址修改逻辑生成下一条地址到 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span></span></span></span> 中，然后根据 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span></span></span></span> 从控存中取出下一条微指令的地址</p>
+<h2 id="sec-1180">题目</h2>
+<h3 id="sec-1183">1 PC 的字地址和字节地址问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620170454.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里指的是，无论主存按字编址还是按字节编址，PC 都可以选择使用的是字地址还是字节地址，<strong>这里的字地址，其实严格来说是指令字的意思</strong>，PC 使用指令字地址, CPU 每次取值之后 PC 加的是严格的数值 1，表示下一条指令</p>
+<p>I:<br>
+当然对 PC 有影响，不多说</p>
+<p>II:<br>
+机器字长是指 CPU 内部的数据通路的字长，这里没有影响</p>
+<p>III:</p>
+<p>假设主存还是按字节编址，一个指令的长度是 4 个字节, 指令按照边界对齐存储的话应该是下面的存储方式。假如地址位数是 8 位<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620170956.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果 PC 使用的是字节地址，那么第一条指令的起始地址就是 0000 0000<br>
+第二条指令的起始地址就是 0000 0100，PC 也得是 8 位，表示的就是真实的指令的字节地址，每次取指之后 PC + 4</p>
+<p>如果 PC 使用指令字地址的话，一条指令字占 4 个字节，并且边界对齐，那么 PC 就不用存 8 位了，只用存高 6 位，然后自动乘 4 就是指令实际的字节地址了，这里第一条指令存放在 PC 中就是 0000 00，第二条指令存放在 PC 就是 0000 01；如果有第三条指令的话，其字节地址就是 0000 1000，PC 中只用存放 0000 10，然后乘 4  就是这个指令的实际字节地址</p>
+<p>如果 PC 使用指令字地址的话，这时一条指令字占 8 个字节，并且边界对齐，那么 PC 也不用存 8 位，只用存高 5 位，然后自动乘 8 就是实际指令的字节地址；比如连续的三条指令的字节地址为 0000 0000；0000 1000；0001 0000。并且 8 位字节地址的话，指令字长度 8 个字节，那么最多只能存放 32 条指令</p>
+<p>这样 PC 只用存放高 5 位，即分别存放 0000 0；0000 1；0001 0；然后乘 8 就是指令的实际字节地址了</p>
+<p>所以当 PC 使用的是指令字地址，的时候指令字长也会对 PC 的位数产生影响</p>
+<h3 id="sec-1219">流水线性能总结</h3>
+<p><mark>吞吐率</mark></p>
+<p>这里是完成的任务个数 n（在流水线中就是执行完毕 n 条指令） 与完成这些任务的时间的比</p>
+<p>假设一个 k 段普通的流水线 CPU，其吞吐率就是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0436em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mord">Δ</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div><p><mark>加速比</mark></p>
+<p>完成同样的任务，不使用流水线与使用流水线所用的时间之比，对于一个 k 段普通的流水线 CPU，其加速比就是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.3074em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mord">Δ</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0315em;">nk</span><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div><h3 id="sec-1239">2 寄存器透明的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620174257.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+显然<br>
+II:<br>
+显然<br>
+III:<br>
+PC 给出的是下一条指令的地址，当然决定指令的执行顺序<br>
+IV:<br>
+对用户完全透明的意思是用户不能取更改，但是 PSW 是可以通过 cmp 指令来进行更改的，只是不能显示的在程序中用指令直接更改；还有 PC 也是这样，它也不是透明的，用户仍然可以通过 jmp 或者 jle 等指令进行更改，只是不能显示的在指令中指明这个寄存器名字直接更改</p>
+<p>像通用寄存器这种寄存器就是可以直接编程的，而 PSW 或者 PC 这些是可以间接编程的，但是这些都是可以编程影响的，称为不透明</p>
+<p>而对于暂存寄存器，以及指令寄存器 IR ，这些寄存器无法通过用户编程的某条指令来进行影响，只能通过 CPU 来进行修改，这个就称为透明的</p>
+<h3 id="sec-1254">3 指令的间址周期概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620175859.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>一般指令的执行分为取值和执行周期，取值就是将指令取出来放到 IR 中，然后执行周期就是根据指令中的地址取出操作数放到运算器中执行</p>
+<p>间址周期就是如果指令是间接寻址的，那就需要在寻址周期和执行周期之间加上一个间址周期先找到指令真正的有效地址，然后执行周期再根据这个有效地址取出操作数放到运算器中执行</p>
+<p>那间址周期中取出操作数的有效地址跟普通指令取出实际操作数的过程一样，将实际有效地址取出放到 MDR 中就行了</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620180245.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1272">4 PC 使用字地址和字节地址的问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620180334.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>按字节编址，指令字长 32 位，占 4 个字节，并且按边界对齐，所以指令的起始字节地址都是 4 的整数倍</p>
+<p>因此 PC 就不用 32 位地址了，直接存前 30 位的指令字地址即可</p>
+<h3 id="sec-1284">5 DMA 操作传输一个数据的时间</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620211127.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>DMA 操作与主存直接进行数据交互，所以传输一个数据就占用一个存取周期</p>
+<h3 id="sec-1293">6 控制器取值的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620211328.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然正确</p>
+<p>B：<br>
+取指的时候都没有将指令取到 CPU 中，那当然控制器不可逆获得相应的指令；控制器取值主要就是自己自动发出一些控制信号，将指令取到 CPU 中</p>
+<p>C，D：<br>
+显然正确</p>
+<h3 id="sec-1308">7 控制器取指的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620211556.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然正确，操作码是指令的东西</p>
+<p>B：<br>
+不一定，如果一条指令的长度非常长，那么控制器就得取好几次才行，如果一条指令长度很多，那只用取一次</p>
+<p>C：<br>
+显然正确，跟 B 是对照的</p>
+<p>D：<br>
+正确</p>
+<h3 id="sec-1326">8 单周期 CPU 的概念和理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620211850.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然正确</p>
+<p>B：<br>
+单周期的 CPU 的所有指令都是在一个时钟周期完成的，这种情况下确实乘法指令和加法指令的周期一样长；但是在多周期 CPU 中乘法指令比加法指令复杂，当然指令周期不一样</p>
+<p>C：<br>
+显然正确</p>
+<p>D：<br>
+单周期 CPU 的指令周期就等于时钟周期，并且为了保证一个时钟周期所有指令的执行完毕，这里的时钟周期的基准必须选择的是最复杂的那条指令的执行时间，所以单周期 CPU 的主频通常就很低</p>
+<h3 id="sec-1344">9 间址周期操作概念的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620212812.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+存储器间接和寄存器间接寻址的间址周期的操作显然是不同的</p>
+<p>B：<br>
+存储器一次间接和多次间接的操作也显然是不同的</p>
+<p>C：<br>
+正确</p>
+<h3 id="sec-1359">10 单周期 CPU 和多周期 CPU 的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620213027.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+错误，单周期 CPU 的所有指令执行都必须压缩在一个时钟周期完成，所以对于单周期的所有指令的执行时间都相同，并且取决于最复杂的那条指令<br>
+很显然，多周期 CPU 和单周期 CPU 的时钟周期都不一样，无法比较</p>
+<p>B：<br>
+正确，多周期有部件共享</p>
+<p>C，D：<br>
+显然正确</p>
+<h3 id="sec-1374">11 CPU 区分指令和数据的方式</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250620214114.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然错</p>
+<p>B：<br>
+首先指令没有啥寻址方式，其次这里改成按照地址来源也不太准确，因为 jmp XXX 这样，指令的地址来源也是来自指令，mov ax, [8888 h]这种数据的地址来源也是来自指令，也不太准确；选择题里面按照指令的周期来区分指令还是数据是最靠谱的</p>
+<p>C：<br>
+这个当然正确，指令执行的第一个阶段一定是指令寻址，后面必然是数据寻址</p>
+<p>D：<br>
+显然错</p>
+<h3 id="sec-1392">12 操作元件和状态元件的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250621155400.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>操作元件包括：多路选择器 Mux，译码器 Decoder, 运算单元 ALU 等；这些也称为组合逻辑元件</p>
+<p>状态元件包括：带有存储功能的元件，IR， PC， MAR， MDR，暂存器等等；这些也称为时序元件</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250621155751.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1407">13 对于 ALU 与总线连接的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250621155940.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果 ALU 两个输入端都直接与总线相连，由于 ALU 没有存储的功能，那么前一时刻放第一个操作数，这个操作数输入之后 ALU 就直接运算输出了，不会保存，那么下一时刻送第二个操作数给 ALU, 那第一个操作数就无了，当然不能进行互相计算</p>
+<p>所以解决办法就是 ALU 的一个输入端加上一个暂存器，前一时刻输入第一个操作数到暂存器存放起来，下一时刻总线输入第二个操作数，同时暂存器的操作数也输入 ALU，这样就完成两个操作数的运算了</p>
+<p>ALU 的输出端也不能直接与总线相连，因为 ALU 不保存结果，如果此时总线上有其他的数据，那么此时输出结构就被冲掉了，无法得到（单总线是这样的，如果是多总线暂存器就会用的少一些）</p>
+<p>所以 D 正确</p>
+<h3 id="sec-1425">14 单总线的特点</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250621161209.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>总线上可以有多个部件接收信息，但是只能由一个部件发出信息</p>
+<h3 id="sec-1434">15 单周期 CPU 的控制信号特点</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250621161325.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然错</p>
+<p>B：<br>
+显然错</p>
+<p>C：<br>
+对于数字电路来说，一个部件上的时钟信号，在一个时钟周期内是不会发生改变的，所以单周期的 CPU 的指令执行就是一个时钟周期，所以控制信号不会有改变，控制信号必须在时钟周期开始的时候就生成这个时钟周期所需要的所有控制信号</p>
+<p>多周期 CPU 有多个时钟周期，那这些控制信号当然有可能改变</p>
+<p>D：<br>
+单周期 CPU 必须进行部件冗余才行，每个部件只能使用一次，多周期 CPU 才有部件共享，部件共享其实就是一个部件在一个时钟周期中使用了多次，此外，多周期 CPU 是可以实现流水线的，那么在相邻的两个时钟周期中这个部件当然被使用了多次</p>
+<h3 id="sec-1455">16 硬布线控制信号产生原理</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250622175921.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>根据上文的硬布线控制器的结构可知</p>
+<p>A：<br>
+指令操作码确实可以，但是地址码不行</p>
+<p>B：<br>
+正确，这里的时钟信号需要输入时钟发生器来生成周期和节拍信号，当然正确</p>
+<p>C：<br>
+操作码译码之后的信号与条件码（反馈信号）其实也会输入组合逻辑单元但是不如译码和时钟信号（这里记住就行了）</p>
+<p>D：<br>
+这里 D 说的主要是反馈信号，不完整</p>
+<h3 id="sec-1476">17 微程序入口地址的形成</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250622181750.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>对于每一个指令，都有一个固定的微程序与其对应，执行微程序的过程会产生一些控制信号，这些控制信号控制 CPU 的部件执行操作，那也就是执行这条指令的过程</p>
+<p>那么微程序肯定有一个入口地址，其实是根据指令的操作码字段来找到的</p>
+<h3 id="sec-1488">18 垂直型微指令</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623150102.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+错，因为字段直接编码方式需要留出一种状态表示这个字段不发出任何微命令</p>
+<p>II:<br>
+正确</p>
+<p>III:<br>
+水平型微指令是并行产生微命令，显然效率高于垂直型</p>
+<p>IV:<br>
+水平型微指令的控制字段的间接编码格式，多个字段共同解释一个微命令，正确</p>
+<h3 id="sec-1506">19 微程序控制器与硬布线控制器的区别</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623152556.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+硬布线控制器显然是更快的，微程序相当于是在 CPU 内部又进行了取指执行操作，速度是变慢的</p>
+<p>B：<br>
+错是 ROM，控制存储器中存放的就是设计好的机器指令的微指令</p>
+<p>C：<br>
+不是决定指令执行顺序，而是微指令执行顺序</p>
+<p>D：<br>
+正确</p>
+<h3 id="sec-1524">20 微处理器的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623153101.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+微处理器是集成大部分 CPU 功能到集成电路上的处理器，跟微程序控制器没啥关系</p>
+<p>其他的不说了</p>
+<h3 id="sec-1536">21 CPU 的基本结构</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623153431.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>当个结论记住就好，选 D</p>
+<h3 id="sec-1545">22 微程序地址的生成 - 增量法</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623165618.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>增量法，也就是下地址法，这种方式的微程序的微指令地址的给出完全是根据 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span></span></p>
+<p>A:<br>
+正确</p>
+<p>B：<br>
+正确</p>
+<p>C：<br>
+首先控制存储器是默认一个单元放一条微指令的</p>
+<p>这里 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span></span> 有 8 位，存放的是微指令的地址，即地址位数有 8 位，因此控制存储器就有 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span> 个存储单元，即最多 256 条微指令但是这 256 条微指令是包括了取指微指令的；所以除了取指微指令之外的微指令条数应该少于 256 条；而一条机器指令对应的不含取指微指令的条数是 4 条，所以最多的机器指令应该少于 256 / 4 = 64 条</p>
+<p>所以 C 错误</p>
+<p>D：<br>
+256 条微指令，一条微指令是 4 B（这里的 4 B 算上了控制转移字段位数），所以容量是 1 KB 正确；</p>
+<h3 id="sec-1572">23 微程序地址的生成 - 下地址方式</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623170759.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>断定法就直接将下一个微程序的地址放到下址字段中（这里不用考虑控制转移）</p>
+<p>这里共有 2 + 32 * 4 条微指令 = 130 条，所以下地址字段应该是 8 位才对</p>
+<h3 id="sec-1584">24 时钟周期信号的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623172525.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：</p>
+<p>CPU 中会内置或者外接一个晶振，这个晶振会反复震动发出信号，那么我们可以对晶振进行分频选择合适长度的震动长度作为时钟信号，所以 A 正确</p>
+<p>B：<br>
+显然正确</p>
+<p>C：<br>
+现代计算机的数据通路，其实可以看作状态元件 - 组合逻辑 - 状态元件这样相互交替而成<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623173332.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>时钟信号就用来控制着相邻两者状态元件之间的同步关系，所有的操作都得按照时钟节拍来同一进行，比如规定一个时钟周期完成一个操作，下一个时钟周期完成下一个操作，那么在一个时钟周期内这个操作就必须得完成并且保证下一个时钟周期起始的输入状态是稳定的，所以这里当然就得设置为所有操作中延迟最大的作为时钟周期的长度，这样才能保证一个时钟周期内任意一个操作都得完成并且输出的状态信息稳定</p>
+<p>D：<br>
+肯定错，一个时钟周期完成某个操作，跟执行新指令没啥关系（如果改成流水线就对了）</p>
+<h3 id="sec-1608">25 各种寄存器状态的可见性</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623175442.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>可见性，意思就是汇编程序员可以通过汇编程序指令修改的寄存器</p>
+<p>I:<br>
+IR 当然不可见，这个是 CPU 进行修改的，汇编程序员只能通过 jmp， je 等指令修改 PC</p>
+<p>II:<br>
+显然没有那条指令可以修改微程序指令寄存器，微程序指令寄存器是 CPU 自己修改的</p>
+<p>III:</p>
+<p>关于基址寄存器，基址寄存器比如 BX 和 BP，BP 就是上一章中函数调用中指明栈帧基地址的寄存器，这个寄存器当然汇编程序员可以修改，当然函数返回的时候得改回去</p>
+<p>还有 BX，汇编程序员之所以要在代码中使用基地址 BX 是因为在编写汇编程序的时候这段程序放在内存中实际位置程序员是不知道的，只能知道这段程序中某个数据在这段程序中的相对位置，这个时候就得在程序的开头使用基址寄存器，由操作系统填写 BX 的值，然后程序员利用 BX 加上相对偏移来找到这段程序中的数据</p>
+<pre class="code-block"><code class="hljs">; EBX 存储结构体基址（运行时确定）
+MOV EBX, [malloc_result]  ; 从堆分配的内存地址存入 EBX
+
+; 访问结构体成员
+MOV EAX, [EBX + 0]   ; 成员 id
+MOV ECX, [EBX + 4]   ; 成员 value
+</code></pre>
+<p>但是基址寄存器汇编程序员是可以显示在代码中直接使用的，可能修改会有问题，但是直接使用里面的值是完全可以的，当然也能修改，但是最好用完之后改回去</p>
+<p>汇编程序员当然可以直接用 mov BX, 0 x 1000 来重新指定一个基址，然后在汇编中使用 MOV EAX , [EBX + 100 H]来访问这个基址加上偏移的数据（这里访问的是实际内存中 1100 H 处的数据吗？这里姑且认为是的，学了 OS 再分析），但是至于 0 x 1100 是什么东西那就不知道了</p>
+<p>IV:<br>
+标志寄存器 PSW 汇编程序员可以使用 cmp 指令来进行修改</p>
+<h3 id="sec-1642">26 汇编指令与机器可直接执行性</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250623182207.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+伪指令其实和汇编指令是一个东西</p>
+<p>II:<br>
+显然，不多说</p>
+<p>III:<br>
+机器指令就是一串二进制数，不管是硬布线还是微程序，机器 CPU 都需要将机器指令的二进制的操作码字段译码，所以当然可以被 CPU 理解执行</p>
+<p>IV:<br>
+汇编指令仍然是人类可以理解的助记符，仍然需要汇编器将其翻译成机器指令才能被 CPU 理解和执行！</p>
+<h3 id="sec-1660">27 m 个并行部件 CPU 的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624182539.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里 m 个并行部件的 CPU 是在普通的非流水线串型的 CPU 之上的概念；意思是普通的 CPU 有一套部件进行串型执行指令，这 m 个并行部件的 CPU 也是进行串型执行，只不过每次串的指令数多于 1 条，相当于 m 个部件同时串型执行，即 m 条指令同时取指，同时译码，同时执行，同时访存，同时写回，与流水线有区别：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624183020.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>那么当流水线稳定之后，每过 m 个时钟周期，完成 m 条指令；这个具有 m 个部件并行的 CPU 也是每过 m 个时钟周期完成 m 条指令</p>
+<p>对于流水线，假设执行了 n 条指令，其吞吐率是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0436em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="mord">Δ</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div><p>对于这个 m 个并行部件的 CPU，假设执行了 n 条指令，这 n 条指令每 m 个时钟周期执行了 m 条指令，一次并行执行 m 条指令，一共是 n/m 次，每次 m 段，执行了 n 条指令其吞吐率是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.1386em;vertical-align:-1.031em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">m</span><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.031em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">Δ</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div><p>所以当 n 趋于无穷的时候两者的吞吐率就是一样的</p>
+<h3 id="sec-1686">28 超标量流水线处理机度的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624184012.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>一般普通的流水线处理机，在进行流水线处理稳定的时候，每个时钟周期只有一条指令取指，一条指令译码，一条指令执行，一条指令访存，一条指令写回；相当于处理这些指令的部件只有一套，其图像是：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624190555.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>而对于这种度为 4 的超标量流水线处理机，所谓度为 4，就是处理指令的部件有 4 套，那意思就是当流水线稳定之后可以同时有 4 条指令取指，同时有 4 条指令译码，同时 4 条执行，同时 4 条访存，同时 4 条写回，稳定之后每个时钟周期都有 4 条指令完成执行，比如下面就是度为 2 的图像：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624191040.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>所以这题选 C</p>
+<h3 id="sec-1707">29 每个阶段执行等长时间的流水线时间计算</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624191354.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>为了安排流水线，指令的每个阶段所花费的时间必须是一样的</p>
+<p>根据画图，实际的执行总时间应该是 204 ns</p>
+<p>但是，虽然我们安排是一样的，但是对于最后一条指令，它还是实际上执行阶段的前半部分 1 s 就执行完毕了</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624191647.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>所以后 1 s 只是为了凑流水线，但是实际上早 1 s 最后一条指令就已经执行完毕了，所以是 203 ns</p>
+<h3 id="sec-1728">30 流水段寄存器的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624191757.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624195508.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>抽象的图如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624192424.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>流水段寄存器，就是在每个执行阶段中间加上一个流水段寄存器，用于保存本段操作的结果或者控制信号，这样可以在下一个时钟周期提供给下一个阶段使用</p>
+<p>A：<br>
+当然正确，这个就是流水段寄存器的功能</p>
+<p>B：<br>
+不正确，不同的流水段寄存器保存的是不同的数据，取指之后的流水段寄存器保存的是指令，译码阶段之后的流水段寄存器保存的是一些控制信号，他们的位数当然不一样</p>
+<p>C：<br>
+显然错误</p>
+<p>D：<br>
+显然错误</p>
+<h3 id="sec-1758">31 功能部件与流水段寄存器的概念 + 流水线数据通路的结构</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624192937.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250624195508.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：</p>
+<p>根据上图的流水线 CPU 的结构，其实最后一段后面是没有接流水段寄存器的，但是这个选项不严谨，硬要说也行</p>
+<p>B：</p>
+<p>功能部件主要就是流水段寄存器之间执行功能的这些部件，这些部件当然需要控制信号，控制信号仅仅作用在功能部件上正确（其实严格来说也错误，因为控制信号会穿过流水寄存器，其实也会输入到流水寄存器中）</p>
+<p>时钟信号仅作用在流水段寄存器上是显然错误的，就比如 PC，其实每个时钟周期 PC 的值都会被改变，因为每个时钟周期总会有指令被取出来</p>
+<p>C：<br>
+正确，这里的阻塞的意思就是流水线冒险中的阻塞</p>
+<p>D：<br>
+正确，见上文的流水线数据通路结构总结</p>
+<h3 id="sec-1788">32 流水线冒险的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625113129.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+显然正确</p>
+<p>II：<br>
+这里使得相同的流水段使用同一个部件的意思是，保证不同的指令在同一个流水段使用相同的部件，即 A 指令与 B 指令都在取指流水段（同一个流水段）使用同一个部件 a，而在其他流水段则不会使用部件 a</p>
+<p>那由于 A 指令和 B 指令是不同的指令，他们两个相同的流水段执行的时候是错开的，所以就不会造成部件 a 的竞争，并且由于只能在取指流水段使用 a，那么于此同时与取指流水段并行的其他流水段没有使用 a，这样就不会造成 a 的竞争，因此就消除了结构冒险</p>
+<p>III:<br>
+重复设置功能部件，也就是部件冗余</p>
+<p>IV:<br>
+显然正确</p>
+<p>所以 D 正确</p>
+<h3 id="sec-1812">34 Load - use 冒险的理解和处理</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625114016.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+正确</p>
+<p>II:<br>
+正确，load - use 冒险如上文所示，至少要阻塞一个周期才能进行旁路</p>
+<p>III:</p>
+<p>这里说的是数据冒险，你分支指令都没有产生新的结果，所以当然不会产生数据冒险；所以正确</p>
+<p>D 正确</p>
+<h3 id="sec-1833">35 对于控制冒险分支指令的一些理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250625124531.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+对于有条件转移的指令来说，当然会发生控制冒险，因为有条件控制转移指令一般会在 EX 阶段做一个减法运算，然后根据结果在 Mem 阶段决定是否跳转，但是这个条件指令的 IF, ID, EX， MEM 阶段相邻的指令也会执行，所以会发生控制冒险</p>
+<p>对于无条件指令来说，也会发生控制冒险，因为无条件指令也得至少经过取指，译码，执行之后才能知道跳转到哪个指令处，并在 EX 阶段进行转移，所以这些阶段仍然有相邻的指令在执行，仍然会发生控制冒险</p>
+<p>II:<br>
+正确，这个方法就是解决控制冒险的手段之一</p>
+<p>III:</p>
+<p>转发技术是解决数据冒险的，所以错误</p>
+<p>V:<br>
+显然错误，假如你流水段划分的数量非常多，那么能够判断是否转移的时候前面的时钟周期就越多，这样前面的流水段就会有更多的指令进入流水线，当你转移的时候错误指令就越多，你就得将这些指令的所有控制信号全部清零，相当于将他们全部延后，那这样浪费的时钟周期就更多；</p>
+<p>或者假如阻塞不让这些指令执行，你塞进去的阻塞和空指令就越多，你的开销显然就会更大</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html"><span class="pager__label">← 上一篇</span><span class="pager__title">4 指令系统</span></a>
+    <a class="pager__item pager__item--next" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html"><span class="pager__label">下一篇 →</span><span class="pager__title">6 总线</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h2" href="#sec-3">CPU 的组成</a><a class="margin__link margin__link--h3" href="#sec-6">CPU 的结构整体是什么？</a><a class="margin__link margin__link--h3" href="#sec-12">指令计数器 PC 是什么？</a><a class="margin__link margin__link--h3" href="#sec-18">PC 的位数取决于什么？PC 使用字节地址和字地址有什么不同？</a><a class="margin__link margin__link--h3" href="#sec-48">指令寄存器 IR 是什么？</a><a class="margin__link margin__link--h3" href="#sec-54">指令译码器 ID 是什么？</a><a class="margin__link margin__link--h3" href="#sec-60">中断机构是什么？</a><a class="margin__link margin__link--h3" href="#sec-66">操作控制信号形成部件是什么？</a><a class="margin__link margin__link--h3" href="#sec-72">CPU 内部最主要由哪两个部分组成？</a><a class="margin__link margin__link--h3" href="#sec-81">CPU 功能有哪些?</a><a class="margin__link margin__link--h2" href="#sec-87">CPU 的寄存器</a><a class="margin__link margin__link--h3" href="#sec-90">通用寄存器包括哪些？</a><a class="margin__link margin__link--h3" href="#sec-96">状态寄存器 PSW 是什么？</a><a class="margin__link margin__link--h2" href="#sec-102">指令的执行过程</a><a class="margin__link margin__link--h3" href="#sec-105">指令周期是指什么？包括哪几个部分？（概况性的）</a><a class="margin__link margin__link--h3" href="#sec-117">机器周期是指什么？</a><a class="margin__link margin__link--h3" href="#sec-129">指令的执行有哪五个步骤？</a><a class="margin__link margin__link--h3" href="#sec-135">取指周期的数据流是什么？</a><a class="margin__link margin__link--h3" href="#sec-141">间址周期的数据流是什么？</a><a class="margin__link margin__link--h3" href="#sec-153">中断周期的数据流是什么？</a><a class="margin__link margin__link--h2" href="#sec-186">数据通路</a><a class="margin__link margin__link--h3" href="#sec-189">数据通路是指什么？</a><a class="margin__link margin__link--h3" href="#sec-195">操作元件（组合逻辑元件）是什么？</a><a class="margin__link margin__link--h3" href="#sec-201">常见的操作元件有哪些？</a><a class="margin__link margin__link--h3" href="#sec-207">存储元件是什么？有哪些？</a><a class="margin__link margin__link--h3" href="#sec-213">单总线数据通路的基本结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-222">通用寄存器之间如何传送数据？控制信号有哪些？</a><a class="margin__link margin__link--h3" href="#sec-228">ALU 执行加法操作的控制信号是什么？</a><a class="margin__link margin__link--h3" href="#sec-237">从主存中读取一个数据的过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-255">写入一个数据到主存的过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-270">三总线数据通路的结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-282">单周期数据通路是什么？</a><a class="margin__link margin__link--h3" href="#sec-288">RISC 架构与单周期 CPU 的关系是什么？</a><a class="margin__link margin__link--h2" href="#sec-306">控制器</a><a class="margin__link margin__link--h3" href="#sec-309">指令，微程序，微指令，微命令，微操作以及各自的关系是什么？</a><a class="margin__link margin__link--h3" href="#sec-347">微程序控制器的组成结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-374">取值微程序共有情况下的微程序指令如何计算？</a><a class="margin__link margin__link--h3" href="#sec-386">微程序控制器的工作过程</a><a class="margin__link margin__link--h3" href="#sec-410">微指令的编码方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-416">微指令的直接编码方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-422">微指令的字段直接编码方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-431">微指令的字段间接编码方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-437">微指令形成下一条指令地址的方式有哪些？</a><a class="margin__link margin__link--h3" href="#sec-446">微指令的格式</a><a class="margin__link margin__link--h2" href="#sec-480">指令流水线</a><a class="margin__link margin__link--h3" href="#sec-483">指令流水段由哪几个部分组成？</a><a class="margin__link margin__link--h3" href="#sec-489">流水线中的机器周期，时钟周期，指令周期的关系是什么？</a><a class="margin__link margin__link--h3" href="#sec-519">流水线数据通路的设计原则是什么？</a><a class="margin__link margin__link--h3" href="#sec-528">流水线数据通路的基本结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-552">适合流水线的指令特点是什么？</a><a class="margin__link margin__link--h3" href="#sec-567">MIPS 指令的流水线实现分为哪几个阶段？</a><a class="margin__link margin__link--h3" href="#sec-573">MIPS 的 R 型指令是如何通过流水线实现的？</a><a class="margin__link margin__link--h3" href="#sec-579">MIPS 的 I 型指令是如何通过流水线实现的？</a><a class="margin__link margin__link--h3" href="#sec-588">MIPS 的 lw 型指令是如何通过流水线实现的？</a><a class="margin__link margin__link--h3" href="#sec-597">MIPS 的 beq 型指令是如何通过流水线实现的？</a><a class="margin__link margin__link--h3" href="#sec-615">流水线冒险总结</a><a class="margin__link margin__link--h3" href="#sec-690">load - use 冒险是什么？</a><a class="margin__link margin__link--h3" href="#sec-732">流水线阻塞的具体操作是什么？</a><a class="margin__link margin__link--h3" href="#sec-777">高级流水线技术</a><a class="margin__link margin__link--h3" href="#sec-828">CPU 的加速比与吞吐率</a><a class="margin__link margin__link--h2" href="#sec-854">多处理器</a><a class="margin__link margin__link--h3" href="#sec-857">计算机体系可以分为哪四种？</a><a class="margin__link margin__link--h3" href="#sec-863">SISD 是什么？</a><a class="margin__link margin__link--h3" href="#sec-872">SIMD 是什么？</a><a class="margin__link margin__link--h3" href="#sec-881">MISD 是什么？</a><a class="margin__link margin__link--h3" href="#sec-890">MIMD 是什么？</a><a class="margin__link margin__link--h3" href="#sec-899">向量处理器是什么？</a><a class="margin__link margin__link--h3" href="#sec-908">硬件多线程是什么？分为哪三种？</a><a class="margin__link margin__link--h3" href="#sec-917">多核处理器是什么？</a><a class="margin__link margin__link--h3" href="#sec-929">共享内存多处理器 SMP 是指什么？与多核处理器的区别是什么？</a><a class="margin__link margin__link--h3" href="#sec-947">SMP 分为哪两种？</a><a class="margin__link margin__link--h3" href="#sec-956">硬布线控制器是什么？</a><a class="margin__link margin__link--h3" href="#sec-962">硬布线控制器与微程序控制器的区别是什么？</a><a class="margin__link margin__link--h3" href="#sec-977">时钟周期</a><a class="margin__link margin__link--h3" href="#sec-1004">机器周期与存取周期 + 时钟周期 + 总线周期</a><a class="margin__link margin__link--h3" href="#sec-1031">单周期 CPU 和多周期 CPU 的区别</a><a class="margin__link margin__link--h3" href="#sec-1046">组合逻辑和时序逻辑</a><a class="margin__link margin__link--h3" href="#sec-1055">硬布线控制器的构成以及控制信号产生基本原理</a><a class="margin__link margin__link--h3" href="#sec-1079">垂直性微指令与水平型微指令</a><a class="margin__link margin__link--h3" href="#sec-1097">微操作控制字段</a><a class="margin__link margin__link--h3" href="#sec-1150">微指令的地址形成方式</a><a class="margin__link margin__link--h2" href="#sec-1180">题目</a><a class="margin__link margin__link--h3" href="#sec-1183">1 PC 的字地址和字节地址问题</a><a class="margin__link margin__link--h3" href="#sec-1219">流水线性能总结</a><a class="margin__link margin__link--h3" href="#sec-1239">2 寄存器透明的概念</a><a class="margin__link margin__link--h3" href="#sec-1254">3 指令的间址周期概念</a><a class="margin__link margin__link--h3" href="#sec-1272">4 PC 使用字地址和字节地址的问题</a><a class="margin__link margin__link--h3" href="#sec-1284">5 DMA 操作传输一个数据的时间</a><a class="margin__link margin__link--h3" href="#sec-1293">6 控制器取值的理解</a><a class="margin__link margin__link--h3" href="#sec-1308">7 控制器取指的理解</a><a class="margin__link margin__link--h3" href="#sec-1326">8 单周期 CPU 的概念和理解</a><a class="margin__link margin__link--h3" href="#sec-1344">9 间址周期操作概念的理解</a><a class="margin__link margin__link--h3" href="#sec-1359">10 单周期 CPU 和多周期 CPU 的理解</a><a class="margin__link margin__link--h3" href="#sec-1374">11 CPU 区分指令和数据的方式</a><a class="margin__link margin__link--h3" href="#sec-1392">12 操作元件和状态元件的概念</a><a class="margin__link margin__link--h3" href="#sec-1407">13 对于 ALU 与总线连接的理解</a><a class="margin__link margin__link--h3" href="#sec-1425">14 单总线的特点</a><a class="margin__link margin__link--h3" href="#sec-1434">15 单周期 CPU 的控制信号特点</a><a class="margin__link margin__link--h3" href="#sec-1455">16 硬布线控制信号产生原理</a><a class="margin__link margin__link--h3" href="#sec-1476">17 微程序入口地址的形成</a><a class="margin__link margin__link--h3" href="#sec-1488">18 垂直型微指令</a><a class="margin__link margin__link--h3" href="#sec-1506">19 微程序控制器与硬布线控制器的区别</a><a class="margin__link margin__link--h3" href="#sec-1524">20 微处理器的概念</a><a class="margin__link margin__link--h3" href="#sec-1536">21 CPU 的基本结构</a><a class="margin__link margin__link--h3" href="#sec-1545">22 微程序地址的生成 - 增量法</a><a class="margin__link margin__link--h3" href="#sec-1572">23 微程序地址的生成 - 下地址方式</a><a class="margin__link margin__link--h3" href="#sec-1584">24 时钟周期信号的理解</a><a class="margin__link margin__link--h3" href="#sec-1608">25 各种寄存器状态的可见性</a><a class="margin__link margin__link--h3" href="#sec-1642">26 汇编指令与机器可直接执行性</a><a class="margin__link margin__link--h3" href="#sec-1660">27 m 个并行部件 CPU 的理解</a><a class="margin__link margin__link--h3" href="#sec-1686">28 超标量流水线处理机度的概念</a><a class="margin__link margin__link--h3" href="#sec-1707">29 每个阶段执行等长时间的流水线时间计算</a><a class="margin__link margin__link--h3" href="#sec-1728">30 流水段寄存器的概念</a><a class="margin__link margin__link--h3" href="#sec-1758">31 功能部件与流水段寄存器的概念 + 流水线数据通路的结构</a><a class="margin__link margin__link--h3" href="#sec-1788">32 流水线冒险的理解</a><a class="margin__link margin__link--h3" href="#sec-1812">34 Load - use 冒险的理解和处理</a><a class="margin__link margin__link--h3" href="#sec-1833">35 对于控制冒险分支指令的一些理解</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>

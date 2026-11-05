@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>梳理 · 22408 备考笔记</title>
+<meta name="description" content="梳理 总线的基本概念 总线的物理特性有哪些？ （1）总线的类型：数据线，控制线，地址线 （2）总线的数量：串型还是并型 （3）总线的引脚排列 总线的电气特性是什么？ （1）电压表示的含义 （2）规定输出信号，一般地址线是输出信号，地址线是单">
+<link rel="icon" href="../../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../../" data-note-id="c044">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../../math/index.html">数学</a><a href="../../../major/index.html" class="is-active">专业课</a><a href="../../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note is-active" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../../major/index.html">专业课 408</a><i>/</i><span>计组</span><i>/</i><span class="crumb__no">06</span></div>
+    <h1 class="doc__title">梳理</h1>
+    <div class="doc__meta"><span>8,028 字</span><span>约 19 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose">
+<h2 id="sec-3">总线的基本概念</h2>
+<h3 id="sec-6">总线的物理特性有哪些？</h3>
+<p>（1）总线的类型：数据线，控制线，地址线<br>
+（2）总线的数量：串型还是并型<br>
+（3）总线的引脚排列</p>
+<h3 id="sec-12">总线的电气特性是什么？</h3>
+<p>（1）电压表示的含义<br>
+（2）规定输出信号，一般地址线是输出信号，地址线是单向的<br>
+（3）规定输入信号，数据线是输入/输出信号，线是双向的<br>
+（4）控制线每一根是单向的，但是多根实现了双向传递</p>
+<h3 id="sec-18">总线的功能特性是什么？</h3>
+<p>（1）规定总线传输数据类型：地址线传地址，数据线传数据，控制线传控制信号</p>
+<h3 id="sec-24">总线的时间特性是什么？</h3>
+<p>什么时候做什么，什么时钟周期发数据或者地址</p>
+<h3 id="sec-30">总线包括哪些？</h3>
+<p>（1）片内总线：CPU 内部总线<br>
+（2）系统总线：CPU，主存，IO 之前的传输线，包括数据总线（双向），地址总线（单向），控制总线（单个单向，总体双向）<br>
+（3）通信总线：计算机系统之间的通信，计网中的东西</p>
+<h3 id="sec-36">系统总线单总线结构是什么？</h3>
+<p>（1）CPU，主存 IO 挂在一组总线上<br>
+（2）同一时刻只能允许两个部件互相信息</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921085923.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-45">系统总线的双总线结构是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921085947.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）分为主存总线，IO 总线以及一个通道，通道具有管理作用<br>
+（2）主存总线负责 CPU 和主存之间的通信，IO 设备通过 IO 接口挂载在 IO 总线上</p>
+<h3 id="sec-54">三总线结构是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921090308.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）分为 IO 总线，DMA 总线，主存总线<br>
+（2）IO 总线负责 CPU 和 IO 之间的信息传递，DMA 总线负责 DMA 操作，主存总线负责 CPU 和主存中间的传输<br>
+（3）主存总线和 DMA 总线不能同时对主存进行存取</p>
+<h2 id="sec-63">总线的性能指标</h2>
+<h3 id="sec-66">总线的性能指标（总线周期，传输周期，时钟周期，工作频率等等）</h3>
+<h4 id="sec-69">总线传输周期（总线周期）</h4>
+<p>一次总线操作所需的时间，通常包括</p>
+<p>（1）总线申请阶段，主要就是总线仲裁，决定是否将总线分配给某个设备</p>
+<p>（2）寻址阶段，比如主设备需要将自己写或者读的数据的地址通过地址总线发给从设备</p>
+<p>（3）传输阶段，指明了地址之后，主设备利用数据总线向从设备中读或者写数据</p>
+<p>（4）结束阶段，释放总线的使用权，让给其他设备使用</p>
+<p>经过一个总线周期，就可以完成一组数据的传送，比如数据总线宽度是 32 bit，那么一个总线周期就可以完成 32 bit 数据的传送</p>
+<p>一个总线周期由若干个总线时钟周期组成（不固定，有可能总线周期包含多个总线时钟周期，有可能一个总线周期就是一个时钟周期，有可能一个时钟周期包含多个总线周期）</p>
+<h4 id="sec-93">总线时钟周期</h4>
+<p>其实就是一个总线的脉冲的长度，可以类比 CPU 中的脉冲，不一定和 CPU 的时钟周期相等</p>
+<p>此外，一个总线时钟周期不一定只传送一次数据（看题目说明），现代总线可以在时钟脉冲的上升沿和下降沿各传送一次数据</p>
+<h4 id="sec-102">总线的时钟频率</h4>
+<p>1 s 内有多少个总线时钟周期，就是总线时钟周期的倒数</p>
+<h4 id="sec-108">总线工作周期</h4>
+<p>总线传输一次数据的时间，总线的工作周期并不是一个比总线时钟周期小的单位！</p>
+<h4 id="sec-114">总线的工作频率</h4>
+<p>实际上就是 1 s 传了多少次数据，在数值上等于 （1 s 总线时钟周期个数） * （1 个总线时钟周期传输数据的次数）</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251212160618.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这道题一个总线时钟周期传 4 次数据；同时说了 1 s 总线传输 1333 M 次，工作频率就是 1333 M，所以总线时钟频率就是 1333/4 M</p>
+<p>即 1 s 1333/4 M 个总线时钟周期</p>
+<p>按照通常的总线时钟周期来计算，一个总线时钟周期传输了 4 * 8 B 的数据</p>
+<p>所以总线带宽就是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1333</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">8</span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">10.66</span><span class="mord mathnormal" style="margin-right:0.0502em;">GB</span><span class="mord mathnormal">p</span><span class="mord mathnormal">s</span></span></span></span></span></div><h4 id="sec-136">总线宽度</h4>
+<p>就是总线上同时传送的数据位数，通常是数据总线的根数</p>
+<h4 id="sec-142">总线带宽</h4>
+<p>也就是总线的数据传输率，单位时间中传输的数据位数</p>
+<p>通常用每秒多少个字节来衡量</p>
+<p>计算公式是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">总线带宽</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">总线工作频率</span><span class="mopen">(</span><span class="mord cjk_fallback">每</span><span class="mord mathnormal">s</span><span class="mord cjk_fallback">总线周期个数</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">总线宽度</span><span class="mopen">(</span><span class="mord mathnormal">bi</span><span class="mord mathnormal">t</span><span class="mord">/</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span></span></div><p>总线带宽其实反应的是总线达到的最高传输速率，但是可能实际有效数据传输速率会小于最高传输速率，比如会有校验位啥的跟有效数据一起传输，计算的时候应该考虑剔除得到实际有效传输速率</p>
+<p>另外对于串型总线和并行总线而言，串型总线每次只能传输 1 个数据，并行总线每次可以传输多个数据；但是并行总线的工作频率不一定会高于串型总线，即它虽然每次传输多，但是它每秒传输的次数不一定比串型的多，所以并行总线的带宽不一定高于串型总线</p>
+<h2 id="sec-161">多模块存储器与总线传输</h2>
+<h3 id="sec-164">多模块存储器的连续编址方式是什么？</h3>
+<p>在进行编址的时候先对一个存储器进行从小到大编址，然后再编另一个存储器</p>
+<h3 id="sec-170">连续编址方式的主存地址划分是什么？CPU 在这种编址方式下是如何访问主存的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250907111100.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>体号用来表示是哪一个存储体，体内地址用于存储体内部的地址偏移</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250907111306.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250907111446.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）主存编址方式是体号+体内地址偏移<br>
+（2）CPU 访问的时候先顺序访问一个体的所有存储单元，再访问下一个体的存储单元</p>
+<h3 id="sec-188">交叉编址方式是是什么？有哪两种启动方式？</h3>
+<p>（1）交叉编址方式的主存地址分为块内地址 + 体号<br>
+（2）这种编址方式的读取特点在于，主存地址递增的时候是挨个读取存储体的，比如块内地址是 0000，有 4 个体，那么体号就是 2 bit，这时读取是先读 0000 00（第 0个体的第 0个存储单元），再读 0000 01（第 1个体的第 0个存储单元），再读 0000 10（第 2 个体的第 0 个存储单元），再读 0000 11（第 3 个体的第 0 个存储单元）<br>
+（3）一种是轮流启动方式，一种是同时启动方式</p>
+<h3 id="sec-194">一次突发总线事务是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251107170352.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里与主存块大小相同的含义是，如果主存块由 4 个存储体组成，一个存储体的存储单元是 1 B，那么此时题目大概率就会给出的是读取 4 B 的数据，即将主存的 4 个存储体轮流读取一次</p>
+<h3 id="sec-203">轮流启动方式下 CPU 是如何访存的？</h3>
+<p>其实也就是上文的一次突发传送事务</p>
+<p>主要包括：<br>
+（1）总线传地址和命令<br>
+（2）存储器准备数据<br>
+（3）总线传输数据</p>
+<p>假设存储体的存取周期是 T，一共 m 各体，那么在存储器准备数据的过程中，<strong>是默认每隔 T/m 启动一个存储体</strong>的，如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251107172440.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在这种方式下</p>
+<p>（1）每个存储体的存储单元位数与总线宽度相同（默认规定）<br>
+（2）在准备数据的过程中，每隔 T/m 就会有一个存储体的存储单元送到总线上，然后进行传输，因此在稳定的情况下，CPU 也是每隔 T/m 就能收到一个数据的<br>
+（3）这里假设总线传输数据的时间为 t 2 = T/m（默认规定），总线传输地址和命令的时间是 t 1，一次突发总线传输过程实际上如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251107175002.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图的 T 就是一个存储周期，即一个存储体准备数据并放到总线上的时间</p>
+<p>根据上图，在稳定的情况下，始终是每隔 T/4 的时间将数据放到了总线上，同样是每隔 T/4 的时间将数据放到了 CPU 中，因此在此时可以认为总线周期等效r = T/4</p>
+<p><strong>这里在通常意义上 T/m （间隔多少时间一个体开始准备）与传输一个数据到 CPU 的时间是相同的</strong></p>
+<h3 id="sec-236">交叉编址方式的同时启动模式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250907121309.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250907121349.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）主存地址分为体内地址 + 体号<br>
+（2）数据总线的位数等于所有存储体的存储单元位数之和，比如一个存储体是 8 bit，主存由 4 个体组成，那么数据总线就是 32 bit，需要一次性读取 4 个体<br>
+（3）这种方式在存储器准备数据的过程中并不是流水线方式，与普通的准备数据过程是一样的，只是每次读的位数多了一些</p>
+<h3 id="sec-245">同时启动方式与轮流启动方式如何区分？</h3>
+<p>（1）一个模块体代表一个存储单元的长度，如果是按字节编址，则一个体长度通常是 1 B，如果是按字（32 bit）编址，一个体长度通常是 4 B</p>
+<p>（2）<br>
+总线宽度与所有模块存储器位数之和相等，则是同时启动<br>
+总线宽度只与单个模块的宽度相等，则是轮流启动</p>
+<p>一般题目都会告诉一个体的长度，利用第二条来判断是轮流启动还是同时启动</p>
+<h3 id="sec-257">看几道例题</h3>
+<h4 id="sec-260">1 DRAM 结构 + 同时启动方式读取所有存储体的数据到总线的过程（理解即可）</h4>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251107175306.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>一般来说就是几个存储体的存储单元一起加起来构成了一个主存块大小</p>
+<p>这里按字节编址，说明存储单元就是 1 B，主存块大小是 4 B，所以存储体就是 4 个</p>
+<p>交叉编址，就是主存地址分为：体内存储单元号 + 体号</p>
+<p>同时启动方式，所以数据总线的位数就是 4 B，32 bit</p>
+<p>对于一个 DRAM 芯片（一个存储体）来说，假设它是 2^12 B 的大小，那么它应该是 8 个 64 * 64 的位平面构成的，类似下面：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250606174721.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+上图的每个存储矩阵有 64 行，每一行都有 64 列，这 8 个存储矩阵的相同位置，第 i 行第 i 列叠在一起的 8 个 bit 形成了一个存储单元，所以上图可以简化为：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251107181035.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+这里仍然有 64 行，每行 64 个 8 bit 存储单元，即 64 * 64 * 8 bit 的 DRAM，也是 2^16 B 的 DARM</p>
+<p>所以整个 CacheMiss 中存储器的动作是：<br>
+（1）主存地址可以进一步划分：体内存储单元地址 + 体号，为 12 bit + 2 bit =&gt; 6 bit 体内行号 + 6 bit 体内列号 + 2 比特体号<br>
+（2）一个主存块是 4 B，因此一个 Cache 行也是 4 B，所以同时需要读取 4 个体的第 0 个存储单元<br>
+（3）第 0 个主存块发生了 Cache MISS，可以认为是访问存储单元：000000 000000 10 的时候发生了 Cache Miss，当然假设访问 000000 000000 00 发生了 Cache MISS 也行<br>
+（4）接着是每个存储体的 000000 行地址选中一行的所有存储单元放到行缓冲寄存器中，然后每个存储体的 000000 列地址选中行缓冲寄存器中对应的存储单元<br>
+（5）00 ，01，10，11，这 4 个存储体同时执行（4）操作，选中了 4 B 的数据，即一个块大小的数据同时放到数据总线上（同时启动方式），传给 Cache 即可</p>
+<h4 id="sec-290">2 同时启动读取方式与 double 类型数据</h4>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251107182201.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>double 类型的数据是 64 bit，也就是 8 B 的长度</p>
+<p>我们先观察它的主存地址，是 1000 0000 0100 0000 0000 0001 1010（B）</p>
+<p>这里有 4 个体，因此交叉编址这个 double 类型数据就在 10 号体上，即第 2 个体，所以 double 的存放应该是：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251107191033.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>按照同时启动的方式读取，那就得读取 3 次了，因此需要 3 个存储周期（3 个总线事务周期，包含了 3 个存储周期）</p>
+<h4 id="sec-311">3 轮流启动方式传输数据的过程</h4>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251107191125.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>主存块大小是 8 B，按照字节编址的方式，所以主存由 4 个体组成，按照交叉编址方式，这里数据线的位数是 8 bit，与一个体的存储单元位数相同，所以按照轮流启动的方式进行</p>
+<p>当 Cachemiss 的时候，开始访问主存，按照上文的轮流启动方式进行，主存的每个体每隔 T/m = 40/4 = 10 ns 启动一次，类似下面这个图：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251107191715.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>首先是总线传地址：10 ns<br>
+4 个体按照流水线轮流启动并传递数据：40 ns + (4 - 1) * 10 ns = 70 ns<br>
+最后传递最后一个体的数据：10 ns<br>
+（注意：上述将主存块读入 CPU 和调入块到 Cache 是并行的，所以可以直接按照调入 CPU 来算）</p>
+<p>所以总的就是 90 ns</p>
+<h4 id="sec-329">4 轮流启动方式传输数据的过程</h4>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251107192432.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）略非常简单，cpu 时钟周期：1.25 ns，总线时钟周期：5 ns，总线带宽：0.8 GBps<br>
+（2）</p>
+<p>这里一次突发传输是 32 B，而一个块大小是 32 B，所以一次突发传输事务即可完成</p>
+<p>（3）</p>
+<p>这里是 8 个体，每个体是 4 B 的长度，一个主存块大小是 32 B，所以需要轮流启动 8 次传输才能完成一个主存块的读取，按照类似下图的方式：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251107191715.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>传地址和命令：1 个总线时钟周期，5 ns<br>
+进行 8 次轮流启动和传数据到 CPU：40 ns + (8 -1) * 40/8 = 75 ns<br>
+最后一次传数据：1 个总线时钟周期，5 ns<br>
+所以总的就是 85 ns</p>
+<h2 id="sec-350">总线定时方式</h2>
+<h3 id="sec-353">同步总线和异步总线是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921092630.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-359">总线复用是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921092704.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+（1）总线可以分时传不同的数据，比如先传地址，再传数据<br>
+（2）好处是可以减少引脚<br>
+（3）坏处是原本并行的操作，现在得分时进行，降低了总线带宽</p>
+<h3 id="sec-365">总线定时方式是什么？</h3>
+<p>总线的定时方式其实是一组协议，用来控制总线上交换数据的设备双方在时间上的配合关系</p>
+<h3 id="sec-371">同步定时方式是什么？</h3>
+<p>（1）总线上的设备由一个时钟信号同一控制<br>
+（2）所有的操作都沿着时钟信号的边沿进行，现代总线可以在时钟信号的上升以及下降沿各传输一次数据，即一个总线时钟周期传输两次数据</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921100711.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-380">主设备和从设备是什么？</h3>
+<p>（1）主设备：可以获得总线控制权的设备<br>
+（2）从设备：只能响应主设备发来的各种总线命令的设备<br>
+（3）所以只有主设备可以控制总线，从设备只能响应来自主设备的控制命令<br>
+（4）一条总线上，同一时刻只能有一个主设备控制总线，选择一个从设备进行通信</p>
+<h3 id="sec-386">总线的异步定时方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921100840.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）没有统一的时钟信号，依靠双方握手进行定时控制<br>
+（2）四个动作：主设备请求，从设备回答，主设备撤销，从设备撤销<br>
+（3）全互锁就是主设备必须收到从设备回答才能撤销，从设备必须知道主设备撤销才能撤销，即主设备请求-&gt;从设备回答-&gt;主设备撤销-&gt;从设备撤销<br>
+（4）半互锁就是主设备必须收到从设备回答才能撤销，从设备不必知道主设备撤销才撤销，而是一段时间之后就撤销：主设备请求-&gt;从设备回答-&gt;主设备撤销，从设备撤销<br>
+（5）不互锁就是两者撤销都不必收到什么信号，过一段时间就撤销：主设备请求-&gt;从设备回答，主设备撤销，从设备撤销</p>
+<h3 id="sec-395">总线事物分离技术是什么？</h3>
+<p>（1）主设备对从设备发出请求之后立刻释放总线，等到从设备准备好了之后总线在申请总线<br>
+（2）这种方式实际上提高了总线利用率</p>
+<h1 id="sec-401">理解</h1>
+<h3 id="sec-404">突发传送（猝发传送）的概念</h3>
+<p>即 CPU 送出一个地址，可以收到多个地址连续的数据</p>
+<h3 id="sec-410">总线事务是指什么？包含哪些阶段？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921095320.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-416">总线的分类</h3>
+<h4 id="sec-419">按功能层次</h4>
+<p><mark>片内总线</mark>：CPU 内部的总线</p>
+<p><mark>系统总线</mark>：CPU 与主存，IO 接口之间互连的总线；系统总线包括三类：<br>
+地址总线：CPU 从主存或者 IO 接口中读写数据时指出主存单元和 IO 接口的地址，单向总线<br>
+数据总线：用来 CPU 和主存以及 IO 接口进行数据交换，传输指令，中断类型号等，是双向总线<br>
+控制总线：用来 CPU 和主存以及 IO 接口之间传输命令，反馈，定时信号等，是双向总线</p>
+<p><mark>IO 总线</mark>：这个总线主要用来连接低速 IO 设备，这个总线通过 IO 接口与系统总线相连，IO 接口与 IO 总线将低速 IO 设备与系统总线分离，免得低速 IO 设备占用来总线但是自己处理数据太慢导致系统总线一直空闲</p>
+<p><mark>通信总线</mark>：这是计算机系统之间的总线，也称为外部总线</p>
+<h4 id="sec-434">按时序控制方式</h4>
+<p><mark>同步总线</mark>：指总线上的设备由统一的时钟信号进行控制，来完成信息传输，哪个时刻干哪个事被固定好了，以统一的时钟信号来作为标准；比如规定第一个时钟信号传地址，第二个时钟信号传数据等等</p>
+<p><mark>异步总线</mark>：总线上的设备之间以信号握手的方式来协调数据传输；比如 CPU 发地址给主存之后，主存回给 CPU 一个接收到地址的信号，CPU 接收到之后知道了主存接收到了地址，然后开始传数据</p>
+<h4 id="sec-443">按数据传输方式</h4>
+<p><mark>串型总线：</mark>按照比特位串进行传输，一次只能传一个 bit，数据之间的设备线只有一跟</p>
+<p><mark>并行总线：</mark>设备之间的数据线有多根，可以并行传输多个 bit</p>
+<h3 id="sec-452">总线各种定时方式以及适用的场景</h3>
+<p>总线的定时方式其实是一组协议，用来控制总线上交换数据的设备双方在时间上的配合关系</p>
+<p><mark>同步定时方式：</mark></p>
+<p>适用于设备之间速度差不多，距离短，以及设备本身之间传输就比较可靠的地方，比如靠近 CPU 的系统总线</p>
+<p><mark>异步定时方式：</mark></p>
+<p>由于同步定时需要对每一根数据线都定时，那么当距离变远了之后，不同的数据线之间时钟就可能有误差，即时钟偏移，那么同样的一个 bit 数据，到达的时间就会有很大的差异，所以同步定时不适合长距离的传输；</p>
+<p>但是异步定时去除了统一的时钟信号，所以规避了时钟偏移，异步定时方式适用于长距离的传输，并且适合各个设备之间速度差异大的情况</p>
+<p><mark>半同步定时方式：</mark></p>
+<p>半同步定时方式总的来说还是需要一个统一的时钟信号，但是不强求所有的部件存取都是统一的总线周期；其通过一个 Wait 信号来插入几个时钟周期</p>
+<p>对于一些准备数据慢的部件，当其准备数据的时候会将一个 Wait 信号置位，然后半同步总线会在 Wait 信号有效的时候插入几个时钟周期让主设备继续等待，直到从设备准备好数据，此时 Wati 信号无效，主设备再去取数据</p>
+<p>半同步定时方式适用于系统工作速度要求不高，并且又包含了许多速度差异大的设备组成的简单系统</p>
+<p><mark>分离事物通信方式</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250627183202.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-491">题目</h2>
+<h3 id="sec-494">1 图片像素与颜色的存储</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250626190240.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>颜色是对应每个像素点的，为了能体现出 65536 = 2^16 个颜色，每个像素点应该要有 16 位的编码才行，一种编码对应一种颜色然后通过显示器体现出来</p>
+<p>所以这道题目的像素中的所有比特位就是 640 * 480 * 16 bit</p>
+<p>所以传输时间就是 640 * 480 * 16 / 56000 =  87.7 s</p>
+<p>D 正确</p>
+<h3 id="sec-512">2 系统总线上传输的东西</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250626191136.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>系统总线包括地址总线，数据总线，控制总线</p>
+<p>地址总线主要是传递内存和 IO 的地址，由 CPU 发送给外设，是单向的<br>
+数据总线会传递一些操作数，指令，中断类型好等数据，是双向的<br>
+控制总线会传递 CPU 发送给外设的控制信号，时钟定时信号，以及请求应答等等</p>
+<p>所以握手应答应该在控制线上才对</p>
+<h3 id="sec-527">3 多通道的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250626193352.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里多通道其实就是 3 个总线的意思</p>
+<p>对于一个总线，1 s   1333 M 个时钟周期，一个时钟周期传输 8 B 数据</p>
+<p>所以一个总线的带宽就是 1333 * 8 Bps，3 个就是 3 * 1333 * 8 Bps</p>
+<p>大约就是 32 GBps 了</p>
+<h3 id="sec-545">4 特殊总线带宽的计算</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250626194715.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>根据题目的公式，1 s 2.4 G 个时钟周期，1 个时钟周期传递 2 次，所以 1 s 传递 4.8 G 次，所以带宽就是 4.8 G * 2 B * 2 = 19.2 GBps</p>
+<p>但是这道题其实也可以不用看公式，题目中说了一次传输每个方向同时传输 20 位数据，即一个方向传输 2 B 有效数据，那么一次传输两个方向就是 4 B 的有效数据，注意这里的带宽指的就单纯是数据，与数据传输的方向无关，这条总线仅仅从数据来看一次就是传输运行了 4 B 的有效数据</p>
+<p>再看题中后面描述，80 位数据，两个时钟周期传输，这是干扰信息，QPI 是单向传输，每次传输 20 位数据，当然需要 4 次才能传完</p>
+<p>但是我们算带宽只用看每个时钟周期传递两次，每次两个方向一共传递 4 B 数据即可</p>
+<h3 id="sec-563">5 易错点：对总线带宽的深刻理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250626195633.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>总线带宽就是默认一个总线周期全部用来传输数据从而得到的数据传输上限，它与总线的具体执行事务是无关的，所以题目中传送地址和读写命令就是干扰信息</p>
+<p>所以这里 1 s 有 420 M 个时钟周期全部用来传输数据，一共是 840 次，每次 8 B 数据，所以 B 正确，而不是 A 正确</p>
+<h3 id="sec-575">6 半同步通信方式，握手信号的采样问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250627191700.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>D，wait 信号其实是有点像异步定时中的应答信号的，半同步通信中，如果主设备一直检测到 wati 有效就会一直等待，直到 wait 信号无效，表示从设备数据准备好了，然后主设备取走数据，这个过程就很像主设备一直等待从设备的应答信号的过程，同时这个 wati 信号的变化可以看作是从设备返回给主设备的应答信号，所以说半同步通信是同步与异步结合的方式</p>
+<p>主设备在每个时钟触发的时候采样，所以采样也是由时钟控制的</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html"><span class="pager__label">← 上一篇</span><span class="pager__title">5 中央处理器</span></a>
+    <a class="pager__item pager__item--next" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html"><span class="pager__label">下一篇 →</span><span class="pager__title">7 IO与中断</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h2" href="#sec-3">总线的基本概念</a><a class="margin__link margin__link--h3" href="#sec-6">总线的物理特性有哪些？</a><a class="margin__link margin__link--h3" href="#sec-12">总线的电气特性是什么？</a><a class="margin__link margin__link--h3" href="#sec-18">总线的功能特性是什么？</a><a class="margin__link margin__link--h3" href="#sec-24">总线的时间特性是什么？</a><a class="margin__link margin__link--h3" href="#sec-30">总线包括哪些？</a><a class="margin__link margin__link--h3" href="#sec-36">系统总线单总线结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-45">系统总线的双总线结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-54">三总线结构是什么？</a><a class="margin__link margin__link--h2" href="#sec-63">总线的性能指标</a><a class="margin__link margin__link--h3" href="#sec-66">总线的性能指标（总线周期，传输周期，时钟周期，工作频率等等）</a><a class="margin__link margin__link--h2" href="#sec-161">多模块存储器与总线传输</a><a class="margin__link margin__link--h3" href="#sec-164">多模块存储器的连续编址方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-170">连续编址方式的主存地址划分是什么？CPU 在这种编址方式下是如何访问主存的？</a><a class="margin__link margin__link--h3" href="#sec-188">交叉编址方式是是什么？有哪两种启动方式？</a><a class="margin__link margin__link--h3" href="#sec-194">一次突发总线事务是指什么？</a><a class="margin__link margin__link--h3" href="#sec-203">轮流启动方式下 CPU 是如何访存的？</a><a class="margin__link margin__link--h3" href="#sec-236">交叉编址方式的同时启动模式是什么？</a><a class="margin__link margin__link--h3" href="#sec-245">同时启动方式与轮流启动方式如何区分？</a><a class="margin__link margin__link--h3" href="#sec-257">看几道例题</a><a class="margin__link margin__link--h2" href="#sec-350">总线定时方式</a><a class="margin__link margin__link--h3" href="#sec-353">同步总线和异步总线是什么？</a><a class="margin__link margin__link--h3" href="#sec-359">总线复用是指什么？</a><a class="margin__link margin__link--h3" href="#sec-365">总线定时方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-371">同步定时方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-380">主设备和从设备是什么？</a><a class="margin__link margin__link--h3" href="#sec-386">总线的异步定时方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-395">总线事物分离技术是什么？</a><a class="margin__link margin__link--h3" href="#sec-404">突发传送（猝发传送）的概念</a><a class="margin__link margin__link--h3" href="#sec-410">总线事务是指什么？包含哪些阶段？</a><a class="margin__link margin__link--h3" href="#sec-416">总线的分类</a><a class="margin__link margin__link--h3" href="#sec-452">总线各种定时方式以及适用的场景</a><a class="margin__link margin__link--h2" href="#sec-491">题目</a><a class="margin__link margin__link--h3" href="#sec-494">1 图片像素与颜色的存储</a><a class="margin__link margin__link--h3" href="#sec-512">2 系统总线上传输的东西</a><a class="margin__link margin__link--h3" href="#sec-527">3 多通道的概念</a><a class="margin__link margin__link--h3" href="#sec-545">4 特殊总线带宽的计算</a><a class="margin__link margin__link--h3" href="#sec-563">5 易错点：对总线带宽的深刻理解</a><a class="margin__link margin__link--h3" href="#sec-575">6 半同步通信方式，握手信号的采样问题</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>

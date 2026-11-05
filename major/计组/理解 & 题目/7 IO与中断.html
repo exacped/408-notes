@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>梳理 · 22408 备考笔记</title>
+<meta name="description" content="梳理 异常与中断 中断系统包括哪些？ 内部异常是指什么？包括哪些东西？ 外部中断是指什么？ 异常的处理过程是什么？ 不同的内部异常的中断处在哪里？（处理完异常之后返回到哪里？） 终止的断点不考虑 此外这里的断点实际上是 PC + 程序状态字">
+<link rel="icon" href="../../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../../" data-note-id="c045">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../../math/index.html">数学</a><a href="../../../major/index.html" class="is-active">专业课</a><a href="../../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note is-active" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../../major/index.html">专业课 408</a><i>/</i><span>计组</span><i>/</i><span class="crumb__no">07</span></div>
+    <h1 class="doc__title">梳理</h1>
+    <div class="doc__meta"><span>1.3 万字</span><span>约 30 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose">
+<h2 id="sec-3">异常与中断</h2>
+<h3 id="sec-6">中断系统包括哪些？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921102955.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-12">内部异常是指什么？包括哪些东西？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921101702.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-18">外部中断是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921101840.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-24">异常的处理过程是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921103052.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-30">不同的内部异常的中断处在哪里？（处理完异常之后返回到哪里？）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921103147.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>终止的断点不考虑</p>
+<p>此外这里的断点实际上是 PC + 程序状态字，上图的中断处一般就是指 PC 的值</p>
+<h3 id="sec-42">PC 和程序状态字在异常发生之后存放在哪里？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921104005.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>PC 和 PSWR 中的 PSW 一般都会被保存在栈中，在中断返回的时候恢复</p>
+<h3 id="sec-51">内部异常是如何进行软件识别的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921104207.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-57">如果在执行异常处理程序中来了一个可屏蔽中断怎么办？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921104421.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>但是如果是不可屏蔽中断，那么上图的机制还是失效的，无法屏蔽不可屏蔽中断</p>
+<p>此外，对于外部中断，只有在指令执行完毕的中断检测周期才能检测到中断是否发生</p>
+<h3 id="sec-69">几个判断题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921104921.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上面五个都正确</p>
+<p>（1）显然正确，如果都没中断请求信号，那还响应个毛线</p>
+<p>（2）正确，这里说了进入中断响应，那么一定是在 CPU 开中断的情况下才能进入中断响应，当然进入中断响应之后会关中断，但是这里说的是进入的时候；此外，对于不可屏蔽的中断它没有中断响应，一旦检测到直接进行处理，所以这里说的是不可屏蔽中断</p>
+<p>（3）（4）异常一般与当前指令执行有关，所以异常是在执行一条指令的过程中进行检测；而中断时指令执行结束之后的中断周期进行检测</p>
+<p>（5）中断屏蔽字（不是开关中断）以及响应优先级电路都在 CPU 外部，中断信号一旦通过了这些进入了 CPU，那此时 CPU 就检测到了中断信号，如果 CPU 处于开中断的状态的话此时是一定要进行响应的</p>
+<h2 id="sec-90">IO 数据传送控制方式 - 程序查询方式</h2>
+<h3 id="sec-93">IO 数据传送控制方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921115952.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-99">数据传输控制方式与总线定时方式的区别是什么？</h3>
+<p>数据传输控制方式是 CPU 如何与外设协调完成一次数据传输；主要是 CPU 如何知道外设准备好了数据待传送交给 CPU，或者 CPU 如何知道外设准备好了接收数据</p>
+<p>比如一个典型的数据传输控制方式是程序查询方式，CPU 会反复查询 IO 接口的状态寄存器来获取 IO 的状态，当 IO 准备好了数据之后 CPU 会取读数据，这就是数据传输控制方式中的程序查询方式的大致思想</p>
+<p>而总线定时方式是更底层的物理电气信号，它规定了你程序查询方式的每一次 CPU 读或者写操作是如何发生的，比如同步定时方式，CPU 的每次读操作都是在每个时钟周期做规定好了的操作，CPU 读 IO 接口的状态寄存器的时候第一个时钟周期获得总线控制，第二个时钟周期送地址，第三个时钟周期送数据等等</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250628130238.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250628130447.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250628130458.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-114">程序查询控制方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921120151.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-120">定时查询和独占查询是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921144046.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-126">IO 数据传送控制方式 - 中断方式</h2>
+<h3 id="sec-129">程序中断控制方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921144702.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921145230.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>CPU 中断响应之后执行中断服务处理程序来负责数据传输，在 CPU 执行中断处理程序的时候，只有一部分是与外设有关的，这部分结束之后外设可以重新启动准备数据了，剩下的数据处理交给中断服务程序来进行收尾</p>
+<h3 id="sec-141">中断响应和中断类型分别是通过什么类型的总线传递给 CPU？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250629184225.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>中断请求以及 CPU 对中断响应的应答都是走控制总线</p>
+<p>而中断类型号传递到 CPU 是走数据总线</p>
+<h3 id="sec-153">中断的响应优先级与处理优先级的区别是什么？</h3>
+<p>中断控制器的基本结果如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250629184225.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>响应优先级是 CPU 响应并处理中断请求的先后次序，其在硬件线路上是固定的，如上图的判优线路</p>
+<p>处理优先级是在中断嵌套中 CPU 实际处理中断的优先级，其由上图的屏蔽寄存器中的屏蔽字实现，屏蔽寄存器即 IMR</p>
+<p>根据上图可以看到，IMR 的每一位对应一个设备中断源，中断源为 1 的时候表示屏蔽这个中断源发送的中断请求，为 0 的时候表示允许发送</p>
+<p>对于不同的外部设备，他们由 CPU 设置不同的中断屏蔽字，<strong>当执行他们的中断服务程序的时候会将中断屏蔽字写入到 IMR 中，此时所有其他设备发送的中断请求都会先与自己的中断屏蔽字的每一位进行一个与操作，没有被屏蔽的中断请求再送到中断响应电路中进行请求优先级排序</strong></p>
+<p>中断屏蔽字可以动态的改变中断处理的优先级；但是中断屏蔽字只有在 CPU 运行服务程序的时候才能设置，当 CPU 执行主程序的时候仍然采用的是中断响应的优先级</p>
+<p>（1）响应优先级是中断控制器中的固定的判优电路<br>
+（2）处理优先级是中断控制器中判优电路之前的中断屏蔽字<br>
+（3）先进行中断屏蔽字处理，然后通过的中断信号再进入中断响应优先级排队<br>
+（4）中断屏蔽字由中断服务程序设置</p>
+<h3 id="sec-180">中断屏蔽字以及作用是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921150939.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图中有 1 2 3 4 一共四种中断源以及对应的中断服务程序，它们各自对应一个屏蔽字，当 CPU 执行这个中断服务程序的时候就会将屏蔽字写入到上图的 IMR 中，1 表示屏蔽，只有 0 表示不屏蔽，才能让其进入到后面的优先级排队电路进行排队</p>
+<p>（1）某个程序设置中断屏蔽字 1101，1 表示屏蔽，0 表示通过</p>
+<h3 id="sec-192">中断隐指令过程是如何找到中断处理程序的地址的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250922171235.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+这一步也是由硬件完成的，中断源会给出自己的中断号给 CPU，CPU 利用一个基地址寄存器，这个寄存器中存放的是中断向量表的起始地址，CPU 拿到中断号之后利用类似数组一样的原理，通过中断号 * 偏移 + 基地址找到中断服务程序的地址<br>
+ff</p>
+<h2 id="sec-198">IO 数据传送控制方式 - DMA 方式</h2>
+<h3 id="sec-201">DMA 控制是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921160252.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）DMA，直接存储器存取，这种方式主存和 IO 之间直接通过 DMA 总线进行数据交换<br>
+（2）控制总线进行 DMA 传送的硬件接口成为 DMA 控制器</p>
+<h3 id="sec-210">DMA 的三种方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921160433.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>总线事务周期，其实就是一个总线周期，是总线传输一次数据的时间</p>
+<p>主存周期就是内存完成一次数据读取或者写入的时间</p>
+<h3 id="sec-222">DMA 的基本过程是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250927125040.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-228">DMA 访问主存使用的是实地址还是虚地址？（暂定，这个知识点不完善）</h3>
+<p>最好是虚拟地址，因为这样 DMA 控制器中的字计数器直接 + 1 即可，不用考虑数据是否在主存中连续存放</p>
+<h3 id="sec-234">DMA 和 Cache 之间会有什么问题？如何解决？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921163910.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-240">DMA 控制器的基本结构是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250701194443.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250701194702.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921161044.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-246">DMA 的预处理阶段的详细过程是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250927124044.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）CPU 执行一段初始化程序对 DMA 控制器进行各种初始化工作，包括<br>
+（2）准备内存，申请内存缓冲区<br>
+（3）传参数<br>
+（4）启动 DMA</p>
+<h3 id="sec-255">DMA 传送数据阶段的详细过程是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250927124149.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）IO 接口中的 IO 端口一个字数据准备好了之后，通知 DMA 控制器，DMA 发出总线请求传输一个字<br>
+（2）传输完成之后字计数器-1，并且修改主存地址，字计数器为 0 的时候结束传送<br>
+（3）这个过程不需要 CPU 参与，只是 DMA 申请总线的时候优先级比 CPU 申请总线更高</p>
+<h3 id="sec-264">DMA 后处理阶段的详细过程是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250927124219.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）DMA 控制器发出中断信号，转到中断处理程序，CPU 接管数据传送过程最后过程<br>
+（2）对数据进行校验等等</p>
+<h3 id="sec-273">DMA 在数据传送阶段使用周期窃取方式传送数据的过程是什么？</h3>
+<p>简单来说，就是当外设准备好了数据之后就会通知 DMA 挪用总线的几个存取周期，来完成这次请求总线的数据传送（一般来说，如果 IO 端口的数据长度与数据总线的长度一样的话，使用一个总线周期就能完成一次 DMA 字传送）</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250927124417.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-282">DMA 适用于什么设备？</h3>
+<p>高速设备，比如网卡，硬盘等等</p>
+<h1 id="sec-288">理解</h1>
+<h3 id="sec-291">程序查询方式的理解和一个例题</h3>
+<p>程序查询方式的 IO 接口基本结构如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250629144522.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里以 CPU 从外设读一个数据为例来说明数据传送的过程</p>
+<p>（1）CPU 执行 IO 指令向状态寄存器中写入启动外设控制命令，比如 OUT 指令，具体来说，CPU 通过地址线指明此时的控制命令要输出的 IO 端口地址，然后通过控制线指明 CPU 执行写操作，接着这个启动命令通过数据线写入到状态寄存器中；</p>
+<p>（2）IO 接口中的控制逻辑将状态控制寄存器（IO 端口）中的启动命令发送给外设，外设开始启动，准备数据；接着控制逻辑将状态寄存器设置为外设忙的信号，这个状态信息会覆盖控 IO 端口原来的控制信息，不过这个控制信息已经发出去了，不用再保存</p>
+<p>之后 CPU 通过不断的执行 IN 指令来读取状态寄存器端口中的状态，来看看 IO 是否准备好了数据</p>
+<p>（3）外设准备好一个数据，通过数据线写入到 IO 接口中的数据缓存寄存器端口中</p>
+<p>（4）外设准备好了数据之后通过状态线反馈给 IO 控制逻辑，IO 控制逻辑将状态寄存器设置为 ready</p>
+<p>（5）CPU 通过读取状态端口寄存器发现数据准备完毕，于是再通过 IN 指令从数据缓存寄存器中取走数据</p>
+<p>以上就是 CPU 通过程序查询方式从外设取走一个数据的具体过程</p>
+<p>在 CPU 查询 IO 接口中的状态端口的时候有两种方式，一种是 CPU 完全停下现在自己正在做的事情，一直反复的查询这个端口，这个方式称为<strong>独占查询</strong>，CPU 将所有的时间都用来 IO 操作；</p>
+<p>另一种方式是<strong>定时查询</strong>，即 CPU 会隔一段时间查询一次 IO 端口，在这些时间间隔 CPU 会去干别的事情</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250629144257.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这道题目中，一次查询是 400 个时钟周期，处理器 1 s 有 500 M 个时钟周期</p>
+<p>这道题目是定时查询方式，即 CPU 会隔一段时间查询一次，其他的时间执行其他的任务</p>
+<p>（1）<br>
+对于鼠标来说，它会将一些信息写入到 IO 接口的数据缓存寄存器中，如果 CPU 不及时取走数据的话，鼠标就会将原来的信息覆盖，从而导致信息的丢失；这也是为什么 CPU 1 s 至少 30 次查询鼠标的原因</p>
+<p>1 次查询用 400 个时钟周期，1 s 30 次，用了 400 * 30 = 12000 个时钟周期</p>
+<p>占 1 s 的总的时钟周期比例是 12000 / 500 M * 100 % = 0.0024 %</p>
+<p>查询鼠标占用 CPU 的比例还挺少，对 CPU 的影响不大</p>
+<p>（2）</p>
+<p>软盘以 16 bit 为单位传送，意思是 CPU 每次查询取走一次数据是 2 B</p>
+<p>软盘的数据传输率是 50 kBps，意思是软盘向 IO 接口中数据缓存寄存器中写入数据的速度是 1 s 写 50 000B 个数据</p>
+<p>先不管数据缓冲寄存器的大小，这里为了保证数据不被覆盖丢失，你软盘这 1 s 中写入到数据缓冲中的数据必须在这 1 s 被 CPU 取走，否则每秒没取走数据堆积起来一定会有数据被覆盖丢失；</p>
+<p>1 s 内 CPU 取走 50 000 B 的数据，CPU 查询一次取走 2 B，所以 1 sCPU 至少要查询 25 000 次，占用的时钟周期个数就是 25000 * 400 = 100 00000 个；占 1 s 的总的时钟周期个数就是 1 0 M / 500 M = 2%</p>
+<p>查询软盘占用 CPU 的比例也还行，可以忍受</p>
+<p>（3）</p>
+<p>这里改成查询一次取走 16 B 数据了</p>
+<p>同软盘的分析过程，1 s 内 CPU 取走 4 MB 数据，所以查询次数就是 0.25 M 次，使用的时钟周期个数就是 100 M 个时钟周期；占用 1 s 的时钟周期总数就是 20%</p>
+<p>你 CPU 20%的时间都用来处理键盘的 IO 操作，这个占比是无法忍受的，所以键盘这类快速的外设使用查询方式进行数据控制就非常不合适</p>
+<h3 id="sec-381">内部异常与外部中断</h3>
+<p>异常是 CPU 内部的引起的中断事件，其包括故障，自陷，终止</p>
+<p>外部中断就是外部 IO 向 CPU 发送的硬件中断请求（如鼠标点击和键盘输入）</p>
+<p>在袁书的教材中，一般用异常指 CPU 的内部异常，中断指外部中断</p>
+<h3 id="sec-393">中断控制器的基本结构</h3>
+<p>中断控制器本身也是一个 IO 设备，CPU 可以访问其 IO 接口配置其功能，比如设置其中断屏蔽字寄存器 IMR，它也被称为可编程中断控制器，其基本结构如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250629184225.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>下面依次说明这个中断控制器的各个结构</p>
+<p><mark>IRR，中断请求寄存器</mark></p>
+<p>它用于暂存每个外部设备的中断请求，IRR 的每一位对应一个外部设备，其值为 1 的时候表示外部设备发出了中断请求，IRR 中的内容又称为中断字，中断处理的时候就通过中断字来确定中断源，从而转到对应的中断处理程序</p>
+<p><mark>IMR，中断屏蔽字寄存器</mark></p>
+<p>IMR 的每一位对应一个设备中断源，中断源为 1 的时候表示屏蔽这个中断源发送的中断请求，为 0 的时候表示允许发送</p>
+<p>对于不同的外部设备，他们由 CPU 设置不同的中断屏蔽字，<strong>当执行他们的中断服务程序的时候会将中断屏蔽字写入到 IMR 中，此时所有其他设备发送的中断请求都会先与自己的中断屏蔽字的每一位进行一个与操作，没有被屏蔽的中断请求再送到中断响应电路中进行请求优先级排序</strong></p>
+<p>中断屏蔽字可以动态的改变中断优先级；但是中断屏蔽字只有在 CPU 运行服务程序的时候才能设置，当 CPU 执行主程序的时候仍然采用的是中断响应的优先级</p>
+<p><mark>优先级排队电路</mark></p>
+<p>这个优先级排队电路的输入是多个通过了屏蔽的中断请求信号，输出是优先级最高的中断编号和中断请求信号</p>
+<p>中断编号通过数据总线 DBUS 反馈给 CPU，而中断请求号 INTR 则通过控制总线 CBUS 传输给 CPU，同时通过控制总线接收来自 CPU 的中断应答信号 INTA</p>
+<p><mark>ISR，中断服务寄存器</mark></p>
+<p>它用来存放多重中断中所有得到中断响应但是中断服务程序还没有结束的中断请求</p>
+<p>一般来说，在多重中断中，低响应优先级的中断可以设置屏蔽字来屏蔽掉高响应优先级的中断，从而避免自己被打断嵌套；但是如果此时是一个高响应优先级的中断服务在执行，低优先级哪怕没有被屏蔽，它也不能去打断高优先级的中断服务；即普通的屏蔽模式下，只能是高响应优先级去打断嵌套低响应优先级中断</p>
+<p>一个新的中断请求通过了屏蔽电路，它会在排队电路中不仅仅与别的通过了屏蔽的请求排队，还要与当前的 ISR 中的中断请求排队，从而决定这个中断请求是否被送给 CPU，只有一个通过了屏蔽，并且响应优先级最高，并且比当前 ISR 中的中断请求的优先级还高的中断请求才会被送给 CPU，才会打断当前的服务程序，进行中断嵌套</p>
+<p><mark>中断使能位和标志位 IF/IE</mark></p>
+<p>这个一般在 CPU 内部，会放在 PSW 寄存器中，它如果为 1 表示开中断，为 0 表示关中断</p>
+<p>关中断表示此时 CPU 不会响应任何中断请求，CPU 可以通过开/关中断指令来设置它</p>
+<h3 id="sec-453">中断控制器的基本工作过程</h3>
+<p>见谭志虎的计组 P 339</p>
+<h3 id="sec-459">可屏蔽中断与不可屏蔽中断 + 关中断与中断允许</h3>
+<p>中断控制器 PIC 的基本结构如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250629184225.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>可屏蔽中断请求通过上图中的 INRT 引脚发送给 CPU</p>
+<p>CPU 的 PSW 状态寄存器中有一个中断允许位 IF</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250629165621.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>INTR 与 IF 进行异或之后送入 CPU 的内部中断判断逻辑，如果 IF = 0 那异或结果就是 0 表示此时 CPU 不响应这个中断请求；如果 IF = 1 则表示 CPU 响应这个中断请求</p>
+<p>关中断的时候就将 IF 设置为 0，这样 CPU 就不会响应所有可屏蔽的中断</p>
+<p>而不可屏蔽的中断的请求则是通过 NMI 引脚发送给 CPU，不可屏蔽的中断，比如掉电中断其优先级最高，CPU 必须响应，关中断操作对其无效</p>
+<h3 id="sec-486">中断识别与中断号</h3>
+<p>以上述中断控制器为例，中断识别是 CPU 识别中断源，获得中断源对应的中断号的过程，CPU 需要拿着这个中断源的中断号去找这个中断的服务程序地址从而执行中断服务</p>
+<p>中断号是计算机统一分配的，对于可屏蔽的中断源，其中断号由中断控制器提供，通过数据总线传给 CPU 的，对于不可屏蔽的中断源以及异常的中断号是集成在 CPU 中预先设置好的</p>
+<h3 id="sec-495">CPU 检测响应外部中断的时机</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250701193854.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的中断请求引脚，比如 Intel 中的 INTR 引脚</p>
+<h3 id="sec-504">中断向量，中断向量表，向量地址，中断指针 + CPU 获得中断服务程序入口地址的过程</h3>
+<p>中断向量是中断服务程序的入口地址以及中断服务程序的初始程序状态字 PSW</p>
+<p>中断向量表是一堆中断服务程序的入口地址和 PSW 的数组</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250629193326.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>向量地址是中断向量表的地址，也称为中断指针</p>
+<p>CPU 拿到中断号之后通过中断号计算该中断源对应的向量表的向量地址，根据向量地址访问向量表，从中读出该中断源的入口地址和程序状态字 PSW，并将两者载入到 PC 和状态寄存器中，于是 CPU 就可以跳转到中断服务程序执行了</p>
+<p>以上过程是在中断响应中由硬件自动完成的</p>
+<p>以 8259 A 芯片为例，CPU 在获得中断类型号之后，这个类型号 * 4 就是这个中断类型号对应的中断向量的地址了</p>
+<p>因此中断向量表应该能支持随机访问才行，所以他的数据结构应该是数组，而不是链表</p>
+<h3 id="sec-531">完整的单级中断过程总结</h3>
+<p><strong>（1）中断请求与中断判优</strong></p>
+<p>IO 设备设置中断控制器中的中断请求寄存器 IRR，通过了屏蔽字（此时 CPU 运行的是主程序，没有屏蔽情况）和中断判优电路之后，中断控制器将中断请求 INTR 和中断号分别通过 CBUS 和 DBUS 送给 CPU</p>
+<p><strong>（2）中断响应</strong></p>
+<p>在中断响应中 CPU 主要执行三个操作，这三个操作是由硬件自动执行的，就好像有默认的指令一样，所以称为隐指令：</p>
+<p><strong>i 关中断</strong></p>
+<p>设置 IF = 0 关中断，这一步是 CPU 为例避免在后面保存信息的时候被别的中断过来打断导致信息丢失中断除了完了无法返回</p>
+<p><strong>ii 保护程序断点</strong></p>
+<p>将当前程序计数器 PC 和当前程序状态字 PSW 入栈保存，这是为了能够在中断执行完毕之后可以返回；如果是外部中断，保存的是当前执行程序指令的下一条地址；如果是内部异常，中断就是由当前指令引起的，所以保存的就是当前指令的地址，中断处理完毕之后要重新执行当前指令</p>
+<p><strong>iii 中断识别</strong></p>
+<p>获得当前中断源的中断号，然后根据中断号去查找中断向量表，在中断向量表中得到当前中断源对应的中断服务程序地址，然后跳转到中断服务程序处理中断（这一步是判断产生中断的类型，由硬件完成）</p>
+<p><strong>（3）保护现场</strong></p>
+<p>这一步也可以称为中断服务的预处理，一般在中断服务程序的开头</p>
+<p>由于中断服务程序可能会修改寄存器的值，所以这一步需要将源主体程序中可能被修改的寄存器的值压入到栈中保存</p>
+<p><strong>（4）执行中断服务</strong></p>
+<p>进行传数据等操作</p>
+<p><strong>（5）恢复现场</strong></p>
+<p>这一步与保护现场是逆操作，将保存的各个寄存器的值出栈恢复</p>
+<p><strong>（6）开中断</strong></p>
+<p>此时 CPU 设置 IF 为 1，允许 CPU 响应新的中断请求</p>
+<p><strong>（7）中断返回</strong></p>
+<p>保存的主程序的 PC 和状态字 PSW 出栈，返回到主程序继续执行了</p>
+<h3 id="sec-597">完整的多级中断过程总结</h3>
+<p><strong>（1）中断请求和中断判优</strong></p>
+<p>当当前中断源通过了中断屏蔽字，并且优先级最高，此时中断控制器将其中断号和中断请求 INTR 发送给 CPU，如果 CPU 内部 IF  = 1 处于开中断，则接着 CPU 就会响应这个中断</p>
+<p><strong>（2）中断响应</strong></p>
+<p>与单级中断完全一样</p>
+<p><strong>i 关中断</strong></p>
+<p><strong>ii 保存断点</strong></p>
+<p><strong>iii 中断识别</strong></p>
+<p><strong>（3）保护现场</strong></p>
+<p>由于是多级中断，此时中断服务程序还会写入自己的中断屏蔽字到中断屏蔽寄存器中，所以这里还需要保存上一个中断服务程序的中断屏蔽寄存器的值；在保护现场的时候同时保护通用寄存器和中断屏蔽寄存器的值</p>
+<p><strong>（4）开中断</strong></p>
+<p>当多重中断中某个中断请求被响应跳转到自己的中断服务程序，然后保护完了上一个中断源的中断服务程序的端点和现场之后就可以直接开中断了</p>
+<p>此时意味着这个中断可以被另一个中断进行嵌套了</p>
+<p><strong>（5）执行中断服务</strong></p>
+<p>在执行中断服务中，当前中断服务程序可以被另外的中断请求嵌套</p>
+<p><strong>（6）关中断</strong></p>
+<p>当前终端执行完自己的中断服务之后要回到上一个中断服务程序，这里关中断是为了保证返回操作的完整性</p>
+<p><strong>（7）恢复现场</strong></p>
+<p>此时要连着上一个中断的中断屏蔽字一起恢复</p>
+<p><strong>（8）CPU 发送 EOI</strong></p>
+<p>CPU 发送当前中断结束命令 EOI 给中断控制器，中断控制器清除 ISR 中当前中断的中断源，表示当前中断执行完毕，这里必须要清楚 ISR 中的这个中断源，因为 ISR 中的中断源也会参与中断响应优先级电路的排序，当前执行完毕的中断源是最高优先级的中断源，它在 ISR 中不被清除后续优先级比它低的中断请求再次到来的时候将永远不会被 CPU 响应</p>
+<p><strong>（9）开中断，中断返回</strong></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250629202635.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-666">中断服务程序的基本结构</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630175137.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630175147.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-672">中断执行 IO 数据交换的完整过程</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250701190035.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>首先是上图的进程 P 1 遇到了一个需要 IO 的函数，比如 read () 或者 write () 系统调用，这个系统调用，如果是写 IO 的话会传递一个数据到 IO，然后启动 IO，阻塞当前进程；如果是读 IO 的话，会传递一些参数，然后启动 IO，然后阻塞当前进程</p>
+<p>阻塞当前进程，选一个其他的进程 P 2上 CPU 执行</p>
+<p>此时 IO 和 CPU 并行工作</p>
+<p>当外设准备好了一个数据，或者打印了一个数据，此时 IO 控制器就会就通知 CPU 进行中断，然后就会执行中断服务程序</p>
+<p>如果是读 IO，中断服务程序会将外设数据从 IO 控制器的 IO 端口（IO 控制器中的数据寄存器）读入 CPU 的通用寄存器，然后再放入内存的内核缓冲区；如果是写 IO，比如打印机打印字符，则中断服务程序会继续传递一个字符到 IO 端口</p>
+<p>不管是写还是读，如果此时进程 P 1 的 IO 操作没有完成，还需要读或者写数据，中断服务程序在完成数据传送之后再次启动 IO，然后中断返回，返回到进程 P 2 执行</p>
+<p>就这样不停重复，直到最后一次执行中断服务程序，发现 IO 所需的数据传输完毕，此时唤醒进程 P 1，将其加入到就绪队列，然后中断返回</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812211724.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>进程 P 1 写数据到打印机的系统调用的一个例子如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812211305.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>P 1 被阻塞期间，IO 控制器触发中断的服务程序例子如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812211336.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>中断传输数据中的数据流向，如果是写数据到 IO，则是先写入内核缓冲区（内存）然后写入 CPU，然后写入 IO 控制器的 IO 端口</p>
+<p>如果是从 IO 读数据，则是从 IO 控制器的 IO 端口读数据到 CPU，然后再读入到内核缓冲区（内存）</p>
+<p>中断方式读或者写数据都需要 CPU 作为中间媒介</p>
+<h3 id="sec-723">DMA 方式与中断方式传输数据的区别</h3>
+<p>（1）在传输数据的过程中中断技术是 CPU 执行程序来进行数据传输，所以涉及到原来程序的现场保护问题；而 DMA 是硬件传输数据，所以 DMA 在传输数据中不涉及现场保护</p>
+<p>（2）CPU 对中断请求的响应是在指令执行结束之后（指令执行周期结束后，并不是指令周期之后）；而 CPU 对 DMA 请求的响应则是在指令的机器周期结束后<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630181303.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（3）中断过程传输数据需要 CPU 的干预，依靠 CPU 执行程序传输，占用的是 CPU 时间；DMA 方式则是依靠硬件传输数据，不占用 CPU 时间</p>
+<p>（4）DAM 方式只能用于数据传送，中断方式还可以用于进行异常的处理</p>
+<h3 id="sec-738">DMA 方式过程</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630210343.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>首先用户会执行一个 read () 函数，然后进入内核，进入内核之后会执行一段例程，这个时候当前进程其实并没有被阻塞，仍然是在用户进程的大背景下，只不过是换到了内核中去执行另外一个函数，但是实际上还是在执行用户进程的一部分程序，只不过这部分程序在内核中，这个例程只不过是一段代码</p>
+<p>由于是 DMA 方式，这个例程函数会继续调用一个预处理程序，预处理程序实际上是设备驱动程序中关于预处理的一部分，CPU 通过执行预处理程序来进行 DMA 的预处理过程</p>
+<p>CPU 在完成预处理，填好各种参数之后，就可以启动外设了，<strong>只有在这个时刻用户进程才真正被阻塞了</strong>，如下所示，下图是一个简单的例程，包含了预处理的过程：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630210507.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+通过一个线程利用程序查询方式来对 DMA 控制器初始化</p>
+<p>下面摘自谭志虎的计组书：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630210620.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630210643.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-759">题目</h2>
+<h3 id="sec-762">1 磁盘驱动器与磁盘控制器的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250627202542.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250627202524.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>磁盘控制器才是磁盘的 IO 接口，其结构如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250627202753.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>它负责将来做 CPU 的并行数据转换成串型数据，然后发送给磁盘驱动器，磁盘驱动器其实就是磁头和盘片这些实际物理组件</p>
+<p>磁盘驱动器将来自磁盘控制器的串型数据写入到磁盘中</p>
+<h3 id="sec-783">2 IO 指令的概念理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250627203239.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250627210141.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>IO 指令是 IO 独立编址中专门用来访问 IO 设备的指令，比如 X 86 中的 IN 和 OUT 指令</p>
+<p>A:<br>
+系统指令，更准确的说法是 <strong>特权指令</strong>。这些是 CPU 指令集中只能在最高特权级别（通常是内核态或 Ring 0）下才能成功执行的指令，IO 指令，比如 IN 或者 OUT 指令；因为 IO 设备可能连接一些非常关键的东西，比如持久化到磁盘的数据，比如向网络发送一些包，比如显示器显示的东西；这些东西如果可以随意被修改的化将会造成比较严重的后果，比如磁盘数据篡改导致系统崩溃，比如伪造数据包发送到网络上进行黑客攻击，比如瞎写显示器导致无法使用计算机，所以 IO 指令也是特权指令的一部分</p>
+<p>B：<br>
+显然正确</p>
+<p>C：<br>
+显然正确</p>
+<p>D:<br>
+IO 指令的格式一般比较简单，不会像访存指令一样支持很多的寻址格式，所以不一定与通用指令的格式一样</p>
+<p><mark>第二题</mark></p>
+<p>IO 指令作用就是将 CPU 的指令传递给 IO 设备，但是实际上是先传递给 IO 接口中的 IO 端口，然后 IO 端口再将数据写到 IO 设备中</p>
+<h3 id="sec-810">3 IO 接口与 IO 设备交换的信息</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250627204459.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>ABC 都不用说了，确实是 IO 设备可以与 IO 接口交换的信息</p>
+<p>中断请求信号是 IO 接口发送给 CPU 的，而不是</p>
+<h3 id="sec-822">4 通信总线的概念和三总线结构</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250627204547.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+三总线结构如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250627205527.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>根据三总线结构，IO 总线是与 IO 接口相连</p>
+<p>这里通信总线是连接计算机系统之间的总线，一个具体的例子是手机通过数据线连接到 USB 接口上，USB 接口就是 IO 接口，其通过数据线这样一个通信总线连接另外一个计算机设备：手机</p>
+<h3 id="sec-837">5 CPU 检测响应中断和 DMA 请求的时机问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630174558.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+显然正确</p>
+<p>II:<br>
+对于外部中断请求 CPU 确实是在一条指令结束的时候进行检查响应；但是对于内部的异常不受到这个制约，因为内部异常有可能就是当前执行的指令引起的</p>
+<p>III:<br>
+DMA 的请求检测和响应会发生在任何一个机器周期的结束，以 5 级流水线为例，取指，译码，执行，访存，写回，哪个机器周期结束都会进行 DMA 检测和响应</p>
+<p>IV：<br>
+并不是，中断服务程序的最后一个指令是 ret 指令，这个指令不是无条件转移指令，ret 指令的含义是从栈中弹出旧的 PC 值，并赋给 PC 寄存器这个值</p>
+<p>V:<br>
+显然错，是根据判优电路才对</p>
+<h3 id="sec-858">6 软中断与软中断指令的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630180158.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630181630.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630182412.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630182036.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的 D 就是执行 INT 指令</p>
+<h3 id="sec-873">7 对于中断响应的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630182802.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+采用硬件更可靠一些，不会被打断，所以 A 正确</p>
+<p>B：<br>
+显然错误</p>
+<p>C：<br>
+中断响应并没有占多少 CPU 的时间，处理器处理速度提高主要看 CPU 处理别的程序的时间，你加快了中断响应的处理时间不会对 CPU 的整体速度有明显的提升影响</p>
+<p>D：<br>
+显然错</p>
+<h3 id="sec-891">8 中断控制器中 IRR 中断寄存器的作用</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630192014.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然错误，一些优先级高的中断必须受到处理</p>
+<p>剩下选项不多说了，这里按照一个结论记住，这是谭志虎书的原话：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630192120.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>C 正确</p>
+<h3 id="sec-906">9 关于中断屏蔽字的作用</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630193332.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+纯纯胡扯，请求优先级没有这个概念</p>
+<p>B：<br>
+响应优先级是由中断控制器中的响应优先电路决定的，中断屏蔽字不能改变</p>
+<p>C：<br>
+中断屏蔽字只能将这个中断请求直接屏蔽，不让其请求传给 CPU，都不被 CPU 响应了又哪里来的执行顺序</p>
+<p>D：<br>
+中断服务程序执行完的次序，其实就是处理优先级，你先处理了当然就先执行完毕（垃圾题目，不用在意）</p>
+<h3 id="sec-924">10 中断方式和 DMA 方式 CPU 和外设各自的工作特点</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630193704.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>外设的工作是指外设准备数据的过程</p>
+<p>中断方式在外设准备数据的时候 CPU 和外设当然是并行工作的</p>
+<p>当外设准备好了数据之后通知 CPU，CPU 通过执行中断服务程序来进行数据传输，此时 CPU 的传送就是与主程序串型工作的，主程序暂停，然后 CPU 去传数据</p>
+<p>DMA 方式中</p>
+<p>外设准备数据就不说了，当然是并行工作的</p>
+<p>传数据的时候虽然 DMA 会占用总线，但是这只会影响 CPU 访存，如果主程序没有访存的指令需求，则此时主程序的执行也不会暂停，所以传输数据与主程序执行也是并行的</p>
+<h3 id="sec-948">11 程序查询方式的细节理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630194819.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+程序查询方式是完全由 CPU 执行程序来完成数据交换的，没有硬件查询方式</p>
+<p>B：<br>
+错误，CPU 通过执行程序来完成数据传送</p>
+<p>C：<br>
+这个是正确的，修改主存地址的原因是 CPU 会将主存中的数据传送给 IO 接口，数据一个个传送当然要不停修改主存地址</p>
+<p>这里的计数器是为了计数自己传送的数据是否传送完全，肯定得用计数器，要不然不知道主存中的其他数据是否是自己要传送的数据</p>
+<p>比如独占查询方式中的一个查询打印机的例子：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630200019.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630200033.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>D：<br>
+这个是独占查询的方式，还有一种定时查询，CPU 固定时间查询一次状态寄存器的状态信息</p>
+<p>D：<br>
+错误，非屏蔽中断不能被屏蔽，必须被响应</p>
+<h3 id="sec-975">13 DMA 传输数据单位的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630202819.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+每启动一次 DMA 传送应该传送的是数据块</p>
+<p>对于周期窃取方式，每窃取一个总线周期传送的是一个字，但是整个 DMA 阶段传送的应该是一个数据块，一个具体的例子如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630203835.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这道题目 C 是错误的</p>
+<p>A：<br>
+显然正确，IO 设备每准备好一个字的数据就会通知 DMA，然后 DMAC 控制器就会请求总线一次</p>
+<p>B：<br>
+是的，这个是唐朔飞书上的原话，因为 DMA 连接的是高速外设，如果不及时响应 DMA 的总线请求，这里数据就容易丢失，所以 CPU 访存会让步 DMA 的总线请求</p>
+<p>C：<br>
+错误，在总线窃取形式的 DMA 和 CPU 访存中只有 DMA 需要传数据的时候 CPU 才不能使用总线访存</p>
+<p>D：显然正确</p>
+<h3 id="sec-1002">14 DMA 请求总线时机的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630212518.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然正确</p>
+<p>B：<br>
+在流水线中一个机器周期 = 存取周期，所以也可以说是在一个总线事物之后响应 DMA 请求，其实更严谨的就是在总线事物之后响应 DMA 请求</p>
+<p>CD 不多说</p>
+<h3 id="sec-1017">15 中断请求响应处理占 CPU 时间比率的计算</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250701162949.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>假设最开始的时候发出了中断请求，为了让 CPU 尽可能少的去处理中断，所以 CPU 应该尽可能延迟才行，所以过了 50 ns，CPU 才进行响应和处理，然后花了 100 ns 进行响应和处理，接着再过 250 ns 又发送了一个中断请求，就这样循环下去：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250701163817.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+我们这里看一个周期即可，结果就是 B</p>
+<p>其实这里跟中断请求的延迟没啥关系，CPU 只要在 IO 发出请求之后的 50 ns 之间处理即可，不管啥时候处理，一个周期内处理花费的时间是固定的 100 ns，所以总是 25%</p>
+<h3 id="sec-1029">16 关于中断和异常的概念区分</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250701164125.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+正确<br>
+B：<br>
+显然错误，多重中断在保护完了现场之后就会开中断<br>
+C：<br>
+在教材和 408 中中断一般就指的是外部中断，如果是 CPU 内部引起的中断会用异常来指明</p>
+<p>D：<br>
+显然正确</p>
+<h3 id="sec-1041">17 DMA 前处理阶段的过程理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250701170118.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+正确，当有 DMA 请求的时候 CPU 会运行一段程序，按照程序查询的方式给 DMA 控制器设置各种参数</p>
+<p>II:<br>
+正确</p>
+<p>III:<br>
+正确</p>
+<p>IV:<br>
+显然正确</p>
+<h3 id="sec-1059">18 外部中断和内部异常的各种例子</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250701170522.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+访存时缺页，这个确实是内部异常中的故障</p>
+<p>II:<br>
+定时器到时，这个确实是外部中断，当个结论记住</p>
+<p>III：<br>
+这个显然是外部 IO 引起的中断</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html"><span class="pager__label">← 上一篇</span><span class="pager__title">6 总线</span></a>
+    <a class="pager__item pager__item--next" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html"><span class="pager__label">下一篇 →</span><span class="pager__title">C语言中的奇怪操作总结</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h2" href="#sec-3">异常与中断</a><a class="margin__link margin__link--h3" href="#sec-6">中断系统包括哪些？</a><a class="margin__link margin__link--h3" href="#sec-12">内部异常是指什么？包括哪些东西？</a><a class="margin__link margin__link--h3" href="#sec-18">外部中断是指什么？</a><a class="margin__link margin__link--h3" href="#sec-24">异常的处理过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-30">不同的内部异常的中断处在哪里？（处理完异常之后返回到哪里？）</a><a class="margin__link margin__link--h3" href="#sec-42">PC 和程序状态字在异常发生之后存放在哪里？</a><a class="margin__link margin__link--h3" href="#sec-51">内部异常是如何进行软件识别的？</a><a class="margin__link margin__link--h3" href="#sec-57">如果在执行异常处理程序中来了一个可屏蔽中断怎么办？</a><a class="margin__link margin__link--h3" href="#sec-69">几个判断题</a><a class="margin__link margin__link--h2" href="#sec-90">IO 数据传送控制方式 - 程序查询方式</a><a class="margin__link margin__link--h3" href="#sec-93">IO 数据传送控制方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-99">数据传输控制方式与总线定时方式的区别是什么？</a><a class="margin__link margin__link--h3" href="#sec-114">程序查询控制方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-120">定时查询和独占查询是什么？</a><a class="margin__link margin__link--h2" href="#sec-126">IO 数据传送控制方式 - 中断方式</a><a class="margin__link margin__link--h3" href="#sec-129">程序中断控制方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-141">中断响应和中断类型分别是通过什么类型的总线传递给 CPU？</a><a class="margin__link margin__link--h3" href="#sec-153">中断的响应优先级与处理优先级的区别是什么？</a><a class="margin__link margin__link--h3" href="#sec-180">中断屏蔽字以及作用是什么？</a><a class="margin__link margin__link--h3" href="#sec-192">中断隐指令过程是如何找到中断处理程序的地址的？</a><a class="margin__link margin__link--h2" href="#sec-198">IO 数据传送控制方式 - DMA 方式</a><a class="margin__link margin__link--h3" href="#sec-201">DMA 控制是什么？</a><a class="margin__link margin__link--h3" href="#sec-210">DMA 的三种方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-222">DMA 的基本过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-228">DMA 访问主存使用的是实地址还是虚地址？（暂定，这个知识点不完善）</a><a class="margin__link margin__link--h3" href="#sec-234">DMA 和 Cache 之间会有什么问题？如何解决？</a><a class="margin__link margin__link--h3" href="#sec-240">DMA 控制器的基本结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-246">DMA 的预处理阶段的详细过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-255">DMA 传送数据阶段的详细过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-264">DMA 后处理阶段的详细过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-273">DMA 在数据传送阶段使用周期窃取方式传送数据的过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-282">DMA 适用于什么设备？</a><a class="margin__link margin__link--h3" href="#sec-291">程序查询方式的理解和一个例题</a><a class="margin__link margin__link--h3" href="#sec-381">内部异常与外部中断</a><a class="margin__link margin__link--h3" href="#sec-393">中断控制器的基本结构</a><a class="margin__link margin__link--h3" href="#sec-453">中断控制器的基本工作过程</a><a class="margin__link margin__link--h3" href="#sec-459">可屏蔽中断与不可屏蔽中断 + 关中断与中断允许</a><a class="margin__link margin__link--h3" href="#sec-486">中断识别与中断号</a><a class="margin__link margin__link--h3" href="#sec-495">CPU 检测响应外部中断的时机</a><a class="margin__link margin__link--h3" href="#sec-504">中断向量，中断向量表，向量地址，中断指针 + CPU 获得中断服务程序入口地址的过程</a><a class="margin__link margin__link--h3" href="#sec-531">完整的单级中断过程总结</a><a class="margin__link margin__link--h3" href="#sec-597">完整的多级中断过程总结</a><a class="margin__link margin__link--h3" href="#sec-666">中断服务程序的基本结构</a><a class="margin__link margin__link--h3" href="#sec-672">中断执行 IO 数据交换的完整过程</a><a class="margin__link margin__link--h3" href="#sec-723">DMA 方式与中断方式传输数据的区别</a><a class="margin__link margin__link--h3" href="#sec-738">DMA 方式过程</a><a class="margin__link margin__link--h2" href="#sec-759">题目</a><a class="margin__link margin__link--h3" href="#sec-762">1 磁盘驱动器与磁盘控制器的概念</a><a class="margin__link margin__link--h3" href="#sec-783">2 IO 指令的概念理解</a><a class="margin__link margin__link--h3" href="#sec-810">3 IO 接口与 IO 设备交换的信息</a><a class="margin__link margin__link--h3" href="#sec-822">4 通信总线的概念和三总线结构</a><a class="margin__link margin__link--h3" href="#sec-837">5 CPU 检测响应中断和 DMA 请求的时机问题</a><a class="margin__link margin__link--h3" href="#sec-858">6 软中断与软中断指令的概念</a><a class="margin__link margin__link--h3" href="#sec-873">7 对于中断响应的理解</a><a class="margin__link margin__link--h3" href="#sec-891">8 中断控制器中 IRR 中断寄存器的作用</a><a class="margin__link margin__link--h3" href="#sec-906">9 关于中断屏蔽字的作用</a><a class="margin__link margin__link--h3" href="#sec-924">10 中断方式和 DMA 方式 CPU 和外设各自的工作特点</a><a class="margin__link margin__link--h3" href="#sec-948">11 程序查询方式的细节理解</a><a class="margin__link margin__link--h3" href="#sec-975">13 DMA 传输数据单位的理解</a><a class="margin__link margin__link--h3" href="#sec-1002">14 DMA 请求总线时机的理解</a><a class="margin__link margin__link--h3" href="#sec-1017">15 中断请求响应处理占 CPU 时间比率的计算</a><a class="margin__link margin__link--h3" href="#sec-1029">16 关于中断和异常的概念区分</a><a class="margin__link margin__link--h3" href="#sec-1041">17 DMA 前处理阶段的过程理解</a><a class="margin__link margin__link--h3" href="#sec-1059">18 外部中断和内部异常的各种例子</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>

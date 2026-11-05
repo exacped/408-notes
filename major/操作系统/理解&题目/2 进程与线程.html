@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>梳理 · 22408 备考笔记</title>
+<meta name="description" content="梳理 进程与进程的虚拟地址空间 进程是什么？ 进程的虚拟地址空间是什么？ 虚拟地址空间是 OS 为每个进程分配的虚拟内存视图，他是进程看到的内存世界，每个进程都认为自己独占整个内存，但是实际上 OS 通过 MMU 将虚拟地址空间与实际物理地">
+<link rel="icon" href="../../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../../" data-note-id="c029">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../../math/index.html">数学</a><a href="../../../major/index.html" class="is-active">专业课</a><a href="../../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note is-active" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../../major/index.html">专业课 408</a><i>/</i><span>操作系统</span><i>/</i><span class="crumb__no">02</span></div>
+    <h1 class="doc__title">梳理</h1>
+    <div class="doc__meta"><span>2.2 万字</span><span>约 51 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose">
+<h2 id="sec-3">进程与进程的虚拟地址空间</h2>
+<h3 id="sec-6">进程是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923153220.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-12">进程的虚拟地址空间是什么？</h3>
+<p>虚拟地址空间是 OS 为每个进程分配的虚拟内存视图，他是进程看到的内存世界，每个进程都认为自己独占整个内存，但是实际上 OS 通过 MMU 将虚拟地址空间与实际物理地址映射对应起来</p>
+<p>每个进程所看到（假想的）地址空间都是一样的，如下所示，都是这样的模板：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923160425.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>当程序调入内存运行的时候就构成了进程的内存映像，也就是虚拟地址空间，这里虚拟地址空间的东西，其实就是进程存放在实际内存的东西，只不过进程以为自己独占了整个内存，但是实际上不是，实际上是 OS 帮内存做了一个映射，将内存存放在自己以为存放在整个内存的东西映射到了实际的物理地址</p>
+<p>进程用自己假想的虚拟地址空间中的地址去访问数据，这个地址就是虚拟地址，OS 的 MMU 对这个地址做变换来映射到真实的物理地址，然后让进程访问到各种数据</p>
+<h3 id="sec-30">进程的内存映像中有什么东西？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251205155247.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923160622.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h4 id="sec-36">内核区</h4>
+<p><strong>进程不可见，进程的 PCB 等数据结构放在此处</strong>，在进程看来它可以通过系统调用访问这个区域，事实上最后还是由 OS 做了转换来访问这个区域，进程只知道可以通过系统调用，利用这个部分的逻辑地址访问这个区域，但是这里面具体是什么进程无法得知</p>
+<h4 id="sec-42">用户栈</h4>
+<p>函数调用的时候用户使用的栈空间，从高地址向低地址增长，同时存放函数中的局部变量</p>
+<h4 id="sec-48">共享库的存储映射区</h4>
+<p>物理内存中只有一份的共享的库（比如动态连接库 DLL），这一部分由所有进程共享，这个区域就实现了进程访问这块共享的代码，就好像这些代码和数据是进程自己拥有的一样</p>
+<h4 id="sec-54">堆</h4>
+<p>通过 malloc 分配的空间就在此处，向高地址增长</p>
+<p>比如 <code>char* ptr = (char*) malloc(100)</code>，这里代码的含义就是在堆中申请一个空间，表示这个空间存放字符，同时返回这个空间的地址，放到 ptr 中，此时 ptr 指针指向的空间位置（指针中存放的地址所指向的位置），就位于堆中，这个位置存放的就是一个字符</p>
+<p>至于这个指针本身所处的位置，则需要看这个指针在那里声明的，如果在函数中，则这个指针空间位于栈，如果在函数外面，则这个指针是全局变量，位于数据区</p>
+<h4 id="sec-66">数据段</h4>
+<p>存放全局变量和静态变量的地方</p>
+<h4 id="sec-72">代码段</h4>
+<p>程序的二进制，只读，可以被多个进程共享</p>
+<p>代码段可以共享，虽然每个进程所访问代码段的时候使用的地址可能不一样，但是对于共享的代码段来说 OS 会将这些虚拟地址映射到同一个物理地址处</p>
+<h2 id="sec-81">进程中的数据结构</h2>
+<h3 id="sec-84">PCB 中有哪些信息？</h3>
+<p>（1）进程标识符：标志每个进程的唯一标识号<br>
+（2）处理机状态：通用寄存器，PC，PSW 等内容，进程切换的时候被切换的进程的这些信息保存在 PCB 中<br>
+（3）进程调度相关：进程优先级，进程状态等<br>
+（4）进程控制信息：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923171048.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-93">PCB 中的处理机状态是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923170909.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-99">PCB 中的进程调度信息是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923170951.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-105">PCB 的组织方式有哪些？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923171141.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-111">PCB 的线性组织方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923171218.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-117">PCB 的链接组织方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923171510.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-123">PCB 的索引组织方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923171607.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-129">进程的控制和状态</h2>
+<h3 id="sec-132">进程的三种基本状态是什么？</h3>
+<p>（1）就绪态：准备好了执行，等待 CPU 资源<br>
+（2）执行态：在 CPU 上运行<br>
+（3）阻塞态：等待 CPU 以外的资源的状态</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923162019.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923162219.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-141">父子进程是什么？两者有什么关系？</h3>
+<p>（1）创建进程的进程是父进程，被创建的进程是子进程<br>
+（2）子进程继承父进程拥有的资源（并非所有），比如打开的文件，分配的缓冲区等等，子进程同时可以自己通过系统调用从 OS 申请资源<br>
+（3）父进程被终止的时候，是否撤销子进程取决于 OS 实现</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923171718.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-150">OS 中引起进程创建的事件有哪些？</h3>
+<p>登录，调度，服务，请求<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923171758.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-156">进程创建的具体过程是什么？</h3>
+<p>（1）申请空闲 PCB，申请数字标识<br>
+（2）分配资源，内存，文件，CPU 时间等等<br>
+（3）初始化 PCB，优先级设置最低<br>
+（4）插入到就绪队列中</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923172028.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里之所以将进创建的进程的优先级设置为最低是为了防止其直接抢占 CPU</p>
+<h3 id="sec-168">进程终止的具体过程是什么？</h3>
+<p>（1）读出状态<br>
+（2）终止执行<br>
+（3）终止它的子进程（看实现）<br>
+（4）归还资源<br>
+（5）移除 PCB</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923172230.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-177">进程阻塞和唤醒的过程是什么？</h3>
+<p>（1）进程的阻塞和唤醒都是通过原语进行的<br>
+（2）进程阻塞是进程主动的行为</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923172423.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-186">进程的通信</h2>
+<h3 id="sec-189">进程的低级通信和高级通信是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923172526.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里对用户透明的意思是用户不用关系通信的内部细节，只用使用打包好的通信方法即可</p>
+<h3 id="sec-198">基于共享数据结构的通信方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923172627.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-204">基于共享存储区的通信方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923172857.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-210">消息传递系统是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923173110.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-216">进程通信-管道</h2>
+<h3 id="sec-219">匿名管道通信和命名管道通信是什么？</h3>
+<p>匿名管道通信：用于父子进程之间通信</p>
+<p>命名管道通信：用户任意进程之间的通信</p>
+<h3 id="sec-228">管道是如何实现的？基本读写单位？</h3>
+<p>（1）操作系统会在内核区开辟一个区域，这个就是管道，具体来说，是一个环形队列，进程通过 pipe 系统调用来进行读写管道<br>
+（2）进程利用一系列系统调用来完成读写，读写基本单位是字符</p>
+<h3 id="sec-234">父子进程对管道的读写权限是什么关系？</h3>
+<p>（1）子进程会继承父进程对于管道的读写权限<br>
+（2）父进程撤销 OS 不会撤销管道，只有管道两端的读者和写者都是 0 OS 才会撤销管道释放内存</p>
+<h3 id="sec-240">对管道读写的互斥情况是什么？（3 条）</h3>
+<p>（1）进程对管道的读写必须互相互斥进行，队列满的时候写进程阻塞，队列空的时候读进程阻塞<br>
+（2）同一时间段，只能由一个进程写，一个进程读，只有当进程 A 写完自己的所有数据，并且进程 B 读完 A 的所有写入的数据，才能允许进程 C 往管道写数据，是半双工通信<br>
+（3）管道中的每个字符只能被读一次，然后就失效，可以被写入覆盖</p>
+<h2 id="sec-246">进程通信-信号（25 年大纲新增）</h2>
+<h3 id="sec-249">进程信号通信是什么？信号分为哪两类？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251105170832.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>由一个进程或者操作系统发送信号给另一个进程进行通信</p>
+<p>信号分为：<br>
+（1）操作系统（缺省）信号<br>
+（2）用户自定义信号</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251105165905.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-264">当进程在 CPU 运行的时候信号到来，会被保存到哪里？</h3>
+<p>（1）保存在进程的 PCB 中<br>
+（2）PCB 中维护两个字段，一个 receive 字段用于保存信号编号，一个 sigmask 字段用于表明这个信号需不需要优先处理<br>
+（3）每个信号本质是一个整数</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251105170334.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-273">信号有哪三种处理手段？</h3>
+<p>（1）忽略信号，但是不能忽略 sigkill 和 sigstop 这两个信号<br>
+（2）执行信号默认操作，比如 OS 会事先定义好一些进程关于信号的处理函数，进程执行这些函数即可<br>
+（3）捕获并处理信号，用户可以不让进程执行 OS 定义好的默认处理函数，而是捕获信号，执行用户自定义的处理函数，sigkill 和 sigstop 这两个信号不能被捕获</p>
+<h3 id="sec-279">信号有哪些方式产生？</h3>
+<p>（1）根据键盘产生，比如按下 Ctrl + C 产生 sigint 信号<br>
+（2）程序异常时，OS 会向进程发送信号终止进程<br>
+（3）利用系统调用函数，比如 kill 系统调用，一个进程通过 kill （）系统调用向另一个进程发送信号</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251105172022.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（4）利用软件产生信号，比如 alarm（）函数，当它的倒计时结束的时候就会向进程发送一个信号<br>
+（5）硬件异常产生信号，当出现硬件异常，它被 OS 检测并通知内核，内核向当前进程发送信号</p>
+<h3 id="sec-291">信号在什么时候会被处理？</h3>
+<p>一般信号并不都是及时响应的，对于不及时响应的信号：</p>
+<p>（1）对于 OS 的信号，需要在内核态进行处理，为了避免 CPU 变态，通常在一个进程进行外部中断，或者异常的返回的时候顺便在内核态进行处理</p>
+<p>（2）对于用户编写的信号，在用户态进行处理，通常在一个进程进行外部中断，或者异常的返回的时候先切换到用户态，PC 转到用户自定义的函数进行处理，处理完了再返回内核态恢复现场，然后再返回</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251105173007.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-306">线程</h2>
+<h3 id="sec-309">线程是什么？</h3>
+<p>（1）可以简单将线程看作进程中执行部分代码模块功能的一个动态执行过程</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925153953.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里没有画出地址空间的内核区</p>
+<h3 id="sec-321">进程与线程的区别是什么？</h3>
+<p>（1）进程是 OS 中资源分配的基本单位<br>
+（2）线程是 OS 中调度的基本单位</p>
+<p>OS 中的进程，即正在进行的程序，他可以看作是代码动态执行的整个过程，包含了静态的代码和各种资源的变化，<strong>它是 OS 分配资源的基本单位</strong>，是一个具有实际功能的程序在一个数据集合上的一次动态执行过程，<strong>同时也是 OS 资源分配的调度的独立单位</strong></p>
+<p>进程中的线程，线程是进程中的一个子执行任务，负责进程中的实际程序执行，一个进程至少含有一个线程，当然一般进程含有多个线程，可以简单认为线程是进程程序中部分功能代码模块的执行动态过程，<strong>线程也可以简略的认为是轻量级进程，线程是 OS 调度的基本单位</strong></p>
+<h3 id="sec-333">线程继承进程什么东西（线程共享进程什么东西）？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709083215.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-339">线程独有的东西有哪些？</h3>
+<p><strong>线程自己独有的资源如下：</strong></p>
+<p>（1）程序计数器，表示线程自己正在执行的代码地址</p>
+<p>（2）寄存器集合，包含线程当前自己的工作状态</p>
+<p>（3）栈，每个线程自己独享的，用于存放局部变量，以及函数调用的上下文信息；理论上每个线程都有自己的栈，但是实际上线程可以修改别人的栈，虽然这样会导致 bug 而不被运行，线程之间并没有什么保护措施，一个线程有自己独有的内核栈和用户栈，设置内核栈的原因就是防止别的线程来访问系统调用时保存在栈中的各种数据</p>
+<p>上述这些就是线程自己的上下文</p>
+<h3 id="sec-357">用户级线程是什么？有什么优缺点？</h3>
+<p>（1）OS 无法感知用户级线程，一个用户级线程阻塞，整个进程全部阻塞（多对一模型）<br>
+（2）用户级线程本身之间线程管理很方便，利用高级语言函数即可</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925155406.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里用户级线程其实就可以看作一整个进程的一个模块，或者一个对象，进程通过一个线程库方法来管理这些特殊的对象，其实这里完全可以将用户级线程理解成进程中不同的函数，由线程库负责这些函数的切换，那么很显然，当一个函数阻塞之后，整个进程都是阻塞的</p>
+<p>但是在下面的 OS 看来，这些东西都是进程的代码，没有区别</p>
+<h3 id="sec-372">内核级线程是什么？有什么优缺点？</h3>
+<p>（1）OS 可以识别内核级线程，因此当线程阻塞的时候可以调度别的线程执行，不会整个进程阻塞，并发能力强<br>
+（2）线程切换开销比较大</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925160126.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图的用户级线程其实是早期的东西，随着 OS 的发展，OS 其实可以做到感知一个用户级线程，方法就是将用户级线程绑定一个内核级线程，OS 通过内核线程来对用户线程进行感知，因此 OS 可以通过内核级线程对用户级线程进行调度，只是要调度的时候需要绑定一个内核级线程</p>
+<p>在运行的时候是直接运行用户级的线程，此时处于用户态，但是调度的时候需要 OS 绑定内核级线程进行调度，所以需要处理内核态，因此这种方式下线程的切换就比较复杂</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925160730.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-390">线程的多对一模型是什么？</h3>
+<p>（1）线程管理效率高<br>
+（2）并发能力差，OS 只能感知一整个进程</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925160820.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这种情况下内核实际上还是只感知到一个线程，OS 认为还是一个单线程的进程，所以进程的调度还是用户区完成；同样的，当一个线程使用内核服务的时候被阻塞，其他的线程都无法执行</p>
+<p>这种模型与纯用户级线程还是有点区别的，这种模式 OS 内核还是能感知到一个线程，而纯用户线程 OS 内核感知的就是一整个进程了</p>
+<h3 id="sec-405">线程的一对一模型是什么？</h3>
+<p>（1）并发能力强<br>
+（2）线程管理代价高</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925161245.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这种跟上面常见的内核级实现是一样的，事实上内核级线程只有对应上用户级线程才有意义</p>
+<h3 id="sec-417">多对多模型是什么？</h3>
+<p>（1）结合了一对一和多对一的优点</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925161608.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这种方式 OS 可以通过不同的内核级线程感知不同的用户级线程，所以这些对应不同内核级线程的用户级线程可以并行执行（多处理器）</p>
+<p>此外，这里还是用户空间的线程库来管理这些用户线程，那么切换开销就比较少，是由用户状态下进行的</p>
+<p>这种方式的缺点和多对一也类似，如果映射到同一个内核级线程的两个用户线程其中一个阻塞，那么这两个用户线程中另一个不需要 IO 的也被阻塞，当然另一个映射不同的内核线程的用户线程不会被阻塞</p>
+<h2 id="sec-435">处理机调度基本概念</h2>
+<h3 id="sec-438">处理机的高级调度是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911184024.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-444">处理机的低级调度是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911191236.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>一个作业通过高级调度调入内存，创建一个或者多个进程，这些进程处理就绪态，然后低级调度负责进程之间的调度，决定谁上 CPU 执行</p>
+<p>高级调度处理的对象是作业相对于进程来说更上层一些</p>
+<h3 id="sec-456">进程的上下文切换以及上下文是什么？</h3>
+<p>（1）上下文切换实际上就是进程切换的过程<br>
+（2）进程的上下文是指进程运行的所有状态信息</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716193801.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-465">闲逛进程是什么？</h3>
+<p>即 idle 进程，每个 CPU 都有一个 idle 进程，idle 进程的优先级是最低的，当 CPU 一个进程都没有的话，CPU 就会运行 idle 进程，idle 进程并不参与进程调度</p>
+<h3 id="sec-471">进程调度的时机有哪些？</h3>
+<h4 id="sec-474">主动放弃</h4>
+<p>（1）进程运行完毕，主动终止<br>
+（2）运行过程中发生异常<br>
+（3）发生时间请求阻塞（如进程主动进行系统调用访问 IO，发现 IO 没有输入数据，此时就会主动阻塞）</p>
+<p>阻塞是进程的主动操作</p>
+<h4 id="sec-483">被动放弃</h4>
+<p>（1）时间片用完<br>
+（2）被更高优先级的进程抢占<br>
+（3）更加紧急的事情需要处理（如外部中断）</p>
+<h4 id="sec-489">不可调度</h4>
+<p>（1）处理中断过程中，这与中断嵌套不一样，中断过程中不可调度，因为中断程序逻辑上属于系统，并不属于任意某个进程，没有调度的概念<br>
+（2）内核临界区不可调度<br>
+（3）原子操作中不可调度</p>
+<h3 id="sec-495">CPU 的利用率和系统吞吐量是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911195948.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-501">处理机调度算法</h2>
+<h3 id="sec-504">周转时间，平均周转时间，带权周转时间，平均带权周转时间是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911200032.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-510">等待时间，响应时间是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911200116.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong>一个进程在整个执行过程的等待时间 = 周转时间 - 运行时间</strong>，是进程从提交到执行完毕的过程中等待 CPU 的时间之和，而不是提交到开始执行的时间</p>
+<h3 id="sec-519">FCFS 调度算法是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911200313.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<strong>上图的等待时间计算有问题，应该是用周转时间 - 运行时间，而不是完成时间 - 运行时间</strong></p>
+<h3 id="sec-525">FCFS 的特点有哪些？对长短作业以及 CPU 或者 IO 繁忙的适应性？</h3>
+<p>（1）不利于短作业，因为短作业等待时间更长<br>
+（2）不利于 IO 繁忙型作业，因为 CPU 繁忙型会一直霸占 CPU，IO 繁忙型总是会被阻塞，就绪之后还是得等到别的任务完成了才会执行</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911200420.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>对长作业有利是指，长作业一旦占据了 CPU，那么就会一直霸占 CPU，一直到自己执行完毕</p>
+<p>对短作业不利是指，一旦短作业之前有长作业，那么短作业会耗费非常多的等待时间</p>
+<p>FCFS 有利于 CPU 繁忙型作业是因为，这种类型的作业一旦上了 CPU 执行，它就会一直霸占 CPU，几乎不会被打断</p>
+<p>不利于 IO 繁忙型进程是因为，这类进行会频繁发起 IO 请求，然后等待 IO 操作，它会一直被阻塞，他被阻塞之后 CPU 调度别的进程执行，那么它就会一直被阻塞，直到 IO 完成，但是哪怕 IO 完成，由于是 FCFS，此时 CPU 还在调度别的进程执行，所以它也得继续等待，并且由于它的 IO 次数很多，那么它就会总是等待</p>
+<h3 id="sec-546">CPU 繁忙型进程和 IO 繁忙型进程是指什么？</h3>
+<p>CPU 繁忙型：指这个作业会长时间占据 CPU，很少进行 IO 操作</p>
+<p>IO 繁忙型：这个作业（进程）在执行的时候会反复进行 IO 请求，它需要等到 IO 结束之后才能继续执行</p>
+<h3 id="sec-555">SJF 调度算法是指什么？（默认非抢占式）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911201524.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-561">SJF 调度算法的特点是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911201705.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>SJF 会导致长作业一直等待短作业执行完毕才能执行长作业，尤其是抢占式的 SJF，这可能会导致长作业被饿死（一直无法得到执行）</p>
+<p>（1）进程越短，优先级越高<br>
+（2）如果是抢占式的，进程剩余时间越短，优先级越高<br>
+（3）平均等待时间和周转时间最优<br>
+（4）短作业有利，长作业不利，可能导致长作业饥饿</p>
+<h3 id="sec-573">响应比是什么？高响应比优先调度算法是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911203800.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这个算法实际上是综合了 FCFS 和 SJF 这两个算法</p>
+<p>在一个作业执行完毕调度别的作业的时候，如果两个作业等待时间相同的话，根据响应比公式，就调度等待时间更短的算法上处理机；</p>
+<p>同时对于那些等待时间更长的作业，它的响应比更大，因此获得调度的可能也更大，它克服了 SJF 长作业可能造成饥饿的现象</p>
+<h3 id="sec-588">优先级调度算法是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911204111.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-594">时间片轮转调度算法是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911204148.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-600">多级队列调度算法是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911205042.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里队列之间也有优先级划分，它的调度特点是：</p>
+<p>（1）如果 CPU 调度某个队列，如果这个队列不为空则一直调度这个队列中的进程，一直到其为空<br>
+（2）如果这个队列为空，则 CPU 往下开始调度队列优先级更低一些的队列中的进程<br>
+（3）只有高优先级队列中的进程都被调度完了，此时才会考虑低优先级队列中的进程</p>
+<p>这样可以将长作业放在一个队列中，从而避免使用 SJF 算法导致饥饿；通过将不同性质的进程放在不同的队列中，在不同的队列中采用匹配适合当前这些进程性质的算法</p>
+<h3 id="sec-615">一个例题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251205172657.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>C 正确</p>
+<p>这里 Q 1 队列先调度谁都无所谓，反正谁先进入 Q 2 都得等待，然后 Q 1 调度完成之后在 Q 2 再统一开始调度</p>
+<h1 id="sec-627">理解</h1>
+<h3 id="sec-630">中级调度是指什么？</h3>
+<p>实际上就是将暂时不能运行的进程</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911191541.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-639">挂起和激活操作是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923165347.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在有的系统中挂起实际上就是将进程调出内存，激活再调入内存</p>
+<p>上述增加了挂起的阻塞和就绪状态的切换与没有引入挂起的时候是一样的，挂起或者激活不会改变进程的基本状态（阻塞或者就绪），这里本质上其实还是基本的三态转换</p>
+<h3 id="sec-651">引入了挂起激活，创建终止的进程状态切换是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250923170507.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-657">fork 函数和 exce 函数功能是什么？</h3>
+<h4 id="sec-660"><mark>fork () 函数</mark></h4>
+<p>子进程是由父进程创建的进程，父进程通过调用 <code>fork()</code> 函数来创建一个子进程，子进程和父进程是两个不同的进程，他们的 PID 和 PCB 都是不同的，也不会共享虚拟地址空间；但是子进程会继承父进程对 OS 的某些全局资源，比如文件，管道，设备的访问权</p>
+<p>当父进程调用 <code>fork()</code> 函数之后，子进程会得到一个父进程的虚拟地址空间的副本，即子进程会独立的有一个虚拟地址空间，但是这个地址空间的映射关系与父进程完全一样：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710200101.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+子进程和父进程此时拥有的代码段，数据段，堆，栈等完全相同</p>
+<p>而当子进程试图修改某个页的数据的时候，就会触发这个页的复制，生成这个页的副本，这样父子进程就不会共享同一个物理页了：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710200303.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这个称为写时复制技术，举一个例子如下：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-type">int</span> global = <span class="hljs-number">10</span>; <span class="hljs-comment">// 全局变量（数据段）</span>
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-type">int</span> local = <span class="hljs-number">20</span>; <span class="hljs-comment">// 局部变量（栈）</span>
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;[main start] PID=%d\n&quot;</span>, <span class="hljs-built_in">getpid</span>());
+    
+    <span class="hljs-type">pid_t</span> pid = fork();
+    
+    <span class="hljs-keyword">if</span> (pid == <span class="hljs-number">0</span>) {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;[child] global=%d local=%d\n&quot;</span>, global, local);
+        global = <span class="hljs-number">100</span>;
+        local = <span class="hljs-number">200</span>;
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;[child modified] global=%d local=%d\n&quot;</span>, global, local);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">sleep</span>(<span class="hljs-number">1</span>); <span class="hljs-comment">// 确保子进程先执行</span>
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;[parent] global=%d local=%d\n&quot;</span>, global, local);
+    }
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>这里父进程调用了 <code>fork()</code> 函数之后就创建了一个子进程，这时子进程独立拥有一个虚拟地址空间，这个地址空间与父进程的地址空间映射到完全相同的代码段，数据段，堆，栈；</p>
+<p>并且此时子进程和父进程同时从 fork () 之后的代码段开始执行，此时就是两个进程并发执行了，两者的执行顺序未知；不过代码段都是可读的，一般不会触发写时复制</p>
+<p>当子进程修改变量的时候，就会触发写时复制，变量会实际复制到实际的物理空间中，然后子进程的虚拟地址空间的映射会发生改变，这样此时父进程和子进程其实对应的是物理空间中实际的两个不同的变量</p>
+<p>运行结果如下所示：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">[main start] PID=<span class="hljs-number">1234</span>      <span class="hljs-comment">// 父进程执行</span>
+[child] global=<span class="hljs-number">10</span> local=<span class="hljs-number">20</span> <span class="hljs-comment">// 子进程初始值</span>
+[child modified] global=<span class="hljs-number">100</span> local=<span class="hljs-number">200</span>
+[parent] global=<span class="hljs-number">10</span> local=<span class="hljs-number">20</span> <span class="hljs-comment">// 父进程值未变</span>
+</code></pre>
+<h4 id="sec-695"><mark>exec () 函数</mark></h4>
+<p>这个函数一般用于子进程换掉原有的父进程程序，让子进程对应一个全新的程序执行，这个函数的功能就是换掉当前进程执行的程序</p>
+<p>具体来说，他会先摧毁原进程的虚拟地址空间的映射关系，然后将新的程序二进制装入内存，然后建立新的虚拟地址空间映射关系，此时进程就会对应全新的代码段，数据段，堆和栈</p>
+<p>然后设置 PC 从新程序的入口开始执行</p>
+<h3 id="sec-707">对多线程模型的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709171707.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong>多对一模型：</strong></p>
+<p>其实就是通常是用户进程程序的线程库来完成线程的创建调度，当这个线程需要进行 IO 的时候就被阻塞，分配一个内核栈给它，这个过程可以理解是用户级线程与内核级线程的对应起来过程</p>
+<p>但是这种模型你只有一个内核栈，只能对应一个线程，线程的切换还是上层用户进程实际的 Yield () 函数处理的，当这个线程阻塞的时候虽然对应了内核线程，具有了内核线程的结构特点，内核感知到了这个线程，但是内核无法切换到别的线程，因为没有别的线程栈，内核只能感知一个线程，那就不能切换了，线程阻塞之后还是无法执行 Yield() 函数了，无法进行线程切换，本质上还是整个进程代码都停掉了</p>
+<p><strong>一对一模型：</strong></p>
+<p>这个模型其实就是通常意义上的内核级线程了，不多说，它的切换需要反复从用户态进入内核态再进入用户态，时间花了很多，而且每个线程都需要内核栈和内核中的 TCB，这也会占用更多的资源</p>
+<p><strong>多对多模型：</strong></p>
+<p>这种模型不必深究，可以理解为线程通常在用户态执行的好好的，当需要 IO 的时候需要内核，然后内核给他分配一个内核栈，让其对应起来，当然它执行完了之后这个内核栈也可以用给其他的线程，这里不用深究具体实现细节；很可能是用户程序和内核各有 TCB 块，当阻塞切换的时候就分配一个内核栈对应起来切换到别的线程；别的切换的时候就直接用户程序切换（瞎猜的）</p>
+<p>这里其实只用知道用户级线程和内核级线程的含义和区别就行了</p>
+<h3 id="sec-737">进程的创建</h3>
+<p><mark>进程的创建</mark></p>
+<p>除了第一个进程，操作系统中的进程均是由另一个进程创建的，创建进程的进程和被创建的进程互为父进程和子进程。父进程是在自己的内核空间创建子进程的。</p>
+<p>在操作系统中，<strong>终端用户登录系统、作业调度、系统提供服务、用户程序的应用请求等都会引起进程的创建</strong>。操作系统创建一个新进程的过程如下：</p>
+<ol>
+<li><strong>为新进程分配唯一进程标识号（pid）</strong>，并申请空白PCB（进程控制块）。若PCB申请失败，则创建失败。</li>
+<li><strong>为进程分配运行所需资源</strong>（如内存、文件、I/O设备、CPU时间等）。资源可能来自操作系统或父进程。若资源不足（如内存），进程进入“创建态”，阻塞父进程等待资源。</li>
+<li><strong>初始化PCB</strong>：
+<ul>
+<li>初始化标志信息（如进程状态）。</li>
+<li>初始化处理机状态信息（如寄存器值）。</li>
+<li>初始化处理机控制信息（如调度参数）。</li>
+<li>设置进程优先级。</li>
+</ul>
+</li>
+<li><strong>将新进程加入就绪队列</strong>，等待被调度运行。</li>
+</ol>
+<p>这些创建过程是由一段原语执行的，称为创建原语，其特点就是执行的过程中不允许中断</p>
+<h3 id="sec-796">PCB 的结构和存放的内容</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712152525.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-802">虚拟地址空间</h3>
+<h3 id="sec-805">子进程与父进程 + fork () 函数与 exec () 函数</h3>
+<h3 id="sec-808">进程和作业的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710203402.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>而进程是一个程序的一次动态执行过程，你要完成一个作业，可能得多个进程进行承担才行</p>
+<h3 id="sec-817">原语的概念</h3>
+<p>原语其实就可以看作是一个程序段，它与普通的程序段的区别在于这些程序段必须要一口气全部执行完，不能够中途进行中断</p>
+<p>原语程序是属于内核的一部分</p>
+<h3 id="sec-826">进程的上下文切换</h3>
+<p>进程的上下文切换（Context Switching）是操作系统在多任务环境中实现进程调度的核心机制，指CPU从一个进程切换到另一个进程时，​<strong>保存当前进程的运行状态（上下文）并恢复新进程状态的过程</strong></p>
+<p>它涉及保存当前任务（<strong>例如：进程、线程</strong>）的状态（包括 CPU 寄存器、程序计数器、栈指针等），然后恢复下一个任务的状态，最终交给 CPU 执行。</p>
+<p>主要的步骤如下：</p>
+<p>1、<strong>保存当前任务</strong>的上下文：操作系统内核会保存当前任务的状态信息，包括 CPU 寄存器信息、程序计数器、堆栈指针等。这些信息通常会被保存在任务的进程控制块（PCB）中。</p>
+<p>2、<strong>根据调度策略</strong>选择下一个任务：操作系统内核会根据调度算法选择一个合适的任务来执行。</p>
+<p>3、<strong>恢复新任务的上下文，按照保存的信息</strong>：操作系统内核会加载新任务的状态信息，包括 CPU 寄存器、程序计数器等。这样，新任务就可以<strong>从上次中断的地方</strong>继续执行。</p>
+<p>4、<strong>运行新任务</strong>：操作系统内核会<strong>将 CPU 的控制权交给新任务</strong>，新任务开始执行</p>
+<p><mark>进程上下文的内容：</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716193801.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-856">进程的几种通信方式总结（简单了解，后续学完了 OS 进行详细总结）</h3>
+<p><mark>共享内存</mark></p>
+<p>共享内存机制，其实就是两个进程各拿出一块虚拟地址空间，它们映射到实际物理内存的相同位置处，这样一个进程写东西另一个进程可以立刻看到了，进程的通信效率非常高</p>
+<p>（1）低级的共享内存方式（共享数据结构）</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712161705.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（2）高级的共享内存方式（共享存储区）</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712161746.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>消息传递</mark></p>
+<p>（1）直接通信</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712155803.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712160507.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712160516.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（2）间接通信（信箱机制）</p>
+<p>通过在内核中建立一个信箱，每次进程的收发消息都通过信箱来完成进程间的通信</p>
+<p><mark>管道机制</mark></p>
+<p>管道是在内核去开辟一个缓冲区域，进程想要往管道这写或者读数据就必须通过系统调用才行，一个进程写数据，一个进程读数据，操作系统帮助维护这个缓冲文件</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712185636.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>套接字 Socket</mark></p>
+<p>这个一般用于不同的主机之间的通信，需要穿越各种协议，应该说是最慢的通信了</p>
+<p><mark>信号量</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712162550.png" alt="image.png300*300" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712162601.png" alt="image.png300*300" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-916">临界资源，临界区，内核临界区</h3>
+<p><strong>临界区（Critical Section</strong> 是操作系统中并发编程的核心概念，指<strong>进程中访问共享资源（如变量、文件、硬件设备等）的代码段</strong>。这段代码在执行时可能引发<strong>数据竞争（Data Race）</strong>，因此必须保证<strong>互斥访问</strong>——即同一时刻仅允许一个进程/线程进入临界区；</p>
+<p>临界资源也就是一个时间段中只允许一个进程使用的资源，各个进程需要互斥的访问临界资源，一个进程中访问临界资源的代码就是临界区</p>
+<p><strong>内核临界区（Kernel Critical Section）</strong> 是操作系统内核中访问共享数据结构或硬件资源的代码段，这些资源必须被<strong>严格互斥访问</strong>以防止竞态条件（Race Condition）。内核临界区的特殊性在于其执行环境的高敏感性和高风险性——任何同步失败都可能导致系统崩溃、数据损坏或安全漏洞</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712210111.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在进程内核临界区中不能进行进程的调度和切换，但是进程在普通的临界区中则可以进行进程的调度和切换；这是因为内核临界区可能访问的是调度队列这些内核临界资源，当其访问这个临界资源的时候就会上锁，因此别的触发调度的程序就无法访问就绪队列了，也就无法完成调度和进程切换了</p>
+<p>在内核临界区的程序绝对禁止休眠，这个是操作系统的一条铁律（目前先不管为什么，可能 408 不考）</p>
+<h3 id="sec-937">各种调度的含义功能</h3>
+<p><mark>中级调度</mark></p>
+<p>也就是内存调度，就是将暂时不能运行的进程调到外存去等待，此时这些进程的状态就称为挂起态，如果具备了运行的条件并且内存是空闲的，那么这个时候就由中级调度来决定将外存上的进程再次调入内存并修改状态为就绪态，并挂到就绪队列上等待</p>
+<p><mark>低级调度</mark></p>
+<p>也就是进程调度，它是根据某种算法来决定就绪队列上的哪个进程上处理机执行</p>
+<p><mark>高级调度</mark></p>
+<p>也就是作业调度，它决定将外存上处于后备队列的几个作业调入内存，创建进程，进程被创建之后首先处于创建态，然后系统会给其分配所需要的资源，然后修改其状态为就绪态</p>
+<h3 id="sec-958">各个进程调度算法对于 IO 繁忙和 CPU 繁忙的进程的适用性（暂定，待继续总结）</h3>
+<p>IO 繁忙进程：这个进程大部分时间都在进行 IO 操作<br>
+CPU 繁忙进程：这个进程大部分时间都在进行 CPU 操作</p>
+<p><mark>FCFS 算法</mark></p>
+<p>不利于 IO 繁忙型进程，因为这类进程会大部分时间进行 IO 操作，只要 IO 操作它就会阻塞，然后放弃 CPU，OS 就会调度别的进程顶掉它；而相反的对于同时到达的 CPU 繁忙型进程它会一直占用，直到自己执行完毕；IO 繁忙型每次 IO 操作会被反复顶掉，因此周转时间就会很长</p>
+<p><mark>短作业优先算法</mark></p>
+<p>更有利于 IO 密集型进程，因为短作业优先的定义就是 CPU 更短的更优先调度，IO 密集型作业相对 CPU 密集型进程天然就在 CPU 上执行更短，所以更优先调度</p>
+<p><mark>高响应比优先算法</mark></p>
+<p><mark>优先级调度算法</mark></p>
+<p>这个 IO 密集的进程优先级是更高的，因为这类进程可以先执行，然后阻塞，调度 CPU 密集的进程执行，这样 IO 和 CPU 就可以并行工作，省了很多时间</p>
+<p>并且 IO 密集的进程往往与用户体验相关，所以应该被赋予更高的优先级</p>
+<p>所以优先级调度算法更有利于 IO 密集进程</p>
+<p><mark>时间片轮转算法</mark></p>
+<p>这个调度算法对于任何进程都是一视同仁</p>
+<h3 id="sec-997">短作业优先的平均周转时间和平均等待时间最少的理解</h3>
+<p>因为对于一串进程，只有执行时间更短的放在前面执行，总体的等待时间才会更少（可以用反证法证明）</p>
+<p>这样平均周转时间是加上了等待时间的总执行时间除以进程个数，那当然就是最少的</p>
+<p>同理平均等待时间也是最少的</p>
+<p>当然抢占式的 SJF 的平均等待时间和平均周转时间更少</p>
+<h3 id="sec-1012">对用户临界资源不能同时访问的理解</h3>
+<p>对于单个 CPU 来说，这里的不能同时访问的意思其实就是并发访问，指的就是不能在一段时间中多个进程同时访问临界资源</p>
+<p>具体来说，如果一个进程正在访问用户临界资源，它是可以并发的，即可以被阻塞暂停然后 CPU调度别的进程去 CPU 执行，但是这个别的进程不能访问这个临界资源，即对于单 CPU 的不能在一段时间内同时访问临界资源</p>
+<p>这个才是不能同时访问临界资源的意思，而不是两个进程在同一时刻并行访问临界资源（当然多核 CPU 也得做到并行的进程不能同时访问临界资源）</p>
+<h2 id="sec-1024">题目</h2>
+<h3 id="sec-1027">1 进程映像的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710155925.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>进程映像，也就是进程实体，他相对于进程的动态而言是静态的，它包括程序段，相关数据段，PCB 三部分组成，京城实体是进程某一时刻的静态状态</p>
+<p>进程可以看作是进程实体运行过程</p>
+<h3 id="sec-1039">2 进程和进程映像的理解 + 进程是系统资源和调度的独立单元</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710160227.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+进程本来就不是程序，程序就是静态的，错误</p>
+<p>B：<br>
+这个是进程实体的定义，这里说的是可以描述，所以当然正确</p>
+<p>C：<br>
+这里线程可以看成是一种轻量级进程，也没错其实，因为线程共享进程的资源，并且拥有自己的栈和 TCB 啥的，当进程只有一个线程的时候这个线程其实就可以看作是进程</p>
+<p>D：</p>
+<p>这个是对的，进程是系统资源和调度的一个独立单元，系统资源和调度的基本单元是线程</p>
+<h3 id="sec-1060">3 对进程并发执行的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710161105.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+连续是错的，进程可以被阻塞，不是连续执行的</p>
+<p>B：<br>
+并不是，只有进行合理的进程管控之后才能得到相同的结果，比如下面两个进程：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710162031.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A 进程的 123 执行序列和 B 的 456 执行序列，如果 x 的初始值是 2</p>
+<p>当执行顺序是 123456 的时候 x 的结果是 2</p>
+<p>当执行顺序是 12  45 34 的时候，x 的结果是 1，原因是 A 进程还没有来得及修改 x 的值，就被 B 进程打断，用原来的 x 的值 2 去给 R 2 赋值了，R 2 的结果是 1，所以最后 R 2 赋值给 x 结果也是 1</p>
+<p>C：<br>
+这里的执行速度跟 B 其实是一个意思，A 执行的越快，那 A 的指令序列就越容易执行完毕；如果没有进程同步的话，A 和 B 的不同执行速度会导致 A，B 最后给变量赋值的结果顺序不同，当然可能改变操作结果</p>
+<p>D：<br>
+这个的确是正确的，如果对进程不采用一些控制手段的话就是不可预测的</p>
+<h3 id="sec-1090">4 对 CPU 空闲的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710181639.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+是的，通过调度来决定谁上 CPU 运行</p>
+<p>B：<br>
+不是，进程的优先级是可以修改的，否则可能会某个进程占据 CPU 之后一直占据的现象</p>
+<p>C：<br>
+并不是，很可能所有的进程都再等待 IO 被阻塞了，此时 CPU 可能处于空闲状态</p>
+<p>D：<br>
+阻塞是申请除了 CPU 之外的别的资源</p>
+<h3 id="sec-1108">5 并发进程执行的相对速度的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710182115.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里并发进程执行的相对速度是指他们运行的速度，也就是他们从开始运行，别切断，然后再运行，再被切换，再继续运行，然后这样断断续续一直到自己执行结束的这段时间的快慢</p>
+<p>它如果能一直占据 CPU 执行下去，那它运行到结束所花的时间就会短，否则被反复打断的话运行所花的时间就会长</p>
+<p>因此这个显然是要收到调度策略的影响的</p>
+<h3 id="sec-1123">6 进程创建的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710192140.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>进程创建原语，其实就是进程的创建过程</p>
+<p>A：<br>
+根据上文，显然正确</p>
+<p>B：<br>
+显然正确</p>
+<p>C：<br>
+进程创建之后会进入就绪队列，不一定会被分配 CPU</p>
+<p>D：<br>
+正确</p>
+<h3 id="sec-1144">7 exec () 系统调用的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710192242.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+正确，通过 exec () 可以直接替换掉进程的代码段，从而执行多个程序</p>
+<p>B：<br>
+错误，你替换了代码段也是一个动态的过程，当下一个时刻一个进程当然只能执行一个程序</p>
+<p>C：<br>
+显然正确</p>
+<p>D：<br>
+父进程创建子进程，当然可以产生多个进程</p>
+<h3 id="sec-1162">8 产生新进程的几个场景（直接记住）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710203012.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+I:<br>
+用户登录，这个就必须得创建一个线程来响应用户的请求</p>
+<p>II：<br>
+高级调度，其实就是作业调度，作业调度当然要产生新的进程来承担作业执行了</p>
+<p>III:<br>
+很显然，比如用户点击一个图标，那就得创建一个进程来处理用户的需求</p>
+<p>IV:<br>
+很显然，不多说</p>
+<h3 id="sec-1177">9 输入输出进程</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710203802.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>&quot;输入输出进程&quot;（选项 B）特指<strong>操作系统内部负责管理 I/O 设备的系统级进程</strong>，具体到打印机场景，它指的是<strong>打印守护进程</strong>（如 Linux 中的 <code>cupsd</code>）。这类进程的核心职责是协调所有打印请求。</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250710211534.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1189">10 子进程和父进程的一些概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250711151847.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然错，子进程和父进程是两个不同的进程，不能拥有相同的 PID</p>
+<p>B:<br>
+正确</p>
+<p>C：<br>
+并不是，有的 OS 撤销父进程的话这个父进程底下的所有子进程也会撤销，但是常见的 OS 比如 Windows 和 UNIX 都不是这种机制</p>
+<p>这个选项反了，而且反过来也不一定，要看具体的 OS</p>
+<p>D：<br>
+不是，两者并发执行，顺序未知</p>
+<h3 id="sec-1210">11 进程地址空间存放的内容</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712150834.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I：<br>
+这个放在数据段中（数据段和代码段统称为正文段）</p>
+<p>II:<br>
+局部变量放在栈中</p>
+<p>III:<br>
+这个其实算函数调用中东西，其实也算局部变量，放在栈中</p>
+<p>IV：<br>
+放在堆中</p>
+<p>V:<br>
+常量其实就是静态变量，存放在数据段中</p>
+<p>VI：<br>
+这个是放在 PCB 中，所有进程的 PCB 都处于内核中</p>
+<h3 id="sec-1234">12 PCB 的具体内容信息</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712152559.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A:<br>
+这个不多说，一定存放在 PCB 中，用于唯一区分进程</p>
+<p>B：<br>
+这个是存放在 PCB 的处理机相关的内容中，用于切换进程的时候保存上下文等信息</p>
+<p>C：<br>
+堆栈指针，这个是存放在 PCB 的资源分配清单中的，同样会用于切换进程的时候保存当前进程的信息</p>
+<p>D：<br>
+这个是放在进程虚拟地址空间的数据段中的，不是在 PCB 中</p>
+<h3 id="sec-1252">13 原语概念的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712153102.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然正确</p>
+<p>B：<br>
+显然正确，这个就是原语的定义</p>
+<p>C：<br>
+原语本质上也是一块程序，它当然在内存中，而且原语是给 OS 提供服务操作的，用于管理进程等东西，原语其实就是 OS 内核程序的一部分</p>
+<p>D：<br>
+原语确实是原子操作，但不是执行快，而是不能被中断，原语不一定执行快</p>
+<h3 id="sec-1270">14 几种进程通信总结</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712155305.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>显然是 C</p>
+<h3 id="sec-1279">15 信箱通信的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712160606.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>信箱通信时消息转递中的间接通信方式</p>
+<p>A：<br>
+显然不是</p>
+<p>B：<br>
+显然正确</p>
+<p>C：<br>
+低级通信是共享存储中基于数据结构的共享方式通信，进程双方在 OS 开辟的一块内存中进行通信，但是这块内存会被组织成一个具体的数据结构，比如数组，或者一个环形缓冲队列等，进程双方必须严格遵守这块内存数据结构的访问方式</p>
+<p>高级通信时共享存储中基于存储区的共享通信方式，进程双方获得的是一块完整的存储区，OS 负责两者的虚拟地址空间与这个物理存储区的映射其他的访问方式啥的由进程自己决定</p>
+<p>D：</p>
+<p>信箱通信不是信号量通信，信号量通信的总结见上文</p>
+<h3 id="sec-1306">16 关于信号通信的一些理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712162832.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+正确</p>
+<p>B：<br>
+正确</p>
+<p>C：<br>
+正确</p>
+<p>D：</p>
+<p>并不是每一种信号都可以由用户自定义处理函数，有一些信号用户可以自定义信号处理函数，有一些只有由 OS 执行默认处理程序</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712163231.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A:<br>
+正确</p>
+<p>B：</p>
+<p>错误，只有当从内核态转为用户态的时候才会检查待处理的信号</p>
+<p>C：<br>
+这里的忽略的意思是 OS 不去处理这个信号，也就是 OS 哪怕检测到这个信号也不去处理，这个也是正确的</p>
+<p>D：<br>
+正确，但是用户不是注册全部信号的处理函数，用户只能注册一部分信号处理函数</p>
+<h3 id="sec-1345">17 进程中的线程进行通信的方式处理</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712164546.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+正确，线程有自己的用户栈和内核栈，切换线程的时候必须保存自己的现场到栈中</p>
+<p>B：<br>
+错误，线程共享进程的地址空间</p>
+<p>C：<br>
+显然错误</p>
+<p>D：<br>
+线程共享进程的地址空间，那么也就共享进程的数据段那么可以直接就是一块全局变量由两个线程共享，只要两者可以进行信息交换，这个也可以叫做通信，当然不需要系统调用</p>
+<h3 id="sec-1363">18 关于线程引入减少时空开销的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712170237.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>C：</p>
+<p>注意程序是可以打包成不同的进程的</p>
+<p>这里的时空开销减少是针对线程负责的功能而言的；在没有线程的时候，将这些程序功能全部用进程来实现，那程序执行的过程可能断断续续的，切换的时候还要进行进程占据的资源切换；因此程序执行的过程切换耗时增加，所以显然时间就变得更长了；但是如果将程序负责的功能用线程实现放在一个进程中，那么切换就只用切换线程就可以了，线程的切换只用切换栈即可，显然速度更快，程序执行更快</p>
+<p>此外，如果将各个功能都放到进程中实现，那么各个进程 OS 需要分配独立的进程资源，如果功能整合成线程放到一个进程中那么 OS 只用分配一些独立的栈空间就行了，显然程序的执行过程空间开销也变少了</p>
+<p>ABD 都很显然</p>
+<h3 id="sec-1384">19 线程的优点分析</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712171918.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然</p>
+<p>B：<br>
+节约系统资源，这个跟上一题一样，同样是针对将程序各个功能独立成进程而言的；将各个功能整合成线程放到一个进程中当然更节约系统资源</p>
+<p>C：<br>
+傻逼题目，这里应该还是相对于将各个功能模块独立成进程的通信而言的，当把这些进程负责的功能整合成线程塞到一个进程中的时候，线程之间的通信可以直接通过共享的全局变量进行，这里显然是更方便了，你进程间通信最快的也得 OS 分配一块共享内存，显然比线程通信更麻烦一些</p>
+<p>D：</p>
+<p>这里还是相对把功能独立成进程而言的，如果各个功能模块是各个进程，那么由于进程之间互相独立，他们有各自独立的负责资源，那么一个进程的崩溃是不会影响其他的进程的</p>
+<p>但如果都用线程实现塞到一个进程中，那么实际上是增加了程序的危险的，因为线程共享了进程的资源，当一个线程瞎吉儿乱改资源或者崩溃的时候，实际上会影响到其他的线程的</p>
+<h3 id="sec-1408">20 对进程通信的管道方式进一步的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712181327.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的两个合作进程本质上其实还是两个进程</p>
+<p>A：<br>
+这里的文件系统其实就是管道，因为管道本质就是 OS 管理的一个文件，当然也可以说是一个内核缓冲区，这里不冲突，因为在 UNIX 系统中就是一切皆是文件的</p>
+<p>B：<br>
+显然，可以用于两个进程通信</p>
+<p>C：<br>
+全局变量在某个进程占据的数据段中，这是属于每个进程独有的资源，显然不能用于互相通信</p>
+<p>D：<br>
+显然</p>
+<h3 id="sec-1429">21 进程被唤醒的概念以及后续操作</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712181731.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>进程的唤醒其实就是这个处于阻塞态的进程等待的资源被释放，这个进程重新处于了就绪态</p>
+<p>A：<br>
+正确</p>
+<p>B：<br>
+错误，其优先级不会改变</p>
+<p>C：<br>
+错误，重新插入到就绪队列，肯定插入到队尾而不是队首</p>
+<p>D<br>
+错误，应该是变成就绪态</p>
+<h3 id="sec-1450">22 内核级线程与用户级线程的区别</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712182813.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然错，切换内核级线程不仅需要反复切换到内核态与用户态，还得切换内核栈和用户栈</p>
+<p>B：<br>
+正确，但是这里不是很严谨，其实内核级线程被阻塞的时候 CPU 调度的是任意一个线程，可能不是同一个进程下的线程</p>
+<p>C：<br>
+这里的程序实体其实就是指内核级线程负责的模块的具体指令代码程序；一般而言内核级线程的实际程序其实还是运行在用户态的，只是如果有那种系统调用的存在，这个线程延申出来的处理中断的操控 IO 的内核程序确实运行在内核态，这个时候这些中断处理程序也可以看作是内核线程程序的一部分，这里说的是可以，所以当然就是正确的</p>
+<p>D：<br>
+显然正确</p>
+<h3 id="sec-1468">23 用户级线程的特点理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712183650.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然正确</p>
+<p>B：<br>
+显然正确，用户级线程的切换就是有用户代码本身负责的（其实是线程库，不过也属于用户程序）</p>
+<p>C：<br>
+根据上文理解中用户级线程的切换方式，他们的管理完全是用户程序本身，是用户程序模拟了整个切换过程，既然用户级线程的存在和管理本身就是程序，那当然跟在哪个操作系统无关了，只要这个 OS 可以运行这个程序实现这个程序功能就行，那这个程序就拥有了用户级线程的实现和管理能力，这个 OS 也就有了用户级线程了</p>
+<h3 id="sec-1483">24 产生新进程的几个场景（直接记住）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712184638.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+显然，这里不说了</p>
+<p>II：<br>
+设备分配是属于给现有的进程分配它所需要的资源，这里不涉及新进程的创建</p>
+<p>III:<br>
+显然</p>
+<h3 id="sec-1498">25 管道通信的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712185001.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+管道是一个特殊的共享文件，它只支持单向的数据传送，如果想要实现双向的数据传送只能实现两个管道</p>
+<p>B：</p>
+<p>管道本质是一个内核缓冲区，所以既然是内核的东西，当然就在内核的运行的地方：内存，与外存是没有关系的</p>
+<p>C：<br>
+当然，如果管道是满的，那当然就不能写了，于是写操作就被阻塞；同理，当管道是空的，那读操作也被阻塞</p>
+<p>D：<br>
+按照 408 的答案来说，可以有多个进程读，但是只能有一个进程写，不过还是得做好同步互斥机制才行</p>
+<h3 id="sec-1519">26 P 操作与进程状态的改变</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712190559.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：</p>
+<p>在操作系统中，<strong>P操作</strong>（也称为 <strong>wait操作</strong> 或 <strong>down操作</strong>）是信号量（Semaphore）机制中的核心原语，用于<strong>进程同步</strong>和<strong>互斥访问共享资源</strong>。它的本质是一个<strong>原子操作</strong>（执行过程不可中断），用于控制进程对临界资源的访问权限</p>
+<p>他的功能是：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712190755.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>P 操作其实就是申请资源，所以当然可能会被阻塞，不是变成就绪态</p>
+<p>B：<br>
+这个也是申请资源，所以还是可能被阻塞，而不是变成就绪态</p>
+<p>C:<br>
+同上</p>
+<p>D：<br>
+这个是进程让出 CPU 资源，确实是变成就绪态</p>
+<h3 id="sec-1546">27 临界区与进程唤醒</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712191026.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>进程唤醒，其实就是从阻塞态到就绪态，即进程申请的资源有了</p>
+<p>I：<br>
+IO 结束，说明 IO 操作结束，得到了结果</p>
+<p>II:<br>
+<strong>临界区（Critical Section）</strong> 是操作系统中并发编程的核心概念，指<strong>进程中访问共享资源（如变量、文件、硬件设备等）的代码段</strong>。这段代码在执行时可能引发<strong>数据竞争（Data Race）</strong>，因此必须保证<strong>互斥访问</strong>——即同一时刻仅允许一个进程/线程进入临界区；临界资源也就是一个时间段中只允许一个进程使用的资源，各个进程需要互斥的访问临界资源，一个进程中访问临界资源的代码就是临界区</p>
+<p>其实就是一些 CPU 之外的资源</p>
+<p>当某个进程退出临界区了之后资源释放，当然可能将进程唤醒</p>
+<p>III：<br>
+当前进程的时间片用完，只会导致当前进程变成就绪态，以及一个就绪态的进程变成运行态，不会是从阻塞态到就绪态的唤醒，所以 III 不行</p>
+<p>因此这道题目就是 C</p>
+<h3 id="sec-1573">28 进程转换与 CPU 状态切换（等看完 HIT 的 OS 课程详细总结 OS 切换进程状态的具体过程）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712191648.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+阻塞进程是由操作系统将进程 PCB 插入到阻塞队列的，这个是阻塞的过程是由 OS 完成的，开始执行以及完成的时候仍然处于内核态，OS 下一步就该去进行进程调度了，而不是返回到用户态，并且哪怕没有可以调度的线程了，OS 也可能停留在内核态继续执行这个被阻塞进程的一些 IO 中断处理，也不一定返回到用户态</p>
+<p>B：<br>
+执行 CPU 调度仍然是内核的代码，仍然是属于内核态，调度完进程还没有中断返回呢，所以仍然在内核态，并且这里说的是执行 CPU 调度，调度的还有可能是调度内核的线程执行呢，不一定返回到用户态</p>
+<p>C：<br>
+唤醒进程也是 OS 完成的，执行唤醒进程的时候仍然在内核态，OS 完成将进程的 PCB 块塞到就绪队列中，但是下一步 CPU 也不一定会回到用户态；因为下一个就绪的进程可能是内核的进程；并且哪怕下一个就绪队列头部的进程不是内核进程， OS 完成唤醒之后也不一定立刻就回到了用户态，OS 可能还需要跳转执行一些别的内核函数呢</p>
+<p>D：<br>
+没错，系统调用执行完毕的时候会执行一条 iret 指令，这个指令会弹出保护的线程程序断点，返回到用户程序，即从内核态返回到用户态</p>
+<h3 id="sec-1591">29 OS 终止进程完成的操作</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712192749.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+如果一个进程本身就没有子进程，所以你终止的时候也不一定终止子进程；而且，对于 UNIX 和 WINDOWs 系统，他们回收了父进程只要子进程也不一定会被回收</p>
+<p>BD：<br>
+终止进程一定会回收进程占用的资源，这些资源就包括设备或者内存，这里的 B 选项默认了是一个占用设备的进程的</p>
+<p>C：<br>
+PCB，显然会被回收</p>
+<h3 id="sec-1606">30 父子线程的关系 + 线程间共享的资源理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712194742.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>线程这里其实就可以直接类比进程，子线程会继承父线程一些资源</p>
+<p>I:<br>
+父子线程还是同属于一个进程的，他们每一个都共享进程的地址空间，这个正确，他们可以访问进程的地址空间的每个地址</p>
+<p>II：<br>
+父子线程其实本质还是两个不同的线程，每个线程都有自己的用户栈，所以并不共享；但是虽然不共享，一个进程的不同线程其实还是可以随意访问别的线程的栈的，这里的保护不像不同的进程那样严格；不过虽然可以访问别的线程的栈，这里还是不能用共享这个词，因为一般一个线程访问别的线程然后更改内容会导致 bug 存在，这一般按规定不是可以运行的操作，只是实际可以存在，他跟共享的含义差别很大，共享是每人都可以拥有并且可以独自修改，就像共享一个全局变量一样，线程的栈在理论上还是不允许别的栈随意修改的</p>
+<p>III:<br>
+文件描述符 fd 是进行 open () 系统调用的时候返回的结果，每个打开的文件在系统中都会有这样一个唯一的文件描述符</p>
+<p>父子线程其实还是同属于一个进程的线程，他们还是会共享进程的一些全局资源，比如文件，设备等</p>
+<h3 id="sec-1627">31 调度算法需要考虑的问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716190125.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+公平性，其实就是指调度算法需要让每个进程都要得到 CPU，不至于有进程处于饥饿状态</p>
+<p>II：<br>
+资源利用率，资源利用率其实是 OS 的目标之一，这个也应该是调度算法应该考虑的东西，它需要充分考虑到资源利用，不至于让某个资源空闲太多时间</p>
+<p>III:</p>
+<p>互斥性，也就是要防止多个进程同时访问某个临界资源，这个跟调度实际上是没有什么关系的，互斥有自己的机制来保证互斥性，调度算法不需要考虑不同的进程访问同一个临界资源的问题</p>
+<p>IV:<br>
+当然</p>
+<h3 id="sec-1648">32 对时间片调度算法的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716191648.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+正确，这个就是分时操作系统的功能，利用时间片调度算法来实现</p>
+<p>B：<br>
+时间片轮转算法事实上在乎的是相应和公平，保证每个进程都可以使用 CPU，而不是让系统变得更高效，并且由于 CPU 被划分了一个个时间片，反而导致系统的切换代价更高了</p>
+<p>C：<br>
+显然不对</p>
+<p>D：<br>
+显然不对</p>
+<h3 id="sec-1666">33 对进程调度的理解 + 处于临界区的进程调度问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716192543.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+正确，虽然时间片轮转算法更能体现轮流，但是这也是进程调度算法的一种，也能体现进程调度的目标</p>
+<p>B：<br>
+显然</p>
+<p>C：</p>
+<p>正确，上下文切换机制就是进程调度的核心实现机制</p>
+<p>D：<br>
+进程处于临界区，说明进程在使用临界区代码访问临界资源，临界资源不能被共享，但是不意味着进程处于临界区不能被打断调度别的进程，可以被调度</p>
+<p>不过，如果进程处于核心临界区就不能被打断调度了，因为处于核心临界区的进程访问的是内核资源，它可能就在访问进程的就绪队列，那它被打断调度别的进程，它还在临界区呢，临界资源还处于上锁状态呢，你进程调度需要访问就绪队列就不可能，无法完成调度，所以处于核心临界区的进程就无法被打断进行别的进程调度</p>
+<h3 id="sec-1690">34 关于线程切换的过程理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716194205.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+你线程负责的是一个进程不同功能模块，当然要切换不同的代码了，所以 PC 是一定要更新的</p>
+<p>II:<br>
+线程切换会进行用户栈和核心栈（内核级线程）当然要更新基址寄存器的值；另外，线程自己对独有自己的上下文，包括：<br>
+（1）程序计数器，表示线程自己正在执行的代码地址</p>
+<p>（2）寄存器集合，包含线程当前自己的工作状态</p>
+<p>（3）栈，每个线程自己独享的，用于存放局部变量，以及函数调用的上下文信息；</p>
+<p>所以当然会切换基址寄存器的值</p>
+<p>III:<br>
+页表基址寄存器就是记录进程对应的页表的在内存中的首地址；这些线程共享进程的这个资源，所以不需要更新页表基址寄存器的值</p>
+<p>IV:<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709083215.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+当然不更新打开文件表</p>
+<p><strong>总的来说线程切换就是切换线程自己独自占有的资源，记住这个就行了</strong></p>
+<h3 id="sec-1720">35 对单道运行的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716202944.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>单道就是必须等到前一个进程执行完毕下一个进程才上场执行<br>
+这题不多说了</p>
+<h3 id="sec-1729">36 SJF 调度算法的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716203224.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>只有 SJF 可以让一串进程的总的等待时间最少（当然抢占式的更少），这里由于是单道运行的，所以不能抢占必须等到前面的进程执行完毕才行</p>
+<p>所以从小到大排队执行是最短的了</p>
+<h3 id="sec-1741">37 动态优先级的变化以及优先级的设置</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716204149.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+IO 型的优先级应该更高，这个是一个结论，具体看上文的 IO 密集和 CPU 密集总结</p>
+<p>B：<br>
+系统进程的优先级显然更高</p>
+<p>C：<br>
+等的时间越长，优先级应该更高，防止进程饿死</p>
+<p>D：<br>
+正确，这是一种动态优先级的调整策略，防止其长时间占据 CPU, 注意哪怕这里是非抢占式的优先级调度这里随着占用 CPU 的时间变长降低其优先级也是有意义的，因为虽然新的进程到达的时候不会强行让他停下来，但是这个进程本身会遇到 IO 阻塞，这个时候它进入了就绪队列，它的优先级变低，这就会对其造成影响，让这种一直占用 CPU 的进程在未来更少被调度</p>
+<h3 id="sec-1759">38 关于进程调度的一些计算方法规定</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716205656.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在进行这种计算题的时候最好是按照下面的格式进行<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716210501.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>总体是一个时间轴，然后标出所有的关键时间结点，下方箭头表示进程到达，上方箭头表示进程执行完毕，这样可以很清楚的看到每个进程的周转时间了，当然，可以根据不同的进程加上一个辅助的信息，比如剩余执行时间等</p>
+<p>P 1: 4<br>
+P 2: 1<br>
+P 3: 8<br>
+P 4: 12<br>
+P 5: 2</p>
+<p>所以这道题很轻易得到总的周转时间就是 27 了</p>
+<h3 id="sec-1777">39 多级反馈队列调度算法的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716210817.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>C：<br>
+这里的系统开销，你首先反馈队列调度本来就需要管理和监控多个队列的进程，这个本来开销就比较大，并且还要让进程在各个队列迁移，以及每个队列的时间片轮转，这些系统开销都不低</p>
+<p>B：<br>
+响应快确实是有点，因为无论是什么进程都会在高优先级队列中使用一个短时间片，没运行完再去下一个队列运行，这样的确每个队列都可以至少得到一个快速的时间片响应</p>
+<p>A：<br>
+这里应该说的是各种类型不同的进程占据的资源都可以得到有效利用，因为无论是短进程还是长进程都可以被兼顾得到很好的响应，所以他们占据的一些资源也可以很好的利用，不像 SJF 一样只能运行短进程，而长进程占据的资源被一直占用不释放，这里当个结论记住就好</p>
+<p>D：<br>
+这里的并发度高是针对不同类型的进程而言的，在一段时间内可以处理不同的进程，无论是短进程还是长进程还是 IO 密集进程还是 CPU 密集进程在一段时间内都可能被处理（只要在不同的队列中即可）</p>
+<h3 id="sec-1795">40 各个调度算法的系统开销分析</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716212507.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的系统开销包括，维护调度算法的数据结果，比如维护多个反馈队列等；计算优先级响应比等信息进行调度判断；以及更换进程带来的上下文切换开销等等</p>
+<p>高响应比：需要实时更新每个进程的等待时间，然后计算每个进程的响应比，进行调度判断，这个开销不算小</p>
+<p>多级反馈队列：需要维护多个反馈队列，需要更改维护每个进行的优先级，需要将进程进行队列调整，如果每个反馈队列是时间片轮转的话还有切换开销，多级反馈队列调度开销是比较大的</p>
+<p>时间片轮转：需要频繁上下文切换，这个开销也不少</p>
+<p>你显然 C 开销是最小的，它不用什么维护数据队列（多级反馈），也不用计算什么东西进行调度判断（高响应比，多级反馈队列），也不用频繁切换进程（时间片轮转）</p>
+<h3 id="sec-1816">41 动态优先级的调整时机</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250717181028.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+在时间片不一定只出现在时间片轮转算法中，还有多级反馈队列调度算法</p>
+<p>运行完了一个时间片之后就会降低这个进程的优先级，这个就是多级反馈队列调度算法的思想</p>
+<p>B：<br>
+降低一个处于等待 CPU 队列上的进程的优先级是一个没有理由的事情，它也没有长时间占用 CPU，如果降低它的优先级就非常不公平，很有可能让其处于饥饿状态，因为本来就没轮到它使用 CPU，你又去降低优先级，那岂不是更难得到 CPU 了；</p>
+<p>反而对于一个从运行态转为就绪态可以降低它的优先级，因为它刚刚已经运行了一段时间的 CPU，下次就应该降低它再次获得 CPU 的概率了，如 A</p>
+<p>C：<br>
+此时应该提升它的优先级，而不是降低</p>
+<p>D：<br>
+与 B 一样，这个进程按照规则本来就应该要执行了，突然降低优先级也是毫无道理的，它也不是那种持续使用了 CPU 的进程，如果此时来了一个更高优先级的进程它就会被踢出 CPU 运行</p>
+<h3 id="sec-1840">42 对各个进程满足短作业优先的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250717182618.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+这个跟短作业优先没有什么联系</p>
+<p>B：<br>
+响应比的计算公式是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">执行时间</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">等待时间</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord cjk_fallback">执行时间</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">执行时间</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">等待时间</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></div><p>对于相同等待时间的两个进程，显然是执行时间更短的响应比更高，所以就考虑了短作业优先的思想</p>
+<p>同时高响应比优先如果一个进程等该时间过长，那么它的响应比也会更高，所以也不会出现饥饿现象</p>
+<p>C：<br>
+这个显然没有考虑到短作业优先思想，时间片轮转就是非常公平的算法</p>
+<p>D：<br>
+这个会产生饥饿</p>
+<h3 id="sec-1865">43 处理机调度时机的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250717184007.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+当然，此时应该调度新的进程到 CPU 运行</p>
+<p>B：<br>
+调度其实就是根据某个算法调度进程到 CPU 上运行，如果此时就绪队列中就这一个刚刚创建好了的进程，那么此时的调度算法就非常简单了，直接调度这个进程到 CPU 上执行，这个当然算调度</p>
+<p>C：<br>
+当然可以调度，可以调度的别的进程，只是不能访问这个临界资源，所以 C 错</p>
+<p>D：<br>
+只要能举一个例子即可</p>
+<p>系统调用返回当然会执行一个 schedule () 函数进行调度，比如控制 IO 打印的系统调用函数：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250701190601.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这个系统调用例程在启动了 IO 之后，然后利用 schedule () 函数阻塞当前进程，调度别的进程返回用户态执行进程 P 2，接着 CPU 和 IO 并行工作</p>
+<p>这里系统调用返回的时候当然要调度别的进程了</p>
+<p>当 IO 完成的时候 IO 自己会发外部中断，跟这里的进程 P 1 通过 INT 0 x 80 自己触发的系统调用无关</p>
+<h3 id="sec-1898">44 对多级反馈队列调度算法的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250717195051.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I, II, III 不多说了</p>
+<p>IV，这里的迁移条件不一定是使用时间片使用完了就直接降低优先级，也可能是如果一个进程等待的时间久了可以提升它到更高优先级的队列执行，迁移条件可以很复杂</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html"><span class="pager__label">← 上一篇</span><span class="pager__title">1 计算机系统概述</span></a>
+    <a class="pager__item pager__item--next" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html"><span class="pager__label">下一篇 →</span><span class="pager__title">3 内存管理</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h2" href="#sec-3">进程与进程的虚拟地址空间</a><a class="margin__link margin__link--h3" href="#sec-6">进程是什么？</a><a class="margin__link margin__link--h3" href="#sec-12">进程的虚拟地址空间是什么？</a><a class="margin__link margin__link--h3" href="#sec-30">进程的内存映像中有什么东西？</a><a class="margin__link margin__link--h2" href="#sec-81">进程中的数据结构</a><a class="margin__link margin__link--h3" href="#sec-84">PCB 中有哪些信息？</a><a class="margin__link margin__link--h3" href="#sec-93">PCB 中的处理机状态是指什么？</a><a class="margin__link margin__link--h3" href="#sec-99">PCB 中的进程调度信息是什么？</a><a class="margin__link margin__link--h3" href="#sec-105">PCB 的组织方式有哪些？</a><a class="margin__link margin__link--h3" href="#sec-111">PCB 的线性组织方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-117">PCB 的链接组织方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-123">PCB 的索引组织方式是什么？</a><a class="margin__link margin__link--h2" href="#sec-129">进程的控制和状态</a><a class="margin__link margin__link--h3" href="#sec-132">进程的三种基本状态是什么？</a><a class="margin__link margin__link--h3" href="#sec-141">父子进程是什么？两者有什么关系？</a><a class="margin__link margin__link--h3" href="#sec-150">OS 中引起进程创建的事件有哪些？</a><a class="margin__link margin__link--h3" href="#sec-156">进程创建的具体过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-168">进程终止的具体过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-177">进程阻塞和唤醒的过程是什么？</a><a class="margin__link margin__link--h2" href="#sec-186">进程的通信</a><a class="margin__link margin__link--h3" href="#sec-189">进程的低级通信和高级通信是指什么？</a><a class="margin__link margin__link--h3" href="#sec-198">基于共享数据结构的通信方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-204">基于共享存储区的通信方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-210">消息传递系统是指什么？</a><a class="margin__link margin__link--h2" href="#sec-216">进程通信-管道</a><a class="margin__link margin__link--h3" href="#sec-219">匿名管道通信和命名管道通信是什么？</a><a class="margin__link margin__link--h3" href="#sec-228">管道是如何实现的？基本读写单位？</a><a class="margin__link margin__link--h3" href="#sec-234">父子进程对管道的读写权限是什么关系？</a><a class="margin__link margin__link--h3" href="#sec-240">对管道读写的互斥情况是什么？（3 条）</a><a class="margin__link margin__link--h2" href="#sec-246">进程通信-信号（25 年大纲新增）</a><a class="margin__link margin__link--h3" href="#sec-249">进程信号通信是什么？信号分为哪两类？</a><a class="margin__link margin__link--h3" href="#sec-264">当进程在 CPU 运行的时候信号到来，会被保存到哪里？</a><a class="margin__link margin__link--h3" href="#sec-273">信号有哪三种处理手段？</a><a class="margin__link margin__link--h3" href="#sec-279">信号有哪些方式产生？</a><a class="margin__link margin__link--h3" href="#sec-291">信号在什么时候会被处理？</a><a class="margin__link margin__link--h2" href="#sec-306">线程</a><a class="margin__link margin__link--h3" href="#sec-309">线程是什么？</a><a class="margin__link margin__link--h3" href="#sec-321">进程与线程的区别是什么？</a><a class="margin__link margin__link--h3" href="#sec-333">线程继承进程什么东西（线程共享进程什么东西）？</a><a class="margin__link margin__link--h3" href="#sec-339">线程独有的东西有哪些？</a><a class="margin__link margin__link--h3" href="#sec-357">用户级线程是什么？有什么优缺点？</a><a class="margin__link margin__link--h3" href="#sec-372">内核级线程是什么？有什么优缺点？</a><a class="margin__link margin__link--h3" href="#sec-390">线程的多对一模型是什么？</a><a class="margin__link margin__link--h3" href="#sec-405">线程的一对一模型是什么？</a><a class="margin__link margin__link--h3" href="#sec-417">多对多模型是什么？</a><a class="margin__link margin__link--h2" href="#sec-435">处理机调度基本概念</a><a class="margin__link margin__link--h3" href="#sec-438">处理机的高级调度是指什么？</a><a class="margin__link margin__link--h3" href="#sec-444">处理机的低级调度是什么？</a><a class="margin__link margin__link--h3" href="#sec-456">进程的上下文切换以及上下文是什么？</a><a class="margin__link margin__link--h3" href="#sec-465">闲逛进程是什么？</a><a class="margin__link margin__link--h3" href="#sec-471">进程调度的时机有哪些？</a><a class="margin__link margin__link--h3" href="#sec-495">CPU 的利用率和系统吞吐量是什么？</a><a class="margin__link margin__link--h2" href="#sec-501">处理机调度算法</a><a class="margin__link margin__link--h3" href="#sec-504">周转时间，平均周转时间，带权周转时间，平均带权周转时间是指什么？</a><a class="margin__link margin__link--h3" href="#sec-510">等待时间，响应时间是指什么？</a><a class="margin__link margin__link--h3" href="#sec-519">FCFS 调度算法是什么？</a><a class="margin__link margin__link--h3" href="#sec-525">FCFS 的特点有哪些？对长短作业以及 CPU 或者 IO 繁忙的适应性？</a><a class="margin__link margin__link--h3" href="#sec-546">CPU 繁忙型进程和 IO 繁忙型进程是指什么？</a><a class="margin__link margin__link--h3" href="#sec-555">SJF 调度算法是指什么？（默认非抢占式）</a><a class="margin__link margin__link--h3" href="#sec-561">SJF 调度算法的特点是什么？</a><a class="margin__link margin__link--h3" href="#sec-573">响应比是什么？高响应比优先调度算法是什么？</a><a class="margin__link margin__link--h3" href="#sec-588">优先级调度算法是指什么？</a><a class="margin__link margin__link--h3" href="#sec-594">时间片轮转调度算法是什么？</a><a class="margin__link margin__link--h3" href="#sec-600">多级队列调度算法是指什么？</a><a class="margin__link margin__link--h3" href="#sec-615">一个例题</a><a class="margin__link margin__link--h3" href="#sec-630">中级调度是指什么？</a><a class="margin__link margin__link--h3" href="#sec-639">挂起和激活操作是什么？</a><a class="margin__link margin__link--h3" href="#sec-651">引入了挂起激活，创建终止的进程状态切换是什么？</a><a class="margin__link margin__link--h3" href="#sec-657">fork 函数和 exce 函数功能是什么？</a><a class="margin__link margin__link--h3" href="#sec-707">对多线程模型的理解</a><a class="margin__link margin__link--h3" href="#sec-737">进程的创建</a><a class="margin__link margin__link--h3" href="#sec-796">PCB 的结构和存放的内容</a><a class="margin__link margin__link--h3" href="#sec-802">虚拟地址空间</a><a class="margin__link margin__link--h3" href="#sec-805">子进程与父进程 + fork () 函数与 exec () 函数</a><a class="margin__link margin__link--h3" href="#sec-808">进程和作业的概念</a><a class="margin__link margin__link--h3" href="#sec-817">原语的概念</a><a class="margin__link margin__link--h3" href="#sec-826">进程的上下文切换</a><a class="margin__link margin__link--h3" href="#sec-856">进程的几种通信方式总结（简单了解，后续学完了 OS 进行详细总结）</a><a class="margin__link margin__link--h3" href="#sec-916">临界资源，临界区，内核临界区</a><a class="margin__link margin__link--h3" href="#sec-937">各种调度的含义功能</a><a class="margin__link margin__link--h3" href="#sec-958">各个进程调度算法对于 IO 繁忙和 CPU 繁忙的进程的适用性（暂定，待继续总结）</a><a class="margin__link margin__link--h3" href="#sec-997">短作业优先的平均周转时间和平均等待时间最少的理解</a><a class="margin__link margin__link--h3" href="#sec-1012">对用户临界资源不能同时访问的理解</a><a class="margin__link margin__link--h2" href="#sec-1024">题目</a><a class="margin__link margin__link--h3" href="#sec-1027">1 进程映像的概念</a><a class="margin__link margin__link--h3" href="#sec-1039">2 进程和进程映像的理解 + 进程是系统资源和调度的独立单元</a><a class="margin__link margin__link--h3" href="#sec-1060">3 对进程并发执行的理解</a><a class="margin__link margin__link--h3" href="#sec-1090">4 对 CPU 空闲的理解</a><a class="margin__link margin__link--h3" href="#sec-1108">5 并发进程执行的相对速度的理解</a><a class="margin__link margin__link--h3" href="#sec-1123">6 进程创建的理解</a><a class="margin__link margin__link--h3" href="#sec-1144">7 exec () 系统调用的理解</a><a class="margin__link margin__link--h3" href="#sec-1162">8 产生新进程的几个场景（直接记住）</a><a class="margin__link margin__link--h3" href="#sec-1177">9 输入输出进程</a><a class="margin__link margin__link--h3" href="#sec-1189">10 子进程和父进程的一些概念</a><a class="margin__link margin__link--h3" href="#sec-1210">11 进程地址空间存放的内容</a><a class="margin__link margin__link--h3" href="#sec-1234">12 PCB 的具体内容信息</a><a class="margin__link margin__link--h3" href="#sec-1252">13 原语概念的理解</a><a class="margin__link margin__link--h3" href="#sec-1270">14 几种进程通信总结</a><a class="margin__link margin__link--h3" href="#sec-1279">15 信箱通信的理解</a><a class="margin__link margin__link--h3" href="#sec-1306">16 关于信号通信的一些理解</a><a class="margin__link margin__link--h3" href="#sec-1345">17 进程中的线程进行通信的方式处理</a><a class="margin__link margin__link--h3" href="#sec-1363">18 关于线程引入减少时空开销的理解</a><a class="margin__link margin__link--h3" href="#sec-1384">19 线程的优点分析</a><a class="margin__link margin__link--h3" href="#sec-1408">20 对进程通信的管道方式进一步的理解</a><a class="margin__link margin__link--h3" href="#sec-1429">21 进程被唤醒的概念以及后续操作</a><a class="margin__link margin__link--h3" href="#sec-1450">22 内核级线程与用户级线程的区别</a><a class="margin__link margin__link--h3" href="#sec-1468">23 用户级线程的特点理解</a><a class="margin__link margin__link--h3" href="#sec-1483">24 产生新进程的几个场景（直接记住）</a><a class="margin__link margin__link--h3" href="#sec-1498">25 管道通信的理解</a><a class="margin__link margin__link--h3" href="#sec-1519">26 P 操作与进程状态的改变</a><a class="margin__link margin__link--h3" href="#sec-1546">27 临界区与进程唤醒</a><a class="margin__link margin__link--h3" href="#sec-1573">28 进程转换与 CPU 状态切换（等看完 HIT 的 OS 课程详细总结 OS 切换进程状态的具体过程）</a><a class="margin__link margin__link--h3" href="#sec-1591">29 OS 终止进程完成的操作</a><a class="margin__link margin__link--h3" href="#sec-1606">30 父子线程的关系 + 线程间共享的资源理解</a><a class="margin__link margin__link--h3" href="#sec-1627">31 调度算法需要考虑的问题</a><a class="margin__link margin__link--h3" href="#sec-1648">32 对时间片调度算法的理解</a><a class="margin__link margin__link--h3" href="#sec-1666">33 对进程调度的理解 + 处于临界区的进程调度问题</a><a class="margin__link margin__link--h3" href="#sec-1690">34 关于线程切换的过程理解</a><a class="margin__link margin__link--h3" href="#sec-1720">35 对单道运行的理解</a><a class="margin__link margin__link--h3" href="#sec-1729">36 SJF 调度算法的理解</a><a class="margin__link margin__link--h3" href="#sec-1741">37 动态优先级的变化以及优先级的设置</a><a class="margin__link margin__link--h3" href="#sec-1759">38 关于进程调度的一些计算方法规定</a><a class="margin__link margin__link--h3" href="#sec-1777">39 多级反馈队列调度算法的理解</a><a class="margin__link margin__link--h3" href="#sec-1795">40 各个调度算法的系统开销分析</a><a class="margin__link margin__link--h3" href="#sec-1816">41 动态优先级的调整时机</a><a class="margin__link margin__link--h3" href="#sec-1840">42 对各个进程满足短作业优先的理解</a><a class="margin__link margin__link--h3" href="#sec-1865">43 处理机调度时机的理解</a><a class="margin__link margin__link--h3" href="#sec-1898">44 对多级反馈队列调度算法的理解</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>

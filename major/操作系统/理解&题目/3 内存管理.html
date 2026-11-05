@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>梳理 · 22408 备考笔记</title>
+<meta name="description" content="梳理 程序的装入 程序装入内存的过程是什么？ ==编译== 编译过程形成的目标程序这些程序的地址都是相对地址，这些地址范围与这个模块大小有关，都是从 0 开始到这个模块的大小，每一个目标模块都有自己的相对地址 ==链接== 这一步是要将各个">
+<link rel="icon" href="../../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../../" data-note-id="c030">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../../math/index.html">数学</a><a href="../../../major/index.html" class="is-active">专业课</a><a href="../../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note is-active" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../../major/index.html">专业课 408</a><i>/</i><span>操作系统</span><i>/</i><span class="crumb__no">03</span></div>
+    <h1 class="doc__title">梳理</h1>
+    <div class="doc__meta"><span>2.6 万字</span><span>约 61 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose">
+<h2 id="sec-3">程序的装入</h2>
+<h3 id="sec-6">程序装入内存的过程是什么？</h3>
+<p><mark>编译</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925162507.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>编译过程形成的目标程序这些程序的地址都是相对地址，这些地址范围与这个模块大小有关，都是从 0 开始到这个模块的大小，每一个目标模块都有自己的相对地址</p>
+<p><mark>链接</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925164310.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这一步是要将各个模块链接在一起，合成一个大的可执行文件，这个可执行文件使用的是另一个逻辑地址，是各个模块整合之后的逻辑地址，也是我们经常说的逻辑地址</p>
+<p><mark>装入，也就是将可执行文件装入内存</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925164411.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-33">绝对装入方式是什么？</h3>
+<p>（1）事先知道程序装入内存位置<br>
+（2）虚拟地址与物理地址完全相同<br>
+（3）适用于单道系统</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925164532.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>对于<strong>早期的单道批处理系统，内存中只有一个进程的时候</strong>完全可以提前知道程序将存放在内存具体的哪个位置处</p>
+<p>因此在编译之后将会直接产生绝对地址代码（此时逻辑地址就和绝对地址完全一样），所以在装入的时候无需对程序中的地址进行修改</p>
+<p>程序员甚至可以直接使用绝对地址编程，不过一般还是用符号，然后在编译或者汇编的时候生成绝对地址（或者逻辑地址，此时逻辑地址就是绝对地址）</p>
+<h3 id="sec-51">重定位是指什么？</h3>
+<p>对于多道程序系统而言，内存中可以存在多个进程，所以编译程序提前知道程序装入内存的哪个位置就是不现实的，所以只能在程序要装入内存的时候将编译生成的逻辑地址转换成实际的物理地址，这个过程就是重定位</p>
+<h3 id="sec-57">静态重定位装入方式是什么？</h3>
+<p>（1）装入时完成虚拟地址到物理地址的映射（重定位）<br>
+（2）装入时地址一次性改变，此后不再改变（程序不再移动）<br>
+（3）适用于固定分区分配方式</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925165026.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>对于多道程序系统而言，内存中可以存在多个进程，所以编译程序提前知道程序装入内存的哪个位置就是不现实的，所以只能在程序要装入内存的时候将编译生成的逻辑地址转换成实际的物理地址，这个过程就是重定位</p>
+<p>在程序编译之后会生成各个目标模块，这些目标模块的起始地址都是按 0 开始算的，模块内部其他地方的地址是相对于这个模块起始的相对地址，在链接之后会修改一些相对地址，不过最后临到装入之前得到的还是相对地址，在装入内存的时候转换成绝对地址</p>
+<p>比如一条指令是 <code>load 1， 2500</code>，它的功能是将 2500 处的整数取到寄存器 1 中，这个是编译之后生成的逻辑地址，也是相对于程序起始 0 的相对地址：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250725183149.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>假如这个程序装入内存之后在内存中是从 10000 开始的，那么你在装入的时候就必须对这里的 2500 进行修改，即与 10 000 相加，得到正确的物理地址 12 500，从而取到正确的数据，同时你这里指令的相对地址 1000 也应该加上 10 000 = 11 000 变成指令的绝对地址</p>
+<p>**这样的地址变换是在装入的时候一次性完成，此后不再改变，这个就称为静态重定位方式，因此你装入之后转换的就是实际的物理地址，不能继续改变，所以程序就不能在内存中浮动了</p>
+<p>并且，这种装入方式地址转换的机制其实就是在相对地址上加上一个偏移（装入位置的起始地址），因此这种装入方式整块程序指令之间的相对位置也不能改变，所以必须得有一块连续的空间来装入整个程序，不可离散装入</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925165816.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图的 jmp 200 实际上是要跳转到右面的 jmp 300 指令处执行，但是这里装入之后回直接将 jmp 200 改成 jmp 11200（简单加上偏移）；而离散装入的话右边原本要执行的指令处就会不在正确的位置上，整个程序就会无法执行</p>
+<p>因此对于分页的内存管理一定不是采用静态重定位装入内存的</p>
+<h3 id="sec-96">动态重定位装入方式是什么？</h3>
+<p>（1）程序执行的时候才进行虚拟地址到物理地址的转换，需要重定位寄存器的支持<br>
+（2）程序装入时不必连续，可以在内存中随意移动<br>
+（3）适用于动态分区，分页，分段等内存管理</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925170238.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的重定位寄存器是一个概念性的东西，实现重定位寄存器的方法有多种</p>
+<p>一种最简单的方式是每个程序都有一个重定位寄存器，重定位寄存器中存放程序被放入内存的起始地址，当执行指令的时候拿到逻辑地址，然后加上重定位寄存器中的地址得到实际的物理地址：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925171118.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>那么当程序在内存中移动的时候，只用修改重定位寄存器中的值即可，那么当指令执行的时候始终可以得到正确的物理地址</p>
+<p>而在分页系统中，实现重定位的机构就是页表，这种方式不仅可以实现程序浮动，还可以实现离散存放，比如下面的例子：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925171319.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>jmp 200 中的 200 是逻辑地址（页号 + 页内偏移），当执行 200 这个逻辑地址的时候会根据页表来找到原来程序 200 处的 jmp 300 的页框号，然后利用页框  + 页内偏移将其转换成实际的物理地址，即 jmp 300 的物理地址，这样虽然离散存放，但是只要记录好每个离散的页在内存中的页框就可以了，这样就可以根据页表将逻辑地址进行完美转换</p>
+<h2 id="sec-126">程序的链接</h2>
+<h3 id="sec-129">程序的链接是什么？</h3>
+<p>其实就是将编译好的不同的模块装在一起的过程</p>
+<h3 id="sec-135">静态链接方式是什么？</h3>
+<p>（1）将所有的目标模块整合成一个完整的大模块，然后不再拆开</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925172217.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>静态链接，是在程序最后装入前，将编译得到的一个个模块拼在一起形成一个完整的装入模块，称为可执行文件，然后需要运行的时候将这个可执行文件统一装入内存不再拆开，这个称为静态链接</p>
+<p>静态链接需要在拼接的时候修改各个模块中的相对地址，不过得到的可执行文件中的地址仍然是相对地址（重定位方式装入）</p>
+<h3 id="sec-150">装入时动态链接方式是什么？</h3>
+<p>（1）边装入，边链接<br>
+（2）只有装入的模块调用了哪个模块，再链接</p>
+<p>装入时动态链接是编译生成了一个个模块之后，先不拼在一起，而是一个个独自装入内存</p>
+<p>如果哪个模块调用了别的模块，那么此时它装入的时候，装入程序会同时再将被调用的那个模块也装入内存，同时修改这两个模块的相对地址</p>
+<p>假如在编译之后生成了下面四个模块：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925172804.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>装入程序在装入第一个模块的时候会对其进行检查，看其是否调用了其他的模块，此时发现它调用了第 2 和第 3 个模块：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925172913.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这样装入模块和模块 2，3 都会被装入内存，同时进行链接：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925173104.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-180">装入时动态链接的优点是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925184137.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的便于模块共享是指，动态链接方式并不会将所有内容打包成一个完整的副本装入内存，在有些情况下，比如 C 语言的库函数，很多程序虽然引入了这个库，但是 OS 只在内存中装入了一份库函数内容，然后别的程序通过共享这一块来实现共享:</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250729192421.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>装入时的动态链接则是每个进程程序只会生成一份最小的可执行文件，这个文件中只包含共享库的一些映射（包括是哪个库，以及这个库在哪里），系统会先将共享库的文件装入内存，然后再将进程主程序装入内存，在装入内存进行重定位的时候建立共享库与主程序的联系，即一边装入一边链接，也就是装入时动态链接了，这里的动态，其实就是共享库只有一份大家共享的意思（不用纠结细节，只用知道有这回事，静态和动态的区别即可）：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250729192851.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+因此，装入时动态链接的好处就是如果想要更新标准库就非常方便，只用更新一份即可，不用将每个进程的标准库文件全部更新；并且这种方式也实现了共享</p>
+<h3 id="sec-198">运行时动态链接是什么？</h3>
+<p>（1）只有当运行的时候真正执行到了哪个模块，然后再进行链接</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250925184405.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>它其实和装入时动态链接的唯一区别在于，装入时动态链接是一个模块中可能调用的模块全部都会装入并连接，比如一个函数中的 if 语句，两个分支都引用了一个模块，则会全部调入</p>
+<p>而运行时动态连接则是真正执行的时候调入模块进入内存并连接，比如 if 语句如果运行的时候只运行了条件 true 的分支，那么此时只会将 true 分支中的模块调入内存</p>
+<p>因此这种链接方式比装入时动态链接更加节省内存</p>
+<p><strong>不要太在意细节，也不要和装入结合，这里只用掌握互相区别即可</strong></p>
+<h2 id="sec-219">连续内存分配管理方式 - 固定分区分配</h2>
+<h3 id="sec-222">内存的分配包括哪两种方式？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909110326.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-228">连续分配方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909110426.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-234">CPU 的内存保护是什么？有哪两种方式？</h3>
+<p>（1）上下限寄存器，存放程序在内存中的上下限地址（检查物理地址），每次访存的时候就需要对比上下限看有没有越界<br>
+（2）界地址寄存器，存放的是逻辑地址的合法偏移范围（其实就是合法逻辑地址），检查通过之后再与重定位寄存器结合生成物理地址<br>
+（3）重定位寄存器，存放的是最小的合法物理地址，其实就是基地址，界地址寄存器检查通过之后再与基地址结合生成物理地址<br>
+（4）离散型内存分配和连续性内存分配都会进行内存保护检查，比如请求式分页管理会在访问块表之前进行逻辑地址越界检查</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909110653.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>当一个程序放入到内存之后，基地址寄存器存放起始物理地址，界地址寄存器存放这个程序的偏移量，当给出一个逻辑地址的时候，逻辑地址其实就可以看作是偏移，因为逻辑地址一定是从进程的逻辑地址空间的 0 开始算的，它不能超过进程的大小，也就是不能超过界地址中的偏移大小，所以可以先用逻辑地址与界地址寄存器进行比较</p>
+<h3 id="sec-246">内存共享是指什么？可重入代码是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909111702.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-252">连续内存分配包括哪三种方式？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909111847.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-258">单一连续分配是指什么？</h3>
+<p>（1）单道程序下<br>
+（2）整个进程独占内存</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909111927.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-267">固定分区分配方式是指什么？</h3>
+<p>（1）内存划定分区<br>
+（2）进程独占分区</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909112012.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-276">固定分区的分区使用表是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909112116.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-282">固定分区的缺点是什么？内部碎片是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909112212.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>固定分区容易产生内部碎片</p>
+<p>内部碎片是指，你拥有一片区域，但是这个区域中有些空间是属于你的，但是你无法使用，这个就是内部碎片</p>
+<h2 id="sec-294">连续内存分配管理方式-动态分区分配</h2>
+<h3 id="sec-297">动态分区分配是指什么？</h3>
+<p>这种分配方式是不提前对内存进行划分，进程来了之后直接在内存中选一块空闲区划给这个内存，因此这种分配方式就需要某个结构来管理内存中的空闲空间</p>
+<p>（1）不事先对内存划分<br>
+（2）进程来了直接找个空闲的分配给它</p>
+<h3 id="sec-306">动态分区的空闲分区表是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909112543.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-312">首次适应算法是指什么？分区表的结构是什么？</h3>
+<p>（1）分区表空闲块按照地址递增排序<br>
+（2）遍历分区表，顺序找到第一个满足进程大小的空闲块</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909112753.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+将进程装入空闲区之后要修改一下表项：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909112833.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>首次适应算法的分区表必须按照地址从低到高进行递增</p>
+<h3 id="sec-327">首次适应算法的优缺点是什么？外部碎片是指什么？</h3>
+<p>（1）缺点就是容易在低地址地方生成外部碎片</p>
+<p>它会首先找到前面的可以装入的内存，所以会留给大进程后面的高地址区域足够的内存空间</p>
+<p>但是由于进程始终往前面放，所以内存的低地址部分会有很多小的无法利用的内存空间碎片，这些内存空间并不单独属于某个进程，但是大家都无法使用，这个就是外部碎片</p>
+<p>另一个缺点是当进程作业很大的时候只能从头开始查分区表，然后一直查到后面，这样会比较耗费时间</p>
+<h3 id="sec-342">邻近适应算法（循环首次适应算法）是指什么？分区表的结构是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909113433.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>其实就是用一个指针记录了上一次分配给进程的表项位置，下一次就不是从头开始，而是从指针位置开始往后寻址第一个满足的空闲分区</p>
+<h3 id="sec-351">最佳适应算法是指什么？分区表的结构是什么？</h3>
+<p>（1）分区表空闲块从小到大排序<br>
+（2）每次分配找到一个最小的满足进程大小的空闲块</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909113728.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>找到后仍然需要修改表项，并且得按照分区大小从小到大进行表项排序（这里新作业大小是 15 KB）：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909113822.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-366">最佳适应算法的缺点是什么？</h3>
+<p>这个算法实际上加重了外部碎片的生成，它比首次适应算法更容易产生外部碎片，因为首次适应算法会按照地址递增从第到高选择一个区域，当这个区域足够大地址足够靠后的时候就不大可能产生外部碎片；但是最佳适应算法一定会选一个大小最接近它的区域，那么这个区域剩下的空间就会足够的小，更容易不被别人使用，因此更容易产生外部碎片</p>
+<h3 id="sec-372">最坏适应算法是什么？分区表的结构是什么？</h3>
+<p>（1）分区表空闲块从大到小排序<br>
+（2）每次分配找到一个最大的满足进程大小的空闲块</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909115642.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>分完之后需要按照从大到小对分区表项进行排序</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909115940.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这种分区方式就是为了解决最佳适应算法中容易产生外部碎片而提出的，这样每次都选择一个足够大的分区分给作业，那么这个分区剩下的空间就更容易被别的进程利用，相对于最佳适应算法，更加不容易产生外部碎片</p>
+<h3 id="sec-390">基于索引的动态分区分配算法是什么？</h3>
+<p>当系统比较大的时候一般的动态分区分配算法形成的分区链就会很长，这个时候可以按照这些分区的大小对它们进行分类</p>
+<p>对于每一类相同大小的空闲分区，可以单独设置一个链表，同时设置一个索引表来管理这些链表</p>
+<p>当需要给一个进程分配空间的时候就查找所需空间对应的索引表表项，获得这个空闲分区链的头指针，然后获得一个空闲分区</p>
+<p>（1）相同的空闲块大小用一个链表链接起来<br>
+（2）每次分配的时候从链表中找到一个分配给进程</p>
+<h4 id="sec-405">快速适应算法</h4>
+<p>它的思想就是上文所述</p>
+<h4 id="sec-411">伙伴系统</h4>
+<h5 id="sec-414">内存分配</h5>
+<p>伙伴系统规定，内存中无论是已分配的分区还是空闲分区一律是 2 次幂的大小</p>
+<p>对于相同大小的分区还是连成一个单独的双向链表，这个就体现了基于索引的思想了，这个时候就可以建立索引表指向这些链表了</p>
+<p>当一个进程所需的内存大小是 n 的时候，我们会看这个 n 是介于 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8247em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8247em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span></span></span></span></span></span></span> 之间，此时给它分配 2^i 大小的空闲块，即在空闲分区大小为 2^i 的双向链表中查找，如果有，那就分给这个进程；如果没有，则向下查找空闲分区大小是 2^{i + 1 }大小的双向链表，找到了之后，将这个 2^{i + 1 }大小的空闲分区一分为二，分成<strong>两个大小是 2^i 一样并且连续</strong>的分区，称为一对伙伴，一个分配被这个进程被占用，另一个大小为 2^i，加入到 2^i 这个空闲分区链表中</p>
+<p>当然，这个进程的大小 n 可能会小于 2^i，但他仍然会独占这个 2^i 的划分空间，所以伙伴算法会产生内部碎片</p>
+<p>上面是伙伴算法的分配分区的思想</p>
+<p>（1）已分配和空闲分区一律是 2 次幂大小<br>
+（2）进程大小在 2^{i-1}到 2^i 之间的话会寻找一个 2^i 的空闲分区分配<br>
+（3）如果没有 2^i，则会寻找一个 2^{i + 1}的分配<br>
+（4）2^{i+1}一分为二，2^i 分配给进程，剩下的 2^i称为它的伙伴，加入到 2^i 大小的空闲分区链表中</p>
+<h5 id="sec-435">内存回收</h5>
+<p>空闲分区的回收是相反的过程，当这个大小为 n 的进程所占的大小为 2^i 的分区被回收之后，这个 2^i 会与旁边的相同大小并且与他相邻的 2^i 的分区合并，形成一个 2^{i + 1}大小的空闲分区</p>
+<p>如果这个 2^{i + 1}大小的空闲分区旁边还有一个相同大小的 2^{i + 1}大小的空闲分区，那么就会继续合并，一直到旁边没有了相同大小分区为止</p>
+<p>（1）2^i 大小的分区别回收之后会与旁边的进行合并<br>
+（2）就这样一直往上合并</p>
+<h4 id="sec-447">哈希算法</h4>
+<p>哈希算法会构造一个哈希表，这个表中的关键字是空闲分区的大小，关键字映射对应的哈希表相应位置处存放了该空闲分区链的头指针</p>
+<p>当进行空闲分区分配的时候，所需的空闲分区大小会作为关键字使用哈希函数进行映射，映射到这个哈希表中的某个位置，获得空闲分区链表，从而分配</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250920101158.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的哈希算法的含义是，当需要分配的时候会拿进程需用的分区大小作为关键字 key 进行哈希映射，映射的结果是这个分区大小连成的链的头指针</p>
+<h3 id="sec-462">紧凑技术是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909142233.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-468">动态分区的分配和回收操作是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909142558.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>(1) 分配的时候一个空间剩下的部分也要放到空闲分区表中进行相应的排序，修改表项<br>
+（2）回收的时候要看是否与前后的空闲分区相邻，注意合并空闲分区表的表项</p>
+<h2 id="sec-477">离散内存分区管理方式 - 分页式</h2>
+<h3 id="sec-480">离散分区管理方式分为哪三种？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909142641.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-486">页，页面，页号，页面号；页框，页帧，物理页，页框号，页帧号，物理页号分别是什么含义？</h3>
+<p>页框 = 页帧= 内存块 = 物理块 = 物理页面，它是内存空间被分成的一个个大小相等的分区，每个分区就是一个页框</p>
+<p>每个页框都有一个编号，即页框号 = 页帧号 = 内存块号 = 物理块号 = 物理页号</p>
+<p>而页和页面是进程的逻辑地址空间的概念，这个虚拟的空间也被分为一个个与页框大小相等的页，也称为页或者页面，他们的编号称为页号或者页面号</p>
+<h3 id="sec-498">分页存储管理方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909143150.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-504">页内碎片是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909143228.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-510">分页管理方式下的逻辑地址格式是什么样的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909143953.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>注意这里的位移量位数是表示的是存储单元的个数，上图是以字节进行编址，如果是以字进行编址，然后一个页面大小是 4 KB，一个字是 2 B，那么这里的位移量就是 11 bit，而不是 12 bit 了；位移量的这串二进制组合表示的是存储单元在页面中的位置，而不是字节的位置，他是对存储单元进行编号，而不是字节</p>
+<h3 id="sec-519">页表是什么？页表一般存放在哪里？页表寄存器是什么？存放什么东西？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909144456.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909144547.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-525">分页管理方式中逻辑地址转换成物理地址的过程是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909144646.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909144711.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>页表中的每一项其实都会对应一个页号的，所以可以用页号来表征页表的长度，从而判断是否越界</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909145055.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909145256.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909145332.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>物理地址中的偏移与逻辑地址中的偏移是完全一样的</p>
+<h3 id="sec-549">TLB 是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909145553.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-555">有了 TLB 之后的地址转换是什么样的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909145703.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里块表的页号不能隐含，因为 TLB 只保留了页表的部分副本，块表的表项并不是按照页号默认递增的</p>
+<p>下面是 TLB 中没有这个页表项的情况：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909145908.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-570">离散内存分区管理方式-多级页表</h2>
+<h3 id="sec-573">单级页表的缺陷是什么？计算页表大小的方法？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723193047.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里页面大小是 4 KB，那么逻辑地址的页内偏移就是 12 位</p>
+<p>那么页号就是 20 位，也就是说有 2^20 个页面，这 2^20 个页面，每个页面都要对应一个页表项，因此页表项的个数就是 2^20 个</p>
+<p>所以整个页表的大小就是 2^22 B，页表是存放在内存中的，内存中的一个页框的大小是 4 KB</p>
+<p>那么光是存储这个页表，就得需要内存中连续的 1024 个页框去存储</p>
+<p>这显然是不可能的，你采用了页式存储管理技术，本来就是要将进程离散存储在内存的，现在光是页表就需要连续的 1024 的连续的空间，那完全违背了页式存储的原则</p>
+<p>而且，由于局部性原理，进程访问的也只是局部的一些页，其实也不用非要将所有的页表项全部放入到内存中</p>
+<p>（1）如果页面太多，会导致页表项太多，会导致页表太大，会需要太大的连续内存空间存放页表<br>
+（2）通过页面个数计算页表项个数，通过页表项个数计算页表的大小</p>
+<h3 id="sec-600">两级页表结构是指什么？</h3>
+<p>逻辑地址空间以及一些规定如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723194639.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>那么对于单级页表，那就有 2^20 个页表项，这些页表项全部连续存放在内存中需要连续的 1024 的页框，这不现实</p>
+<p>于是我们可以将这个单级页表分组，每一组包括 1024 个页表项，一共是 4 KB 大小，刚好可以存放在内存的一个页框中：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723194951.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这些分组其实就是二级页表，一个二级页表一个存在在内存的一个页框中，二级页表之间可以不连续存放</p>
+<p>相当于我们将整个大页表打散了，离散的存放在内存中，<strong>对原来的大的页表进一步分页</strong></p>
+<p>这些二级页表离散的存放在内存中，为了记录这些二级页表存放的块号，我们又创建了一个顶级页表，也就是页目录表</p>
+<p>这个顶级页表（页目录表），它的每一个表项，存放的是二级页表的页表号以及这个二级页表存在内存中的块号：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723195613.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>所以对于逻辑地址可以划分为：<br>
+（1）页目录号 + 二级页号 + 页内偏移<br>
+（2）页目录号用于查找页目录表，找到二级页表所在物理块对应的页目录表项<br>
+（3）找到二级页表所在物理块号后，二级页号用于查找二级页表，找到实际存放数据的页所在物理块对应的二级页表项<br>
+（4）找到实际存放数据的页所在的物理块号之后直接与页内偏移拼接，就得到物理地址了</p>
+<h3 id="sec-636">多级页表划分过程以及物理地址转换过程是什么？</h3>
+<p><strong>（1）在页表划分中有这样一个原则，就是页表的大小不能超过页框的大小（或者说页表大小不能超过页的大小）</strong><br>
+<strong>（2）还有一个原则，虚拟内存有多少个页，他们对应的实际的页表项的个数是固定的，不会因为多级页表划分就减少，而是有限个页表项组合成一个页的大小作为第 n 级页表</strong><br>
+<strong>（3）划分的时候从第 n 级页表开始，然后划分到 n - 1 级页表，然后是 n - 2，一直到满足 n - k 级页表大小小于页框，此时根据 n - k = 1，算出 n</strong></p>
+<p>比如下面这个问题：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723204157.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>页面大小为 4 KB，所以页内偏移就是 12 位</p>
+<p>所以逻辑地址中页号就有 38 位，它实际对应的页面个数就是 2^38 个，这里实际的页面是指存放数据的页面，这些页面的页号和物理块号的对应关系存放在 n 级页表的一个表项中，每个页面对应一个 n 级页表页表项</p>
+<p><strong>n 级页表</strong></p>
+<p>实际页面是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">38</span></span></span></span></span></span></span></span></span></span></span></span> 个，所以总共对应 2^38 个 n 级页表项，n 级页表项就是实际的页表项，记录实际存放数据的页的页号和物理页框的对应关系</p>
+<p>根据页表的大小不能超过页框的大小，n 级页表最多是 4 KB，一个页表项是 4 B，所以一个 n 级页表最多有 1 K 个实际的页表项，这里明显超了，所以需要划分 n - 1 级</p>
+<p>一共 2^38 个实际的页表项（n 级页表项），这些页表项都是用页框（或者说页大小）存放的，因此需要：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.1771em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4911em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">38</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span></span></span></span></span><span class="mord cjk_fallback">个页框存放</span></span></span></span></span></div><p>也就是 n 级页表有 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span></span></span></span></span></span></span></span> 个， n 级页表的每个页表都会对应 n-1 级页表中的一个页表项，用来记录 n 级页表存放的块号</p>
+<p><strong>n-1 级页表</strong></p>
+<p>那么 n - 1 级页表就有 2^18 个页表项了，总共也就是 2^18 * 4 B = 2^20 B 的大小，所以这个 n - 1 级页表就大于了一个页框的大小，因此需要继续划分</p>
+<p>n-1 级页表一共有 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span></span></span></span></span></span></span></span> 个 n 级页表项，所以 n-1 级页表需要：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.1771em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4911em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span><span class="mord cjk_fallback">个页框存放</span></span></span></span></span></div><p>也就是 n-1 级页表有 2^8 个，n - 1级页表的每个页表都会对应 n-2 级页表中的一个页表项，用来记录 n-1 级页表存放的块号</p>
+<p><strong>n - 2 级</strong></p>
+<p>2^8 个 n - 1 级页表，对应 2^8 个 n - 2 级页表的表项，这个最顶级的页表的总的页表项大小是 2^8 * 4 B = 1 KB &lt; 4 KB，没有超过一个页框大小</p>
+<p>因此划分的就是 n - 2 级页表终止，它就是最顶层的页表</p>
+<p>n - 2 = 1 ，所以 n = 3，所以划分的就是 3 级页表</p>
+<p>所以逻辑地址划分为四个部分</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723205825.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>第一个部分是一级页号，是二级页表对应的表项在一级页表中的偏移，通过一级页号查找一级页表找到二级页表在内存中的块号</p>
+<p>第二个部分是二级页号，表示的是三级页表表项在二级页表中的偏移，通过二级页号查找二级页表，找到三级页表在内存中的块号</p>
+<p>第三个部分是三级页号，表示的是实际数据页表项在三级页表中的偏移，通过三级页号查找三级页表，找到实际数据存放在内存中的块号</p>
+<p>第四部分是页内偏移，表示实际数据在内存块中的偏移，通过页内偏移与实际数据在内存中的块号拼接，计算得到实际的物理地址</p>
+<h2 id="sec-713">离散内存管理方式-分段式</h2>
+<h3 id="sec-716">分段存储管理方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909160012.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的段号的位数取决于程序被划分了多少个段</p>
+<p>段内地址的位数取决于最大的那个段的长度</p>
+<p>（1）进程的虚拟地址空间被划分成了一个个的段<br>
+（2）虚拟地址分成段号和段内偏移<br>
+（3）每个段的大小不一致，段内偏移位数取决于最大的段，因此有的段的一些地址没用上</p>
+<h3 id="sec-731">分段式存储是如何将段放入实际物理内存的？段表是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909162109.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>系统将程序分好段之后直接将段放入到内存中，段内的数据连续，但是段间不一定连续</p>
+<p>分段管理下没有对内存进行划分</p>
+<p>这里的段号也是默认递增的，所以可以省略</p>
+<p>（1）段号隐藏，默认递增<br>
+（2）段表项包括段长和基地址<br>
+（3）基地址是内存中的段起始地址</p>
+<h3 id="sec-749">分段式管理是如何根据逻辑地址转换成物理地址的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909162737.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>虚拟地址中的段号是用来找到段表中的某个用于地址转换的项的，这里的段号相当于段表中的偏移</p>
+<p>段表基址寄存器中的段表长度需要与段号进行一个比较，来避免段号越界</p>
+<p>然后通过段表起始地址  + 段号找到段表中对应的段表项</p>
+<p>段表项中存放的是这个段在内存中的起始地址和段长</p>
+<p>这里通过段内地址 + 段的起始地址得到实际的物理地址</p>
+<p>注意这里并不是将段内地址与段的起始地址进行拼接，而是相加，在分页式的地址转换中是进行拼接，因为分页式中页表给出的是物理页框号，整个物理内存被划分成一个个页框，每个页框的大小一样，这样就可以很方便对物理地址进行划分</p>
+<p>但是分段式物理内存没有划分段，因此物理地址没有段号这一说法，所以不能拼接，而是直接相加</p>
+<p>（1）用户给出虚拟地址，拆分为段号和段内偏移<br>
+（2）用段号访问段表，首先看看段号是否越界（超出段表长度）<br>
+（3）利用段表起始地址 + 段号，找到段表项<br>
+（4）段表项中的段基地址 + 段内偏移，得到物理地址，<strong>这里是相加，而不是拼接</strong>！</p>
+<h3 id="sec-779">分段管理和分页管理的区别是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250909162902.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-785">分段式存储和分页式存储地址空间一维和二维的理解</h3>
+<p>分页式存储，地址空间是一维的，这是指进程的整个逻辑地址空间被看作了一大块连续的存储单元，虽然是分页的，但是每个页之间的存储单元地址是递增连续的，用户只用给出相对于进程空间的起始 0 的偏移，简单说就是逻辑地址，那么就可以得到是哪一个页，哪一个页内偏移，然后转换成物理地址访存，这种方式虽然逻辑地址是被划分成了页号和页内偏移两部分，但是本质上还是相对于进程空间起始 0 的偏移，用户给出的地址起始还是相对于进程起始的偏移，并不是页号和页内偏移，页不为用户所感知，用户自己提供的就只是一种信息，所以是一维的</p>
+<p>分段式存储管理中，进程的空间被划分成了一个个的段，虽然用户给出是哪个段，然后再给出段内偏移，这样拼接成的同样是逻辑地址，但是这个逻辑地址必然是两个信息，而不是相对于进程空间起始 0 的偏移，因为分段式存储管理它的每个段的大小不一样，并且段内偏移地址都是从 0 开始的，一个段的大小不一定等于段内偏移位数可以表示的最大空间，也就是说逻辑地址某些表示可能是废的，没有意义，比如段号为 10 的段只有 4 KB 大小，但是你逻辑地址如果段号是 10，偏移是 16 位，偏移给出了 8 K，那这个逻辑地址就是没有意义的，所以用户给出的逻辑地址只能被解释为段号和段内偏移两个量，不能解释为相对于进程空间起始偏移这样一个量，所以是二维的</p>
+<p><strong>其实就是用户对于分段的段号和段内偏移是有感知的，所以地址在用户看来就是两部分，但是用户对于分页是没有感知的，用户看来就是一串连续的二进制整体的逻辑地址</strong></p>
+<h3 id="sec-797">共享段与共享段表</h3>
+<h4 id="sec-800">共享段</h4>
+<p>共享段是多个进程共享的内存区域，在分段管理中，这个区域会放入各个进程逻辑地址空间中划分的某个段，所以称为共享段</p>
+<p>在分段式分配中，为了实现共享内存这块区域，直接在两个进程的段表中的两个段表项的起始地址设置相同就可以了：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250726163315.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>注意上图段表项在两个不同进程之间段号是可以不一样的，只用保证起始地址一样即可</p>
+<p>（1）内存区域中的段共享</p>
+<p>（2）两个进程中的段号可以不一样，段表中的起始地址指向一样</p>
+<h4 id="sec-821">共享段表</h4>
+<p>为了实现段的共享，在系统中会设置一个共享段表结构，这个共享段表不是属于某一个进程，而是属于整个系统</p>
+<p>当有一个共享段出现在内存的时候，它就会占用共享段表中的一个表项：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250726163914.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1)共享段表属于整个系统，当出现一个共享段的时候它就占据一个共享段表一个表项</p>
+<p>（2）共享段表项记录有多少个进程正在共享这个段，因此这个表项仍然可能有多条记录</p>
+<h1 id="sec-836">理解</h1>
+<h3 id="sec-839">进程的逻辑地址空间</h3>
+<p>进程的逻辑地址空间，其实就是进程自身看到的内存地址，每个进程都认为自己拥有一个​<strong>​独立的、私有的、连续​</strong>​的地址空间，从地址 0 开始一直到最大可寻址地址。其他进程的存在对其不可见</p>
+<p>在逻辑地址空间中，地址是按顺序排列的（0, 1, 2, 3,...）。进程的代码、数据和堆栈结构都放在这个看似连续的空间内，对于进程来说，它自己本身安排的堆啊，栈啊，各种数据都是放在这个连续的逻辑地址空间中</p>
+<p>更具体一些，程序中变量、函数等符号的地址（如变量 <code>a</code> 位于 <code>0x08049000</code>），在程序编译链接后形成的可执行文件中的各个地址，就是基于这个逻辑地址空间生成的。​<strong>​这些地址就是逻辑地址</strong>，进程将把它的各种数据安排在这个连续的地址中，这些地址本质上也是一些连续的数字，只不过是进程使用的地址数字，这些数字不是实际的内存的物理地址。</p>
+<p>这些<strong>连续的没有实际对应物理内存的地址就构成了逻辑地址空间，当然也可以称为虚拟地址空间</strong>，进程对这个空间的安排如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250721183330.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250721183344.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<mark>代码段</mark></p>
+<p>程序的二进制代码，代码段是只读的，并且可以被多个进程共享，程序段其实是实际存放在内存的的一块只读的物理区域，多个进程都可以读这段区域，并且不会被修改，所以可以被多个进程共享</p>
+<p><mark>数据段</mark></p>
+<p>程序运行的时候加工处理的对象，包括全局变量和静态变量</p>
+<p><mark>进程控制块 PCB</mark></p>
+<p>它是由 OS 系统控制的，放在系统内核区</p>
+<p><mark>堆</mark></p>
+<p>用来动态分配的变量，比如通过 <code>malloc()</code> 函数向高地址分配空间</p>
+<p><mark>栈</mark></p>
+<p>用来存放局部变量，用来实现函数调用，从用户空间的最大地址向低地址增加</p>
+<h3 id="sec-884">内存保护的两种方式</h3>
+<p><mark>上下限寄存器</mark></p>
+<p>在 CPU 中设置一对上下限寄存器，直接记录进程在主存中的上下限地址，CPU 每次访存都会与这对寄存器进行对比，看是否越界</p>
+<p><mark>基地址寄存器和界地址寄存器</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250725202344.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这两种方式不仅要硬件支持，同时还需要 OS 软件支持，比如设置这两个寄存器的值，或者进程切换的时候切换这两个寄存器的值，这些都需要 OS 的一些软件指令支持的</p>
+<h3 id="sec-902">地址绑定</h3>
+<p>源程序中的地址通常就是符号，比如一个变量 count</p>
+<p>编译器会将这些符号绑定到相对地址（相对地址就是逻辑地址）上，在进行链接或者装入程序的时候，会将这些相对地址再次绑定到绝对地址（内存的实际物理地址上）</p>
+<h3 id="sec-911">程序的装入与重定位</h3>
+<p>程序的装入，也就是将经过编译和链接之后的程序装入内存，这个过程最重要的就是地址的各种转换，其实装入主要讨论的就是地址转换</p>
+<p>在装入的时候将程序的逻辑地址转换成物理地址的过程就是重定位（也可能是执行的时候进行地址转换，反正就是地址要变化）</p>
+<h4 id="sec-920">绝对装入方式</h4>
+<p>对于早期的单道批处理系统，内存中只有一个进程的时候完全可以提前知道程序将存放在内存具体的哪个位置处</p>
+<p>因此在编译之后将会直接产生绝对地址代码（此时逻辑地址就和绝对地址完全一样），所以在装入的时候无需对程序中的地址进行修改</p>
+<p>程序员甚至可以直接使用绝对地址编程，不过一般还是用符号，然后在编译或者汇编的时候生成绝对地址（或者逻辑地址，此时逻辑地址就是绝对地址）</p>
+<h4 id="sec-932">静态重定位装入方式</h4>
+<p>对于多道程序系统而言，内存中可以存在多个进程，所以编译程序提前知道程序装入内存的哪个位置就是不现实的，所以只能在程序要装入内存的时候将编译生成的逻辑地址转换成实际的物理地址，这个过程就是重定位</p>
+<p>在程序编译之后会生成各个目标模块，这些目标模块的起始地址都是按 0 开始算的，模块内部其他地方的地址是相对于这个模块起始的相对地址，在链接之后会修改一些相对地址，不过最后临到装入之前得到的还是相对地址，在装入内存的时候转换成绝对地址</p>
+<p>比如一条指令是 <code>load 1， 2500</code>，它的功能是将 2500 处的整数取到寄存器 1 中，这个是编译之后生成的逻辑地址，也是相对于程序起始 0 的相对地址：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250725183149.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>假如这个程序装入内存之后在内存中是从 10000 开始的，那么你在装入的时候就必须对这里的 2500 进行修改，即与 10 000 相加，得到正确的物理地址 12 500，从而取到正确的数据，同时你这里指令的相对地址 1000 也应该加上 10 000 = 11 000 变成指令的绝对地址</p>
+<p><strong>这样的地址变换是在装入的时候一次性完成，此后不再改变，这个就称为静态重定位方式</strong></p>
+<h4 id="sec-953">动态重定位装入方式</h4>
+<p>重定位方式装入内存可以允许程序被装入到内存的任意位置，只用装入之后修改得到实际的物理地址即可</p>
+<p>但是在静态重定位方式中是不允许程序在内存中移动的，程序一旦移动，装入的时候转换的绝对地址就又失效了</p>
+<p>这时可以采用动态重定位装入方式，动态重定位装入方式在将程序装入内存的时候不会进行地址改变，因此这种方式装入内存的时候程序中的地址仍然是相对地址（逻辑地址）</p>
+<p>只是在实际执行的时候将逻辑地址转换成绝对地址，这种方式称为动态重定位装入方式</p>
+<h4 id="sec-968">静态重定位与固定分区内存分配</h4>
+<p>固定分区分配是将内存的用户空间划分为若干固定大小的分区并且在后续不会进行改动</p>
+<p>这些分区的大小可以互相相等，也可以根据作业大小划分为若干大分区，若干中等分区，以及若干小分区</p>
+<p>这样每个进程就被分配在一个固定的分区中了不会进行移动，因此这种分配方式非常适合静态重定位方式</p>
+<h4 id="sec-980">动态重定位与动态分区内存分配</h4>
+<p>动态分区分配中会根据一些算法选择一个空闲的分区给相应的进程</p>
+<p>那么时间长了就会有碎片产生，这些小碎片无法装入一个大的进程，这时就需要用紧凑技术将内存中的进程进行移动，然后将小碎片合并成一个大的空闲分区</p>
+<p>这样进程在内存会出现移动，所以就不能使用静态重定位，而应该使用动态重定位了</p>
+<h4 id="sec-992">动态重定位与基本分页和分段内存分配</h4>
+<p>基本分页和分段是在程序的执行阶段，知道了一个程序的逻辑地址之后然后查页表或者段表转化成实际的物理地址，然后访存，这个是基本分页和分段的地址转换过程，显然是在执行阶段进行的</p>
+<p>所以基本分页和分段内存分配方式也是使用的动态重定位方式</p>
+<h4 id="sec-1001">静态重定位的地址转换</h4>
+<p>静态重定位的地址转换是在程序装入内存之前由装入程序一次性全部转换完成的，是不需要硬件的，完全是由软件完成的</p>
+<p>因此在内存分配中如果分配方式需要用到动态重定位，比如动态分区分配，那它的地址转换过程就不是由软件单独完成的</p>
+<h4 id="sec-1010">动态重定位的地址转换</h4>
+<p>动态重定位的地址转换需要用到重定位寄存器，或者硬件地址变换机构，那就需要硬件支持，比如动态分区分配方式，在紧凑的时候需要移动内存中的程序，所以必须得用到动态重定位的方式</p>
+<h3 id="sec-1016">程序的链接</h3>
+<p>程序在编译之后会形成一个个不同的模块，链接就是将这些模块拼在一起的过程</p>
+<p>在考研中链接和装入就单独分开学习，别混在一起</p>
+<h4 id="sec-1025">静态链接</h4>
+<p>静态链接，是在程序最后装入前，将编译得到的一个个模块拼在一起形成一个完整的装入模块，称为可执行文件，然后需要运行的时候将这个可执行文件统一装入内存不再拆开，这个称为静态链接</p>
+<p>静态链接需要在拼接的时候修改各个模块中的相对地址，不过得到的可执行文件中的地址仍然是相对地址（重定位方式装入）</p>
+<h4 id="sec-1034">装入时动态链接</h4>
+<p>装入时动态链接是编译生成了一个个模块之后，先不拼在一起，而是一个个独自装入内存</p>
+<p>如果哪个模块调用了别的模块，那么此时它装入的时候，装入程序会同时再将被调用的那个模块也装入内存，同时修改这两个模块的相对地址</p>
+<h4 id="sec-1043">运行时动态链接</h4>
+<p>运行时动态链接是指，在实际运行这个模块的时候如果发现了它调用了其他的模块，并且这个模块还没有装入内存，则此时由 OS 去寻找这个模块，然后装入内存链接到运行模块上</p>
+<p>这样凡是运行的时候没有执行的模块都不会被装入内存和链接，这样可以节省大量的内存空间</p>
+<p>无论时静态链接还是装入时静态链接，实际上它们装入内存的模块在运行的时候不一定会被调用，比如错误处理模块，它仍然是被某个模块调用，但是这个模块执行的时候不一定会出错，所以有可能这个错误处理模块装入内存之后不会被实际运行，这样内存空间就浪费了</p>
+<h4 id="sec-1055">链接与装入的区别</h4>
+<p>链接主要的工作是确定各个模块的逻辑地址，也就是建立程序各个模块之间的联系，所以称为链接</p>
+<p>装入主要的工作是将逻辑地址转换成物理地址</p>
+<h4 id="sec-1064">装入时动态链接与静态链接的区别</h4>
+<p>静态链接和动态链接其实都在程序运行之前将完整的程序放入了内存中，只是静态链接每个进程都有一个共享库的副本；而装入时动态链接的共享库在内存中只有一份，只是在装入的时候（即地址转换的时候）指明当前主程序调用共享库在内存中的位置，将这些程序黏在一起</p>
+<p>具体来说，静态链接的每一个进程都有在磁盘中的共享标准库的副本，在连接的时候生成的整个可执行文件也包含共享库的副本，放入内存每个程序也都有共享库的副本，这样整个进程其实非常臃肿：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250729192421.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>而装入时的动态链接则是每个进程程序只会生成一份最小的可执行文件，这个文件中只包含共享库的一些映射（包括是哪个库，以及这个库在哪里），系统会先将共享库的文件装入内存，然后再将进程主程序装入内存，在装入内存进行重定位的时候建立共享库与主程序的联系，即一边装入一边链接，也就是装入时动态链接了，这里的动态，其实就是共享库只有一份大家共享的意思：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250729192851.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+因此，装入时动态链接的好处就是如果想要更新标准库就非常方便，只用更新一份即可，不用将每个进程的标准库文件全部更新；并且这种方式也实现了共享</p>
+<h4 id="sec-1082">装入时动态链接与运行时动态链接的区别</h4>
+<p>假如一个主程序中有各种对库函数的调用依赖</p>
+<p>装入时动态链接会将这些依赖以及主程序全部放入内存，建立链接以及地址转换</p>
+<p>而运行时动态链接则只将主程序装入内存，主程序执行到调用库函数的代码的时候再将这个模块调入内存与主程序链接以及地址转换</p>
+<p>运行时动态链接可以避免程序运行时一些没有用到的模块装入内存浪费内存空间</p>
+<h4 id="sec-1097">运行时动态链接与分页和分段管理</h4>
+<p>运行时动态链接更适合分段管理，因为运行时动态链接其实还是按照功能划分将模块调入内存然后进行链接；而功能逻辑划分恰恰是分段管理做的事情</p>
+<p>如果是分段管理的话，你可以将这个段直接调入内存就行了，非常方便，这个功能模块就在这个段中</p>
+<p>而如果是分页管理，那么整个功能模块可能被划分成了一个个的页，你需要将一个个页调入内存，并且这些页之间还是离散的，你还需要在页表上写入一个个的对应关系，显然是更麻烦的</p>
+<h4 id="sec-1109">链接与内存分配方式</h4>
+<p>实际上，链接没有强制要求一定使用哪种内存分配方式，比如固定分区的分配，完全可以用静态链接，实现将各个模块拼在一起装入这个分区；或者也可以先装入某个模块，然后执行调用的时候再调入另一个模块，也行</p>
+<p>或者分页方式中，它也对链接方式是无所谓的，完全可以先拼成一个大的可执行文件，然后分页离散装入内存（静态链接）；或者先分模块，然后将某个模块分页装入内存，然后执行调用哪个模块再将这个被调用的模块分页，然后再调入内存，这也是可以的</p>
+<p>但是运行时动态链接一定采用的是动态重定位方式，因为运行的时候才会将模块调入主存，当然地址转换也是执行的时候进行</p>
+<p>不过动态重定位方式采用的不一定是运行时动态链接，比如分页管理中，完全可以静态链接成一整块的可执行文件，然后装入内存，运行的时候进行重定位</p>
+<h3 id="sec-1124">碎片问题</h3>
+<h4 id="sec-1127">基本分页式存储管理</h4>
+<p>这种方式会产生内部碎片</p>
+<p>进程的页面是与内存的页框一一对应的，内存中的一个页框存放进程逻辑地址空间划分的一个页面</p>
+<p>假如进程只占据了 3.5 个页面，即第四个页面只占了一半，这个页面也会存放到内存中，这样就形成了内部碎片</p>
+<p>分页式管理其实本质上还是划分了一些固定大小的空间给进程，这个空间如果没有被占满，那就产生了内部碎片</p>
+<h4 id="sec-1142">基本分段式存储管理</h4>
+<p>分段式没有对实际的内存进行划分，而是将进程本身划分成了一个个的段，比如数据段，栈段等等（也可以说是对逻辑地址空间进行了段划分），然后直接将这些段放入了内存中，内存哪里有空就放到哪里</p>
+<p>那当然不会产生内部碎片了，反而会产生外部碎片</p>
+<h4 id="sec-1151">固定分区式管理</h4>
+<p>这种管理方式是对内存进行划分一些不会变化的大小固定的分区（分区之间可以不相等），然后将进程装入这些分区中</p>
+<p>当然进程可能小于这个分区大小，就会产生内部碎片</p>
+<h4 id="sec-1160">段页式存储管理</h4>
+<p>这种管理方式会给进程先按功能进行逻辑分段，然后在每个段再进行页的划分，同时对内存进行了页框划分</p>
+<p>这样实际上进程还是按照页为单位离散的存放在内存中</p>
+<p>这样每个段都有一个页表，这种方式段表和页表共存</p>
+<p>段表记录了每个段对应的页表，这个页表记录了这个段划分的页面存在在内存中的哪个内存块：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250725212417.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+这种方式本质上还是按照页面为单位放入内存，所以还会出现一个段中的程序占不满页面的情况，那这个页面存入了页框中，就会出现内部碎片了</p>
+<h3 id="sec-1178">各种内存分配管理的简单理解</h3>
+<p><mark>单一连续内存分配</mark></p>
+<p>单一连续分配是在单道系统中采用的内存分配方式，此时内存中只有一个进程，即这个进程占据内存的整个用户区，这种方式是单一连续分配</p>
+<p><mark>固定分区内存分配</mark></p>
+<p>固定分区内存分配是事先给内存的用户区划分好一些固定的以后不会变化的区域，进程来了之后装入其中一个区域；</p>
+<p>这些区域可能互相相等，也可能互相不相等</p>
+<p><mark>动态分区分配</mark></p>
+<p>这种分配方式是不对内存进行划分，进程来了之后直接在内存中选一块空闲区划给这个内存</p>
+<p>上面三种都属于连续内存分配，意思就是给进程在内存中划分出来一整块连续空间给这个进程的所有内容，进程在内存中存放是连续的，而不是打散的</p>
+<p><mark>分页存储管理</mark></p>
+<p>这种方式是对进程空间进行分页，对内存物理空间进行分页框，页框和页的大小相等，然后将进程的内容按照页为单位离散的存放在内存中，通过页表来找到进程的页与实际的页框的对应关系</p>
+<p><mark>分段存储管理</mark></p>
+<p>这种方式是对进程进行逻辑分段划分，而不对内存进行划分，然后将进程按照整个段放入内存中，进程的各个段之间离散分布在内存，段内连续，通过段表来找到进程的一个段在内存中的位置</p>
+<p><mark>段页式存储管理</mark></p>
+<p>这种管理方式会给进程先按功能进行逻辑分段，然后在每个段再进行页的划分，同时对内存进行了页框划分</p>
+<p>这样实际上进程还是按照页为单位离散的存放在内存中</p>
+<p>这样每个段都有一个页表，这种方式段表和页表共存</p>
+<p>段表记录了每个段对应的页表，这个页表记录了这个段划分的页面存在在内存中的哪个内存块：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250725212417.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1235">动态分区分配算法的排序问题</h3>
+<p><mark>空闲分区链</mark></p>
+<p>在每个分区的头部会有一个前向指针，在每个分区的尾部会有一个后向指针，这样通过前，后指针将每个分区连起来，这个就形成了空闲分区链</p>
+<p><mark>首次适应算法</mark></p>
+<p>这种算法要求对空闲分区链进行地址递增排序，不过空闲分区链本身就是满足按地址递增的，所以不用显示调整</p>
+<p><mark>最佳适应算法</mark></p>
+<p>这种算法要求对空闲分区连进行大小递增排序</p>
+<p><mark>最差适应算法</mark></p>
+<p>这种算法要求对空闲分区连进行大小递减排序</p>
+<h3 id="sec-1262">基本分页式存储管理</h3>
+<p>这种给进程分配内存的方式是按照页进行的，其中进程的逻辑地址空间被分成了多个页，内存也被分成了多个页框（物理块）</p>
+<p>进程的逻辑地址空间的页大小与内存的页框大小一样</p>
+<p>分配的时候就按照页进行，将进程的各个页放到内存的实际各个物理块中，这样进程所有存储内容就按内存中的页框被打散了，进程的各个页之间不一定连续，只是保证页内连续</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723154916.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h4 id="sec-1277">页表与页表项</h4>
+<p>页表是每个进程自己拥有的数据结构，一般存放在进程的 PCB 中，它的作用是记录了内存逻辑地址空间的页与实际 OS 分配给这个进程的内存块（页框）的对应关系</p>
+<p>具体来说，页表由一个个页表项组成，每一个页表项都指明了进程的页号以及对应的实际内存中的页框号</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723155250.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h4 id="sec-1289">页表与页表项的大小问题</h4>
+<p><mark>页表项的大小</mark></p>
+<p>页表项的块号应该能够表示所有的内存块号</p>
+<p>比如一个 4 GB 大小的内存，一个页框大小是 4 KB</p>
+<p>那么就有 4 GB / 4 KB =  2^20 个页框，那么页框的编号就是从 0 ~ 2^20 - 1</p>
+<p>块号需要用二进制来表示这些编号，那么就得至少 20 位的块号才能表示，但是按字节编址的话一个存储单元是 8 bit，你 20 位实际占了 3 个存储单元，因此这 3 个存储单元实际上都属于页表项中的块号，所以块号实际占用了 24 bit 的数据</p>
+<p><strong>内存块的个数 -&gt; 块号的位数</strong></p>
+<p>对于页表项的页号字段，这个字段实际不占用空间，因为页表在内存中是默认连续存放的，这样整个页表其实变成了一个数组，数组的下标就是页号，数组每个元素内容就是块号</p>
+<p>如果知道了进程逻辑地址空间的某一个页的页号 i，并且此时页表的起始地址 X 也知道，根据数组寻元素，X  +  3 i 此时就是这个页号对应的页表项了</p>
+<p><mark>页表的大小</mark></p>
+<p>页表的大小其实就是所有页表项的大小之和，也就是所有的块号占据的大小之和</p>
+<p>假如进程的逻辑地址空间有 n + 1个页的话，页号从 0 ~ n，那么每个页表项是 3 B，所以页表的总的大小就是 (n + 1) * 3 B</p>
+<h4 id="sec-1325">一般地址转换</h4>
+<p>进程的页面是离散分布在内存中的，当我们知道了一个逻辑地址 A 之后，我们首先应该知道这个 A 对应的进程的页号，以及页内偏移</p>
+<p>通过页号查找页表得到块号，然后知道块号的起始地址，再根据页内偏移就得到了这个逻辑地址对应的物理地址</p>
+<p>如果我们知道了进程的某个逻辑地址 A，下面是确定这个逻辑地址 A 的基本过程：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723163653.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong>（1）确定逻辑地址对应的页号和页内偏移</strong></p>
+<p>在进程的逻辑地址空间中，页是连续存放的，所以只要用逻辑地址除以页大小，商就是页号，余数就是页内偏移：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723164147.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong>（2）通过查页表获得这个页号对应的内存块号</strong></p>
+<p><strong>（3）通过块号得到这个内存块号在内存中的起始地址</strong></p>
+<p>在内存中块号也是连续存放的，所以只要用块号 * 块大小，那么就得到了这个块在内存中的实际物理起始地址了</p>
+<p><strong>（4）通过页内偏移 + 内存块的起始地址得到实际的物理地址</strong></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723164433.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h4 id="sec-1364">快速地址转换</h4>
+<p>在计算机中地址都是二进制形式的，并且一般页大小或者块大小也都是 2 的整数次幂</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723164835.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong>（1）确定逻辑地址对应的页号和页内偏移</strong></p>
+<p>这里 32 位逻辑地址的低 12 位就是页内偏移，高 30 位就是页号，直接拆开就得到了页号和页内偏移，对于计算机来说只用拆分二进制就行了，不用除法操作</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723165118.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong>（2）通过查页表获得这个页号对应的内存块号</strong></p>
+<p><strong>（3）通过块号得到这个内存块号在内存中的起始地址</strong></p>
+<p>此时不用再做乘法操作得到这个内存块的起始地址了，因为块的大小是 2 的整数次幂，你只要将内存块号左移相应的位数即可，比如这里的例子中，页面大小是 2^12 B，因此内存块号左移 12 位就是起始地址了：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723165541.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里本质还是乘了内存块的大小，但是在计算机中就不用乘法操作，而是用移位操作即可</p>
+<p><strong>（4）通过页内偏移 + 内存块的起始地址得到实际的物理地址</strong></p>
+<p>根据上述分析，你页内偏移也是 12 位，内存块的起始地址的低 12 位刚好是 0，所以这里相加的结果相当于内存块号和页内偏移直接拼接在一起的结果：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723165913.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>所以对于计算机来说（3）和（4）两步可以直接合并，当查页表得到内存块号之后直接将内存块号与页内偏移拼接就得到了实际的物理地址</p>
+<p>这样当页面大小是 2 的整数次幂的时候，计算机就不用进行什么加减乘除，它直接通过切分逻辑地址以及查表然后拼接二进制，就可以得到物理地址了</p>
+<h4 id="sec-1409">逻辑地址结构与页面大小</h4>
+<p>根据上文的快速地址转换原理，逻辑地址可以直接划分为页号和页内偏移两个部分：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723170542.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这样，只要知道了页内偏移，也就知道了页的大小，同时也知道了页号多少位，也就知道了进程有多少个页面了</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723170849.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里逻辑地址的页内偏移与查页表获得的块号直接拼接在一起就得到了物理地址（本质上是物理地址成页面大小然后加上页内偏移的结果）</p>
+<h4 id="sec-1427">基本地址变换机构</h4>
+<p>这个是用来进行逻辑地址转换成物理地址的一些硬件设施</p>
+<h5 id="sec-1433">页表寄存器（PTR）</h5>
+<p>它用来存放当前进程的页表在内存中的起始地址 F 和页表长度 M，这里的 M 是指页表中一共有 M 个页表项，也即这个进程一共有 M 个页，所以页号应该是 0 ~ M - 1</p>
+<p>进程没有被调度的时候页表的起始地址 F 和页表长度存放在进程的 PCB 中，当进程被调度的时候会将这两个数据存入页表寄存器中</p>
+<h5 id="sec-1442">基本地址变换机构的工作过程</h5>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723182050.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）当进程被调度的时候 OS 会将 PCB 的系统区中存放的页表起始地址和页表长度放入 PTR 中：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723182014.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（2）OS 获得了逻辑地址 A 之后进行切分，获得页号和页内偏移，然后对页号的合法性进行检查，如果页号大于页表长度 M，就会触发越界中断：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723182336.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（3）如果通过了越界检查，则通过页号与页表起始地址 F，找到页表中这个页号对应的页表项，从而获得对应内存的块号：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723182540.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（4）拿到内存块号之后直接与页内偏移拼接，这样就得到了逻辑地址 A 对应的物理地址了：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723182636.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723182733.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+一个具体的手算的逻辑地址转换为物理地址变换的例子是：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723183147.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h4 id="sec-1478">具有块表的基本地址变换机构</h4>
+<h5 id="sec-1481">块表 (TLB)</h5>
+<p>块表也是一个高速缓存硬件设施，但是它存的不是内存的副本，而只是内存中页表项的副本，具体来说，它存的是最近访问的页表项的副本</p>
+<p>同时内存中的页表也被称为慢表</p>
+<p>访问 TLB 不算做访存</p>
+<h5 id="sec-1493">具有块表的基本地址变换机构工作过程</h5>
+<p>（1）当切换进程到处理机运行的时候块表的内容被清除：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723185755.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（2）进程要访问（0， 0）这个逻辑地址，即页号是 0，偏移地址也是 0</p>
+<p>（3）OS 根据页表长度进行越界检查</p>
+<p>（4）通过了越界检查之后然后访问块表，但是由于块表此时为空，所以没有命中</p>
+<p>（5）既然块表没有命中，于是通过页号和页表起始地址访问内存中的慢表</p>
+<p>（6）访问慢表的页表项，获得内存块号，同时将此时访问的页表项复制到块表中：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723190315.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（7）根据内存块号和逻辑地址偏移量，拼接得到物理地址，于是可以访问内存的实际物理单元了</p>
+<p>以上是块表没有命中的工作过程，下面是块表命中的工作过程</p>
+<p>（8）进程接着想要访问（0， 4）的逻辑地址</p>
+<p>（9）当通过了越界检查之后，就会访问块表 TLB，发现可以命中，于是直接用此时块表对应的内存块号与此时逻辑地址的页内偏移拼接，得到物理地址访问内存了：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723190953.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h5 id="sec-1532">块表结构访问效率的提升</h5>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723191120.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>如果是先访问块表，没有命中再访问慢表</mark></p>
+<p>访问块表如果命中，则 1 us 访问块表，剩下 100 us 访问内存，总的时间就是 101 us</p>
+<p>如果访问块表没有命中，则 1 us 访问块表，100 us 访问慢表，剩下 100 us 访问内存，总的时间就是 201 us</p>
+<p>所以总时间就是：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723191333.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>如果是块表和慢表同时访问</mark></p>
+<p>这里的意思是，访问块表和慢表是同时进行的，即最开始的 1 us 是并行的，如果块表命中，则访问块表的1 us 有效，于此同时访问慢表终止，结果再加上 100 us 访问内存时间，所以总的时间就是 101 us</p>
+<p>如果块表没有命中，则访问块表终止，但是在访问块表的 1 us 过程中并行在访问慢表，所以访问慢表继续</p>
+<p>总的花费时间是 1 us + 99 us + 100 us  = 200 us</p>
+<p>开头的 1 us 是块表慢表同时访问的并行时间，中间的 99 us 是块表没有命中，继续访问慢表的剩下时间，最后的 100 us 是访存时间</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723191728.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这两种访问区别利用时间图来表示如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250723191806.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h4 id="sec-1577">两级页表</h4>
+<h3 id="sec-1580">分段式管理和分页式管理共享和安全性的理解</h3>
+<p>分段式管理更容易实现共享和安全保护</p>
+<p>这是因为分段式管理每个段存储的东西是隔开的，比如一些只读的程序，它只会存放在一个段中，每个段存放有自己不同的功能数据，分段是按照信息的逻辑结构进行划分的，将这些段放到内存中的时候可能会产生外部碎片</p>
+<p>那么不同的进程想要共享这些数据，只用在自己的段表中将自己的程序段映射的内存基址变成一样的就行了</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250724170703.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>但是如果是分页式管理，每个页都是连续的，一段可以共享的代码可以跨页存放，这个页中有可以共享的数据，也有不能共享的数据，那如果将含有可以共享的页对应的页框号放在不同的进程的页表中就不合适，因为不同的进程同时可以访问不能共享的数据了，所以分页式实现数据共享就不如分段式管理</p>
+<p>同理，安全性就是防止一些数据被别的进程访问，分段式管理只用把这个段对应的内存基址别放到别人的段表就行了，很容易可以实现数据保护</p>
+<p>但是分页式还是老问题，可以共享的数据和不能共享的数据还是可能在一个页中，这样就不容易实现数据保护，因为你一个页中的数据既要让别人可以访问，又要让别人不能访问，实现难度就大很多</p>
+<h3 id="sec-1604">分段或者分页管理的访存次数</h3>
+<p><mark>基本分页式管理</mark></p>
+<p>当拿到逻辑地址之后，需要访存一次拿到页表，然后，再访存一次拿到内存数据<br>
+所以应该是访存两次</p>
+<p><mark>基本分段式管理</mark></p>
+<p>这个进程的段表会在内存，当拿到进程的逻辑地址的时候会访存一次拿到段表</p>
+<p>然后再访存拿到数据</p>
+<p>所以应该是访存两次</p>
+<p><mark>段页式访存次数</mark></p>
+<p>这种管理方式会给进程先按功能进行逻辑分段，然后在每个段再进行页的划分，同时对内存进行了页框划分</p>
+<p>这样实际上进程还是按照页为单位离散的存放在内存中</p>
+<p>这样每个段都有一个页表，这种方式段表和页表共存</p>
+<p>那么当拿到逻辑地址的时候，首先应该访存一次拿到段表，然后再访存一次拿到这个段对应的页表，然后得到物理地址之后再访存一次拿到数据</p>
+<p>所以应该是 3 次访存</p>
+<h3 id="sec-1643">从地址 0 开始的各个分区的起始地址计算问题</h3>
+<p>如果内存是从 0 开始的并且是按字节编址，那么起始是 20 K，大小是 40 K 的分区的末尾地址应该是 60 K - 1</p>
+<p>比如一个大小为 5 个 B 的存储区，起始是 4，那么 4, 5, 6, 7, 8 一共 5 个存储单元，末尾存储单元的地址就是 4 + 5 - 1，然后紧接着的存储区的起始地址就是 4 + 5 = 9</p>
+<p>同理那么起始是 20 K，大小是 40 K 的分区的末尾地址应该是 60 K - 1，紧接着的分区的起始地址就是 60 K 了</p>
+<h2 id="sec-1655">题目</h2>
+<h3 id="sec-1658">1 分时系统的内存分配理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250725160758.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+存储保护不是为了限制内存的分配，而是防止一个进程访问另一个进程的地址区域</p>
+<p>B：<br>
+首先，分时系统是进程并发，会共享一些内存资源的，这里当然不是严格的 M/N 的内存空间</p>
+<p>其次，内存分配有多种方式，并不是完全平均的给每个内存分配固定大小的内存空间</p>
+<p>C：<br>
+并不是无限大，虽然虚拟地址空间技术会给作业更多的空间但是假如一个计算机系统的是 32 位的，那虚拟地址空间也就 2^32 B 的大小了</p>
+<p>D：<br>
+正确，需要一个 MMU 的硬件支持，并且遇到一些缺页中断的时候也需要硬件支持</p>
+<h3 id="sec-1679">2 各种内存分配方式用到的重定位方式</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250725203850.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:</p>
+<p>单一连续分配是在单道系统中采用的内存分配方式，此时内存中只有一个进程，即这个进程占据内存的整个用户区，这种方式是单一连续分配</p>
+<p>它采用的装入方式是绝对装入，程序直接编译之后就得到了绝对地址，不需要硬件干涉</p>
+<p>II:<br>
+固定分区分配方式采用的装入方式是静态重定位，他在装入内存之前由装入程序完成逻辑地址转换成绝对地址，并此后不再改变，所以也不需要硬件支持</p>
+<p>III：<br>
+页式存储管理，这种分配方式的地址转换是在程序执行的时候拿到逻辑地址，通过地址转换机构转换成物理地址，这其实是属于动态重定位，需要硬件支持</p>
+<p>IV:<br>
+动态分区分配会有一个紧凑技术，会导致程序在内存中移动，所以得用到动态重定位，需要硬件重定位寄存器的支持</p>
+<p>V：</p>
+<p>这里页式虚拟内存管理会涉及到进程的对换，这也会导致程序在内存中移动，所以也是动态重定位的方式，也需要硬件支持</p>
+<h3 id="sec-1709">3 动态重定位的重定位寄存器的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250725205306.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+显然正确</p>
+<p>B：<br>
+动态重定位是一个系统中只需要有一个就行了，一个时刻其实是只有一个进程执行的（单处理器），如果有别的进程执行，那么需要进行上下文切换即可</p>
+<p>并且对于分页和分段这种动态重定位的内存管理分配方式，它有自己的地址转换机构，也不需要重定位寄存器</p>
+<p>C：<br>
+重定位寄存器中的值就是程序执行的时候实际放到内存中的起始地址的值，所以这里相加就是正确的</p>
+<p>比如动态分区内存分配就是这样的地址转换逻辑，当然分段和分页有自己的地址转换机构，不需要重定位寄存器，但是需要重定位寄存器的确实是这样转换的</p>
+<p>D：<br>
+正确，这个就是动态重定位的定义</p>
+<h3 id="sec-1733">4 页式管理相对于连续分配的优点</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250726154245.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>页式管理显著提高了内存的利用率</p>
+<p>对于连续内存分配来说，它必须给一个进程找到一块连续的空间进程才能放入内存，这样时间久了，或者进程多了之后内存就会被打散，留下一些不连续的碎片，那么当又来一个进程之后，如果大小与碎片不合，那就无法利用这些碎片，除非将这些碎片整合紧凑在一起，但是这样又浪费了很多时间</p>
+<p>而页式管理其实是将进程打散了，散成一个个的页放入内存，这样内存中哪怕没有很大的连续区域，它也可以放入这个进程的部分页和部分内容，进程仍然可以执行，这样当然就提高了内存空间的利用率了</p>
+<h3 id="sec-1748">5 共享段表的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250726155001.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>B 其实也对，但是不合适，因为仅仅共享物理内存空间的话是不需要共享段表的，比如进程通信的时候共享一个物理内存空间</p>
+<p>所以本质上还是共享代码或者数据，A 更合适一些</p>
+<h3 id="sec-1760">6 分段的确定</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250726164355.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>分段管理的目的就是为了方便编程的，它就是由程序员在编程的时候确定的，只是 OS 沿用了这种划分逻辑，按照编程的时候划分的区域装入内存，和程序员的思维契合，方便程序员</p>
+<h3 id="sec-1769">7 内存管理的 OS 代价</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250726165325.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>分区考虑的东西是最少的</p>
+<p>他只用将连续的进程放入到内存就行了，地址转换也很简单，不需要什么单独的地址转换机构，也不需要多余的页表或者段表之类的数据</p>
+<h3 id="sec-1781">8 分页管理的碎片问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250726170150.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+内存的空间是一定的，页面越大，那对应的页框就越大，那么页框就越少，当然页表项就越少了</p>
+<p>II:<br>
+在分页管理中，对进程的数据划分页面的时候只可能最后一个页面没有别填满，然后放入内存的时候就会出现内部碎片</p>
+<p>页面更小，当然没占满的时候可以降低最后一个页面的碎片大小，比如进程的数据原本只占用了大页面的 1/3 的部分，有 2/3 的大页面成为了碎片</p>
+<p>但如如果大页面变成了一半的小页面，那这个大页面有一半的空间可以被别的数据利用，碎片就更小了；如果大页面变成了 1/3，那完全就没有碎片了</p>
+<p>III:</p>
+<p>这里磁盘访问的时间确实不是由读取页面决定的，读取页面的时间会远小于磁盘旋转寻道的时间</p>
+<p>但是页面大小的选择并不单单取决于访问磁盘的时间，比如还需要考虑形成的碎片大小等因素，所以虽然页面大小并不决定访问磁盘的时间，但是仍然不一定选择较大的页面</p>
+<h3 id="sec-1808">9 内存管理与单道或者多道程序设计系统</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250726172720.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>其实只有单用户连续分配是早期的单道系统一个进程独占整个内存</p>
+<p>其他的分配管理都是不同的进程共享这个内存，都适用于多道程序设计系统</p>
+<h3 id="sec-1820">10 对每个进程页表的存放的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250726174417.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>分页管理中每个进程的页以及页号都是属于逻辑地址空间的东西，都是自己独有的；而页表就是记录页号与实际的内存块号之间的对应关系，所以页表当然就是每个进程所独有的，每个进程都会有一个自己的页表</p>
+<p>页表或者段表这些东西是 OS 提供的地址转换的服务，所以它们应该是由 OS 来维护的，权限很高，它们必须放在内存的内核区而不是用户区；并且大部分情况下参与并发执行的进程的页表或者段表都会放入到内核区的，当转换到别的进程执行的时候 OS直接就从内存中读取页表然后进行地址转换了， A 更合适一点，</p>
+<p>如果其他的就绪的进程的页表不是在内存而是在外存中，那么每次调度的时候还需要 IO 操作从外存读取数据到内存，这样很明显就是不合适的</p>
+<h3 id="sec-1835">11 段页式管理的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250728143214.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>其实分段就是为了方便用户的编程，段就是由用户划分的，是按照逻辑进行划分的</p>
+<p>而将段放入内存的时候 OS 会对内存和段进行分页，这样可以提高内存的利用率</p>
+<p>所以当然就是 B 正确了</p>
+<h3 id="sec-1850">12 内部碎片的产生理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250728143759.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>内部碎片只有对内存进行划分了之后将进程内容装在这个划分的分区中，这个分区没有被占满，但是仍然被进程的内容独占，造成了内存空间浪费，这个就是内部碎片</p>
+<p>所以那些事先进行分区划分内存的分配方式都会产生内部碎片</p>
+<p>因此 II, III, IV 都会产生内部碎片</p>
+<h3 id="sec-1865">13 分页管理与重定位方式</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250728145904.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+正确</p>
+<p>II:<br>
+页式管理就是会产生内部碎片，所以错误</p>
+<p>III:<br>
+错误</p>
+<p>IV:<br>
+页式存储管理的地址转换是在程序执行的时候进行的，这种方式显然是动态重定位方式</p>
+<p>重定位就是逻辑地址转换成物理地址</p>
+<p>静态重定位就是在装入内存的时候地址转换一次，然后不再改变，那么进程的数据如果需要在内存中移动的话就会出问题</p>
+<p>动态重定位就是在程序执行的时候进行转换</p>
+<p>而分页式存储管理就是在程序执行的时候拿到逻辑地址，然后转换成物理地址，所以当然就是动态重定位，而不是静态重定位</p>
+<h3 id="sec-1895">14 多级页表的计算</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250728151011.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>首先，当前这个系统逻辑地址空间大小是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">48</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span></p>
+<p>然后一个页的大小是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span></p>
+<p>所以整个系统可以被划分为 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">36</span></span></span></span></span></span></span></span></span></span></span></span> 个页</p>
+<p>然后每一个页对应一个页表项，所以对应 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">36</span></span></span></span></span></span></span></span></span></span></span></span> 个页表项，这个页表项，其实可以看作不进行多级页表划分的时候的整个大的页表的页表项个数</p>
+<p>当进行多级页表划分的时候实际上页表项的个数不变，因为你物理块页框还是要与这么多的页表相对应呈现一一映射关系，所以仍然是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">36</span></span></span></span></span></span></span></span></span></span></span></span> 个，这是最后一级页表的总的页表项，目前最后一级称为 1 级（这里 1 级方便做题，跟课本上是的多级页表的级是倒过来的）</p>
+<p>1 级页表的总的大小就是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">36</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">8</span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span> = <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">39</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span>，每个页表占 4 KB，所以总的页表个数就是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">27</span></span></span></span></span></span></span></span></span></span></span></span> 个</p>
+<p>也就是最后一级页表的总个数是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">27</span></span></span></span></span></span></span></span></span></span></span></span> 个</p>
+<p>最后一级页表的总大小不满足小于 4 KB，所以得往上划分</p>
+<p>上一级页表，即 2 级页表的每一个表项对应 1 级页表的一个页表，所以 2 级应该有 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">27</span></span></span></span></span></span></span></span></span></span></span></span> 项，每一项是 8 B，所以 2级的页表一共是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">30</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span>，不满足小于 4 KB，所以得继续往上划分，2 级页表一共有 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.3629em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0179em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7463em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-2.931em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">30</span></span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span></span></span></span></span></span></span></span> 个</p>
+<p>2 级页表 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span></span></span></span></span></span></span></span> 个，所以 3 级页表页表项就是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span></span></span></span></span></span></span></span> 个，所以 3 级页表的总大小就是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">8</span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">21</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span></p>
+<p>这个大小大于 4 KB，所以继续向上划分，3 级页表的个数就是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.3629em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0179em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7463em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-2.931em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">21</span></span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span> 个</p>
+<p>因此 4 级页表的项数就是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span> 个，所以 4 级页表的总大小就是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span> 刚好就是 4 KB</p>
+<p>因此 4 级页表就 1 个页表可以存放所有表项</p>
+<p>因此这道题就是 4 级</p>
+<p>总结：</p>
+<p>（1）最后一级的页表它的页表项总数是整个逻辑空间划分的页数，对应物理内存的页框数</p>
+<p>（2）上一级页表的一个页表项，对应下一级的一个页表，通过下一级的页表总数算出上一级的页表项的总数，从而算出上一级的页表总大小</p>
+<p>（3）每一级页表必须满足一个页表的大小不超过物理内存的页框大小，这道题就是 4 KB，只有某一级对应的页表项不算很多，可以放在一个 4 KB 的页表中，这时划分结束</p>
+<p><mark>另一种思考方式</mark></p>
+<p>仍然，最后一级，即 1 级的页表项的总个数始终是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">36</span></span></span></span></span></span></span></span></span></span></span></span> 个，对应逻辑地址空间的 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">36</span></span></span></span></span></span></span></span></span></span></span></span> 个页，和物理空间的 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">36</span></span></span></span></span></span></span></span></span></span></span></span> 个页框</p>
+<p>一个页表最大是 4 KB，一个页表项的大小是 8 B，所以一个页表最多对应 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span> 个页表项</p>
+<p>假如是两级页表，那么 2 级页表就只有一个，对应 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span> 个页表项，一个页表项对应 1 级页表的一个页表，而 1 级页表的一个页表也对应 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span> 个页表项，所以二级页表对应的总的 1 级页表项最多就是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span></span></span></span></span></span></span></span> 个，少于 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">36</span></span></span></span></span></span></span></span></span></span></span></span> 个，所以二级页表不行，得往上继续分</p>
+<p>假如是三级页表，那么 3 级页表就只有一个，最多对应 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span> 个页表项，一个页表项对应一个二级页表，一个二级页表又对应 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span> 个 1 级页表项，所以三级页表最多对应 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">27</span></span></span></span></span></span></span></span></span></span></span></span> 个 1 级页表项，少于 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">36</span></span></span></span></span></span></span></span></span></span></span></span> 个，所以 3 级页表不行，继续往上分</p>
+<p>假如是 4 级页表，按照规律，最多对应 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">36</span></span></span></span></span></span></span></span></span></span></span></span> 个 1 级页表项，刚好满足，所以就是 4 级页表了</p>
+<h3 id="sec-1973">15 分区分配内存的保护措施理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250728163415.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>分区分配就是那种固定分区，或者动态分区分配方式，它们保护的时候只用保证进程访存别访问到别的进程的用户空间就行了，一个进程是连续存放在内存的，程序代码，数据，和栈都在一起，所以只用保证地址访问别越界就行了，不用单独区保护代码，数据，栈这些东西</p>
+<p>因此用一个基地址寄存器和一个界地址寄存器就能进行保护了</p>
+<h3 id="sec-1985">16 动态分区算法产生内存碎片的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250728165826.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>动态分区没有对内存进行划分，所以这些算法产生的其实都是外部碎片，不是内部碎片</p>
+<p>不过不管是内部还是外部碎片，碎片的定义就是太小了以至于别人无法利用这块内存，所以如果一个算法总是产生一些小空间那么它就很容易产生碎片；最佳适应算法就是这样的算法，它总是找一块最适合当前进程大小的空闲区，那么这个空闲区留下的空间一定是最小的，也最难被别的进程使用，所以留下的空间最容易成为碎片</p>
+<p>而别的算法，比如最坏适应算法，它总是找一个最大的空闲区分配给进程，所以留下的空闲区也足够大，更有机会被别的进程利用，更不容易变成碎片</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html"><span class="pager__label">← 上一篇</span><span class="pager__title">2 进程与线程</span></a>
+    <a class="pager__item pager__item--next" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html"><span class="pager__label">下一篇 →</span><span class="pager__title">4 虚拟内存</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h2" href="#sec-3">程序的装入</a><a class="margin__link margin__link--h3" href="#sec-6">程序装入内存的过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-33">绝对装入方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-51">重定位是指什么？</a><a class="margin__link margin__link--h3" href="#sec-57">静态重定位装入方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-96">动态重定位装入方式是什么？</a><a class="margin__link margin__link--h2" href="#sec-126">程序的链接</a><a class="margin__link margin__link--h3" href="#sec-129">程序的链接是什么？</a><a class="margin__link margin__link--h3" href="#sec-135">静态链接方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-150">装入时动态链接方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-180">装入时动态链接的优点是什么？</a><a class="margin__link margin__link--h3" href="#sec-198">运行时动态链接是什么？</a><a class="margin__link margin__link--h2" href="#sec-219">连续内存分配管理方式 - 固定分区分配</a><a class="margin__link margin__link--h3" href="#sec-222">内存的分配包括哪两种方式？</a><a class="margin__link margin__link--h3" href="#sec-228">连续分配方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-234">CPU 的内存保护是什么？有哪两种方式？</a><a class="margin__link margin__link--h3" href="#sec-246">内存共享是指什么？可重入代码是指什么？</a><a class="margin__link margin__link--h3" href="#sec-252">连续内存分配包括哪三种方式？</a><a class="margin__link margin__link--h3" href="#sec-258">单一连续分配是指什么？</a><a class="margin__link margin__link--h3" href="#sec-267">固定分区分配方式是指什么？</a><a class="margin__link margin__link--h3" href="#sec-276">固定分区的分区使用表是什么？</a><a class="margin__link margin__link--h3" href="#sec-282">固定分区的缺点是什么？内部碎片是指什么？</a><a class="margin__link margin__link--h2" href="#sec-294">连续内存分配管理方式-动态分区分配</a><a class="margin__link margin__link--h3" href="#sec-297">动态分区分配是指什么？</a><a class="margin__link margin__link--h3" href="#sec-306">动态分区的空闲分区表是什么？</a><a class="margin__link margin__link--h3" href="#sec-312">首次适应算法是指什么？分区表的结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-327">首次适应算法的优缺点是什么？外部碎片是指什么？</a><a class="margin__link margin__link--h3" href="#sec-342">邻近适应算法（循环首次适应算法）是指什么？分区表的结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-351">最佳适应算法是指什么？分区表的结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-366">最佳适应算法的缺点是什么？</a><a class="margin__link margin__link--h3" href="#sec-372">最坏适应算法是什么？分区表的结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-390">基于索引的动态分区分配算法是什么？</a><a class="margin__link margin__link--h3" href="#sec-462">紧凑技术是什么？</a><a class="margin__link margin__link--h3" href="#sec-468">动态分区的分配和回收操作是什么？</a><a class="margin__link margin__link--h2" href="#sec-477">离散内存分区管理方式 - 分页式</a><a class="margin__link margin__link--h3" href="#sec-480">离散分区管理方式分为哪三种？</a><a class="margin__link margin__link--h3" href="#sec-486">页，页面，页号，页面号；页框，页帧，物理页，页框号，页帧号，物理页号分别是什么含义？</a><a class="margin__link margin__link--h3" href="#sec-498">分页存储管理方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-504">页内碎片是指什么？</a><a class="margin__link margin__link--h3" href="#sec-510">分页管理方式下的逻辑地址格式是什么样的？</a><a class="margin__link margin__link--h3" href="#sec-519">页表是什么？页表一般存放在哪里？页表寄存器是什么？存放什么东西？</a><a class="margin__link margin__link--h3" href="#sec-525">分页管理方式中逻辑地址转换成物理地址的过程是什么？</a><a class="margin__link margin__link--h3" href="#sec-549">TLB 是什么？</a><a class="margin__link margin__link--h3" href="#sec-555">有了 TLB 之后的地址转换是什么样的？</a><a class="margin__link margin__link--h2" href="#sec-570">离散内存分区管理方式-多级页表</a><a class="margin__link margin__link--h3" href="#sec-573">单级页表的缺陷是什么？计算页表大小的方法？</a><a class="margin__link margin__link--h3" href="#sec-600">两级页表结构是指什么？</a><a class="margin__link margin__link--h3" href="#sec-636">多级页表划分过程以及物理地址转换过程是什么？</a><a class="margin__link margin__link--h2" href="#sec-713">离散内存管理方式-分段式</a><a class="margin__link margin__link--h3" href="#sec-716">分段存储管理方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-731">分段式存储是如何将段放入实际物理内存的？段表是什么？</a><a class="margin__link margin__link--h3" href="#sec-749">分段式管理是如何根据逻辑地址转换成物理地址的？</a><a class="margin__link margin__link--h3" href="#sec-779">分段管理和分页管理的区别是什么？</a><a class="margin__link margin__link--h3" href="#sec-785">分段式存储和分页式存储地址空间一维和二维的理解</a><a class="margin__link margin__link--h3" href="#sec-797">共享段与共享段表</a><a class="margin__link margin__link--h3" href="#sec-839">进程的逻辑地址空间</a><a class="margin__link margin__link--h3" href="#sec-884">内存保护的两种方式</a><a class="margin__link margin__link--h3" href="#sec-902">地址绑定</a><a class="margin__link margin__link--h3" href="#sec-911">程序的装入与重定位</a><a class="margin__link margin__link--h3" href="#sec-1016">程序的链接</a><a class="margin__link margin__link--h3" href="#sec-1124">碎片问题</a><a class="margin__link margin__link--h3" href="#sec-1178">各种内存分配管理的简单理解</a><a class="margin__link margin__link--h3" href="#sec-1235">动态分区分配算法的排序问题</a><a class="margin__link margin__link--h3" href="#sec-1262">基本分页式存储管理</a><a class="margin__link margin__link--h3" href="#sec-1580">分段式管理和分页式管理共享和安全性的理解</a><a class="margin__link margin__link--h3" href="#sec-1604">分段或者分页管理的访存次数</a><a class="margin__link margin__link--h3" href="#sec-1643">从地址 0 开始的各个分区的起始地址计算问题</a><a class="margin__link margin__link--h2" href="#sec-1655">题目</a><a class="margin__link margin__link--h3" href="#sec-1658">1 分时系统的内存分配理解</a><a class="margin__link margin__link--h3" href="#sec-1679">2 各种内存分配方式用到的重定位方式</a><a class="margin__link margin__link--h3" href="#sec-1709">3 动态重定位的重定位寄存器的理解</a><a class="margin__link margin__link--h3" href="#sec-1733">4 页式管理相对于连续分配的优点</a><a class="margin__link margin__link--h3" href="#sec-1748">5 共享段表的概念</a><a class="margin__link margin__link--h3" href="#sec-1760">6 分段的确定</a><a class="margin__link margin__link--h3" href="#sec-1769">7 内存管理的 OS 代价</a><a class="margin__link margin__link--h3" href="#sec-1781">8 分页管理的碎片问题</a><a class="margin__link margin__link--h3" href="#sec-1808">9 内存管理与单道或者多道程序设计系统</a><a class="margin__link margin__link--h3" href="#sec-1820">10 对每个进程页表的存放的理解</a><a class="margin__link margin__link--h3" href="#sec-1835">11 段页式管理的理解</a><a class="margin__link margin__link--h3" href="#sec-1850">12 内部碎片的产生理解</a><a class="margin__link margin__link--h3" href="#sec-1865">13 分页管理与重定位方式</a><a class="margin__link margin__link--h3" href="#sec-1895">14 多级页表的计算</a><a class="margin__link margin__link--h3" href="#sec-1973">15 分区分配内存的保护措施理解</a><a class="margin__link margin__link--h3" href="#sec-1985">16 动态分区算法产生内存碎片的理解</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>

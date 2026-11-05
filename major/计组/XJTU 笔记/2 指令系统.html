@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2-指令系统 · 22408 备考笔记</title>
+<meta name="description" content="2-指令系统 2.1 概述 定义： 指令系统是指一台计算机所具有的全部机器指令的集合，它反映了该机所拥有的基本功能，是软件和硬件的接口或者交界面；为了使指令系统中的每条指令都可以在计算机上执行， 计算机硬件相应地就具有执行这些指令的逻辑线路">
+<link rel="icon" href="../../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../../" data-note-id="c047">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../../math/index.html">数学</a><a href="../../../major/index.html" class="is-active">专业课</a><a href="../../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note is-active" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../../major/index.html">专业课 408</a><i>/</i><span>计组</span><i>/</i><span class="crumb__no">09</span></div>
+    <h1 class="doc__title">2-指令系统</h1>
+    <div class="doc__meta"><span>2.6 万字</span><span>约 61 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose">
+<h2 id="sec-3">2.1 概述</h2>
+<p><strong>定义：</strong></p>
+<p>指令系统是指一台计算机所具有的全部机器指令的集合，它反映了该机所拥有的基本功能，是软件和硬件的接口或者交界面；为了使指令系统中的每条指令都可以在计算机上执行， 计算机硬件相应地就具有执行这些指令的逻辑线路， 所以指令系统表征了计算机硬件的基本功能，是对计算机硬件功能的具体描述。</p>
+<p>如果在计算机的一个基本操作是由硬件实现，那就应该在指令系统中设置一条专用的指令，如果这个操作是由软件实现，那么这个操作就是通过一条条指令组成的子程序来实现的。</p>
+<p><strong>分类：</strong></p>
+<p>从计算机系统的层次结构来说， 计算机的指令有宏指令、机器指令和微指令之分：</p>
+<p><strong>宏指令</strong>是由若干条机器指令组成的软件指令，它属于软件。</p>
+<p><strong>微指令</strong>是微程序级的命令，它属于硬件。</p>
+<p><strong>机器指令</strong>（通常简称为指令） 介于微指令与宏指令之间，每条指令可完成一个独立的操作，如一个算术运算或一次数据传送操作，机器指令就是一条二进制数，早起程序员就用一条打孔纸带上的机器指令来控制计算机</p>
+<p>指令格式则是指令字用二进制代码表示的结构形式，由操作码字段和地址码字段组成。操作码字段表征指令的操作特性与功能；地址码字段通常指定参与操作的操作数的地址</p>
+<h2 id="sec-33">2.2 指令系统的发展</h2>
+<p><strong>指令系统发展的三个特征：</strong></p>
+<p>（1）软件硬化，用一条功能复杂的新指令来取代原先需要一串指令完成的功能，这是为了避免反复访存带来的时间损耗</p>
+<p>（2）不断增加功能复杂的指令和复杂的寻址方式来支持高级语言的高效实现</p>
+<p>（3）为了兼容系列机软件，指令系统不断扩大</p>
+<p><strong>CISC（复杂指令系统计算机）的主要问题：</strong></p>
+<p>（1）<strong>指令系统庞大，指令功能和寻址方式以及指令格式复杂，导致编译程序复杂，速度慢</strong>，难以通过编译优化生成高效的目标代码程序</p>
+<p>（2）<strong>指令功能复杂，且每种指令都可访存，占用多个机器周期</strong></p>
+<p>（3）为了实现复杂的指令系统，采用了微程序控制技术，由微程序解释执行机器指令，这样又影响了指令的执行速度</p>
+<p>（4）<strong>有80%左右的指令只有在20%的cpu时间才会被用到，即存在大量不经常使用的指令</strong>，这就导致cpu的研发制造周期非常长，难以调试以及可维护性差</p>
+<p><strong>计算机执行程序所需的时间：</strong></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240724173312945.png" alt="image-20240724173312945" loading="lazy" decoding="async" class="note-img"></p>
+<p>RISC指令与CISC相比，由于其简化了指令复杂功能，因此一个程序的指令条数会比CISC多一些，但是由于RISC指令大多由一个机器周期实现，所以CPI比CISC低很多，并且由于RISC指令结构更加简单，所以完成一个同样的操作经过CPU内部数据通路更短，因此一个机器周期也比CISC指令对应的硬件结构小很多</p>
+<p><strong>RISC（精简指令系统计算机）的特点：</strong></p>
+<p>（1）指令长度固定，格失少，寻址方式少，指令各个字段划分一致，各个字段功能规整</p>
+<p>（2）指令中只有取数/存数指令访存，其余指令都在寄存器之间进行</p>
+<p>（3）控制单元直接以硬件布线为主，很少采用微程序控制</p>
+<p>（4）优先选取了使用频率高的指令，避免复杂指令，采用编译优化技术，减少程序执行时间</p>
+<p>（5）cpu中的通用寄存器数量很多，大多数的算数逻辑运算指令的操作数都在寄存器中存取</p>
+<p>（6）cpu采用流水线结构，大部分指令都可以在一个机器周期中完成</p>
+<p>mips32是RISC结构的经典代表，下文中都将以mips32作为RISC指令系统的范例进行介绍</p>
+<h2 id="sec-96">2.3 指令系统的功能</h2>
+<h3 id="sec-99">2.3.1 指令系统的设计原则</h3>
+<p><strong>（1）完整性</strong></p>
+<p>其要求通用计算机应该具备完善的指令功能，这时CISC指令系统的特点，许多指令的功能完全可以通过使用基本指令编写程序实现，因此完整性但不是RISC指令的特点</p>
+<p><strong>（2）规整性</strong></p>
+<p>规整性包括三个方面：</p>
+<ol>
+<li>对称性，指所有的运算部件都能够同等的访问所有的的寄存器和存储器单元，所有的指令都可以使用各种寻址方式</li>
+<li>匀齐性，指一种操作性质的指令可以支持各种数据类型，比如算术运算指令可以支持字节，字，双整形，以及十进制和单双精度浮点数的运算</li>
+<li>一致性，指指令格式和数据格式的一致性，也就是指令长度和数据长度应该有一定的关系而方便存取，比如指令长度和数据长度通常都是字节的整数倍</li>
+</ol>
+<p><strong>（3）高效性</strong></p>
+<p>通常CISC是通过复杂的指令完成指令工作减少程序中指令的条数来提供效率；而RISC更强调减少单条指令的执行时间来提高效率</p>
+<p><strong>（4）兼容性</strong></p>
+<p>指系列机种之间应该具备相同的基本结构和共同的指令系统，从而保证各个机种之间的软件应该可以通用；不过通常只能做到向后兼容和向上兼容</p>
+<h3 id="sec-143">2.3.2 数据类型</h3>
+<p>数据类型，数据表示，操作数的定义如下所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240724180638135.png" alt="image-20240724180638135" style="zoom:50%;" />
+<p>操作数构成了指令的一部分，注意操作数和数据表示有些不一样，操作数单指指令的一部分，一般而言这一部分（指操作数类型）可以包括地址，数字，字符，逻辑数等等；但是数据表示是指硬件可以直接识别的数据类型，它可以作为操作数从而变成指令的一部分，也可以是存储器中存放的指令可以直接操作硬件可以识别的数据类型；操作数是指令中的概念，数据表示意义更广一些</p>
+<p>在机器中一律使用二进制表示这些操作数，为了让硬件区分不同的操作数类型，通常使用操作码来区分指定不同的操作数</p>
+<h4 id="sec-156">操作数类型</h4>
+<p>下面我们主要介绍的就是操作数类型</p>
+<p><strong>（1）地址</strong></p>
+<p>地址就是指令或是操作数被存放在存储设备中的位置编码（注意指令也是放在存储器中存放的），主要的存储设备包括通用寄存器，主存和IO设备；地址是一种比较特殊的操作数，指令中可以直接给出地址，当然大多数情况是需要计算得到的，下文细嗦</p>
+<p><strong>（2）数字</strong></p>
+<p>数字型数据是计算机处理的最基本操作数类型。计算机中常用的数字类型有定点数和浮点数</p>
+<p><strong>（3）字符</strong></p>
+<p>文本或者字符串也是常见的数据类型</p>
+<p><strong>（4）逻辑数</strong></p>
+<p>不赘述</p>
+<p>需要注意的是，MIPS32指令中存数或取数指令分别有字节，半字，和字的操作，并且对于字节或者半字的数据载入到32位寄存器时是载入到低位的，高位部分需要进行扩充，对于有符号数的扩充是用符号位扩充，对于无符号数的扩展需要用零扩展</p>
+<h4 id="sec-189">地址空间</h4>
+<p>下面介绍指令中的<strong>地址空间</strong>，地址空间也是由一串二进制的地址操作数形成的：</p>
+<p>首先是计算机中的主要存储设备，主要包含三个，寄存器，主存储器，和IO设备，它们各自都包含多个可编址的数据单 元。对这些单可以 <strong>统一编址</strong> 或者 <strong>单独编址</strong>，从而形成了单地址空间或这多个地址空间</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240727171055976.png" alt="image-20240727171055976" loading="lazy" decoding="async" class="note-img"></p>
+<p>对于三个地址空间，也就是主存，寄存器和IO设备三者都独立编址，在RISC机器中，规定所有的运算，移位测试等操作只能在通用寄存器中进行，只有访问操作（读写）才可以在三种存储设备中进行；而对于CISC系统，所有的操作都可以在三种存储器中进行，这就导致指令非常复杂</p>
+<p>对于两个地址空间，即对通用寄存器编址，以及对主存和IO设备编址；通常做法是将主存和IO设备的地址空间的高端划出给IO设备；将主存和io一起编址可以简化指令系统，因为不需要再另设指令分别取访问主存和IO，但是统一编址后需要译码器区分到底是访问主存还是IO设备，因此这样编址会影响指令执行的速度</p>
+<p>对于一个地址空间，就是三个存储设备统一编址，一般指令空间的最低端划分给通用寄存器，最高端划分给io设备，中间部分给主存；这里的高端和低端的意思大概是地址空间的低地址部分，和高地址部分（毕竟访存的时候还是通过二进制数形成一个地址的）</p>
+<p>对于无地址空间，也成为隐含编址，在堆栈计算机中，运算指令是不需要地址的</p>
+<h4 id="sec-213">编址方式</h4>
+<p>计算机硬件可以支持指令按照不同的长度访问存储设备中的数据，比如按照字，半字，字节，所以指令访问存储设备中的最小单位也可以是字或半字或字节，<strong>我们将指令可以访问的最小数据位数构成一个编址单位</strong>；而编址方式就是指主存单元的地址编排方式（其实也不一定是主存），其决定了主存的最小访问单元，即决定了一个编址单位是字还是字节还是半字，一般而言常用的编址单位有字和字节</p>
+<p><strong>（1）按字编址</strong></p>
+<p>这种编址方式就是一个编址单位是一个字，以8086为例，其字长位16位，并且数据总线也是16位，这样编址单位的二进制位数就与访问一次设备得到数据的二进制位数一样了</p>
+<p>如果指令字长（就是指令的长度，取决于操作码长度，操作数地址和操作数地址的个数）和数据字长（计算机中存储一个数据所占用的位数，也就是数据单位的位数，数据字长的长短决定了计算机在一次操作中能够处理的数据量大小）和机器字长（cpu可以一次处理的位数，就是通用寄存器的位数）三者相等（早期计算机中就是三者相等）；那么每次取值之后PC（程序计数器）自动加一，每次取数据之后数据指针也是自动加一减一的（后面细嗦）</p>
+<p>但是按字编址显然是不灵活的，数据的空间占有率不高，且特别是非数值领域</p>
+<p>对于按字编址的主存大小，其容量为：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240727175236559.png" alt="image-20240727175236559" style="zoom:50%;" />
+<p><strong>（2）按字节编址</strong></p>
+<p>为了适应非数值的数据，比如一个字符ASCII码就是一个字节的长度，一般而言信息的基本单位就是一个字节，所以现在的普遍编址方式就是按字节编址；但是一般计算机的字长（指通用寄存器的位数）都是字节的4倍以上，所以计算机中编址单位所含的信息量（一个字节）就与访问一次存储器所获得的信息是不同的，这就产生了字节在存储器中的存放问题</p>
+<p>对于存储器按字节编址，那么存储器就既有字节地址也有字地址，字节地址是连续的（也就是最小存储单元）按0， 1， 2...这样递增下去；但是字地址不是连续的，比如一个32位机器其字的长度就是32位是字节的<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>倍，所以字的地址就是0, 4, 8, 16....</p>
+<p>所以如果对于一个32位的地址编码，如果按照字节寻址那么寻址空间大小就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">32</span></span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.0502em;">GB</span></span></span></span>，如果按照字来寻址，字长位32位，因此4个字节构成一个字长，字的个数就是字节的个数除以4，因此字的寻址空间大小就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">32</span></span></span></span></span></span></span></span></span><span class="mord">/4</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mord mathnormal" style="margin-right:0.0278em;">or</span><span class="mord mathnormal">d</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord mathnormal">G</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mord mathnormal" style="margin-right:0.0278em;">or</span><span class="mord mathnormal">d</span><span class="mclose">)</span></span></span></span></p>
+<p>按字节编址的存储器中有两个问题</p>
+<p><strong>字节编址存放顺序问题</strong></p>
+<p>对于多字节的数据存放在存储器中有两种存放顺序，一种是低字节放在低地址（小端存放），一种是低字节放在高地址（大端存放）；两种存放示意图如下所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240727181249797.png" alt="image-20240727181249797" style="zoom:50%;" />
+<p><strong>不同字长数据存放的边界问题</strong></p>
+<p>对于程序中的不同数据其字长也是不一样的，这些数据在主存中混合存放其存放方式有两种，边界对齐和边界不对齐</p>
+<p>所谓边界对齐，就是严格规定了字节，字，半字，双字存放的起始位置，比如假设机器字长为32位，规定半字长数据的存放起始位置必须是偶地址，单字长的数据存放起始地址必须是4的倍数，并且按照小端存放方式存放数据如下所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240727182517450.png" alt="image-20240727182517450" style="zoom:50%;" />
+<p>第二行的字数据显然不能再存放再第一行了，因为其存放的地址必须为4的倍数，因此这就会造成空间的浪费，如上图的阴影所示</p>
+<p>所谓边界不对其，就是一个数据挨着一个数据存放将空间都占满，如下所示（还是小端存放方式）：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240727182704211.png" alt="image-20240727182704211" style="zoom:50%;" />
+<p>上图中的阴影是一个字数据，可以看到它的存放被拆成了两段</p>
+<p>但是这就带来两个问题，一个是上图字数据跨越了两个字单元，因此如果是16位的数据总线访存的时候就必须得访问两次主存才可以将数据取出，同样一个字节，半字，都可能跨越两个字单元，这样就造成了访问速度下降了一半；另外一个问题就是存储器的读写控制很麻烦，因为这种存放的边界问题不规整，很难判断相邻的两位是否是真的属于一个完整的数值</p>
+<p>对于MIPS处理器，其要求严格的边界对齐，以32位机器字长为例，要求半字数据必须放在偶字节地址上，字数据必须放在4倍字节地址上，双字数据必须放在8倍字节地址上</p>
+<h3 id="sec-283">2.3.3 操作类型</h3>
+<p>所谓的操作类型就是把指令系统按功能进行分类，一般来讲指令系统包含五大指令：数据传送，数据运算，程序控制，输入输出，其他这五大指令</p>
+<h4 id="sec-289">数据传送指令</h4>
+<p>这类指令的功能就是在寄存器之间，寄存器和主存之间，以及主存之间传送数据</p>
+<h4 id="sec-295">数据运算指令</h4>
+<p>需要注意的是CISC指令支持支持源操作数和目的操作数在内存单元的运算类指令，但是RISC指令只有存数和取数可以访问内存，运算类指令的源操作数和目的操作数都在寄存器中（至于什么是源操作数什么是目的操作数，后文细嗦）</p>
+<p>数据运算指令包括下面四类：</p>
+<p><strong>（1）算数运算指令</strong></p>
+<p>也就是算数运算，包括加减乘除等等</p>
+<p><strong>（2）逻辑运算指令</strong></p>
+<p>与或非操作</p>
+<p><strong>（3）移位指令</strong></p>
+<p>移位指令包括算数移位，逻辑移位，循环移位三种；</p>
+<p>对于算数移位而言有算数左移（高位移除，低位补零）算数右移（低位移除，高位补符号位）</p>
+<p>对于逻辑移位而言有逻辑左移（高位移除，低位补零）逻辑右移（低位移除，高位补零）</p>
+<p>对于循环移位而言有循环左移（循环左移将二进制数的所有位向左移动一个或多个位置，移出的高位重新插入到低位）</p>
+<pre class="code-block" data-lang="c"><code class="hljs">原数：  <span class="hljs-number">00101100</span>
+左移<span class="hljs-number">1</span>位：<span class="hljs-number">00101100</span> -&gt; <span class="hljs-number">01011000</span>
+</code></pre>
+<p>循环右移（循环右移将二进制数的所有位向右移动一个或多个位置，移出的低位重新插入到高位）：</p>
+<pre class="code-block" data-lang="c"><code class="hljs">原数：  <span class="hljs-number">00101100</span>
+右移<span class="hljs-number">1</span>位：<span class="hljs-number">00101100</span> -&gt; <span class="hljs-number">00010110</span>
+</code></pre>
+<p><strong>（4）程序控制指令</strong></p>
+<p>程序控制指令也被称为转移指令，其包括无条件转移，条件转移，调用与返回，陷阱和陷阱指令</p>
+<p>对于无条件转移就是直接将程序转移到一条需要执行的指令</p>
+<p>对于条件转移就是条件满足，就转移，一般机器都可以提供条件码作为某些指令的执行结果，比如零标志，如果结果为零就将这个位置为零等</p>
+<p>对于调用与返回指令，也就是CALL和RETURN指令，CALL表示转移到子程序的入口来执行子程序，RETURN表示返回调用的位置即源程序的调用子程序的断点位置，CALL和RETURN指令都是成对出现的；此外需要注意的是为了能够正确返回到源程序，在调用子程序的时候需要记住返回到源程序的地址以便子程序执行结束的时候可以正确返回；一般在调用子程序的时候返回地址可以存放在寄存器中，但是这种方式难以实现子程序嵌套（即子程序调用子程序，因为寄存器的数量是有限的，一般只能记住源程序的地址）；或者放在子程序的开始地址单元处，然后从第二个单元开始执行子程序，这种方式可以实现子程序的嵌套，但是不能实现递归子程序；最好的方法是存放在堆栈中，当调用结束的时候就从堆栈弹出返回地址</p>
+<p>对于陷阱和陷阱指令，所谓陷阱就是程序在执行过程中发生了意外事故导致程序不能正常运行，比如电压不稳定或执行了除以零的操作，此时计算机就发出陷阱信号，转入处理程序进行相应的故障处理；一般而言陷阱指令不是直接提供给用户使用的，但是IA-32的软中断指令是提供给用户使用的陷阱指令</p>
+<p><strong>（5）输入输出指令</strong></p>
+<p>对于输入输出单独编址的计算机而言设有输入输出指令，这个指令完成从IO接口中的寄存器读入一个数据到cpu中的寄存器，或者从cpu中的寄存器写入到io接口寄存器中</p>
+<p><strong>（6）其他</strong></p>
+<p>不再赘述</p>
+<h2 id="sec-366">2.4 指令格式</h2>
+<p>指令格式就是指令的二进制表示形式</p>
+<h3 id="sec-372">2.4.1 指令的组成</h3>
+<p>指令格式就是二进制代码表示的指令结构形式，其包括操作码和地址码两个部分，如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240728161439978.png" alt="image-20240728161439978" loading="lazy" decoding="async" class="note-img"></p>
+<p>操作码指出了指令完成的功能，地址码指出操作数的地址，也就是操作对象所处的位置，或者下一条指令在主存中的位置</p>
+<h4 id="sec-384">操作码</h4>
+<p>指令的操作码需要给出两部分信息</p>
+<p>（1）指令的操作类型，比如加减乘除移位，存储读取等等</p>
+<p>（2）所需操作数的类型，计算机中存放的数据就是单纯的一堆二进制的数，如果解读这一串二进制数就需要指令的操作码给出解释字段</p>
+<h4 id="sec-396">地址码</h4>
+<p>指令中涉及的地址包括寄存器地址，主存地址，和IO设备地址；</p>
+<h4 id="sec-402">指令的分类（CPU的结构）</h4>
+<p>指令中的地址码的形式实际上取决于cpu结构，一般而言cpu分为堆栈型，累加器型和通用寄存器三种cpu结构，相应的指令结构也分为三种：堆栈型，累加器型和通用寄存器型；对于不同结构的指令系统，其操作数的位置，个数，以及给出方式（显式给出，即操作数直接在指令中或者明确给出了操作数的地址，隐式给出即操作数放在某个位置处，这个位置是固定的，不需要给出地址，比如push ax, 自动将ax内容放入到堆栈顶的位置处，或者total += 5，默认有一个操作数就是在total的位置）；下面来分别介绍这几种cpu结构：</p>
+<p><strong>首先是堆栈型的cpu结构：</strong></p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240728164114467.png" alt="image-20240728164114467"  />
+<p>上图中的灰色是源操作数，TOS即栈顶，堆栈寄存器中的两个源操作数都是隐式给出的，即约定存放在栈顶和次栈顶，当结果得出之后再将结果放入到栈顶，上图中原来是有两个灰色块的，黑色块是运算结果，放在栈顶，此时TOS应该指向黑色块才对；在这种cpu结构中，只能通过push/pop操作访问存储器</p>
+<p><strong>然后是累加器型cpu结构：</strong></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240728164736574.png" alt="image-20240728164736574" loading="lazy" decoding="async" class="note-img"></p>
+<p>其中累加器AC是隐式的，这个存储单元既作为源操作数又作为运算结果，也就是累加，在这个单元上不断加上一个存储器中的另一个操作数</p>
+<p><strong>然后是通用寄存器结构（RS，指寄存器存储器类型）：</strong></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240728165628001.png" alt="image-20240728165628001" loading="lazy" decoding="async" class="note-img"></p>
+<p>在通用寄存器结构中所有的操作数都显示给出，对于RS型的结构，也就是指一个源操作数存放在通用寄存器中，另一个来自存储单元中，然后运算结果放入到通用寄存器中（这里不一定是通用寄存器，如果是专用的寄存器那指令中的寄存器操作数可以省略）</p>
+<p><strong>最后是RR型的通用寄存器结果（指寄存器寄存器类型）：</strong></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240728165731454.png" alt="image-20240728165731454" loading="lazy" decoding="async" class="note-img"></p>
+<p>在RR型的cpu结构中，两个源操作数，运算结果全部放在通用寄存器中；对于通用寄存器结构的cpu，所有的操作数都是显示给出的</p>
+<p>通过上述分析，很显然对于堆栈型和累加器型的计算机，其指令的长度比较短，程序占用空间小，但是堆栈类型的计算机不能随机访问堆栈（固定在栈顶和次栈顶）；累加器型还有一个累加器作为中间单元，因此程序需要频繁访问存储器，降低了程序的执行效率；所以目前大多数计算机都采用的是通用寄存器型的结构</p>
+<p>对于通用寄存器的指令系统，ALU可以最多三个操作数，包括两个源操作数和一个结果操作数，因此通用寄存器的指令系统中存储器操作数可以为0个，1个，或者2个3个；<strong>这样我们可以根据存储器操作数的个数对通用寄存器的指令系统进行进一步的划</strong>分：RR(寄存器寄存器型，没有存储器操作数)，RS（有一个存储器操作数），SS（全部都是存储器操作数）</p>
+<p>一般而言，指令的格式和长度越单一（比如RR型的指令系统，操作数只考虑几个寄存器即可），编译器需要做的优化工作就越简单，但是目标代码长度就很长，而指令的格式和长度越丰富，目标代码的长度就越短（因为可以用一条指令完成一段简单指令程序的功能），但是这种多样性会增加编译器和cpu硬件的实现难度；目前SS型的指令系统已经弃用，上述三种指令系统的优缺点如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>指令系统类型</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RR（寄存器，寄存器类型）</td>
+<td>字长固定，结构简单，各个指令执行时钟周期数相近</td>
+<td>指令条数多，目标代码复杂，占用空间大</td>
+</tr>
+<tr>
+<td>RS（寄存器，存储器类型）</td>
+<td>不需要load指令加载到寄存器中，可直接对存储器中数据引用，目标代码紧凑</td>
+<td>指令中的操作数不对称，对存储器中的操作数编码会影响可使用的寄存器个数（存储器很大，可能占用寄存器对应的二进制位）；不同指令的时钟周期差异很大</td>
+</tr>
+<tr>
+<td>SS（存储器，存储器类型）</td>
+<td>目标代码最紧凑，不需要寄存器保存变量了</td>
+<td>由于存储器很大，所以指令的字长变化很大，并且频繁访问存储器很影响效率，现在已经弃用</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sec-501">指令的分类（地址的个数）</h4>
+<p>如上文所述，<strong>对于一个指令系统而言最多包含三个操作数</strong>，一元操作包含一个源操作数和一个目的操作数，二元操作涉及三个操作数，两个源操作数和一个目的操作数；每一个操作数都可以定位在寄存器或者存储器中，比如对于通用寄存器的指令系统而言要求每个操作数地址都必须显示的给出，所以一条指令所包含的地址数是不同的，因此指令可以根据包含的不同的操作数地址进行划分</p>
+<p><strong>（1）三地址指令</strong></p>
+<p>指令格式如下所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240728174438872.png" alt="image-20240728174438872" style="zoom:67%;" />
+<p>其中，A1, A2称为源操作数地址，A3称为目的操作数地址，运算关系就是：<code>A3 &lt;- A1 OP A2</code>，运算完成之后A1, A2对应的操作数不变</p>
+<p><strong>（2）两地址指令</strong></p>
+<p>两地址指令对应的是一元操作，对应格式如下所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240728174712591.png" alt="image-20240728174712591" style="zoom:50%;" />
+<p>两地址指令格式其实就是在三地址指令的基础上将一个源操作数与目的操作数结合了，这就表示一个源操作数将会被一个目的操作数取代，指令字长缩小；两地址和三地址的指令都与基于通用寄存器指令系统相对应</p>
+<p><strong>（3）一地址指令</strong></p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240728175227394.png" alt="image-20240728175227394" style="zoom:67%;" />
+<p>在两地址的基础上，如果一个源操作数或者目的操作数约定为一个固定的位置，比如累加寄存器ACC中，这就是一地址指令，支持一地址指令的计算机称为累加器结构（上文有过介绍）一地址指令的长度进一步缩短</p>
+<p>对于程序转移类的指令，上图中的A是下一条指令的地址</p>
+<p><strong>（4）零地址指令</strong></p>
+<p>零地址指令是省略了两地址指令的两个操作数的地址，将其全部变成隐含的，比如堆栈机结构的指令系统，默认两个操作数位于栈顶和次栈顶，并将结果放入到栈顶</p>
+<p>当然零地址指令也包括空操作，还有子程序的返回和中断在形式上都是零地址指令，它们的操作数地址隐含在堆栈指针SP中（后文细嗦）</p>
+<p>对于CISC指令中，多个地址以及以及指令长度都是混用的，这样可以增强指令的功能；但是在RISC指令中，除了专门的访问指令（load/store)是RS型的指令，其他的指令一律是RR型的，地址结构单一；对于地址个数的选取有两个标准：一是总程序的长度尽可能小，即所有指令所占的位数尽可能短；二是程序执行速度尽可能快，即执行过程中访问存储器的信息量总和尽可能小</p>
+<p>我们举个例子对比一下：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240728181124711.png" alt="image-20240728181124711" style="zoom: 67%;" />
+<p>上图中的A, B, C, D, E, F分别表示不同的操作数所在的地址，可以理解为寄存器地址，也可以理解为存储器地址（按需要在上述不同指令系统中理解）</p>
+<p>零地址的堆栈机不再赘述</p>
+<p>一地址的累加器结构</p>
+<pre class="code-block"><code class="hljs">load E : 将E加载到累加器中
+mul F ： 将累加器中的数据乘F并放入到累加器中
+store G : 将累加器中的数据放入存储器G位置处
+load D : 将D中的数据放入到累加器中
+sub G : 即用累加器中的数据减去原来E * F的结构，得到D - E * F
+...,后面不再赘述
+</code></pre>
+<p>对于二地址和三地址的汇编代码，因为是RS型，所以其中X， Y， Z只有一个是存储器地址，其他都是寄存器地址，这里不再赘述</p>
+<h3 id="sec-566">2.4.2 指令字长</h3>
+<p>一条指令中包含的二进制码位数称为指令字长。指令字长取决于操作码的长度、地址码的长度和地址码的个数</p>
+<h4 id="sec-572">常见指令字长结构</h4>
+<p><strong>（1）等长指令字结构（一般是单子长）</strong></p>
+<p>所有的指令字长均相等，并且有指令字长 = 机器字长 = 存储字长（计算机中一个字所占的位数）；这样指令的读取和分析的硬件结构简单</p>
+<p><strong>（2）可变指令（变长指令字结构）</strong></p>
+<p>一般包括半字长指令，单字长指令，双子长指令</p>
+<p>控制这种指令的硬件电路比较复杂，并且多字长指令的话cpu需要读取多次才能取得一个完整的指令；一般CISC指令系统采用的就是变成指令字结构，而RISC指令系统采用的一般是固定字长（一般就是单字长指令了）；MIPS32采用的指令字结构就是单字长指令32位</p>
+<h4 id="sec-590">字长的选取</h4>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240728183430877.png" alt="image-20240728183430877" style="zoom:67%;" />
+<h3 id="sec-594">2.4.3 操作码扩展技术</h3>
+<p>指令格式中（也就是一串二进制位）需要安排一个唯一的操作码，这个操作码的位数选取的原则就是能够表示指令系统中的全部指令功能</p>
+<p>操作码的长度可以是固定的也可以是变长的</p>
+<p>定长的操作码指令系统中，所有指令的操作码位数相同，并且字段的位置也是固定的，这样指令的译码就会变得很简单，但是很多信息位被浪费了；RISC系统普遍采用的就是定长的操作码指令系统</p>
+<p>变长的操作码指令系统中，各个指令的操作码的位数不一致，并且操作码分散在指令字的不同字段中；这种结构可以很好利用指令结构中的二进制位，压缩操作码的长度，IA-32采用的就是这种结构（好恶心啊，这傻逼中文教科书真的搁着分类列点呢）</p>
+<p>当采用等长指令字格式的时候，可以将空闲的地址码当作操作码来使用从而增加操作码的位数，这就是操作码的扩展技术</p>
+<p>一般而言操作码的扩展分为两种，一种是等长操作码扩展，一种是不等长操作码扩展，<strong>这里着重介绍等长操作码扩展</strong></p>
+<p>所谓等长操作码扩展，就是每次给操作码增加的位数是一样的，比如4-8-16扩展法，意思就是操作码的长度分别是4位，8位，16位，每次增加等长的4位；当然还有3-6-9扩展法了</p>
+<p>当使用等长操作码扩展的时候，根据不同的扩展标致还可以有不同的扩展方法，所谓扩展标志的意思就是不同位数的扩展码比如4位扩展码和8位扩展需要一个标志进行区分，这就是扩展标志；以4-8-16扩展法为例，它可以有一个码点标志位的15/15/15扩展法和一个标志位的8/64/512扩展法</p>
+<p>对于一个码点标志位的15/15/15扩展法，其扩展示意图如下所示，以16位的指令字长为例，注意操作码的位数才决定了指令功能从而决定了指令的条数，地址码只是用来取数据的，同一条指令可以对应不同的数据进行运算：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240729181446530.png" alt="image-20240729181446530" style="zoom:67%;" />
+<p>对于一个码点标志位的15/15/15扩展法，所谓的一个码点标志位，如上图所示对于三地址指令，其操作码的取值范围是0000 ~ 1110，没有1111，说明如果前4位如果是1111就不是三地址指令了，而变成了8位操作码的而地址指令，这里的前四位的1111就作为一个码点标志位表明不再是三地址指令了；同理，从前8位的1111 1111开始就不再是二地址指令而变成了一地址指令；因此各个指令的条数也就很容易解释了，这里不再赘述</p>
+<p>对于一个标志位的8/64/512扩展法，其扩展示意图如下所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240729181427279.png" alt="image-20240729181427279" style="zoom:67%;" />
+<p>所谓一个标志位指的是用一个位来区分操作码的位数（也就是几地址指令），上图中，第一位为零九表示是三地址指令，那么这里的第一位就是一个标志位；同理，第一位为一，第五位为零就表示的是二地址指令，那么显然而地址指令的个数就是8 * 8 = 64条了；依次类推，将每次增加4位的第一位作为一个标志位，因此零地址指令的条数就是8 * 8 * 8 * 16 = 8192条了</p>
+<p>我们来看一个例子理解一下：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240729182051754.png" alt="image-20240729182051754" style="zoom:67%;" />
+<p>这个例子中，先是二地址指令，地址码有12位因此操作码就有4位，二地址条数有15条，而操作码4位最多16条，因此而地址的操作码的范围应该是0000 ~ 1110；这里用前四位1111表示不再是二地址指令了</p>
+<p>对于一地址指令，地址码有6位，因此操作码有10位，而前四位必须是1111，所以可变动的操作码部分就只有6位，最多有64种编码，但是一地址指令只用了34位，所以我们从小到大对齐进行编排</p>
+<p>1111(000000) ~ 1111(011111)，这是32条编码方式，一个32条；然后再增加两条1111(100000)和1111(100001)，形成了34条指令</p>
+<p>对于零地址指令，操作码一共16位，但是根据上文，显然前五位一定是11111（因为1110已经被二地址占用），而中间五位有两条00000和00001也被二地址占用，所以中间五位必须从00010到11111，至于后面六位就随便了，因此零地址的范围就是：</p>
+<p>11111(00010 ~ 11111)(000000~111111)一共30*2^6条</p>
+<p><strong>所以指令编码需要考虑的有：</strong></p>
+<p><strong>（1）分配的操作码从小到大来编排指令</strong></p>
+<p><strong>（2）需要有标志位或标志码进行区分，上例中前四位1111表示不再是三地址指令，11111 00000与11111 00001表示前五位为11111仍然是一地址指令，其他的前五位11111都是零地址指令，标志码可以不止一个</strong></p>
+<p><strong>（4）计算指令的条数，需要考虑编码，不能简单将所有二进制的排列组合减去题中给的其他指令条数</strong></p>
+<p>我们再看一个例子：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240729183902165.png" alt="image-20240729183902165" style="zoom: 67%;" />
+<p>（1）这是定长的操作码字段，直接就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></p>
+<p>（2）有扩展的情况下就得考虑标志码了，对于二地址的情况，其操作码的位数为8位，可以有2^8条指令，由于有m条二地址指令，所以前四位就剩下了<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span>个用来表示不是二地址指令来作为标志码；对于一地址而言有16位的操作码，前四位有m条被二地址使用，所以一地址最多形成的指令有<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span>条，当然前16位操作码不一定全形成一地址指令，还可能有一些是零地址值的标识码，比如上面的例子，11111 00010 到11111 11111就是是零地址的标志码；我们这里假设这16位有k个类型组成了零地址指令，那么对于零地址指令有<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>，所以k就是n除以<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span>取整，所以前16位作为一地址指令就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">⌈</span></span><span class="mord mathnormal">n</span><span class="mord">/</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">⌉</span></span></span></span></span></span>个了</p>
+<p>（3）二地址指令达到最大，那么8位操作码只留下一个作为一地址的标志码，所以二地址最大就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>个；而一地址有16位操作码，前8位只能是11111111，后八位有得留出一个作为零地址的标志码，所以一地址也最多有<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">))</span></span></span></span>个；对于零地址，其前16位只被留下了11111111 11111111作为标志码，其后八位不用留下标志码了，所以零地址的个数就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span>个</p>
+<h3 id="sec-679">2.4.4 指令格式举例</h3>
+<h4 id="sec-682">IA 32 指令格式</h4>
+<p>IA32是标准的CISC指令体系，其指令的长度可变，并且还可以带有一些前缀，如下所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240729191158614.png" alt="image-20240729191158614" style="zoom:67%;" />
+<p>上图中的前缀是指令的可选项，它们的作用是对后面的指令本身做一个显示的约定，四个前缀各占一个字节8位</p>
+<p>**指令前缀：**包括锁定前缀和重复前缀，锁定前缀是为了解决资源冲突问题，即对存储器的排他性访问；重复前缀是为了用于字符串中的重复操作，依次加快字符串处理速度</p>
+<p>**段取代前缀：**一般而言一条指令使用的段寄存器可以不必出现在指令格式中，可以默认，当我们不想默认的时候就得使用段取代寄存器明确指明这条指令使用哪一个段寄存器</p>
+<p>**操作数长度取代前缀和地址长度取代前缀：**在实地址模式下，操作数和地址默认长度都是16位，在保护地址模式操作数和地址也有默认地址，所谓实模式和保护模式的区别就是保护设置，实质上就是屏蔽一些地址的访问防止程序间胡乱访问地址带来的问题，当一条指令不想使用默认长度的时候通过这两个前缀来指定</p>
+<p>下面是指令本身</p>
+<p><strong>OP_Code</strong>不再多说</p>
+<p><strong>Mod ~ R/M字段</strong>规定了存储器的寻址方式，给出了寄存器操作数的寄存器地址号</p>
+<p><strong>SIB字段</strong>与Mod ~ R/M字段一起对操作数的来源做出一个完整明确的说明</p>
+<p>其他的不再赘述</p>
+<h4 id="sec-716">MIPS 32 指令格式</h4>
+<p>MIPS 32的指令字长固定，操作码长度固定，并且没有专门的寻址方式字段而是由指令格式本身来决定寻址方式，MIPS32指令有如下几类</p>
+<p><strong>R-型指令：</strong></p>
+<p>也就是RR（寄存器寄存器类型）的指令，其结构如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240729192706405.png" alt="image-20240729192706405" loading="lazy" decoding="async" class="note-img"></p>
+<p>其操作码是固定的000000六位，操作类型由Func字段指定，Rs, Rt分别是两个源操作数，其结果送到Rd中，如果是移位指令的话就对Rt中的内容进行移位，位移量由Shamt指定，这种类型的寻址方式只有一种，就是寄存器寻址</p>
+<p><strong>I-型指令：</strong></p>
+<p>这个指令就是立即数指令，具体操作由OP_Code指定，结构如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240729193054743.png" alt="image-20240729193054743" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果是双操作数类型的指令，Rs内容和立即数作为第一第二源操作数，结果放入Rt中</p>
+<p>如果是load/store指令，则将Rs中的内容和立即数扩展后的内容相加作为存储单元的地址，load指令将存储单元数据放入Rt中，store指令将Rt中的数据放入存储单元</p>
+<p>如果是条件分支指令，则对Rt和Rs内容进行指定运算，根据运算结果决定是否转移到目标地址，目标地址的得出是将PC中的内容与立即数扩展之后的内容相加得到</p>
+<p>I-型指令的寻址方式有寄存器寻址，立即数寻址，相对寻址，基址或变址寻址（后文细嗦寻址方式）</p>
+<p><strong>J-型指令：</strong></p>
+<p>这个指令就是无条件跳转指令，指令中给出的是26位的直接地址，将当前PC的高4位拼接上26位直接地址，然后加上两个零就得到了跳转的目标地址：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240729193746458.png" alt="image-20240729193746458" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-764">2.5 寻址方式</h2>
+<p>所谓寻址方式，就是计算源操作数，目的操作数以及下一条指令在数据存储设备中的位置的方式，数据存储设备主要包括寄存器，主存储器，IO设备；下文中主要介绍寄存器和主存储器，并且寄存器和主存储器分别具有独立的编址空间；并且由于寄存器本来个数就很少，所以存储器的地址空间远远大于寄存器的地址空间，即主存的编址位数远大于寄存器的编址位数；并且主存储器中可以存放数据也可以存放指令，数据或指令所在的存储单元的编号就是其在主存中的地址</p>
+<p><strong>形式地址</strong>（符号地址），指令中显式给出的地址</p>
+<p><strong>有效地址</strong>，其是由形式地址根据某种变换规则得到，怎么变换取决于寻址方式；有效地址是由寻址方式和形式地址共同决定的；<strong>通过形式地址求有效地址的方法就是寻址方式</strong>，有效地址可能直接是物理地址（不采用虚拟内存机制）；也可能不是物理地址而是虚拟地址（采用虚拟内存机制）；有的地方将逻辑地址中的偏移地址也称为有效地址，这里别纠结，一般在开发中，<strong>统一将计算得到的地址就称为有效地址</strong></p>
+<p><strong>物理地址</strong>，物理存储器按照8位字节序列加以编址，每个字节都有唯一的地址与之对应，也就是存储单元的<strong>实际地址</strong>，物理地址空间就是物理地址的大小，也就是指所有能被cpu直接寻址访问的存储器。包括内存条、显存和一些ROM；物理地址空间的大小受限于总线条数，m条地址线所对应的物理地址空间的范围为<code>0 ~ 2^m - 1</code></p>
+<p><strong>虚拟地址</strong>：</p>
+<p>首先是<strong>虚拟存储器（虚拟内存）</strong>，这不是任何实际的物理存储器，而是借助磁盘等辅助存储器来扩大主存容量，使之为更大或更多的程序所使用，<strong>虚拟地址</strong>就是虚拟存储器的地址，而<strong>逻辑地址</strong>就是虚拟地址的形式表示方式，一般以<strong>段地址：偏移地址</strong>的形式给出，当然程序指令中使用的地址（程序员使用的）也可称为逻辑地址，因为段地址通常由系统指定；逻辑地址与虚拟地址通常是一个东西</p>
+<p>寻址方式有两类，指令寻址方式和数据寻址方式，寻址方式就是根据形式地址得到有效地址的过程，如果没有虚拟内存机制那么得到的有效地址就是实际的物理地址，否则就是虚拟地址，至于虚拟地址再转换成物理地址，那就是MMU（一个硬件单元，称为内存管理单元）要做的事情；下文默认计算得到的有效地址就是物理地址（对理解寻址方式不影响）</p>
+<h3 id="sec-788">2.5.1 指令寻址</h3>
+<p>指令寻址就是确定下一条将要执行的指令所在主存单元地址的方法；指令的执行分为顺序和跳跃两种，因此指令的寻址方式也分为顺序和跳跃两种</p>
+<h4 id="sec-794">顺序寻址</h4>
+<p>顺序寻址不需要在指令中显示给出下一条指令地址信息，而是通过程序计数器PC + 1自动形成下一条指令的地址，注意这里的+ 1并不是指的是加一个地址单元，而是加n，n取决于指令字长，如果指令字长是单个字，那就是加单字长，如果指令字长是双字，那就加两个字长即加2</p>
+<p>PC的初始值通常由操作系统的加载程序设定，设定位第一条指令在主存单元中的地址</p>
+<h4 id="sec-803">跳跃寻址</h4>
+<p>跳跃寻址由转移类指令直接显示给出下一条指令的信息，转移类指令可以采用类似数据寻址的多种方式</p>
+<h3 id="sec-809">2.5.2 数据寻址</h3>
+<p>数据寻址可以分为两类，基本寻址方式和符合寻址方式，下面介绍的前四种为基本寻址方式，最后一种寻址方式为复合寻址方式</p>
+<h4 id="sec-815"><strong>（1）立即寻址</strong></h4>
+<p>所谓立即寻址就是操作数直接在指令的地址码字段中给出，形式地址不是操作数的地址而是操作数本身，又称为立即数，立即数以补码的形式放在操作数的位置处</p>
+<p>这种寻址方式只能用于源操作数，通常用在给寄存器赋初值，或者作为立即数作为常数参与运算；比如IA32中的指令mov eax, 100；或者MIPS32中的I指令，<code>addi $s1, $s2, 100</code>（立即数100提供一个源操作数）如下是一个立即寻址的一地址格式，#表示这个操作数采用的是立即寻址，是寻址方式的标志：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240731161718081.png" alt="image-20240731161718081" loading="lazy" decoding="async" class="note-img"></p>
+<h4 id="sec-827"><strong>（2）寄存器寻址</strong></h4>
+<p>这种寻址方式对于源操作数和目的操作数都适用，一般用在源操作数在通用寄存器中或者运算结果需要存到通用寄存器中；这时操作数的地址码字段给出的是寄存器的编号，如下所示，其中Ri是寄存器的编号，Ri前面的符号表示寄存器寻址的特征，#表示的是立即寻址的特征，I是一个立即数（补码形式）：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240731161907651.png" alt="image-20240731161907651" loading="lazy" decoding="async" class="note-img"></p>
+<p>IA32指令中的<code>mov eax, 100</code>以及MIPS32中的<code>add $s1, $s2, $s3</code>就是这种寻址方式，寄存器寻址无需访问主存（主存其实就是内存条+ cache)，所以执行时间短，并且由于寄存器数量比较少，所以地址编号就比较短，节省了指令的存储空间，这种寻址方式在CISC和RISC中广泛应用</p>
+<h4 id="sec-839"><strong>（3）存储器寻址</strong></h4>
+<p>顾名思义，其实就是需要根存储器打交道的寻址方式，其包括直接寻址，存储器间接寻址，寄存器间接寻址，偏移寻址和段寻址；这些寻址方式对于指令的跳跃寻址也是适用的</p>
+<h5 id="sec-845"><strong>i 直接寻址</strong></h5>
+<p>直接寻址就是指令的地址码字段的形式地址直接就是数据或是一条指令的有效地址（在存储器中的地址），其寻址速度快，但是寻址范围比较小，指令格式如下所示，地址A之前的符号就是直接寻址的标志，并且形式地址A就是有效地址EA：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240731165902432.png" alt="image-20240731165902432" loading="lazy" decoding="async" class="note-img"></p>
+<p>在MIPS32中跳转指令<code>j 200</code>就是直接寻址的方式，这个机器指令有32位，其中6位操作码，26位地址码，200就是指令的地址，由于MIPS32中的指令以4字节对齐，因此所有的指令地址的最后两位一定是00，所以这里的26位地址码其实可以看作指令地址的前26位，默认最低两位是00，从而表示28位的指令地址</p>
+<p>直接寻址寻址速度快，因为只访问了一次内存，但是地址直接就在指令中从而限制了地址空间的大小，因此寻址范围就比较小</p>
+<h5 id="sec-860"><strong>ii 间接寻址（存储器间接寻址）</strong></h5>
+<p>间接寻址的地址码给出的不是操作数也不是操作数的地址，而是操作数地址的地址，因此就需要多次访问内存才可以得到实际的操作数，间接寻址可以只进行一次间接，也可以进行多次间接</p>
+<p>大多数的计算机采用的是一次间接寻址，通过指令中的地址码去访问内存，内存中的内容就是操作数的地址，这里我们用(A)表示地址A中的内容，(Ri)表示寄存器Ri中的内容，一次间接寻址的示意图如下所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240731171241999.png" alt="image-20240731171241999" style="zoom: 67%;" />
+<p>A上方两个点这个符号就是间接寻址的标识；当采用多级间接寻址时，第一次间接寻址的标志由指令给出，而后面内存中的数据是有效地址或仍是间接地址，是由这个内存单元中的内容给出，比如，如果我们从内存中取出的数据的间接寻址标志位（通常为最高位）为1，说明我们需要将标志位去除后的数据作为地址码继续访问内存，一直到取出的数据的标志位为0，表示这个数据剔除掉标志位0之后就是实际的有效地址，此时根据这个有效地址再访问一次内存取出的数据就是实际的操作数，比如两次间接寻址的有效地址就是EA = ((A))，A是指令中给出的形式地址</p>
+<p>假设存储器存储字长（也就是存储器中一个字的长度）是m，通常等于机器字长，如果使用的是一次间接寻址，那么第一次访问存储器的时候得到的有效地址就是m位，因此一次寻址空间大小就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span></span></span></span></span></span></span>；如果是多次间接寻址，那么最后得到的一个数据必须剔除掉一位标志位才能作为有效地址，所以寻址空间大小就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span>；注意这里的寻址空间大小与指令中的形式地址A无关，因为不管A怎么取，得到的有效地址就是那m位，这m位所对应的存储单元地址就是固定的，不管A怎么取，实际的操作数只能对应在0 ~ <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span>这些存储单元中，操作数所处的地址空间没有发生变化，所以不能用形式地址乘存储器的字长得到总的地址空间大小</p>
+<p>间接寻址可扩大寻址范围，但是因为多次访存，所以指令执行速度慢；并且MIPS指令系统由于流水线的结构限制，不支持间接寻址的方式</p>
+<h5 id="sec-879"><strong>iii 寄存器间接寻址</strong></h5>
+<p>寄存器间接寻址与存储器间接寻址的区别在于指令中的形式地址给出的是寄存器的编号，而有效地址则放在寄存器中，即EA = (Ri)，下图是寄存器间接寻址的示意图，指令中Ri左侧的R上方一个帽子的符号表示的是寄存器间接寻址的标志：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240731174153705.png" alt="image-20240731174153705" style="zoom:67%;" />
+<p>寄存器间接寻址所需的地址码相比于间接寻址的地址码更短，并且寻址空间大小取决于寄存器的长度，也就是机器字长</p>
+<p>同样MIPS系统由于流水线结构限制不支持寄存器间接寻址</p>
+<h5 id="sec-892"><strong>iv 偏移寻址</strong></h5>
+<p>偏移寻址是直接寻址与寄存器间接寻址的结合，在指令中得给出一个偏移地址A（A是有符号整数，通常用补码表示），以及一个寄存器的编号Ri，偏移地址和Ri中存放的地址加起来构成了实际有效地址：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240731175407485.png" alt="image-20240731175407485" style="zoom:67%;" />
+<p>常见的偏移寻址有如下几种：</p>
+<h6 id="sec-902">- <strong>相对寻址</strong></h6>
+<p>相对寻址使用专门的程序计数器PC，即有效地址EA = (PC)  + A，指令中只需要给出偏移地址A即可，所以地址码部分可以很短，其寻址范围取决于A的范围，假设A是k位，其作为补码的范围为<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9324em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mord cjk_fallback">到</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>之间，因此相对寻址的寻址空间大小就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0991em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mord cjk_fallback">到</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9324em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></p>
+<p>相对寻址可用于操作数寻址也可用于指令寻址，并且只要操作数或指令与当前指令的相对位置不变，那么不论程序在主存中的哪里都可以正确执行，一般PC始终指向当前指令的下一条指令的地址，所以只要操作数或者指令与当前指令的相对位置不变（与自己的绝对位置无关），那么无论当前指令在内存中的哪里都可以取到正确的操作数和下一条应该执行的指令，程序可以正确运行，而操作数以及这条指令的绝对位置可以随当前指令程序变动，因此相对寻址可以编写与位置无关的程序</p>
+<h6 id="sec-911">- <strong>变址寻址</strong></h6>
+<p>变址寻址需要一个编址寄存器Rx，这个寄存器可以是一个通用寄存器，也可以是一个专用的寄存器；变址寻址通常用在数据和字符串的处理中</p>
+<p>它的原理是指令中给出一个基本地址A，也就是数组或字符串的起始地址，通常为无符号整数，然后编址寄存器中存放地址的修改量（是一个带符号数）；操作数在数组中的变化由编址寄存器的修改来完成，并且这是由硬件自动完成的；也就是某个操作数编址寻址得到之后编址寄存器自动加上或减去一个量，即Rx = (Rx) + Delta</p>
+<p>如果是一个专用的编址寄存器，那么寄存器不需要在指令中给出，EA = (Ex) + A，如果是通用寄存器，则需要在指令中给出寄存器的编号Ri, EA = (Ri) + A</p>
+<h6 id="sec-923">- <strong>基址寻址</strong></h6>
+<p>基址寻址需要一个基址寄存器Rb，这个寄存器可以是一个通用寄存器，也可以是一个专用的寄存器，指令中的形式地址给出偏移地址A，有效地址为EA = (Rb) + A；基址寻址用于实现操作系统对用户程序的动态定位</p>
+<p>基址寄存器中存放的是基本地址值（基地址），这是由系统设定的且用户不能更改；程序中指令或数据的改变由不同的偏移量A（一个带符号整数，以补码形式存放在指令中，可以有正偏移和负偏移）来完成</p>
+<p>基址寻址和变址寻址的硬件实现完全相同，但是两者在程序中的作用是不同的，变址寻址用于数组和字符串的处理运算，而基址寻址则用于将逻辑地址（这里的逻辑地址特指偏移量，也就是程序中使用的地址）转变为物理地址，实现程序的动态定位</p>
+<aside class="callout callout--note"><div class="callout__label">NOTE</div><div class="callout__body"><blockquote>
+<p>当操作系统将一个程序加载到内存中时，它通常不会将程序加载到固定的地址，而是将程序加载到一个可用的内存区域。操作系统会确定程序的基地址（加载基址），然后利用程序中给出的偏移地址A（特指逻辑地址）来确定操作数的有效地址，进而得到物理地址</p>
+</blockquote>
+</div></aside><p>MIPS 32中的load/store指令采用的就是类似的基址寻址的方式，指令中指定一个基址寄存器（32位）和一个16位的偏移量，然后对16位的偏移量进行符号扩展，然后与基址寄存器中的内容相加得到有效地址，如指令<code>lw $s1, 100($s2)</code>，就特指s2是基址寄存器，100就是程序中使用的偏移地址，这里也就是逻辑地址，计算得到的就是有效地址</p>
+<h5 id="sec-945"><strong>v 段寻址</strong></h5>
+<p>段寻址其实是基址寻址的一种特例，其用于地址长度超过机器字长的场合，也就是存储器很大，大到机器字长也无法表示存储单元的地址了；此时系统将主存空间分段，对于一个指令或者操作数，需要指出所在的段以及段内的偏移量；其中段地址以及段内偏移是与机器字长相等的，两者错位相加从而得到更大的存储器地址</p>
+<p>段地址存放在段寄存器Rs中，并且段寻址相对于其他的寻址过程其实是一个附加的过程，即我们先通过其他寻址方式得到一个暂时的有效地址EA，然后将EA作为段的偏移地址再加上段地址得到真实的物理地址；所以网上很多内容说的有效地址就是偏移地址其实是针对段寻址而言的，广义上的有效地址就是计算得到的地址；并且段寻址最后将段地址和偏移地址相加得到的地址就是真实的存储器单元的物理地址：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240731193212787.png" alt="image-20240731193212787" style="zoom:80%;" />
+<h4 id="sec-955"><strong>（4）堆栈寻址</strong></h4>
+<p>堆栈是一种存储设备，栈顶是数据的唯一出入口，栈顶指针（SP）始终指向栈顶，栈顶浮动变化，而栈底始终不变；堆栈的设置有两种：</p>
+<p>一种是栈顶设置在区域的低地址端，栈底在高地址端，栈顶向下生长，数据入栈栈顶地址减小（存储器的编址画图，从下到上地址增加）</p>
+<p>一种是栈顶设置在区域的高地址端，栈底在低地址端，栈顶向上生长，数据入栈栈顶地址增加（存储器的编址画图，从下到上地址增加）</p>
+<p>存储器堆栈有两种实现方式：</p>
+<p><strong>（1）SP指向栈顶的一个空单元</strong></p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240731194558402.png" alt="image-20240731194558402" style="zoom:67%;" />
+<p>如果是向上生长的栈（上图所示）</p>
+<p>数据入栈(PUSH)操作：</p>
+<ol>
+<li>(SP) &lt;- 数据，箭头左侧有一个括号默认省略，这里的箭头表示放到了左侧作为地址对应的单元中，这里的意思是将数据放入到[(SP)]这个地址对应的存储单元中</li>
+<li>SP &lt;- (SP) + 1，SP中的地址加一，向上涨一个单元，然后放入到SP中</li>
+</ol>
+<p>数据出栈(POP)操作：</p>
+<ol>
+<li>SP &lt;- (SP) - 1</li>
+<li>[(SP)]出栈</li>
+</ol>
+<p>如果是向下生长的栈</p>
+<p>数据入栈(PUSH)操作：</p>
+<ol>
+<li>(SP) &lt;- 数据</li>
+<li>SP &lt;- (SP) - 1</li>
+</ol>
+<p>数据出栈操作：</p>
+<ol>
+<li>SP &lt;- (SP) + 1</li>
+<li>[(SP)]出栈</li>
+</ol>
+<p><strong>（2）SP指向栈顶，栈顶非空</strong></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240731212647712.png" alt="image-20240731212647712" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果是向上生长的栈（上图所示）</p>
+<p>数据入栈(PUSH)操作：</p>
+<ol>
+<li>SP &lt;- (SP) + 1</li>
+<li>(SP) &lt;- 数据</li>
+</ol>
+<p>数据出栈(POP)操作：</p>
+<ol>
+<li>[(SP)]出栈</li>
+<li>SP &lt;- (SP) - 1</li>
+</ol>
+<p>如果是向下生长的栈</p>
+<p>数据入栈(PUSH)操作：</p>
+<ol>
+<li>SP &lt;- (SP) - 1</li>
+<li>(SP) &lt;- 数据</li>
+</ol>
+<p>数据出栈操作：</p>
+<ol>
+<li>[(SP)]出栈</li>
+<li>SP &lt;- (SP) + 1</li>
+</ol>
+<p>注意上述中的+1 -1的意思也是加一个或建一个操作数的长度，不一定是一个存储单元地址</p>
+<p><strong>堆栈寻址实例：</strong></p>
+<p>对于Pentium 4中有专门的堆栈指针寄存器ESP(SP)，栈中的每个元素可以是16位或是32位，其指令系统中有专门的入栈指令push和出栈指令pop；push或pop操作后ESP变化的长度自动根据入栈或出栈的操作数的长度进行调整；其堆栈向下生长，栈顶指针指向栈顶空的存储单元，每入栈一个32位操作数就有ESP &lt;- (ESP) - 4，每出栈一个32位操作数就有ESP &lt;- (ESP) + 4</p>
+<p>同样，在Pentimu中还支持特殊的堆栈指令:</p>
+<p>pushf/popf：将程序的状态字入栈和出栈</p>
+<p>pusha/popa：将8个16位通用寄存器内容入栈和出栈</p>
+<p>pushad/popad：将8个32位通用寄存器内容入栈和出栈</p>
+<p>MIPS中也有一个堆栈指针寄存器SP，栈中的每个元素为固定的32位，其没有专门的入栈和出栈指令，其入栈和出栈的操作只能通过lw/sw来实现，所以不能自动进行栈指针调整，只能通过addi来调整SP的值，堆栈向下生长，栈顶指针指向栈顶空的存储单元，每入栈一个操作数就有SP &lt;- (SP) - 4，每出栈一个32位操作数就有SP &lt;- (SP) + 4</p>
+<h4 id="sec-1136">（5）复合寻址</h4>
+<p>将两种以上寻址方式联合起来使用，称为复合寻址；一般从复合寻址的名称中反应寻址方法的顺序；</p>
+<p><strong>比如变址间接寻址：</strong></p>
+<p>也就是先变址寻址然后再间接寻址，EA = [(Rx) + A]，先是变址寄存器加上形式地址A得到一个一个中间结果地址，然后将这个地址所对应的存储单元中的内容作为有效地址，然后变址寄存器加上一个偏移量，Rx = (Rx) + Delta</p>
+<p><strong>比如间接变址寻址：</strong></p>
+<p>EA = (Rx) + (A)，先是形式地址所对应的存储单元的内容作为偏移地址，然后再加上变址寄存器中的内容作为有效地址，然后变址寄存器加上一个偏移量，Rx = (Rx) + Delta</p>
+<h4 id="sec-1154">一个关于指令的例题</h4>
+<p>不过上述的寻址方式介绍都是原理性的，不同机器不同指令系统可能是不一样的，要根据需要具体而定</p>
+<p>接下来我们来看一个例子：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240731221844760.png" alt="image-20240731221844760" style="zoom:67%;" />
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240731221912548.png" alt="image-20240731221912548" style="zoom:67%;" />
+<p>按字编址，即存储器中最小存储单元是一个字，16位，字长指令格式，即单子长指令，指令字长为一个字长度，为16位</p>
+<p>（1）操作码有4位，显然可以有16条指令；指令中的Ms/Md是寻址方式的标志位，根据表格可以看到是3位二进制数，因此寄存器的地址码就只有3位， 所以最多有8个寄存器；MDR（主存数据寄存器）用来保存要写入地址单元，或是从地址单元读到的数据，因此MDR至少是16位，因为存储器是按字编址的，一个存储单元数据至少就是16位，MAR（主存地址寄存器）用来保存数据传输到的地址以及数据来源的地址，由于主存空间的大小是128KB，但又是按字编址的，所以主存空间最多有128 * 1024 * 8 / 16 = 2^16个字，即字的编址空间应该是16位，用一串16位的二进制就可以表示所有字的地址了，所以MAR也至少是16位</p>
+<p>（2）转移指令采用的是相对寻址的方式（题中说的），偏移地址存放在寄存器Rn中，而Rn是16位的寄存器，所以寻址范围就是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">15</span></span></span></span></span></span></span></span></span><span class="mord cjk_fallback">到</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">15</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></span></div><p>而PC的范围为<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord">0</span><span class="mord cjk_fallback">到</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">16</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>，但是整个主存的地址空间大小才<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">16</span></span></span></span></span></span></span></span></span></span></span></span>，所以总的寻址范围就是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord">0</span><span class="mord cjk_fallback">到</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">16</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></p>
+<p>（3）add (R4), (R5)+，根据题意，add的机器码为0010，所以机器码的前四位是0010，而(R4)表示寄存器间接，寻址标志是001，且R4的编号是100，所以前10位就是0010  001100，同理(R5)+表示寄存器间接且自增，寻址标志是010，且R5的编号是101，所以16位的机器码为0010(add) 001(寄存器间接）100(R4编号) 010(寄存器间接且自增）101(R5编号) B</p>
+<p>对于这条指令，首先是源操作数 = ((R4)) = 5678H；然后是目的操作数 = ((R5)) = 1234H</p>
+<p>然后相加结果是5678H + 1234H = 68ACH；并存放到(R5)作为地址对应的单元中，即5678H存储单元处的数据变为68ACH</p>
+<p>加法操作完成之后R5中的内容加一存放到R5之中，即(R5) = 5678H + 1 = 5679H；注意add指令的作用就是将两个操作数相加然后放入到目的操作数中</p>
+<h3 id="sec-1190">2.5.3 程序定位方式</h3>
+<p>注意程序员在编写高级语言程序时使用的地址并不是里面指令或是数据的真实物理地址，而是使用的一个符号空间中的符号，这样编写得到的程序称为源程序</p>
+<p>得到源程序之后编译器需要对源程序进行编译，将符号元素转换成指令和数据，并把符号地址转换成存储器的地址，这里的地址也不是实际的物理地址，而是每个程序自己虚拟出来的地址空间中的地址，也称为逻辑地址或相对地址；并且每个源程序的逻辑地址空间都是从0开始的；这样做是为了保证程序的模块化以及处理程序大小大于主存空间大小的情况</p>
+<p>对于现代计算机而言，代码编写完成，甚至编译完成都是无法知道程序的实际位置的，只有等到操作系统将其装入主存或是程序开始运行了，这时操作系统才会根据编译得到的逻辑地址确定程序的物理地址；注意程序在运行之前必须先要装入主存中</p>
+<p>这样将指令和数据的逻辑地址转换为物理地址的过程称为程序的定位，所谓定位方式就是确定程序中指令和数据的主存物理地址的时间和实现方式</p>
+<p>程序的定位方式分为三种：</p>
+<p>（1）直接定位方式，只程序装入主存之前就已经确定了指令和数据的物理地址</p>
+<p>（2）静态定位方式，程序装入主存的过程中进行地址变换确定了指令和数据的物理地址</p>
+<p>（3）动态定位方式，程序在执行过程中，访问到相应的指令或是数据的时候才进行地址转换</p>
+<h4 id="sec-1217">直接定位方式</h4>
+<p>采用直接定位方式时在编写程序或是编译程序的时候使用的直接就是物理地址，不需要进行地址变换</p>
+<p>对于单任务系统，一个程序运行的时候计算机的所有资源都被其独占，直接使用物理地址编程是可行的</p>
+<p>对于多任务系统，可以将整个物理地址空间分块，每个程序独占一个块，因此对于程序员来说每个程序对应的主存物理空间分块就是已知的，就可以在装入内存的时候确定物理地址</p>
+<p>但是如果程序很大，其大小超过了给其分配的物理空间，那就只能把程序分块，在程序运行的时候逐段调入到物理地址空间中，这样的操作称为覆盖</p>
+<h4 id="sec-1232">静态定位方式</h4>
+<p>静态定位方式是由加载程序（操作系统程序）来完成地址转换的，其要求被加载的程序本身是可以被重定位的，即程序中需要被修改的地址需要有某些标识</p>
+<p>程序被加载到主存储器的过程中集中一次完成地址转换，将那些带有标识的指令和数据引用的逻辑地址全部转换为物理地址，并且程序一定进入到主存之后就不能再进行移动</p>
+<p>直接定位方式的程序每次进入主存的时候只能进入到一个固定的物理空间中，而静态定位方式每次运行的时候可以进入到不同的物理空间中</p>
+<p>静态定位方式是在执行之前一次装入到主存中，因此在执行期间不能在主存储器中移动，其无法提高主存储器的利用率，并且如果程序大小超过了分配给它的物理空间，就必须使用覆盖操作了</p>
+<p>并且由于程序在物理空间中的地址固定，所以多个用户如果使用同一个程序就很容易造成数据冲突以及各种数据操作不一致，所以静态定位方式不支持多个用户共享一个程序，如果多个用户非要使用同一个程序，那就必须在物理地址空间中分配一个新的空间给另一个用户使用，这个空间中放入此程序的副本</p>
+<h4 id="sec-1250">动态定位方式</h4>
+<p>动态定位是在程序的执行过程中进行地址变换的，动态定位必须要有硬件的支持，并且其通常是采用基址寻址的方式确定物理地址，一个简单的例子是程序在装入到主存储器之前指令和数据的地址不做任何修改，而将主存的起始地址存入这个程序对应的地址寄存器中，在程序执行的时候通过基址寄存器加上程序中的逻辑地址从而形成物理地址，当然指令中并不是所有的数据都需要这样做，某些采用相对寻址的地址码不需要加上基址寄存器，不过这样需要在指令中给出说明</p>
+<p>程序中的实际物理地址是在执行的过程中由硬件（地址加法器和基址寄存器）形成的，所以整个程序当然就不需要一次全部放入内存，并且装入内存之后也不用任何修改，所以其装在内存哪个位置也无所谓，这就可以充分利用主存空间中的碎小内存块，可以让主存空间得到充分利用</p>
+<p>并且如果用户采用动态定位方式，这样他们面对的程序块就可以是一样的（反正这一块只读的程序中的地址需要自己的程序对应的硬件做一次地址变换，将对应数据放入自己的程序对应的空间中，但是静态就不行了，所有程序的地址放入后都定死了，地址不能根据不同用户进行更改了），因此一个程序段就可以被多个程序所共享</p>
+<p>同时动态定位方式支持虚拟存储器，可以给每个用户提供一个比实际空间大得多的虚拟内存空间（逻辑空间地址），这一部分在OS中细嗦</p>
+<h4 id="sec-1265">重定位的一个例子</h4>
+<p>以实模式下的一段汇编程序为例，Pentium 4采用的是静态定位模式：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240801171438815.png" alt="image-20240801171438815" loading="lazy" decoding="async" class="note-img"></p>
+<p>这段代码的意思是将data数据段的段地址赋值给段寄存器ds，在汇编的时候会识别需要重定位的指令，在生成的.exe文件的开头标注这些需要重定位的的地点（即在文件中的偏移），操作系统将.exe文件装入到内存中时读取.exe文件头部的的重定位表，根据其装入的实际地址重写这些重定位项，上述程序中mov ax, data中的data值就是需要重定向的内容，因此在.exe文件中data的值就没有任何意义，操作系统将其装入到物理内存中时如果给data分配的数据段的段地址是1000，那么mov ax, data就被修改成了mov ax, 1000，这样就完成了静态定位</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html"><span class="pager__label">← 上一篇</span><span class="pager__title">C语言中的奇怪操作总结</span></a>
+    <a class="pager__item pager__item--next" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html"><span class="pager__label">下一篇 →</span><span class="pager__title">3 存储器</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h2" href="#sec-3">2.1 概述</a><a class="margin__link margin__link--h2" href="#sec-33">2.2 指令系统的发展</a><a class="margin__link margin__link--h2" href="#sec-96">2.3 指令系统的功能</a><a class="margin__link margin__link--h3" href="#sec-99">2.3.1 指令系统的设计原则</a><a class="margin__link margin__link--h3" href="#sec-143">2.3.2 数据类型</a><a class="margin__link margin__link--h3" href="#sec-283">2.3.3 操作类型</a><a class="margin__link margin__link--h2" href="#sec-366">2.4 指令格式</a><a class="margin__link margin__link--h3" href="#sec-372">2.4.1 指令的组成</a><a class="margin__link margin__link--h3" href="#sec-566">2.4.2 指令字长</a><a class="margin__link margin__link--h3" href="#sec-594">2.4.3 操作码扩展技术</a><a class="margin__link margin__link--h3" href="#sec-679">2.4.4 指令格式举例</a><a class="margin__link margin__link--h2" href="#sec-764">2.5 寻址方式</a><a class="margin__link margin__link--h3" href="#sec-788">2.5.1 指令寻址</a><a class="margin__link margin__link--h3" href="#sec-809">2.5.2 数据寻址</a><a class="margin__link margin__link--h3" href="#sec-1190">2.5.3 程序定位方式</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>

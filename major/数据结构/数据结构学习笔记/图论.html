@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>图的基本概念 · 22408 备考笔记</title>
+<meta name="description" content="图的基本概念 一些基本概念 有向图，无向图： 这里不再赘述，不过值得一提的是所有的无向边都可以等价的看作两个有向边 度数： 每个点链接的边的个数，有向图中就是入度加上出度 出度： 有向图中这个点有多少边指出去 入度： 有向图中有多少边指向这">
+<link rel="icon" href="../../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../../" data-note-id="c081">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../../math/index.html">数学</a><a href="../../../major/index.html" class="is-active">专业课</a><a href="../../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note is-active" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../../major/index.html">专业课 408</a><i>/</i><span>数据结构</span><i>/</i><span class="crumb__no">20</span></div>
+    <h1 class="doc__title">图的基本概念</h1>
+    <div class="doc__meta"><span>1.2 万字</span><span>约 28 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose">
+<h2 id="sec-3">一些基本概念</h2>
+<p><strong>有向图，无向图：</strong> 这里不再赘述，不过值得一提的是所有的无向边都可以等价的看作两个有向边</p>
+<p><strong>度数：</strong> 每个点链接的边的个数，有向图中就是入度加上出度</p>
+<p><strong>出度：</strong> 有向图中这个点有多少边指出去</p>
+<p><strong>入度：</strong> 有向图中有多少边指向这个点</p>
+<p><strong>重边：</strong> 有向图中两个节点之间方向一致的边（与边的权重无关），无向图中两个顶点之间一样的边</p>
+<p><strong>简单图：</strong> 不存在重边和自环的图</p>
+<p><strong>路径：</strong> 沿着顶点走，走过的点和边，无向图直接走即可，有向图必须按着边的方向走</p>
+<p><strong>简单路径：</strong> 走过的路径中不包含重复的点和边</p>
+<p><strong>环：</strong> 路径的起点和终点如果一样的话称为环</p>
+<p><strong>无向完全图：</strong> 图中任何两个点之间都有边</p>
+<p><strong>有向完全图：</strong> 图中任何两个点之间都有两条有向边</p>
+<p><strong>稀疏图：</strong> 点相对于边更多，有很少的边或弧</p>
+<p><strong>稠密图：</strong> 边相对于点更多，有很少的点，稠密和稀疏是相对的概念，没有绝对的定义</p>
+<h2 id="sec-45"><strong>图的存储：</strong></h2>
+<h3 id="sec-48">邻接矩阵：</h3>
+<p>适用于存放稠密图，可存有向图，无向图，常用，空间复杂度O(n^2)，不能存放重边</p>
+<p>有向图的存储如下图所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-02-13-15-02-38-168_com.jideos.jno.png" alt="Screenshot_2024-02-13-15-02-38-168_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<p>无向图的存储如下图所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-02-13-15-06-02-369_com.jideos.jno.png" alt="Screenshot_2024-02-13-15-06-02-369_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-66">邻接表：</h3>
+<p>适用于存稀疏图，可存有向图，无向图，常用，空间复杂度<code>O（n + m)</code>，（<code>n </code>是点数，<code>m</code>是边数）如果是稠密图<code>m</code>大概是<code>n^2</code>级别，所以邻接表存放稠密图也是<code>O(n^2 )</code>的，可以存放重边，能用邻接矩阵的地方一定可以使用邻接表</p>
+<p>有向图的存储如下图所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-02-13-15-06-35-476_com.jideos.jno.png" alt="Screenshot_2024-02-13-15-06-35-476_com.jideos.jno" style="zoom: 50%;" />
+<p>无向图的存储如下图所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-02-13-15-06-53-562_com.jideos.jno.png" alt="Screenshot_2024-02-13-15-06-53-562_com.jideos.jno" style="zoom:50%;" />
+<h3 id="sec-80">邻接多重表：</h3>
+<p>适用于稀疏图，可存无向图，不常用，空间复杂度<code>O(n + m)</code>，可以存放重边</p>
+<p>这是邻接表对存储无向图的优化，主要用来寻找反向边，不过由于我们一般用数组模拟的邻接表，在加入边的时候无向边看作两条有向边连续加入边的，因此两条反向边一定是连续的，给边进行编号，每个边异或1就是自己的反向边</p>
+<p>因此这种存储方式在实际中很少用</p>
+<p>不过笔试的时候还是得用教材上的知识；我们优化每个链表的节点为：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>{
+    <span class="hljs-comment">//存这条边</span>
+    <span class="hljs-type">int</span> val1;
+    Node* next1;
+
+    <span class="hljs-comment">//存反向边</span>
+    <span class="hljs-type">int</span> val2;
+    Node next2;
+
+}
+</code></pre>
+<p>这样遍历到邻接表的某个边的时候就可以直接知道这条边的反向边了</p>
+<h3 id="sec-99"><strong>十字链表：</strong></h3>
+<p>适用于稀疏图，可存有向图，无向图，不常用，空间复杂度<code>O(n + m)</code>，不能存放重边（不好存）</p>
+<p>十字链表是对邻接矩阵的优化，由于系数图对存放的空间有很大的浪费，因此邻接矩阵中的每个点都有两个指针，分别指向这个点的下边和右边的第一个点，如下图所示，我们只需要存所有是<code>1</code>的点，每个点有两个方向指针：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-02-13-15-16-24-966_com.jideos.jno.png" alt="Screenshot_2024-02-13-15-16-24-966_com.jideos.jno" style="zoom:50%;" />
+<p>这个存储可用于<code>Dancing Linksing</code>算法中，用来求解数独以及八皇后问题</p>
+<h3 id="sec-112"><strong>三元组表：</strong></h3>
+<p>适用于稀疏图，可存有向图，无向图，常用于<code>Bellman-ford</code>算法，<code>Kruskal</code>算法，空间复杂度：<code>O(m)</code>，可存放重边</p>
+<p>这是最简单的存放方式，每一个边用一个三元组存放即可<code>(1, 2, k)</code>表示点<code>1</code>到点<code>2</code>之间有一条边，且边的权值是<code>k</code></p>
+<p>以上存储方式凡是可以存放稀疏图的都可以存放稠密图</p>
+<h1 id="sec-124">图的遍历</h1>
+<p>这里只考虑有向图了，无向图是特殊的有向图，这里图的存储方式用邻接表的方式，两种遍历的实现如下所示</p>
+<h2 id="sec-130">DFS（深度优先遍历）</h2>
+<p>只要这个点有出边，那就一直向下遍历，直到遍历完全，然后回溯（注意判重，每个点只能遍历一次）</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">100010</span>, M = <span class="hljs-number">100010</span>;
+
+<span class="hljs-type">int</span> n, m;
+<span class="hljs-type">bool</span> st[N];<span class="hljs-comment">//判重数组</span>
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>{
+    <span class="hljs-type">int</span> id;
+    Node* next;
+    <span class="hljs-built_in">Node</span>(<span class="hljs-type">int</span> _id):<span class="hljs-built_in">id</span>(_id), <span class="hljs-built_in">next</span>(<span class="hljs-literal">NULL</span>){};
+    
+}*head[N];<span class="hljs-comment">//邻接表的方式存放图</span>
+
+<span class="hljs-comment">//头插法插入结点</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span></span>{
+    <span class="hljs-keyword">auto</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Node</span>(b);
+    p-&gt;next = head[a];
+    head[a] = p;
+}
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> u)</span></span>{
+    <span class="hljs-comment">//先标记被搜过</span>
+    st[u] = <span class="hljs-literal">true</span>;
+    <span class="hljs-comment">//输出这个点</span>
+    cout &lt;&lt; u &lt;&lt; endl;<span class="hljs-comment">//注意这里先输出点，再进行下面的遍历</span>
+    <span class="hljs-comment">//枚举u的所有临边</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p = head[u]; p; p = p-&gt;next){
+        <span class="hljs-type">int</span> j = p-&gt;id;
+        <span class="hljs-keyword">if</span>(!st[j]) <span class="hljs-built_in">dfs</span>(j);
+    }
+    
+}
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    cin &gt;&gt; n &gt;&gt; m;<span class="hljs-comment">//输入顶点数和边数</span>
+    <span class="hljs-keyword">while</span>(m --){
+        <span class="hljs-type">int</span> a, b;
+        <span class="hljs-comment">//输入两个顶点</span>
+        cin &gt;&gt; a &gt;&gt; b;
+        <span class="hljs-comment">//加入一条边</span>
+        <span class="hljs-built_in">add</span>(a, b);
+    }
+    
+    <span class="hljs-comment">//因为可能不是连通图，所以需要枚举所有的点，用st数组判断是否被搜索过</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i ++)
+        <span class="hljs-keyword">if</span>(!st[i]) <span class="hljs-built_in">dfs</span>(i);
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-02-13-15-50-04-746_com.jideos.jno.png" alt="Screenshot_2024-02-13-15-50-04-746_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-140">BFS（宽度优先遍历）</h2>
+<p>我们一层层遍历，这里的层可以看作是到起点的距离，BFS搜到的点一定是距离最短的点，所以<code>BFS</code>可以用来求解最短路，宽搜用一个队列来实现</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;queue&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">100010</span>, M = <span class="hljs-number">100010</span>;
+
+<span class="hljs-type">int</span> n, m;
+<span class="hljs-type">bool</span> st[N];<span class="hljs-comment">//判重数组</span>
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>{
+    <span class="hljs-type">int</span> id;
+    Node* next;
+    <span class="hljs-built_in">Node</span>(<span class="hljs-type">int</span> _id):<span class="hljs-built_in">id</span>(_id), <span class="hljs-built_in">next</span>(<span class="hljs-literal">NULL</span>){};
+    
+}*head[N];<span class="hljs-comment">//邻接表的方式存放图</span>
+
+<span class="hljs-comment">//头插法插入结点</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span></span>{
+    <span class="hljs-keyword">auto</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Node</span>(b);
+    p-&gt;next = head[a];
+    head[a] = p;
+}
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">bfs</span><span class="hljs-params">()</span></span>{
+    queue&lt;<span class="hljs-type">int</span>&gt; q;
+    <span class="hljs-comment">//先将起点加入到队列中</span>
+    q.<span class="hljs-built_in">push</span>(<span class="hljs-number">1</span>);
+    st[<span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;
+    <span class="hljs-comment">//当队列不为空的时候</span>
+    <span class="hljs-keyword">while</span>(q.<span class="hljs-built_in">size</span>()){
+        <span class="hljs-comment">//每次取出队头元素</span>
+        <span class="hljs-keyword">auto</span> t = q.<span class="hljs-built_in">front</span>();
+        q.<span class="hljs-built_in">pop</span>();<span class="hljs-comment">//删掉队头元素</span>
+        <span class="hljs-comment">//这里是出队列的时候遍历这个元素</span>
+        cout &lt;&lt; t &lt;&lt; endl;
+        <span class="hljs-comment">//扩展t的所有的临点加入到队列中</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p = head[t]; p; p = p-&gt;next){
+            <span class="hljs-type">int</span> j = p-&gt;id;
+            <span class="hljs-keyword">if</span>(!st[j]) q.<span class="hljs-built_in">push</span>(j), st[j] = <span class="hljs-literal">true</span>;<span class="hljs-comment">//加入到队列中</span>
+        }
+    }
+}
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    cin &gt;&gt; n &gt;&gt; m;<span class="hljs-comment">//输入顶点数和边数</span>
+    <span class="hljs-keyword">while</span>(m --){
+        <span class="hljs-type">int</span> a, b;
+        <span class="hljs-comment">//输入两个顶点</span>
+        cin &gt;&gt; a &gt;&gt; b;
+        <span class="hljs-comment">//加入一条边</span>
+        <span class="hljs-built_in">add</span>(a, b);
+    }
+    
+    <span class="hljs-comment">//因为可能不是连通图，所以需要枚举所有的点，用st数组判断是否被搜索过</span>
+    <span class="hljs-built_in">bfs</span>();
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-02-13-16-16-43-701_com.jideos.jno.png" alt="Screenshot_2024-02-13-16-16-43-701_com.jideos.jno" style="zoom: 67%;" />
+<h1 id="sec-148">拓扑排序</h1>
+<p><strong>定义：</strong> 若一个由图中所有点构成的序列 <code>A</code> 满足：对于图中的每条边 <code>(x,y)</code>，<code>x</code> 在 <code>A</code> 中都出现在 <code>y</code> 之前，则称 <code>A</code> 是该图的一个拓扑序列，如下图所示，另外一个图的拓扑排序是不唯一的：</p>
+<p>不一定所有的图都有拓扑排序，如果图中有环则不存在拓扑排序</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-02-13-16-27-01-183_com.jideos.jno.png" alt="Screenshot_2024-02-13-16-27-01-183_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240213163325750.png" alt="image-20240213163325750" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-163">BFS实现</h2>
+<p>每次将入度为<code>0</code>的点加入到序列中，并将这个点从图中去除，如下所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-02-13-16-31-36-188_com.jideos.jno.png" alt="Screenshot_2024-02-13-16-31-36-188_com.jideos.jno" style="zoom:50%;" />
+<p>可以用一个队列来维护当前入度为<code>0</code>的点，然后将这个点去除，它的临接点的入度都减一，加入下一个入度为0的点，不断迭代</p>
+<p>**判断是否存在拓扑排序：**如果结束后所有的点都被遍历过了，就说明存在拓扑排序，否则不存在，因为环中的每一点的入度都不可能为0</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;queue&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+<span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">100010</span>, M = <span class="hljs-number">100010</span>;
+
+<span class="hljs-type">int</span> n, m;
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>{
+    <span class="hljs-type">int</span> id;
+    Node* next;
+    <span class="hljs-built_in">Node</span>(<span class="hljs-type">int</span> _id):<span class="hljs-built_in">id</span>(_id), <span class="hljs-built_in">next</span>(<span class="hljs-literal">NULL</span>){
+        
+    }
+}*head[N];
+
+<span class="hljs-type">int</span> d[N];<span class="hljs-comment">//维护每一个点的入度</span>
+<span class="hljs-type">int</span> q[N];<span class="hljs-comment">//一个队列维护入度为1的点同时也是拓扑序列</span>
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span></span>{
+    <span class="hljs-keyword">auto</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Node</span>(b);
+    p-&gt;next = head[a];
+    head[a] = p;
+}
+
+<span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">topsort</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-comment">//使用数组来枚举队列</span>
+    <span class="hljs-comment">//定义一个队头和一个队尾</span>
+    <span class="hljs-type">int</span> hh = <span class="hljs-number">0</span>, tt = <span class="hljs-number">-1</span>;
+    <span class="hljs-comment">//枚举所有的点，将入度为0的点加入到队列中</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n; i ++)
+        <span class="hljs-keyword">if</span>(!d[i]) 
+            q[++ tt] = i;
+            
+            
+    <span class="hljs-comment">//当队列不为空的时候</span>
+    <span class="hljs-keyword">while</span>(hh &lt;= tt){
+        <span class="hljs-comment">//每次取出队头元素</span>
+        <span class="hljs-type">int</span> t = q[hh ++];
+        <span class="hljs-comment">//遍历队头元素的所有临边</span>
+        <span class="hljs-comment">//将去掉这个点后的入度为0的点加入到队列中</span>
+        <span class="hljs-comment">//遍历这个点所有的边</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p = head[t]; p; p = p-&gt;next)
+            <span class="hljs-keyword">if</span>( -- d[p-&gt;id] == <span class="hljs-number">0</span>) q[++ tt] = p -&gt; id;
+        
+    }
+    
+    <span class="hljs-comment">//队尾就是结点的个数 - 1</span>
+    <span class="hljs-keyword">return</span> tt == n - <span class="hljs-number">1</span>;
+    
+}
+
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    cin &gt;&gt; n &gt;&gt; m;
+    <span class="hljs-keyword">while</span>(m --){
+        <span class="hljs-type">int</span> a, b;
+        cin &gt;&gt; a &gt;&gt; b;
+        <span class="hljs-comment">//b结点的入度加一</span>
+        d[b] ++;
+        <span class="hljs-built_in">add</span>(a, b);
+    }
+    
+    <span class="hljs-comment">//如果没有拓扑排序</span>
+    <span class="hljs-keyword">if</span>(!<span class="hljs-built_in">topsort</span>()) <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;-1&quot;</span>);
+    <span class="hljs-keyword">else</span>{
+        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i ++) cout &lt;&lt; q[i] &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+        
+    }
+}
+</code></pre>
+<p><strong>时间复杂度：</strong></p>
+<p>邻接表存储：每个点和每个边都会被遍历一次，因此时间复杂度就是<code>O(n + m)</code>，以下代码就是对于每一个点都出队了一次，且每次出队的时候都遍历了它的所有的边，且遍历了一次，因此遍历了所有的边，后面输出序列的时候就是遍历所有的点</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">    <span class="hljs-comment">//当队列不为空的时候</span>
+    <span class="hljs-keyword">while</span>(hh &lt;= tt){
+        <span class="hljs-comment">//每次取出队头元素</span>
+        <span class="hljs-type">int</span> t = q[hh ++];
+        <span class="hljs-comment">//遍历队头元素的所有临边</span>
+        <span class="hljs-comment">//将去掉这个点后的入度为0的点加入到队列中</span>
+        <span class="hljs-comment">//遍历这个点所有的边</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p = head[t]; p; p = p-&gt;next)
+            <span class="hljs-keyword">if</span>( -- d[p-&gt;id] == <span class="hljs-number">0</span>) q[++ tt] = p -&gt; id;
+        
+    }
+</code></pre>
+<p>邻接矩阵存储：对于每个点找邻接点的时候需要遍历所有的点，所以时间复杂度是<code>O(n^2)</code>，因为在遍历边的时候需要将所有的点都遍历一遍判断是否与当前的点存在一条边</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">    <span class="hljs-comment">//当队列不为空的时候</span>
+    <span class="hljs-keyword">while</span>(hh &lt;= tt){
+        <span class="hljs-comment">//每次取出队头元素</span>
+        <span class="hljs-type">int</span> t = q[hh ++];
+        <span class="hljs-comment">//遍历队头元素的所有临边</span>
+        <span class="hljs-comment">//将去掉这个点后的入度为0的点加入到队列中</span>
+        <span class="hljs-comment">//遍历所有的点</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i ++){
+            <span class="hljs-comment">//判断是否有一条边</span>
+            。。。<span class="hljs-comment">//再进行下面的逻辑</span>
+        }
+        
+    }
+</code></pre>
+<h2 id="sec-188">DFS实现（判断环）</h2>
+<p>dfs实现与图的dfs遍历几乎一摸一样，差别在于拓扑排序的时候是在回溯之前遍历点，那么对于任意一个点，当它被遍历的时候就说明它可以到达点都被遍历完全了，它可以到达的点都加入到了序列中，此时将其加入到序列里，不会违反拓扑排序规则</p>
+<p>判断是否存在拓扑排序的时候也就是判断图中是否存在环，这里可以直接用dfs来判断环，可以发现，如果图中存在环，那么递归栈当中的点一定会被搜到两次，这与某个点被搜到两次是有区别的，如下图所示：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-02-14-15-03-36-708_com.jideos.jno.png" alt="Screenshot_2024-02-14-15-03-36-708_com.jideos.jno" style="zoom:50%;" />
+<p>因此需要记录点是否在递归栈当中，这里的dfs函数就单纯表示判断环了，只是我们在dfs的过程中构造一个序列，这个序列就是拓扑序列，<strong>这个算法可以当作一个回溯判断图中环的算法</strong></p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">100010</span>, M = <span class="hljs-number">100010</span>;
+
+<span class="hljs-type">int</span> n, m;
+<span class="hljs-type">int</span> st[N];<span class="hljs-comment">//判重数组，1表示在递归栈中，2表示已经被遍历</span>
+<span class="hljs-type">int</span> q[N];
+<span class="hljs-type">int</span> top = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>{
+    <span class="hljs-type">int</span> id;
+    Node* next;
+    <span class="hljs-built_in">Node</span>(<span class="hljs-type">int</span> _id):<span class="hljs-built_in">id</span>(_id), <span class="hljs-built_in">next</span>(<span class="hljs-literal">NULL</span>){};
+    
+}*head[N];<span class="hljs-comment">//邻接表的方式存放图</span>
+
+<span class="hljs-comment">//头插法插入结点</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span></span>{
+    <span class="hljs-keyword">auto</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Node</span>(b);
+    p-&gt;next = head[a];
+    head[a] = p;
+}
+
+
+<span class="hljs-comment">//这里dfs表示在深搜的过程中是否存在环</span>
+<span class="hljs-comment">//在深搜回溯的时候加入这个点到序列中，此时这个点所有能到达的点都在序列中了</span>
+<span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> u)</span></span>{
+    <span class="hljs-comment">//先标记在递归栈当中</span>
+    st[u] = <span class="hljs-number">1</span>;
+    
+    <span class="hljs-comment">//枚举u的所有临边</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p = head[u]; p; p = p-&gt;next){
+        <span class="hljs-type">int</span> j = p-&gt;id;
+        <span class="hljs-comment">//如果临边的点中出现了环，返回false</span>
+        <span class="hljs-keyword">if</span>(!st[j]){
+            <span class="hljs-keyword">if</span>(!<span class="hljs-built_in">dfs</span>(j)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(st[j] == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<span class="hljs-comment">//如果邻接点是栈中的点，返回false</span>
+            
+    }
+
+    <span class="hljs-comment">//在遍历的过程中回溯的时候记录序列</span>
+    q[top ++] = u;
+    
+    <span class="hljs-comment">//这个点遍历完了之后出递归栈，并标记遍历过</span>
+    st[u] = <span class="hljs-number">2</span>;
+    <span class="hljs-comment">//从这个点向下遍历没有出现环，返回给上一层</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+
+<span class="hljs-comment">//拓扑排序的函数</span>
+<span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">topsort</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-comment">//防止出现非连通图，每个没被遍历过的点都需要dfs</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n; i ++){
+        <span class="hljs-keyword">if</span>(st[i] == <span class="hljs-number">0</span>){
+            <span class="hljs-comment">//如果出现了环，返回false</span>
+            <span class="hljs-keyword">if</span>(!<span class="hljs-built_in">dfs</span>(i)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+    }
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    cin &gt;&gt; n &gt;&gt; m;<span class="hljs-comment">//输入顶点数和边数</span>
+    <span class="hljs-keyword">while</span>(m --){
+        <span class="hljs-type">int</span> a, b;
+        <span class="hljs-comment">//输入两个顶点</span>
+        cin &gt;&gt; a &gt;&gt; b;
+        <span class="hljs-comment">//加入一条边</span>
+        <span class="hljs-built_in">add</span>(a, b);
+    }
+    
+    <span class="hljs-comment">//如果没有拓扑排序</span>
+    <span class="hljs-keyword">if</span>(!<span class="hljs-built_in">topsort</span>()) <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;-1&quot;</span>);
+    <span class="hljs-keyword">else</span>{
+        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = n; i &gt;= <span class="hljs-number">1</span> ; i --) cout &lt;&lt; q[i] &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+        
+    }
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><strong>时间复杂度：</strong></p>
+<p>以下代码遍历每个点的时候都会遍历这个点的所有的边：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-comment">//枚举u的所有临边</span>
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p = head[u]; p; p = p-&gt;next){
+    <span class="hljs-type">int</span> j = p-&gt;id;
+    <span class="hljs-comment">//如果临边的点中出现了环，返回false</span>
+    <span class="hljs-keyword">if</span>(!st[j]){
+        <span class="hljs-keyword">if</span>(!<span class="hljs-built_in">dfs</span>(j)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(st[j] == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<span class="hljs-comment">//如果邻接点是栈中的点，返回false</span>
+        
+}
+</code></pre>
+<p>因此每个点每个边都只遍历了一次，所以时间复杂度是<code>O(m + n)</code>，如果用邻接表，以上代码会遍历所有的点来判断是否有一个边，所以时间复杂度是<code>O(n ^ 2)</code></p>
+<h1 id="sec-212">图的应用 - 最小生成树</h1>
+<h2 id="sec-215">最小生成树（MST）</h2>
+<p><strong>定义：</strong> 一个具有 <code>n</code> 个顶点的连通图，它的每条边都有一个权值，我们取 <code>n</code> 个顶点以及 <code>n - 1</code> 条边出来形成一颗树，这棵树的边权和最小，这个树就称为最小生成树</p>
+<p><strong>最小生成树涉及的是无向图</strong></p>
+<p><strong>唯一性的充分条件：</strong></p>
+<p>最小生成树不一定唯一</p>
+<p>假设我们根据图生成了一颗最小生成树，树中的边称为树边，图中剩余的边称为非树边，我们将任意一个非树边加入到树中一定可以形成一个环，如果这个环中的每个树边的权值都严格小于这个非树边，那么最小生成树就是唯一的</p>
+<p>反之，如果这个环中有树边的权值等于非树边，那么我们去掉这个树边，用这个非树边代替，就会得到一个新的最小生成树，且权值不变，最小生成树就不唯一</p>
+<h2 id="sec-236">Prim算法（普利姆算法）</h2>
+<p><strong>朴素Prim算法：</strong> 时间复杂度 <code>O(n^2)</code>，使用于稠密图</p>
+<p><strong>堆优化Prim算法：</strong> 时间复杂度 <code>O(mlogn)</code>，适用于稀疏图，在稠密图中如果 <code>m ~ n^2</code>，那么复杂度反而比朴素版本的高</p>
+<p><strong>基本思想：</strong></p>
+<p>这是一个贪心思想，每次将离连通部分距离最近的点和点对应的边加入的连通部分<code>T</code>，连通部分<code>T</code>逐渐扩大，一直到所有的点都加入到了连通部分</p>
+<p>这里的距离指的是点<strong>直接</strong>与连通部分中的点相连的距离</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">假设初始时有T, S两个集合，图的所有顶点初始在S集合中，结果顶点集是T
+dist[N]表示每个点到连通部分T的距离，初始时为无穷
+    
+随机加入S中的一个点到T中，更新其余点到T中的距离
+ <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; n; i++)
+ {
+     t &lt;- 找到集合S距离集合T最近的点;
+     t加入到集合T中，用t更新其他点到集合T的距离;
+     从S中剔除点t
+ }
+</code></pre>
+<p><strong>证明：</strong></p>
+<p>假设在求解的过程中，顶点<code>A</code>到连通块的边<code>a</code>的权值最小，假设最后的最小生成树没有包含<code>a</code>，那么在最后的最小生成树中<code>A</code>一定通过其他的路径连接到连通块中，如下图所示，这个路径一定有一个顶点连通块直接相连，假设是<code>B</code>，<code>b </code>的权值大于<code>a</code>：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-02-15-16-59-30-923_com.jideos.jno.png" alt="Screenshot_2024-02-15-16-59-30-923_com.jideos.jno" style="zoom:50%;" />
+<p>我们把<code>b</code>替换成<code>a</code>，显然，树的权值会变小，<code>A</code>通过其他路径构成的最小生成树的权值不是最小的，矛盾，因此每次应该加入权值最小的边到连通块中</p>
+<p><strong>代码实现：</strong></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240215164529225.png" alt="image-20240215164529225" loading="lazy" decoding="async" class="note-img"></p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">510</span>, M = <span class="hljs-number">100010</span>, INF = <span class="hljs-number">0x3f3f3f3f</span>;
+
+<span class="hljs-type">int</span> n, m;
+<span class="hljs-comment">//用邻接矩阵来存储</span>
+<span class="hljs-comment">// dist表示点到连通块的距离</span>
+<span class="hljs-type">int</span> g[N][N],dist[N];
+
+<span class="hljs-type">bool</span> st[N];<span class="hljs-comment">//st[i] = true表示点i已经在连通块T内</span>
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">prim</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-comment">// 先将距离初始化为正无穷</span>
+    <span class="hljs-built_in">memset</span>(dist, <span class="hljs-number">0x3f</span>, <span class="hljs-keyword">sizeof</span> dist);
+    
+    <span class="hljs-comment">//先将第一个点加入到集合T中</span>
+    dist[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+    <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;
+    
+    <span class="hljs-comment">//加入n个点</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i ++){
+        <span class="hljs-type">int</span> t = <span class="hljs-number">-1</span>;
+        <span class="hljs-comment">//找n个点中距离集合T距离最小的点,一开始是第一个点</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= n; j ++){
+            <span class="hljs-comment">// 如果当前点仍然在集合S中,且当前点是第一次选</span>
+            <span class="hljs-comment">// 或者当前点仍然在集合S中,且当前点的距离小于上一次选的点</span>
+            <span class="hljs-comment">// 此时选中这个点</span>
+            <span class="hljs-keyword">if</span>(!st[j] &amp;&amp; (t == <span class="hljs-number">-1</span> || dist[j] &lt; dist[t]))
+                t = j;
+        }
+        
+        <span class="hljs-comment">//如果最小的距离都为正无穷,说明不连通</span>
+        <span class="hljs-keyword">if</span>(dist[t] == INF) <span class="hljs-keyword">return</span> INF;
+        st[t] = <span class="hljs-literal">true</span>;<span class="hljs-comment">//当前这个点从集合S中剔除</span>
+        <span class="hljs-comment">//生成树的权值加上这个边</span>
+        res += dist[t];
+        <span class="hljs-comment">//用这个点更新其他所有点到集合T的距离</span>
+        <span class="hljs-comment">//对于已经在集合T中的点,不受影响</span>
+        <span class="hljs-comment">// 对于直接与t相连的点会进行一次更新, 其余的点其实距离不变</span>
+        <span class="hljs-comment">// 加入t进入集合T中后,只有与t直接相连的点的距离才会受影响</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= n; j ++){
+            dist[j] = <span class="hljs-built_in">min</span>(dist[j], g[t][j]);
+        }
+        
+        <span class="hljs-comment">//如果图不是连通的,那么始终有点的距离不会更新,dist[k]为INF</span>
+    }
+    
+    <span class="hljs-keyword">return</span> res;
+}
+
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    
+    cin &gt;&gt; n &gt;&gt; m;
+    
+    <span class="hljs-comment">//将所有的边的权值初始化为正无穷</span>
+    <span class="hljs-built_in">memset</span>(g, <span class="hljs-number">0x3f</span>, <span class="hljs-keyword">sizeof</span> g);
+    
+    <span class="hljs-comment">//读入边</span>
+    <span class="hljs-keyword">while</span>(m --){
+        <span class="hljs-type">int</span> a, b, c;
+        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+        <span class="hljs-comment">//无向图读入边以及如果有重边的话取权值更小的一个</span>
+        <span class="hljs-comment">//重边权值大的一个边根据最小生成树的定义,不会成为一条边,这里直接剔除即可</span>
+        g[a][b] = g[b][a] = <span class="hljs-built_in">min</span>(g[a][b], c);
+        
+    }
+    
+    <span class="hljs-type">int</span> res = <span class="hljs-built_in">prim</span>();
+    <span class="hljs-keyword">if</span>(res == INF) cout &lt;&lt; <span class="hljs-string">&quot;impossible&quot;</span>;
+    <span class="hljs-keyword">else</span> cout &lt;&lt; res;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><strong>关于重边：</strong></p>
+<p>关于重边问题，假如两个顶点之间有重边，我们直接取重边中权值最小的那一个，这样存储的图进行算法求解得到的生成树与原来的图的生成树是完全等价的</p>
+<p>因为假如最后的生成树中没有这两个顶点之间的边，那我们存储哪个边都无所谓，假如最后的生成树中有这两个顶点之间的边，显然生成树中的边应该是最小权值的那一个</p>
+<h2 id="sec-281">Kruskal算法（克鲁斯卡尔算法）</h2>
+<p>时间复杂度：<code>O(mlogm)</code></p>
+<p>克鲁斯卡尔是加边算法，先将所有的点加入到集合<code>T</code>中，然后将所有的边从小到大排序，遍历边，如果边对应的两个点此时在集合T中不连通，则将边加入集合<code>T</code>，否则不加入</p>
+<p><strong>基本思想：</strong></p>
+<ol>
+<li>先将所有的边按权重从小到大排序（算法瓶颈，实现复杂度<code>O(mlogm)</code>，并且注意的是，<code>kmlogm</code>的常数部分<code>k</code>很小</li>
+<li>一开始是集合中只有点，没有边，所有的点都不连通</li>
+<li>然后枚举每条边<code>a - b(w:c)</code>
+<ol>
+<li>如果<code>a</code>，<code>b</code>不连通，就把这条边加入到集合里面去</li>
+</ol>
+</li>
+</ol>
+<p>他的证明方式与Prim很像，这里不再赘述了</p>
+<p><strong>代码实现：</strong></p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">510</span>, M = <span class="hljs-number">100010</span>, INF = <span class="hljs-number">0x3f3f3f3f</span>;
+<span class="hljs-type">int</span> n, m;
+
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Edge</span>{
+    <span class="hljs-type">int</span> a, b, c;
+    
+    <span class="hljs-comment">//重载小于号, 可以使用Edge[i] &lt; Edge[j]这样的语句</span>
+    <span class="hljs-comment">//小于号看作一个函数, 这里的参数t表示的就是语句中&lt;右边的Edge[j]</span>
+    <span class="hljs-type">bool</span> <span class="hljs-keyword">operator</span> &lt; (<span class="hljs-type">const</span> Edge&amp; t) <span class="hljs-type">const</span> {
+        <span class="hljs-keyword">return</span> c &lt; t.c;
+    }
+}e[M];
+
+<span class="hljs-type">int</span> p[N];
+
+<span class="hljs-comment">//并查集找祖宗元素, p[x] = k表示x的父节点是k</span>
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>{
+    <span class="hljs-keyword">if</span>(p[x] != x) p[x] = <span class="hljs-built_in">find</span>(p[x]);
+    <span class="hljs-keyword">return</span> p[x];
+}
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    cin &gt;&gt; n &gt;&gt; m;
+    
+    <span class="hljs-comment">// 读入所有的边</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; m; i ++){
+        
+        cin &gt;&gt; e[i].a &gt;&gt; e[i].b &gt;&gt; e[i].c;
+    }
+    
+    <span class="hljs-comment">// 将所有的边排序</span>
+    <span class="hljs-built_in">sort</span>(e, e + m);
+    
+    <span class="hljs-comment">//初始化并查集,初始时每个结点的父节点是自己</span>
+    
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i ++) p[i] = i;
+    
+    <span class="hljs-comment">// cnt是一开始n个块的数量,也就是n个点在连通块T中</span>
+    <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>, cnt = n;
+    
+    <span class="hljs-comment">//从小到大枚举所有的边</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; m; i ++){
+        <span class="hljs-type">int</span> a = e[i].a;
+        <span class="hljs-type">int</span> b = e[i].b;
+        <span class="hljs-type">int</span> c = e[i].c;
+        <span class="hljs-comment">// 如果两个点没有连通</span>
+        <span class="hljs-comment">// 将这个边加入到T中</span>
+        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">find</span>(a) != <span class="hljs-built_in">find</span>(b)){
+            res += c;
+            cnt --;
+            <span class="hljs-comment">// a的祖宗结点的父节点指向b的祖宗结点，合并两个块，也就是连通两个结点</span>
+            <span class="hljs-comment">// 所以到最后所有的连通结点都有一个公共的祖先</span>
+            p[<span class="hljs-built_in">find</span>(a)] = <span class="hljs-built_in">find</span>(b);
+        }
+        
+    }
+    
+    <span class="hljs-comment">//如果最后连通块的数量大于1，说明原来的图就不连通</span>
+    <span class="hljs-keyword">if</span>(cnt &gt; <span class="hljs-number">1</span>) cout &lt;&lt; <span class="hljs-string">&quot;impossible&quot;</span>;
+    <span class="hljs-keyword">else</span> cout &lt;&lt; res;
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>这里并查集主要是用来判断两个点是否连通的，经过几次<code>find()</code>函数之后后面的判断非常的快，近似于常数级别，这里的时间复杂度主要花在排序上面，并查集详情看下面的文章</p>
+<p><a href="https://zhuanlan.zhihu.com/p/576366304">算法基础（七）：Trie树，并查集，堆 - 知乎 (zhihu.com)</a></p>
+<h1 id="sec-330">图的应用 - 最短路</h1>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240215180345154.png" alt="image-20240215180345154" loading="lazy" decoding="async" class="note-img"></p>
+<p>单源汇最短路这里只介绍朴素版本的Dijkstra，详细的四种适用于不同情况的单源汇最短路看下面的文章：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/583873854">算法基础（十一）：图 - 最短路问题1 - Dijkstra - 知乎 (zhihu.com)</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/584395700">算法基础（十二）：图 - 最短路问题2 - Bellman Ford与SPFA - 知乎 (zhihu.com)</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/584539200">算法基础（十三）：图 - 最短路问题3 - Floyd算法 - 知乎 (zhihu.com)</a></p>
+<p>另外这些算法都用于求有向图的最短路问题，如果是无向图，建立图的时候直接存两遍边即可，无向图看成特殊的有向图</p>
+<h2 id="sec-351">单源汇最短路-无负边-朴素Dijkstra算法</h2>
+<h3 id="sec-354"><strong>基本思想：</strong></h3>
+<p>一个 dist数组保存源点到其余各个节点的距离，<code>dist[i] </code> 表示源点到节点 <code>i </code> 的距离。初始时，<code>dist</code> 数组的各个元素为无穷大，<code>dist[1] = 0</code></p>
+<p>用一个状态数组<code>state</code> 记录是否找到了源点到该节点的最短距离，<code>state[i]</code>如果为真，则表示找到了源点到节点<code>i</code>的最短距离，<code>state[i]</code>如果为假，则表示源点到节点<code>i</code>的最短距离还没有找到。初始时，<code>state</code> 各个元素为假</p>
+<p>初始的图如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-12-16-37-07-995_com.jideos.jno.png" alt="Screenshot_2024-03-12-16-37-07-995_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<p>下面进行寻找最短路的过程：</p>
+<ol>
+<li>遍历 <code>dist</code> 数组，找到一个节点，这个节点是：没有确定最短路径的节点中距离源点最近的点。假设该节点编号为<code>i</code>。此时就找到了源点到该节点的最短距离，<code>state[i]</code> 置为<code>1</code>，如下所示，找到了<code>1</code>点到源点的距离</li>
+</ol>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-12-16-41-15-624_com.jideos.jno.png" alt="Screenshot_2024-03-12-16-41-15-624_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<ol start="2">
+<li>遍历<code>i</code>所有可以到达的节点<code>j</code>，如果 <code>dist[j]</code>大于 <code>dist[i]</code> 加上<code>i -&gt; j</code>的距离，即 <code>dist[j] &gt; dist[i] + w[i][j]</code>（<code>w[i][j]</code>为 <code>i -&gt; j</code>的距离） ，则更新 <code>dist[j] = dist[i] + w[i][j]</code>，如下图，<code>1</code>可以到<code>2 3 4</code>，并且距离小于原来的距离，更新这些点的距离</li>
+</ol>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-12-16-42-56-158_com.jideos.jno.png" alt="Screenshot_2024-03-12-16-42-56-158_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<p>重复上述两个步骤，直到所有的点都找到了到源点的最短距离：</p>
+<p>将<code>2</code>的状态设置为1，更新<code>4, 5</code>的距离：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-12-16-47-27-375_com.jideos.jno.png" alt="Screenshot_2024-03-12-16-47-27-375_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<p>将<code>4</code>的状态设置为<code>1</code>更新<code>5</code>的距离：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-12-16-49-09-437_com.jideos.jno.png" alt="Screenshot_2024-03-12-16-49-09-437_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<p>将<code>3</code>的状态设置为<code>1</code>，此时不更新距离：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-12-16-50-12-702_com.jideos.jno.png" alt="Screenshot_2024-03-12-16-50-12-702_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<p>将<code>5</code>的状态设置为<code>1</code>，此时所有点的距离更新完毕，此时<code>dist</code>中的值就是每个点到源点的最短距离：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-12-16-51-31-981_com.jideos.jno.png" alt="Screenshot_2024-03-12-16-51-31-981_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<p><code>Dijkstra</code>算法采用的是一种贪心的思想，伪代码如下所示：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-comment">//一个 dist数组保存源点到其余各个节点的距离，dist[i] 表示源点到节点i的距离。初始时，dist数组的各个元素为无穷大</span>
+ <span class="hljs-type">int</span> dist[n],state[n];
+ dist[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>
+ <span class="hljs-comment">//state[i] = 1表示点i进入了集合S中，表示这个点的最短距离已经找到</span>
+ <span class="hljs-comment">//state[i] = 0表示点i仍在集合T中，表示没有确定最短路径的节点中距离源点最近的点</span>
+ <span class="hljs-keyword">for</span>(i:<span class="hljs-number">1</span> ~ n)
+ {
+     t &lt;- 没有确定最短路径的节点中距离源点最近的点;
+     state[t] = <span class="hljs-number">1</span>;
+     更新t-&gt;j的dist[j];
+ }
+</code></pre>
+<p>这里可以用数归简单证明这个贪心策略：</p>
+<p>第一次操作，显然源点本身距离源点就是最短的距离<code>0</code></p>
+<p>假设经过上述前<code>k</code>次操作后有<code>k</code>个点（不一定是编号<code>1 ~ k</code>）得到了自己到源点的最短距离，已经确定了最短距离的前<code>k</code>个点构成了集合<code>S</code>，剩下的点构成了集合<code>V</code></p>
+<p>那么对于第<code>k + 1</code>操作，我们找到了点<code>m</code>，此时<code>m</code>是剩下的所有的点中到源点的距离最小的点，我们需要证明<code>dist[m]</code>就是<code>m</code>到源点的最短距离，并且这个路径对应的最后一段是<code>e -&gt; m</code>，这里我们需要证明两件事情：</p>
+<ol>
+<li><code>dist[m]</code>此时一定是从源点出发经过<code>S</code>中的点到<code>m</code>最小的路径</li>
+</ol>
+<p>也就是证明对于在<code>S</code>中所有能直接到达<code>m</code>的点<code>(e1, e2, ...e)</code>，有<code>dist[e] + e-&gt;m</code>的距离是最小的，由于我们的更新距离的操作，每次将这些点加入到<code>S</code>中的时候都会进行取小操作，因此这个结论显然成立</p>
+<ol start="2">
+<li><code>dist[m]</code>对应的路径在后面的操作中也一定是最小的，也就是说不存在一条路径包含<code>V</code>中的点使得距离小于<code>dist[m]</code></li>
+</ol>
+<p>这里用反证法证明，假设有另外一条路径含有<code>V</code>中到达点<code>m</code>距离更短，那一定是如下图中的红色路径所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-12-17-58-49-130_com.jideos.jno.png" alt="Screenshot_2024-03-12-17-58-49-130_com.jideos.jno" loading="lazy" decoding="async" class="note-img"></p>
+<p>由于<code>dits[l] &gt; dist[m]</code>，且其他的边的权值都是正数，因此不可能比<code>dist[m]</code>更短，矛盾！</p>
+<p>所以此时找到的<code>dist[m]</code>就是点<code>m</code>的最短路径对应的距离</p>
+<h3 id="sec-464">代码实现：</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240312201543333.png" alt="image-20240312201543333" loading="lazy" decoding="async" class="note-img"></p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">510</span>, M = <span class="hljs-number">10010</span>, INF = <span class="hljs-number">0x3f3f3f3f</span>;
+<span class="hljs-type">int</span> n, m;
+<span class="hljs-type">int</span> g[N][N], dist[N];
+<span class="hljs-type">bool</span> st[N];
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">dijkstra</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-comment">//初始化距离为正无穷</span>
+    <span class="hljs-built_in">memset</span>(dist, <span class="hljs-number">0x3f</span>, <span class="hljs-keyword">sizeof</span> dist);
+    <span class="hljs-comment">//初始化起点的距离</span>
+    dist[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+    <span class="hljs-comment">//枚举n次，加入n个点到集合S中</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i ++){
+        <span class="hljs-type">int</span> t = <span class="hljs-number">-1</span>;<span class="hljs-comment">//每次用t表示当前距离最小的点</span>
+        <span class="hljs-comment">//找集合T中的最短的距离</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= n; j ++)
+        <span class="hljs-comment">// 这里或上t == -1是为了开始时随机指定一个T中的距离</span>
+            <span class="hljs-keyword">if</span>(!st[j] &amp;&amp; (t == <span class="hljs-number">-1</span> || dist[t] &gt; dist[j])) t = j;
+        st[t] = <span class="hljs-literal">true</span>;
+        <span class="hljs-comment">//用t更新其他点的距离</span>
+        <span class="hljs-comment">//统一从1开始更新，已经在S中的点不受影响因为dist[t]一定更大</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= n; j ++)
+            dist[j] = <span class="hljs-built_in">min</span>(dist[j], dist[t] + g[t][j]);
+    }
+    <span class="hljs-keyword">return</span> dist[n];
+}
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    cin &gt;&gt; n &gt;&gt; m;
+    <span class="hljs-built_in">memset</span>(g, <span class="hljs-number">0x3f</span>, <span class="hljs-keyword">sizeof</span> g);
+    <span class="hljs-comment">//读入m条边</span>
+    <span class="hljs-keyword">while</span>(m --){
+        <span class="hljs-type">int</span> a, b, c;
+        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+        <span class="hljs-comment">//处理重边，保留最小的权值边，结果等价</span>
+        g[a][b] = <span class="hljs-built_in">min</span>(g[a][b], c); 
+    }
+    <span class="hljs-type">int</span> res = <span class="hljs-built_in">dijkstra</span>();
+    <span class="hljs-keyword">if</span>(res == INF) <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;-1&quot;</span>);
+    <span class="hljs-keyword">else</span> cout &lt;&lt; res;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>时间复杂度很显然<code>n^2</code></p>
+<h2 id="sec-474">多源汇最短路-Floyd算法</h2>
+<p>这里只用记住算法的过程即可，<code>Floyd</code>是一个三维的动态规划过程，如果想要知道证明可以看下面这篇文章：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/613716744">Floyd算法的证明 - 知乎 (zhihu.com)</a></p>
+<p>假设对顶点进行 1 ~ n 编号</p>
+<p><code>d[k][i][j]</code> 表示顶点 i  经过顶点编号不超过 k 的顶点的中转到达和顶点 j 的最短路径长度</p>
+<p><code>d[0][i][j]</code> 表示顶点 i 直接到达顶点 j 的最短路径长度，<code>d[0][i][j]</code> 在初始化图的时候就可以得到，如果 i 不能直接到达 j，则设置为无穷</p>
+<p>对于 <code>d[k][i][j]</code>，即顶点 i 经过顶点编号不超过 k 的顶点的中转到达顶点 j，其路径可以分为两种：</p>
+<p>（1）路径中含有顶点 k，此时这个路径可以分为两端，从 i -&gt; k 以及从 k -&gt; j，从 i -&gt; k 的路径中没有顶点 k，即经过的是前 k - 1 个顶点的中转，最短是 <code>d[k - 1][i][k]</code>，同理，从 k -&gt; j 的路径长度就是 <code>d[k - 1][k][j]</code>，这种情况的路径的最短长度是 <code>d[k - 1][i][k] + d[k - 1][k][j]</code></p>
+<p>（2）路径中不含有顶点 k，那这种路径就是经过了前 k  - 1 个顶点的中转，所以最短长度就是 <code>d[k - 1][i][j]</code></p>
+<p>所以经过顶点 k 的路径的最短长度就是上面两种路径的长度取小：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.0572em;">j</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">min</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal">d</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.0572em;">j</span><span class="mclose">]</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">d</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.0572em;">j</span><span class="mclose">]</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span></span></div><p>这个就是 Floyd 算法的递推公式，我们初始的时候可以知道 d[0][i][j]的各种值，所以三重循环就可以得到 <code> d[n][i][j]</code> 了</p>
+<p>但是最外层的 k 其实可以提出来当作最外层循环，这样可以将空间降到 n^2，用 <code>d[i][j]</code> 来表示从 i 到 j 的最短距离</p>
+<p>因为 k 是从小到达循环的，所以在更新 <code>d[i][j]</code> 的时候 <code>d[i][j]</code> 原来的值其实就是 <code>d[k - 1][i][j]</code>，核心代码就是比较 <code>d[i][j]</code> 与 <code>d[i][k] + d[k][j]</code> 的大小即可</p>
+<h3 id="sec-514">代码实现：</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20240312203021459.png" alt="image-20240312203021459" loading="lazy" decoding="async" class="note-img"></p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">210</span>, INF = <span class="hljs-number">0x3f3f3f3f</span>;
+
+<span class="hljs-type">int</span> n, m, Q;<span class="hljs-comment">//点数边数，询问的数量</span>
+<span class="hljs-type">int</span> d[N][N];<span class="hljs-comment">//d[i][j]表示i-&gt;j的最短距离</span>
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    cin &gt;&gt; n &gt;&gt; m &gt;&gt; Q;
+    <span class="hljs-built_in">memset</span>(d, <span class="hljs-number">0x3f</span>, <span class="hljs-keyword">sizeof</span> d);
+    <span class="hljs-comment">//初始化每个点到自己的点的距离是0</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i ++) d[i][i] = <span class="hljs-number">0</span>;
+    
+    <span class="hljs-keyword">while</span>(m --){
+        <span class="hljs-comment">//读入所有的边</span>
+        <span class="hljs-type">int</span> a, b, c;
+        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+        d[a][b] = <span class="hljs-built_in">min</span>(d[a][b], c);
+    }
+    
+    
+    <span class="hljs-comment">//Floyd算法，三重for循环即可</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k = <span class="hljs-number">1</span>; k &lt;= n; k ++)
+        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i ++)
+            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= n; j ++)
+                d[i][j] = <span class="hljs-built_in">min</span>(d[i][j], d[i][k] + d[k][j]);
+                
+    <span class="hljs-keyword">while</span>(Q --){
+        <span class="hljs-type">int</span> a, b;
+        cin &gt;&gt; a &gt;&gt; b;
+        <span class="hljs-type">int</span> c = d[a][b];
+        <span class="hljs-comment">//注意如果两个点不连通的话c不一定严格等于INF，因为可能存在负边</span>
+        <span class="hljs-keyword">if</span>(c &gt; INF / <span class="hljs-number">2</span>) <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;impossible&quot;</span>);
+        <span class="hljs-keyword">else</span> cout &lt;&lt; c &lt;&lt; endl;
+        
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+
+</code></pre>
+<p>时间复杂度是<code>O(n^3)</code></p>
+<h1 id="sec-524">图的应用 - 关键路径</h1>
+<h2 id="sec-527"><strong>AOE网络：</strong></h2>
+<p>即边表示活动的网，<code>AOE</code> 网络是一个带权的有向无环图，其中顶点表示事件，弧表示活动（或者工序），弧上的权值表示活动持续的时间，比如下图的一个 <code>AOE</code> 网络：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-13-18-29-10-165_com.jideos.jno.png" alt="Screenshot_2024-03-13-18-29-10-165_com.jideos.jno" style="zoom:50%;" />
+<p>需要注意的是</p>
+<p>（1）只有某顶点的事件发生后，这个事件出发的所有活动才能开始</p>
+<p>（2）只有指向这个事件的活动都完成后，这个事件才算发生</p>
+<h2 id="sec-543"><strong>AOE网络的源点和汇点：</strong></h2>
+<p>入度为<code>0</code>的点为源点，出度为<code>0</code>的点为汇点，这两个点可以简单看作工程中的开始点和结束点，如下图的红色的顶点：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-13-18-33-38-875_com.jideos.jno.png" alt="Screenshot_2024-03-13-18-33-38-875_com.jideos.jno" style="zoom:50%;" />
+<h2 id="sec-550">关键路径：</h2>
+<p><code>AOE</code>网中的有些活动是可以并行进行的（如<code>a1, a2, a3</code>），所以完成工程的最短时间是从源点到汇点的最长路径的长度。路径长度最长的路径就叫做<strong>关键路径</strong>（Critical Path）。如下图中红色顶点和有向边构成的就是一条关键路径，关键路径的长度就是完成活动（<code>a1, a4, a9, a10</code>的时间总和：18：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-13-18-40-54-171_com.jideos.jno.png" alt="Screenshot_2024-03-13-18-40-54-171_com.jideos.jno" style="zoom:50%;" />
+<p>关键路径上的活动就是关键活动，可以通过缩短关键活动的事件来缩短工期时间，但是活动时间不是无限缩短的，因为可能缩短到一定程度之后就变成了非关键活动</p>
+<p>关键路径不唯一</p>
+<h2 id="sec-563">事件最早开始时间：</h2>
+<p>时间最早发生时间就是从源点到这个事件顶点<strong>最长路径</strong>上的活动时间之和，如下图中事件<code>5</code>的最早开始时间就是<code>7</code>，事件<code>6</code>的最早开始时间就是<code>7</code>：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-13-18-54-09-119_com.jideos.jno.png" alt="Screenshot_2024-03-13-18-54-09-119_com.jideos.jno" style="zoom:50%;" />
+<p>为什么这里是最长路径呢，因为由于<code>AOE</code>网络的定义，事件<code>5</code>开始就意味着活动<code>a4, a5</code>已经完成了，要保证这两个活动都完成时间肯定是取大，不能再早了，再早活动<code>a4</code>就不能完成了</p>
+<h2 id="sec-573">事件最晚开始时间：</h2>
+<p>每个顶点事件的最晚开始时间，如果超出了这个时间则工期会延期，计算方式如下：</p>
+<p><strong>事件的最晚开始时间 = 关键路径的长度 - 该事件到汇点的最长路径长度</strong></p>
+<blockquote>
+<p>这结论直接记住吧</p>
+</blockquote>
+<p>我们以下图中的事件<code>6</code>为例来说明为什么它的最晚开始的时间是这样计算的；</p>
+<p>首先从源点到汇点的关键路径的长度是从源点到汇点最长的路径长度，再加上活动是可以并行进行的，所以最长的路径可以保证<code>AOE</code>网络中的所有的活动都可以完成，这个长度也就是<strong>工期</strong></p>
+<p>事件<code>6</code>的最晚开始时间就是<code>18 - 8 = 10</code>，显然当事件6在t = 10的时候开始时由于其到事件9的最长路径是8，因此可以保证在工期中完成所有的活动</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20241115214310493.png" alt="image-20241115214310493" style="zoom: 33%;" />
+<p>假如这个时间不是最晚的，<code>6</code>再晚一点开始比如<code>=11</code>开始，这个时候各个路径上的进行点为：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20241115214541044.png" alt="image-20241115214541044" style="zoom:33%;" />
+<p>注意活动8必须等到事件5发生了才能开始，因此红色此时指向活动8完成了4位置处，这里就先不标活动12的完成，因为它太短了，反正的都要等前面的活动完成才能导致事件9发生</p>
+<p>再经过4个时间单位即t = 15的时候事件8发生：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20241115215143062.png" alt="image-20241115215143062" style="zoom:33%;" />
+<p>再经过1个时间单位，事件7发生，t = 16：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20241115215335177.png" alt="image-20241115215335177" style="zoom:33%;" />
+<p>再经过两个时间单位，活动10完成，t = 18：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/image-20241115215438918.png" alt="image-20241115215438918" style="zoom:33%;" />
+<p>活动12早就完成了不用管，活动10完成了，但是活动11还需要1个时间单位才能完成，这就导致了延期1个时间单位，导致整个工期的时间达到了19个，比上文中的工期多了一个时间单位</p>
+<p>所以事件6的最晚开始时间就不能再晚于10了</p>
+<h2 id="sec-622">活动最早开始时间：</h2>
+<p>活动的最早开始时间就是活动弧起点事件的最早开始时间，如上图所示活动 <code>a8</code> 的最早开始时间就是 <code>10</code></p>
+<h2 id="sec-628">活动最晚开始时间：</h2>
+<p>活动的最晚开始时间就是活动箭头起点事件的最晚开始时间，如上图所示活动 <code>a9</code> 的最晚开始时间就是 <code>10</code></p>
+<h2 id="sec-634">求最长路径的算法：</h2>
+<p>不管怎么样，不管求什么东西，我们总是得知道一个点到另一个点的最长路径，这里介绍两种求最长路径的方式</p>
+<h3 id="sec-640">将边的权值取负</h3>
+<p>将边的权值全部取反，用<code>Floyd, SPFA, bellman - Ford</code>算法求，这些算法求的是负数的最小值，我们结果取反就是正数的最大值了，注意由于含有负边不能用<code>Dijkstra</code>算法求解，这里不再赘述</p>
+<h3 id="sec-646">拓扑序 + DP</h3>
+<p>这里用DP的思想来求，分析仍按照集合论的角度分析，不熟悉的看下面文章：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/659135617">算法基础（三十二）：用01背包为例来分析动态规划 - 知乎 (zhihu.com)</a></p>
+<p><strong>状态表示：</strong></p>
+<p>一个一维变量：<code>f[i]</code></p>
+<p><strong>状态表示的集合：</strong></p>
+<p><code>f[i]</code>对应的集合是从源点出发到点<code>i</code>的所有路径长度构成的集合</p>
+<p><strong>状态表示的集合属性：</strong></p>
+<p>集合的最大值</p>
+<p><strong>集合划分：</strong></p>
+<p>从源点到顶点<code>i</code>的路径可以按照能直接到达点<code>i</code>的顶点进行划分，假设有点<code>a, b, c</code>直接指向<code>i</code>，即有边<code>a -&gt; i, b -&gt; i, c -&gt; i</code>，那么集合中的元素（路径）可以根据最后一个边的起点是哪一个进行划分，如下图所示集合可以划分为三个子集：</p>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/Screenshot_2024-03-13-21-10-44-442_com.jideos.jno.png" alt="Screenshot_2024-03-13-21-10-44-442_com.jideos.jno" style="zoom: 50%;" />
+<p><strong>递推关系：</strong></p>
+<p><code>f[i]</code>是集合的最大值，那么显然是三个子集的最大值然后取大，对于<code>a -&gt; i</code>对应的这个子集，集合中的元素路径的最后一个边始终是<code>a -&gt; i</code>，要想最大，那么就是从源点到<code>a</code>的路径最大，然后加上<code>w(a -&gt; i)</code>，即<code>f[a] + w(a -&gt; i)</code>，同理另外两个子集的最大值也是这样分析，所以有递推公式：</p>
+<p><code>f[i] = max(f[a] + w(a -&gt; i), f[b] + w(b -&gt; i), f[c] + w(c -&gt; i))</code></p>
+<p>归纳就是：<code>f[i]  = max(f[k] + w(k -&gt; i))</code>, 其中<code>k</code>满足顶点<code>k</code>可以直接到达点<code>i</code>，即存在边<code>k -&gt; i</code></p>
+<p>由于是按照拓扑序进行递推，我们已经求出了<code>f[k]</code>，因此<code>f[i]</code>也就顺利求出来了</p>
+<p><strong>时间复杂度：</strong></p>
+<p>每个点和边遍历一次，因此时间复杂度就是<code>O(m + n)</code>，线性复杂度</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html"><span class="pager__label">← 上一篇</span><span class="pager__title">数据结构（6）：Huffman树和Huffman编码</span></a>
+    <a class="pager__item pager__item--next" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html"><span class="pager__label">下一篇 →</span><span class="pager__title">DS 代码和C语言汇总</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h2" href="#sec-3">一些基本概念</a><a class="margin__link margin__link--h2" href="#sec-45">图的存储：</a><a class="margin__link margin__link--h3" href="#sec-48">邻接矩阵：</a><a class="margin__link margin__link--h3" href="#sec-66">邻接表：</a><a class="margin__link margin__link--h3" href="#sec-80">邻接多重表：</a><a class="margin__link margin__link--h3" href="#sec-99">十字链表：</a><a class="margin__link margin__link--h3" href="#sec-112">三元组表：</a><a class="margin__link margin__link--h2" href="#sec-130">DFS（深度优先遍历）</a><a class="margin__link margin__link--h2" href="#sec-140">BFS（宽度优先遍历）</a><a class="margin__link margin__link--h2" href="#sec-163">BFS实现</a><a class="margin__link margin__link--h2" href="#sec-188">DFS实现（判断环）</a><a class="margin__link margin__link--h2" href="#sec-215">最小生成树（MST）</a><a class="margin__link margin__link--h2" href="#sec-236">Prim算法（普利姆算法）</a><a class="margin__link margin__link--h2" href="#sec-281">Kruskal算法（克鲁斯卡尔算法）</a><a class="margin__link margin__link--h2" href="#sec-351">单源汇最短路-无负边-朴素Dijkstra算法</a><a class="margin__link margin__link--h3" href="#sec-354">基本思想：</a><a class="margin__link margin__link--h3" href="#sec-464">代码实现：</a><a class="margin__link margin__link--h2" href="#sec-474">多源汇最短路-Floyd算法</a><a class="margin__link margin__link--h3" href="#sec-514">代码实现：</a><a class="margin__link margin__link--h2" href="#sec-527">AOE网络：</a><a class="margin__link margin__link--h2" href="#sec-543">AOE网络的源点和汇点：</a><a class="margin__link margin__link--h2" href="#sec-550">关键路径：</a><a class="margin__link margin__link--h2" href="#sec-563">事件最早开始时间：</a><a class="margin__link margin__link--h2" href="#sec-573">事件最晚开始时间：</a><a class="margin__link margin__link--h2" href="#sec-622">活动最早开始时间：</a><a class="margin__link margin__link--h2" href="#sec-628">活动最晚开始时间：</a><a class="margin__link margin__link--h2" href="#sec-634">求最长路径的算法：</a><a class="margin__link margin__link--h3" href="#sec-640">将边的权值取负</a><a class="margin__link margin__link--h3" href="#sec-646">拓扑序 + DP</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>梳理 · 22408 备考笔记</title>
+<meta name="description" content="梳理 文件的基本概念 数据项（字段）是什么？ 记录是指什么？ 文件是指什么？ 文件名和类型是指什么？ 文件有哪些操作？分别是指什么？ 文件的访问矩阵是指什么？ 文件的逻辑结构 文件的逻辑结构与逻辑地址是什么？ 文件的逻辑结构是指用户眼中文件">
+<link rel="icon" href="../../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../../" data-note-id="c032">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../../math/index.html">数学</a><a href="../../../major/index.html" class="is-active">专业课</a><a href="../../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note is-active" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../../major/index.html">专业课 408</a><i>/</i><span>操作系统</span><i>/</i><span class="crumb__no">05</span></div>
+    <h1 class="doc__title">梳理</h1>
+    <div class="doc__meta"><span>2.9 万字</span><span>约 70 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose">
+<h2 id="sec-3">文件的基本概念</h2>
+<h3 id="sec-6">数据项（字段）是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912185207.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912185239.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-12">记录是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912185320.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-18">文件是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912185631.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-24">文件名和类型是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912185659.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-30">文件有哪些操作？分别是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912190212.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-36">文件的访问矩阵是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912190318.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-42">文件的逻辑结构</h2>
+<h3 id="sec-45">文件的逻辑结构与逻辑地址是什么？</h3>
+<p>文件的逻辑结构是指用户眼中文件本身的结构，而不是文件系统的组织结构，在用户眼中，文件的逻辑结构是一整个连续的空间中数据的组织方式，用户访问文件使用的是文件中数据的逻辑地址，逻辑地址就是用户所看到和使用的地址，比如，在用户眼中文件中的数据地址就是 0 ~ 25586 这样一个连续的空间，用户在使用逻辑地址之后，由 OS 转换成物理地址来访问实际的物理地址来访问文件数据</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802083638.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>用户眼中的这样一个连续的空间也是有结构的，称为文件的逻辑结构</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802083304.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-60">无结构文件是什么？</h3>
+<p>无结构文件也称为流式文件，它以二进制位字符流为单位将文件的数据组织起来：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802083450.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>检索文件中的数据只能用穷举方法</p>
+<h3 id="sec-72">记录与记录的键值是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802083942.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802083954.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-78">顺序结构顺序文件是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802084114.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802084147.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-84">串结构顺序文件是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802084229.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-90">索引文件是什么？索引表是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802084346.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-96">索引顺序文件是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802084606.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802084710.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-102">直接或散列文件是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806205212.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-108">文件的逻辑地址的划分</h3>
+<p>文件的逻辑空间大小一般是盘块的整数倍，用户眼中的文件内容是一整个的连续内容，用户使用的地址都是逻辑地址</p>
+<p>但是这些连续的文件内容会被切分成一块块放入到实际的物理磁盘空间，非常类似分页内存管理的方式</p>
+<p>所以这样逻辑上连续的文件也会被划分成一个个的块，这个称为逻辑块，因此逻辑地址空间应该被划分为两个部分，即文件块号和块内偏移</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802091422.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-123">对逻辑的理解</h3>
+<p>在内存管理和文件中都涉及这样一个逻辑的概念</p>
+<p>无论是进程内容还是文件内容，它会在开始（用户看来）被看作一个整体，一整块连续的东西，但是实际上被切分存放在不同的地方</p>
+<p>就比如一整块蛋糕，它实际上会被切分成不同的小块装在不同的袋子里，只不过对于计算机来说进程内容和文件始终不会物理上形成一个整体，这个整体是一个假想的整体，逻辑的整体，OS 会根据这个假想的整体进行切分并存放数据到实际的物理空间中</p>
+<p>更具体来说，用户会认为有一整块的连续的地址比如 0  ~ 25536 存放了一个完整连续的进程或者文件，用户会用这些地址来访问进程或者文件内容；但是 OS 会实际上将文件或者进程分块放在了外存或者内存中，OS 会将用户的逻辑地址转换成实际的物理地址，这样用户就有了一种直接使用逻辑地址访问到了数据的假象，这个就是逻辑</p>
+<p>这些逻辑地址都可以看成一整块进程中某个数据相对于整个完整进程开头的偏移</p>
+<p>同样，逻辑结构就是用户假想的这个不存在的整体的结构，用户会认为这一整块的文件或者进程每一部分都有它的实际意义，但是在 OS 看来都是一些二进制，OS 存放这些数据到外存的时候不在乎这些数据怎么被解释，当用户需要他假想的整体中的那块数据的时候就用逻辑地址访问，OS 就会给用户那块二进制数据，然后由用户决定怎么使用和解释这块数据，由用户所解释和使用和看到的结构就是逻辑结构</p>
+<p>比如流式文件或者顺序文件，在 OS 看来这些都是二进制，他们平等的存放在外存中，但是用户不这样认为，用户按照自己假想的逻辑整体利用逻辑地址从 OS 拿到数据之后，会认为二进制字节之间是独立的，这个就是流式文件；用户拿到 OS 提供的数据之后会认为一组二进制形成一个记录，然后各个记录按这组二进制中某个二进制数值按顺序递增，这个就是顺序文件</p>
+<h2 id="sec-147">文件的物理结构</h2>
+<h3 id="sec-150">文件分配（物理结构）是什么？</h3>
+<p>根据上文所说，文件的逻辑地址可以划分为逻辑块号和块内偏移</p>
+<p>文件会被分块存放在物理磁盘中，并且文件中某个数据的块内偏移与在物理磁盘块中的块内偏移是一样的</p>
+<p>那么，只要我们可以知道文件的逻辑块与物理块的映射关系，这样就可以直接将物理块号替换为逻辑块号，这样就知道了物理地址了</p>
+<p>这个逻辑块号与物理块号的映射关系，或者说逻辑块如何在物理块中存放，这个就是文件分配</p>
+<h3 id="sec-165">文件的连续分配是指什么？有什么优缺点？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912193151.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）支持随机读写<br>
+（2）顺序访问速度快<br>
+（3）连续分配方式，最适合定长的文件，对于可变长度的文件不合适</p>
+<h3 id="sec-174">文件的隐式连接分配是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912193305.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-180">隐式连接的优缺点是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912193421.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-186">文件的显示连接分配是指什么？（FAT 表）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912193843.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>注意这里的盘块号是所有外存的盘块号，在 FAT 表中这些盘块号依次递增，表项内容就是这个物理盘块号的下一块物理盘块号是多少</p>
+<h3 id="sec-195">显示连接分配的优缺点是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912194146.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的随机访问是与隐式连接相比而言的，显示连接不用挨个访问物理块，而只用访问内存中的 FAT 表即可</p>
+<p>事实上，这个 FAT 表存放了整个磁盘的连接信息，也可以用于空闲磁盘块的管理，其实是很占内存的，我们实际上只用知道当前这个文件系统的组织就行了，不需要所有的连接信息</p>
+<h3 id="sec-207">单级索引分配方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912195456.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>索引分配方式就是用一个物理块记录文件中所有物理块的连接</p>
+<p>这里盘块号可以看作是索引块中的一个项，这个项存放了整个文件占用的一个外存中的物理块块号</p>
+<h3 id="sec-219">单级索引分配的优缺点是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912195730.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-225">多级索引分配方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912195923.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912195959.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>下面多级所有分配方式中的二级索引中的盘块号就是实际文件存放的盘块号；二主索引中的盘块号则是二级索引块的块号<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912200215.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-234">多级索引的优缺点是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912200341.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-240">文件物理结构组织有哪些？分别支持什么访问方式（随机 or 不随机）</h3>
+<p>连续分配：支持随机读写，但是不是很适合存可变长度的文件</p>
+<p>隐式连接：不支持随机读写</p>
+<p>显式链接：支持随机读写（指不用一块块顺序访问磁盘，而是可以在内存中直接定位磁盘号）</p>
+<p>索引分配：单级索引支持随机访问，多级索引随着级数的增加访问外存磁盘的次数增大，没有必要说明，仍然支持随机读写</p>
+<h3 id="sec-255">文件控制块存放的与物理分配有关的信息是什么？（不同的物理分配方式存放的信息有什么区别？）</h3>
+<p>连续分配方式：起始块号和块数</p>
+<p>连接分配方式（隐式链接）：起始块号和结束块号</p>
+<p>链接分配方式（显示链接）：文件的起始块号；此时内存中会有一个 FAT 表，这个表的表项按序递增，对应了磁盘块号，表项序号就是磁盘块号，类似数组下标，表项内容就是这个磁盘块链接的下一块磁盘块块号</p>
+<p>索引分配方式：FCB（或者 inode) 中存放的是一个指针索引表，指向了文件存放的物理块号（直接索引方式）；如果是一级索引方式，那么 FCB 中存放的指针索引表指向的仍然是磁盘块，称为索引块，指针索引表中存放的是索引块号，这类磁盘块内容存放的还是磁盘块号而不是文件内容，这些磁盘块号对应的磁盘才是文件真正存放的磁盘块；当然如果是混合索引方式，那么 inode 中的索引表，有的指针指向实际的文件磁盘块，有的指针指向一个 1 级索引块，这个索引块中存放的全是指针，指向实际的文件磁盘块物理地址</p>
+<h3 id="sec-270">如何根据多级索引访问文件的某个字节？（多级索引访问磁盘块的过程）</h3>
+<p>（1）想要访问文件的某个字节，必须访问到最真实的地址项，即直接指向文件所在磁盘块的地址项<br>
+（2）直接索引的真实地址项就是 inode 中，因此只用读取一次 inode 到内存就能访问到了，然后再读取字节所在磁盘块即可，一共 2 次 IO<br>
+（3）一级间接的真实地址项在 inode 中的地址项指向的磁盘块中，因此读 inode 一次到内存中，然后再读一次将真实地址项所在的磁盘到内存，然后访问到了真实地址项，最后读一次文件磁盘块即可，一共 3 次 IO<br>
+（4）同理，二级地址项需要 4 次 IO</p>
+<h3 id="sec-276">一个多级索引的例题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251210202540.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）</p>
+<p>一个索引块有 1 K 个地址项</p>
+<p>10 个直接地址，对应 40 KB 大小文件</p>
+<p>一个一级间接，对应 1 K * 4 KB = 4 MB 大小文件</p>
+<p>一个二级间接，对应 1 K * 4 MB = 4 GB 大小文件</p>
+<p>所以想访问 6 MB + 5 KB 的字节，它所对应的地址项在 2 级间接索引中，一共 4 次 IO</p>
+<h2 id="sec-300">文件元数据和索引结点</h2>
+<h3 id="sec-303">文件控制块是什么？包含哪些信息？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250912200542.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>文件的物理位置是文件在外存中的位置，而不是内存中的位置</p>
+<h3 id="sec-312">文件控制块与文件目录的关系是什么？</h3>
+<p>多个文件控制块放在一起组成文件目录，文件控制块其实就可以看作是目录中的一个目录项</p>
+<h3 id="sec-318">文件元数据是什么？</h3>
+<p>一个文件包含两部分内容，分别是文件的信息和文件的元数据（属性信息）。文件元数据包含用来描述一个文件的特征的系统数据，诸如访问权限、文件拥有者、文件大小以及文件数据块的分布信息。</p>
+<h3 id="sec-324">索引结点 inode 与索引结点编号是什么？</h3>
+<p>索引结点是外存中存放文件元数据的一块区域，我们一旦找到了索引结点，我们也就找到了这个文件的元数据，索引结点与文件是一一对应的。</p>
+<p>索引结点有自己的索引结点编号，只要知道索引结点编号，那么就可以通过查 inode 表找到这个 inode 在磁盘中的地址，从而获取这个 inode 索引结点了</p>
+<h3 id="sec-333">FCB 与索引结点的关系是什么？</h3>
+<p>FCB 也就是文件控制块，它其实也是目录文件中的一个目录项，inode 索引结点主要是将目录项中除了文件名之外的信息全部摘出来了，单独存放再外层中，保留了一个 inode 编号来找到 inode 结点</p>
+<p>而 FCB 则是直接将 inode 中的文件元数据一股脑放在目录项中，与文件名形成一个大的目录项</p>
+<p>可想而知，采用 FCB 的目录文件将会变得非常大</p>
+<h3 id="sec-345">引入索引结点之后的目录和目录项是什么?</h3>
+<p><strong>目录是一种特殊的文件，它包含了一组目录项，目录也是保存在磁盘中的，目录文件也是文件</strong></p>
+<p>目录中的一个目录项，表述了这个目录下的某个文件的信息，包括这个文件名以及这个文件对应的索引结点编号</p>
+<p>只要通过文件名找到了目录项中的索引结点编号，然后通过查索引表知道了索引结点位置，然后从索引结点中拿到文件的元数据，获取到了元数据，然后就可以访问文件了，一个目录项对应一个文件实体，这个目录项存储在上级目录文件中</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801154842.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>注意目录本身也是文件，它仍然在上级目录中对应有目录项，如果要访问这个目录文件，仍然需要在它的上级目录的目录项中找到这个目录的索引结点编号，然后访问索引结点，然后拿到这个目录文件的元数据，然后才能访问这个目录文件</p>
+<h3 id="sec-363">索引结点的结构是什么？包含哪些信息？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801180137.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>文件类型：用来说明这个文件是一个实际的文件还是一个目录文件，还是一个软链接等等</p>
+<p>存储权限：跟这个文件的访问权限有关</p>
+<p>物理地址：通过这个物理地址来获取文件逻辑地址向物理地址的转换</p>
+<p>链接计数：跟硬链接有关，增加一个硬链接，链接计数+1，连接计数也就是引用计数</p>
+<h3 id="sec-381">索引结点加载内存之后增加了哪些信息？</h3>
+<p>当我们从目录项中获得这个文件对应的索引结点的索引结点编号的时候</p>
+<p>通过 inode 编号查找外存的 inode 表，然后找到这个索引结点地址，然后将这个 inode 放入内存：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801180512.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>当这个 inode 加载到内存中的一个内核专用缓冲区的时候它会增加一些其他信息：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801180900.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>inode 编号：其实就是这个 inode 在目录项中的编号，也是这个 inode 在 inode 表中的编号，通过这个 inode 编号来找到 inode 表中的 inode，当这个 inode 已经被放入内存了，然后有另外一个进程用 inode 编号找这个 inode 的时候就不用 IO 操作了，这个进程可以直接访问内存中的这个 inode</p>
+<p>状态：包括修改位，和互斥锁，修改位用来表示这个 inode 是否被修改，它返回外存要用到；互斥锁，用来进程间共享操作的</p>
+<p>访问计数：用来表示这个文件被打开了多少次，每当有一个进程访问这个 inode 结点，此访问计数 + 1，这个字段指出了当前正在使用该 inode 的数量</p>
+<p>device 号：与文件系统卷有关，OS 中可能有多个文件系统，一个文件系统对应一个逻辑设备号，并且不同的文件系统中可能有相同 inode 编号的 inode，所以这里的 device 号和 inode 编号共同确定一个 inode</p>
+<h3 id="sec-411">在混合索引分配方式物理结构的文件，其索引结点中跟地址有关的字段是什么？</h3>
+<p>直接块，一级间址，二级间址，三级间址这些东西</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913170944.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里就可以通过访问文件的索引结点，知道文件存储的物理块的地址了</p>
+<p>那么文件的大小其实就是上图中所指的所有数据块加起来的综合大小</p>
+<h3 id="sec-426">文件目录检索的过程</h3>
+<p>在用户视角中，所看到的文件系统其实是一个树形的结构：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801155750.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这棵树中有两类文件，一类是目录文件，这个文件实际的内容存放的是这个目录下的各个文件所对应的目录项</p>
+<p>一类是真实的文件，比如上面的 b.txt 这类不作为索引作用的文件，这些文件作为这个树形结构的叶结点</p>
+<p>如果我们要访问文件路径 <code>root/dir1/dir4/c.av</code>，下面是拿到 c.av 文件元数据的过程：</p>
+<p>文件系统启动的时候就已经获得了根目录的索引编号，所以可以直接去访问根目录文件的索引结点，获得根目录的元数据，获得 root 文件的内容，不过大多数题目中 root 这个根目录内容其实会事先放入到内存</p>
+<p>根目录的内容就是 root 底下子结点文件的目录项：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801160304.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>访问文件路径下一个是 dir 1，那么就根据这个 dir 1 名字，在 root 目录文件内容中检索 dir 1 对应的 inode 编号，然后同理，通过查表获得 dir 1 目录文件所对应的索引结点，然后获得 dir 1 的文件元数据，然后将 dir 1 放入内存访问 dir 1 文件内容，<strong>访问任何文件都需要将文件内容放入内存</strong>：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801161937.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>然后就是 dir 4，按照上文过程，访问 dir 4 的内容如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801162101.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>根据 c.av 在 dir 4 目录文件内容中找到 c.av 对应的 inode 编号，然后拿到 c.av 的 inode 结点，获得 c.av 的元数据，这样就可以访问 c.av 文件了</p>
+<p>以上就是目录检索的整个过程</p>
+<h2 id="sec-471">文件目录的种类</h2>
+<h3 id="sec-474">单级文件目录是指什么？有什么缺点？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913172543.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）只有一张大的文件目录表，每个文件占一个目录项<br>
+（2）文件名不能重复<br>
+（3）查找速度慢</p>
+<h3 id="sec-483">两级文件目录是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913172711.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）一个主目录和多个用户目录<br>
+（2）主目录的目录项指向用户目录，并包含用户名<br>
+（3）不同用户的文件可以重复</p>
+<h3 id="sec-492">树形文件目录是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913172759.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上下两级的文件目录中的文件目录项对应的文件名是可以重名的，但是单个文件目录中还是不能有重名的文件</p>
+<p>（1）常见的文件目录结构，将文件结构按照树组织起来<br>
+（2）子目录在父目录中占一个目录项<br>
+（2）上下两级目录文件名可以重复，单个目录中文件名还是不能重复</p>
+<h3 id="sec-504">路径名是什么？当前目录是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913173236.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）从当前目录（工作目录）开始的称为相对路径<br>
+（2）从根目录开始的称为绝对路径</p>
+<h3 id="sec-513">文件硬链接是指什么？</h3>
+<p>硬链接是指这个目录项直接复制了原来目录项中的 inode 编号，比如原来的目录项是 y 对应 inode m，那么硬链接这个目录项同样就是 y 对应 inode m，硬链接没有创建新的索引结点，而是沿用了原来的目录项对应的索引节点</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913173952.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-522">文件的软链接是什么？</h3>
+<p>软连接和硬链接其实都是都某个目录项的复制，它们自己也是目录项（或者说文件，一般目录项就是文件的部分内容），这是两种不同的复制方式</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913174627.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A 和 C 都是两个目录文件，这两个目录文件中会有两个新的目录项，这两个目录项对应了新的索引编号和索引结点</p>
+<p>对应的索引结点也会对应一个新的文件实体（上图中的 FLINK）只不过这个文件实体的内容是原来目录项 F 的路径 （类似快捷方式）</p>
+<p>这里只有 B 这个目录文件中的目录项会指向真正的 F 文件所对应的索引结点</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913175145.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）新的目录项，新的索引结点，以及新的文件<br>
+（2）文件内容是原来文件的路径</p>
+<h3 id="sec-546">软链接和硬链接方式下 inode 的连接计数的改变是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913175405.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801164448.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>连接计数记录的是实实在在的指向这个 inode 的目录项的个数</p>
+<p>软链接虽然也共享指向这个文件，但是这个文件的硬链接数不会改变，软链接所对应的目录项会有一个新的 inode，和一个新的 LINK 文件，这个 LINK 文件所对应的 Inode 的链接计数是 1（上图的 inode n）</p>
+<p>（1）硬链接增加，链接计数+1，硬链接减少链接计数-1<br>
+（2）软链接对应新的索引结点，链接计数为 1</p>
+<h2 id="sec-564">文件的操作</h2>
+<h3 id="sec-567">操作文件的是谁？</h3>
+<p>进程</p>
+<h3 id="sec-573">文件是怎么保存在磁盘上的？</h3>
+<p>（1）文件的 inode 保存在磁盘的 inode 区，访问文件需要将 inode 放到内存（内核区）<br>
+（2）文件本身保存在数据区</p>
+<h3 id="sec-579">inode 调入内存的时候增加了哪些信息？</h3>
+<p>（1）修改位<br>
+（2）互斥锁<br>
+（3）打开计数器：有多少个进程打开了这个文件</p>
+<h3 id="sec-585">系统级打开文件表是什么？</h3>
+<p>（1）一个系统设置一张，用于避免调入内存的 inode 信息过于冗余<br>
+（2）每个表项对应一个文件，存放这个文件的 inode 一些冗余信息，指针指向这个 inode</p>
+<h3 id="sec-591">进程级打开文件表是什么？（进程的描述符表与 fd）</h3>
+<p>（1）每个进程设置一张，每个表项对应这个进程打开的一个文件<br>
+（2）表项指针域指向这个文件的系统打开文件表表项（若没有系统打开文件表，则直接指向文件的 inode）<br>
+（3）表项的地址就是文件描述符 fd</p>
+<h3 id="sec-597">文件的打开操作 <code>open</code> 系统调用</h3>
+<h4 id="sec-600">给出参数：文件的绝对路径</h4>
+<h4 id="sec-603">过程</h4>
+<p>（0）查看 inode 是否在内存<br>
+（1）如果不在内存中，则从外存调入到内核缓冲区<br>
+（2）增加系统打开文件表的一个表项<br>
+（3）inode 访问计数 = 1<br>
+（4）增加用户（进程）打开文件表一个表项，指针域指向系统打开文件表表项</p>
+<p>（0）查看 inode 是否在内存<br>
+（1）如果在内存，inode 访问计数 + 1<br>
+（2）增加用户（进程）打开文件表一个表项，指针域指向系统打开文件表表项</p>
+<h4 id="sec-612">返回：用户打开文件表的描述符 fd</h4>
+<p>完成 open 系统调用，后续所有操作都是基于文件描述符 fd</p>
+<h3 id="sec-618"><code>read()</code> 和 <code>write()</code> 系统调用</h3>
+<h4 id="sec-621">给出参数：fd，buffer, len</h4>
+<p>fd：文件描述符<br>
+buffer：读文件到 buffer 中，或者将 buffer 中的数据写到文件<br>
+len：读或者写的长度</p>
+<h4 id="sec-627">过程</h4>
+<p>（1）根据 fd 找到用户打开文件表的表项<br>
+（2）拿到表项中的读写指针（文件指针），这个是逻辑地址，标识文件读写位置<br>
+（3）根据表项指针域去访问系统打开文件表，进而访问 inode<br>
+（4）根据逻辑地址以及 len，再加上 inode 中的外存信息，来访问外存的文件<br>
+（5）将要读的数据调入到 buffer（读操作）</p>
+<h3 id="sec-633"><code>close</code> 系统调用</h3>
+<p>一定会移除进程打开文件表的表项</p>
+<p>（1）利用 fd 找到用户打开文件表表项，移除表项<br>
+（2）利用 fd 找到 inode 中的访问计数，如果访问计数 &gt; 1 则让其 - 1<br>
+（3）如果访问计数 = 1，则这个 inode 失效，是否写回磁盘看具体实现策略</p>
+<h3 id="sec-642">用户打开文件表的线程共享问题</h3>
+<p>（1）同一个进程的所有线程共享用户打开文件表，用相同的 fd 访问文件<br>
+（2）子进程继承父进程的用户打开文件表，子进程可以访问父进程访问的文件</p>
+<h3 id="sec-648">文件创建的具体过程</h3>
+<p>（1）外存分配 inode，以及分配 inode 编号<br>
+（2）文件所在目录中创建一个目录项，设置文件名和 inode 编号与 inode 关联起来</p>
+<p>假设创建的文件路径是 <code>root/x/y</code></p>
+<p>首先会在外存上分配一块 inode，同时会在 inode 表上给他找一个对应的 inode 号以及一个表项给这个 inode 使用</p>
+<p>然会会在这个文件所在的目录的目录文件中，即 <code>root/x</code> 这个文件的文件内容中，加上一个关于文件 y 的目录项，这个目录项的文件名就绝对路径中获取，即 y，同时设置这个目录项的 inode 号，让其与 inode 关联起来</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801192037.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-666">文件的删除操作（<code>delete(root/x/y)</code> 系统调用的过程）</h3>
+<p>（1）如果硬链接计数 &gt; 1，则只是单纯硬链接计数 -1<br>
+（2）如果硬链接计数 = 1，则此时 inode 以及 inode 对应的文件的磁盘块都要被释放<br>
+（3）无论硬链接是否 = 1，都要删除文件 y 对应的目录项</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801194143.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-675">文件的关闭操作和删除操作的区别是什么？</h3>
+<p>（1）close 调用影响的是访问计数以及必然删除用户打开文件表中的表项<br>
+（2）关闭操作影响的是链接计数以及必然删除目录文件中对应的目录项</p>
+<h2 id="sec-681">文件系统的结构</h2>
+<h3 id="sec-684">文件系统的各个层次是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913180857.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的逻辑地址是逻辑文件中的块，物理地址是外存中的块号，而不是内存管理中的内存块号</p>
+<h3 id="sec-693">读取文件的过程中文件系统的工作流程是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913181619.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-699">磁盘的分区是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913181739.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-705">一个分区中的内容有哪些？引导块，超级块，空闲空间管理，i 结点这些是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250913182312.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-711">文件指针是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801195145.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801195158.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-717">多个进程打开同一个文件是什么过程？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250914194529.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250914194538.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-723">系统级打开文件表的表项添加和删除的时候是什么？</h3>
+<p>系统级打开文件表的表项创建与 inode 被放入内存中的时机相同，文件打开的时候进程级打开文件表表项的指针域不是指向 inode 而是指向系统级打开文件表的这个文件对应的表项</p>
+<p>当文件关闭的时候如果发现 inode 的访问计数减为了 0，那么此时 inode 失效，系统级打开文件表的这个表项被移除，当然进程级打开文件表的表项也被移除</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801190935.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong>只有当文件第一次被打开的时候才会才系统打开文件表中创建一个表项，当最后一个访问这个文件的进程关闭了文件之后系统及打开文件表中的表项才会被移出</strong></p>
+<h3 id="sec-738">一个与文件打开表有关的例题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250914190633.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>由于是硬连接，所以 f 1 和 f 2 共享 inode</p>
+<p>两个进程的进程级打开文件表表项分别指向了系统级打开文件表的不同表项，这两个表项指向两个文件的 inode，也就是同一个 inode</p>
+<p>I:<br>
+，读写指针都不可能相同</p>
+<p>II:<br>
+正确</p>
+<p>III:<br>
+正确</p>
+<h2 id="sec-759">虚拟文件系统</h2>
+<h3 id="sec-762">虚拟文件系统是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250914191933.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>简单来说，虚拟文件系统负责将所有不同的文件系统整合在一起，让用户可以通过系统调用统一进行访问</p>
+<h3 id="sec-771">虚拟文件系统中有哪四个对象类型？</h3>
+<p>（1）超级块对象，标识一个文件系统，存储文件系统的一些信息<br>
+（2）索引块对象，标识一个文件，文件被第一次访问的时候在内存中创建索引结点<br>
+（3）目录项对象，也就是目录文件中的目录项，可以通过目录项找到索引结点<br>
+（4）文件对象，与一个进程相关的，打开的文件</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250914192105.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-780">文件系统的挂载</h3>
+<p>（1）也就是设备中的文件系统与操作系统中的某个目录建立关联，让用户可以通过访问目录来访问设备中的文件<br>
+（2）根文件系统是所有挂载的起点，所有文件系统都在这下面扩展</p>
+<h3 id="sec-786">inode 的访问计数和连接计数的区别是什么？</h3>
+<p>inode 只有增加一次硬链接，其连接计数才会加一</p>
+<p>访问计数是只要文件被打开了一次就 + 1，访问计数是 open 调用成功之后这个文件对应的 inode 计数就会 +1</p>
+<h2 id="sec-795">外存管理</h2>
+<h3 id="sec-798">空闲表法是什么？</h3>
+<p>（1）连续分部的磁盘块组成一个空闲区<br>
+（2）每个空闲区对应空闲表中的一个表项<br>
+（3）表项包括区号，空闲区第一个块号，空闲区块数等信息</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802160407.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802160417.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-807">空闲盘块链是什么？</h3>
+<p>（1）所有的空闲盘块构成一整条链<br>
+（2）分配空间从链首取下空闲盘块，回收空间从链尾摘下盘块分配给用户<br>
+（3）连续分配多块磁盘块的时候效率非常低</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802160725.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802160806.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802160819.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>空闲盘块链在分配的时候效率会非常的低，因为你分配的时候是一个个盘块分配的，你必须将这个空闲盘块经过 IO 读入内存，这样才能知道下一个盘块的地址，才能将内存中的指向这个链表的头指针指向下一块磁盘，这样如果分配多个空闲盘块的时候效率会非常的低</p>
+<p>注意这里分配的时候就需要 IO 读入磁盘，更别说文件内容写入磁盘了</p>
+<h3 id="sec-822">空闲盘区链是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802160942.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802160951.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>空闲盘区链的缺点和空闲盘块连差不多，只有大量的空闲盘块存在一起的时候整个链才不长</p>
+<h3 id="sec-831">位图法是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802163159.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-837">成组链接法是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915183455.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）灰色区域中的是索引块，索引块最上方数字是索引块的块号，索引块红色是这个索引块中空闲块的的块数（指向下一个索引块也算一个空闲块），红色下面是指向下一个索引块的指针（下一个索引块的盘块号），再再下面就是这个索引块所包含的空闲盘块的块号</p>
+<p>（2）空闲盘块号栈，其实就是某个索引块的内容，栈底指向外存中的下一块索引块块号，栈底下面的都是这个索引块所对应的空闲盘块号，这个索引块放到内存用于分配给文件磁盘块</p>
+<p>（3）上面是栈底，下面是栈顶</p>
+<h3 id="sec-852">成组链接法分配盘块的过程是什么样的？</h3>
+<p>（1）从内存中的空闲盘块号栈的栈顶开始分配一个磁盘块，分配完了，栈中的空闲盘块数减一<br>
+（2）内存中的索引块的所有盘块都分配完了之后根据它指向的外存中的下一个索引块，将其内容移入内存，然后将这个<strong>索引块也分配出去</strong>，然后继续分配</p>
+<p>此时内存中有一个 999 和 8，两个磁盘块，这两个其实都可以分配，8 是下一个索引块的块号<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213092357.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>将 999 盘块分配出去之后：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213092817.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>此时如果想要继续分配，则会将 8 号盘块中的索引内容移入内存，然后将 8 号索引块本身也分配出去：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213092919.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-867">成组链接法的空闲盘块的回收</h3>
+<p>（1）新回收一个空闲盘块，则将盘块号放到栈中，即回收是直接回收到内存<br>
+（2）当内存中的这块索引块已经满了之后，此时再回收一个盘块，则将内存中的索引块内容移入到这个索引块，然后内存清空，只留下这个新回收盘块的盘块号</p>
+<p>下图是内存此时索引内容指向的情况：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213091648.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>又回收了一个 888 号磁盘块之后：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213091723.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>又回收一个 8 号盘块之后，将内存中的索引信息移入到 8 号盘块，然后内存的栈就只留下 8 号盘块指针指向 8 号盘块：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213093033.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-882">一道例题，成组链接法</h3>
+<p>这个图有问题，最后一个索引块中盘块数量应该是 99 个<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213083227.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）<br>
+2  + 100 + 100 + 99 = 301 个，索引块本身也算作一个空闲块</p>
+<p>（2）<br>
+当分配了 2 个空闲盘块之后会将 300 号索引块内容移入栈中，并将 300 号盘块也当作空闲块分配出去：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213095631.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>再分配一块，所以空闲栈的栈顶就是 302 了</p>
+<p>（3）<br>
+第二问分配结束之后的状态是：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213095813.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>回收 700 之后空闲盘块栈就会变满：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213095953.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>继续回收 711，则会将 711 这块盘块当作一个索引块，放入空闲盘块栈中的内容，然后移出空闲盘块栈中的数据，保留一个指向 711 块的索引：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213100250.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>后续的 703，788，701，都直接分配到空闲盘块栈中了：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251213100452.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>所以栈顶指针应该是 s_nfree[3]，内容就是 701</p>
+<h3 id="sec-918">成组链接法的优点是什么？</h3>
+<p>（1）空闲分区表和空闲链表都不适合大型文件系统，成组链接法克服他们的缺点</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915190155.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的连续是指一开始分配的时候连续，在后续的不断分配和回收的过程中实际上磁盘块会越来越乱的</p>
+<h1 id="sec-930">理解</h1>
+<h3 id="sec-933">系统级打开文件表 + 进程级打开文件表 + 文件描述符 fd 这些是什么？</h3>
+<p><mark>系统级打开文件表</mark></p>
+<p>系统级打开文件表的每个表项对应一个已经打开的文件，存放这个文件的 inode 的一些冗余信息，表项指针指向这个文件的 inode</p>
+<p>为了不让一个 inode 过于冗余，有些设计者会设计一个系统级打开文件表，这个文件表中的一个表项中的指针域指向内存中的这个 inode，然后这个 inode 的一些其他信息会放在这个表项中：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801183447.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>进程级打开文件表</mark></p>
+<p>进程级打开文件表的每个表项对应了这个进程打开的某个文件，表项指针指向该文件的 inode，表项地址是文件描述符 fd</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801183620.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801183653.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>进程级打开文件表的每个表项的指针域就指向了系统级打开文件表对应 inode 的表项（<strong>如果这个 OS 中没有系统级打开文件表，那这里的指针域就直接指向内存中的这个 inode</strong>），如果有系统打开文件表的话，关系如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250914194338.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>进程级打开文件表其实可以看成一个数组，这个数组的元素就是这个打开表的表项，表项的内容就是指针域和其他信息，每个表项在数组中的索引，或者位置就称为对应文件的文件描述符 fd</p>
+<p>因此一个文件描述符 fd 就对应了一个进程级文件打开表的表项，也就对应了一个 inode，也就通过 inode 对应到了这个实际的文件，因此当一个文件在进程级打开文件表中有表项的时候就不用文件名来访问这个文件了，而是只用 fd 就可以经过一系列的转换来访问这个文件了</p>
+<h3 id="sec-969">文件打开概念的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801175643.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>多个进程操作文件：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801175842.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-981">文件的读写理解</h3>
+<p>文件的读就是将磁盘中某个文件内容读入到内存中</p>
+<p>文件的写就是将内存中内容写入到磁盘的文件</p>
+<h3 id="sec-990">文件的两层保护</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801201424.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里文件允许的权限在 inode 中，inode 中会被保存这个文件对每一个用户的权限</p>
+<p>如果一个用户调用 <code>open(路径，权限)</code>，这里的用户要求的权限大于 inode 中允许用户申请的权限，则此时不能给用户打开访问</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801201755.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的存取权限以二进制的形式表示，二进制的每一位表示一个权限：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801201850.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里给用户分组，用来指示不同的用户有不同的访问权限控制</p>
+<p>注意上述每个组的用户分别有 3 位用来表示这个用户组对文件的权限，并且每个权限都要 1 位来表示有或者没有，某个用户组对应的 3 位二进制合在一起的编码表示权限的组合，而不是一种权限对应一种编码，比如上图的组 1 对应的 111 表示这个组的用户即有读写的权限也有执行的权限，而不是 111 单个表示某个权限</p>
+<p>注意别与微指令中的控制字段编码互斥微命令弄混了，这里编码互斥微命令是一个编码表示一个微命令，所以 4 个微命令只用 2 位就可以表示了，但是这里权限是 1 位表示一个权限，所以 3 个权限必须用 3 位表示</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801203521.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>权限有 5 个所以是 5 位</p>
+<p>每个用户都需要 5 位表示他的权限</p>
+<p>所以结果是 20 位</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802080659.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>用户在打开文件之后会将自己申请的权限写入到进程打开文件表中：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802080838.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果下次用户再使用 write 系统调用来试图修改文件，那就是不可行的了：</p>
+<h3 id="sec-1041">文件分配- 连续分配</h3>
+<p>连续发分配就是将这些块连续访存外存中，这样只用知道这些块存放的起始地址，以及分配的整个空间长度，就可以通过起始地址和逻辑地址计算出实际的物理地址了</p>
+<p>因此文件的元数据中负责地址转换的功能信息就是开始块地址和分配长度</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802093730.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>此时打开文件之后文件的元数据会存放在内存中，如果用户想要访问文件的某个内容，会直接根据文件元数据转换成物理地址，然后访问外存，将内容读入到内存，所以这种连续分配方式读取文件内容只用一次访存即可</p>
+<h3 id="sec-1056">文件分配 - 链式分配（隐式链接）</h3>
+<p>隐式链接与连续分配相对应，这种方式将每个物理块通过链连在了一起</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802095740.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>文件元数据负责地址转换部分存放的是开始块的地址和结束地址</p>
+<p>如果文件物理块从第 0 号开始，那么读取第 k 号文件快需要首先将第 0 号读入内存知道第 1 号块的地址，然后将第 1 号块读入内存知道第 2 号块地址,,,,, 所以读取第 k 号文件块需要 k  + 1 次 IO 操作，一直到将第 k 号物理块放入内存，这个时候才能读到它的内容</p>
+<p>所谓隐式链式，就是这些链都隐藏到了每个物理盘块中，那么如果想要访问下一块物理块就必须要将上一块物理块放入内存访问，如果有一张表将每个链接全部提取出来，这个就是显示链接了</p>
+<h3 id="sec-1074">文件分配 - 链式分配（显示链接）（FAT 法，文件分配表法）</h3>
+<p>显示链接就是类似于静态链表，它将每个物理块中的链接（块号）放到了一个 FAT 表中，这个 FAT 表中，表的序号就是物理盘块号，每个表项内容是分配给文件的物理盘块号在物理外存下一块分配给文件的盘块号，注意，我们是可以通过物理块号知道这个物理块的起始地址的（因为一个个物理块的确是在外存中连续的）只要知道起始物理块地址和物理块大小，就可以根据物理块号访问到这个物理块的实际地址</p>
+<p>物理块号与逻辑块号不是一个东西，数据在第几个逻辑块，即他的逻辑块号是多少，并不代表这就是他的物理块，只能说他是系统分配给这个文件的第几个物理块，但是系统分配给这些文件的物理块块号是不确定的，是随机的，尤其是链式分配中</p>
+<p>下图分配给文件的盘块链的起始盘块号是 52<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806201427.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+此时 FCB 中存放的是这个文件的盘块链中链首盘块的物理块号，当我们知道了是第 i 个逻辑块之后（i 从 0 开始），就去访问 FAT 表，访问第 i 次的表项内容就是需要访问的物理块的块号了，于是就可以通过这个物理块块号知道了需要访问的物理块的地址了</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806202639.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1089">文件分配 - 索引分配 (直接索引)</h3>
+<p>inode 中存放着文件的元数据，用户通过这个元数据进行逻辑地址和物理地址的转换</p>
+<p>索引分配方式就是直接在 inode 中存储一个指针数组，这些指针指向了文件被切分存放在物理空间的地址：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802110038.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802110051.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图中就是第 0 个逻辑块存放在磁盘的第 2 个物理块中</p>
+<p>第 4 个逻辑块存放在磁盘的第 7 个物理块中</p>
+<h3 id="sec-1107">文件分配 - 索引分配（一级索引）</h3>
+<p>一级索引是指 inode 中的索引指针指向的不是实际的文件存放物理块，它指向的块中内容存放的是文件所在物理块的块号，你需要再进行一次索引才能找到文件实际存在的物理块</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802110554.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在一级索引中，inode 中的一个指针会对应文件的 4 个逻辑块，第一个指针对应[0, 3]号文件快，第二个指针对应[4, 7]号文件快</p>
+<p>所以如果想要访问第 6 块文件块，则会用 inode 中的第二个指针访问磁盘，将上图第 3 个物理块读入内存，然后从中取出第 6 个逻辑块对应的物理块 20，然后再去访问磁盘中的这个实际存放文件内容的物理块，将其读入内存访问实际的文件数据</p>
+<p>因此一级索引访问一个文件块需要两次 IO 操作</p>
+<h3 id="sec-1125">文件分配 - 索引分配（多级索引）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802123110.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1131">文件分配 - 索引分配（混合索引）</h3>
+<p>混合索引方式是结合了上面的直接索引和多级索引</p>
+<p>inode 指针可以指向一个实际存放文件的物理块，也可以指向一个存放索引的物理块，这个物理块中的内容可以是实际存放文件的物理块，也可以继续是存放索引的物理块</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802123652.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这些索引块负责管辖的文件逻辑块编号如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802123932.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果要访问第 100 块文件逻辑块（从 0 开始），则需要在 inode 中需要访问它指向的 2 级间接索引块</p>
+<p>这个 2级间接索引块的 10 个指针指向了 10 个 1 级间接索引块，每个 1 级间接索引块管理 10 个实际的文件块（10 个指针指向 10 个实际的文件物理块）</p>
+<p>这个 2 级索引块指向的第 0 个一级索引块负责管理第[20 ~ 29]块文件</p>
+<p>第 1个一级索引块负责管理第[30 ~ 39]块文件</p>
+<p>...。</p>
+<p>第 6个一级索引块负责管理第[80 ~ 89]块文件</p>
+<p>第 7 个一级索引块负责管理第[90 ~ 99]块文件</p>
+<p>第 8 个一级索引块负责管理第[100 ~ 109]块文件</p>
+<p>所以应该访问这个 2 级间接索引块的第 8 个指针（从 0 开始）指向的 1 级索引块，然后访问这个 1 级索引块的第 0 个指针指向的实际文件存储物理块</p>
+<h3 id="sec-1176">文件分配方式的各种优缺点</h3>
+<p><mark>连续分配</mark></p>
+<p>优点：实现简单，地址转换访问快</p>
+<p>缺点：</p>
+<p>（1）不适合动态增长，因为它需要连续的空间，增长的话得继续往后分配连续的物理块，但是很可能后面物理块被别人占用了，因此很难实现动态增长</p>
+<p>（2）插入和删除效率低下，插入块或者删除块得连续移动后续的物理块，像数组一样，所以不适合插入和删除</p>
+<p>（3）产生外部碎片，外部碎片都是像这样没有严格划分按需分配空间的分配方式产生的，比如内存管理的的分段管理还有连续分配方式中的动态分区管理，这些都会产生外部碎片</p>
+<h3 id="sec-1197">磁盘块操作所需要的 IO 次数</h3>
+<p><mark>读取</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802142735.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>修改</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802142813.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>修改操作必须以磁盘块为单位先将其读入到内存中，然后写回磁盘，这个过程需要两次 IO 操作</p>
+<p><mark>覆盖</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802142907.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>连续分配删除磁盘块（覆盖）的例子</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802143109.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果在知道了盘块 2 的地址的情况下挪动他将其覆盖盘块 1，则需要先将盘块 2 读入到内存，然后再写入覆盖到盘块 1</p>
+<p>这样需要 2 次 IO 操作</p>
+<p><mark>一个磁盘 读取的例子</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802143729.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong>（1）</strong></p>
+<p>对于 root 这个目录文件来说，它底下有 6 个子文件，所以对应 root 目录文件内部就有 6 个目录项，这里是 FCB 模式，也就是对应 6 个 FCB</p>
+<p>因此 root 目录文件占据 2 个物理块，并且按顺序依次存放的，usr 这个文件对应的目录项在 root 的第二个物理块中</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802144925.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>由于访问的路径是 <code>root/usr/he/dir1/A</code></p>
+<p>下一步需要访问 usr 目录文件，所以需要先访问 usr 目录文件在 root 中所对应的目录项 FCB，从而获得 usr 的元数据，这时 root 只有第 1 块即块 0 在内存，由于是链式存储此时需要利用块 0 的链将 root 的块 1 调入内存访问 usr 的 FCB 块</p>
+<p><strong>这个时候需要一次 IO 操作</strong>，这样就可以将 usr 的 FCB 所在的物理块调入内存了，获得了 usr 的元数据，这样就可以访问 usr 目录文件内容了</p>
+<p>下一步需要访问 he 这个目录文件，所以需要先访问 usr 目录文件中 he 所对应的目录项 FCB，usr 目录文件有 2 个物理块，每个物理块中存放的 FCB 如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802145821.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>由于是链式存储，只能先访问块 0，然后发现 he 的 FCB 不在块 0 中，然后利用块 0 的链访问块 1，所以先将块 0 放入内存，然后再将块 1 放入内存，然后才能访问到 he 目录文件所对应的 FCB 块</p>
+<p><strong>这个过程需要 2 次 IO 操作</strong>，这样就拿到了 he 目录文件的 FCB 块中的元数据，这样就可以访问 he 目录文件内容了</p>
+<p>根据绝对路径 <code>root/usr/he/dir1/A</code>，下一步需要访问 dir 1 这个目录文件，所以在这之前，得先访问 he 目录文件中 dir 1 的目录项 FCB</p>
+<p>he 这个目录文件中只有 3 个 FCB 块，只在一个物理块中，所以只用一次 IO 操作，将 he 的文件物理块放入内存，这样就可以访问到了 dir 1 的 FCB 块</p>
+<p><strong>只用一次 IO</strong>，访问 dir 1 在 he 中的 FCB 块，拿到 dir 1 的元数据，就可以访问 dir 1 的文件内容了</p>
+<p>下一步是访问文件 A ，同样，在此之前需要获得在 dir 1 中的 A 的 FCB</p>
+<p>这里类似，<strong>同样需要一次 IO</strong>，将 dir 1 中的一块物理块放入内存，拿到 A 的 FCB，获得 A 的元数据</p>
+<p>也就是说，经过了 5 次 IO 操作，完成了文件 A 的目录检索工作，将 A 的 FCB 放入到了内存中：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802150858.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>下面开始访问文件 A</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802151053.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A 有 598 条记录，一共占有 299 个物理块，因此需要 299 次 IO 操作将 A 的文件内容放入内存</p>
+<p>再加上 A 的目录检索的 5 次 IO 操作</p>
+<p>因此将 A 完整读入内存需要 304 次 IO 操作</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802151404.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里只是说 A 是连续文件，即实际物理块分配是连续的，A 的 FCB 元数据只有 A 的开始块地址和分配的总长度</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802093730.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果知道了记录是第几块，我们直接用开始块地址加上块大小乘中间间隔的块数就知道了这个记录所在物理块的起始物理地址了</p>
+<p>再加上记录的块内偏移，就知道了这个记录的实际物理地址了，不过只考虑多少次 IO 操作的话只用知道是哪一块物理块就行了</p>
+<p>这里第 487 条记录，487/2 = 243，所以这条记录，如果是从第 0 块开始的话 487 在第 243 块上；如果是从第 1 块开始的话，487 在第 244 块上</p>
+<p>不过无所谓，我们知道了是哪一块，利用 A 的元数据的开始块地址，加上中间间隔的大小，就可以直接访问到这个物理块，将其放入内存了，所以只需要一次 IO 即可</p>
+<p>再加上 A 的目录检索（目录检索与第 1 问一样，目录是链式），将 A 的 FCB 放入内存的过程，需要 5 次 IO</p>
+<p>一共就是 6 次 IO 操作</p>
+<p>这里，因为是连续存放，所以可以直接根据 A 的元数据找到这条记录所在物理块的地址，只用一次 IO 就可以将这个物理块放入内存</p>
+<p>但如果是链式分配方式，那么虽然知道了这条记录在从 0 开始的第 243 块物理块上，但是仍然需要依次将第 0 块，第 1 块..... 第 242 块物理块放入内存，然后从 242 块物理块得到第 243 块物理块的地址，然后再将 243 块物理块放入内存，一共就需要 244 次 IO 操作，加上目录检索那就是 250 次 IO 操作了</p>
+<h3 id="sec-1341">文件系统的外存布局</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802155238.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图是一个磁盘的简单划分</p>
+<p>引导块：用于引导操作系统用的</p>
+<p>超级块：用于存放文件系统相关的信息，文件系统的挂载就是将超级快放入内存，此后如果 OS 想要访问文件系统，那么它就会在内存中访问这个超级快，获得文件系统的相关信息</p>
+<p>inodes 表区域：用于 inode 索引块的查询</p>
+<p>数据块：用于真正存放文件数据的区域</p>
+<h3 id="sec-1362">空闲磁盘块管理与文件实现（分配）</h3>
+<p>一般不能用文件实现，即文件的物理块分配的方式来管理空闲的磁盘块，因为空闲的磁盘块会远多于文件所占据的磁盘块，如果用索引法或者 FAT 法，那么此时空闲块有关的信息就会无比巨大，放入内存显然不合适</p>
+<h3 id="sec-1368">成组链接法是什么？</h3>
+<p>成组链接法与空闲盘区法比较类似，不过物理上连续的空闲物理块会作为一个盘区；但是成组链接法的空闲盘块合在一起作为一个组，这个组中的各个盘块不用要求连续</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802163909.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>索引块中存放了这个分组中的所有磁盘块的指针，指向分组 0 中的所有磁盘空闲块的位置</p>
+<p>然后各个分组的索引块之间用指针链接起来</p>
+<p>这样多块物理块分配的时候可以直接将一整个组分配给文件，此时只用调入索引块进入内存即可，这样就避免了多次 IO 操作分配物理块</p>
+<p>并且多个物理块形成一个组，这样也避免了索引块过多导致链过长</p>
+<p>但是在实际中可以进一步去除链来减少索引块中存放的信息，我们统一让每个分组中第 0 块物理块作为下一个分组的索引块，在这样的规定下，索引块就只用存放自己的空闲物理块指针就好了，不用存放下一个索引块的地址了：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802164425.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1395">索引块中存放的信息是什么？</h3>
+<p>索引块中会存放这个索引块对应的分组中的所有空闲块号，以及块的数量</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802165205.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果是最后一个索引块，则这个索引块中的空闲物理块号记为-1：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802165236.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1410">成组链接法 - 空闲块的分配</h3>
+<p>空闲块的分配一律从分组 0 开始，分组 0 会将它下面的除了最开始的索引块之外的所有物理块分给文件，然后只剩下最后一个索引块 18，然后，会将这个 18 索引块的内容复制到内存中的分组 0 索引块中，并将这个索引物理块继续分配给文件：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802170007.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802170049.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在这个过程中，只有当分组 0 的所有物理块全部分配完了，还需要继续分配的时候，才会去进行一次 IO 读取下一个分组的索引块 18 中的内容到内存中，然后继续分配这个索引块对应的分组物理块</p>
+<h3 id="sec-1425">成组链接法 - 文件块的回收</h3>
+<p>加入回收一个磁盘块 50，它会直接回收到内存中的这个分组 0 上，即直接在分组 0 中增加一个指向 50 号磁盘块的指针即可，不需要 IO 操作：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802170612.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>假如一个分组的磁盘块上限是 5 个，如果此时需要继续回收一个磁盘块 128</p>
+<p>那么此时会将这个新回收的 128 作为一个新的分组的索引块，然后将内存中的这个分组 0 的索引信息复制到这个 128 物理块中，这样这个新回收的 128 物理块就作为原来内存中分组 0 的索引块指向的所有物理块的索引块了：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802171057.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>原来索引块 0 中的内容覆盖这个 128 物理块，需要一次 IO 写入</p>
+<p>这样下次再回收一个新的物理块，就可以继续在内存的这个分组 0 中插入空闲块的指针了：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802171308.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1452">磁盘的格式化 - 低级（物理）格式化</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802180557.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1458">磁盘的格式化 - 磁盘分区</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802181148.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1464">磁盘的格式化 - 高级（逻辑）格式化</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802181511.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>对于文件系统来说，一种文件系统对应一种磁盘布局方式，也就是上图的高级格式化方法，负责格式化的程序让磁盘呈现上图的那种布局</p>
+<p>负责格式化的程序和文件系统都熟悉磁盘的布局，逻辑格式化是对磁盘进行布局的一方，文件系统是利用布局来访问文件的一方</p>
+<p>不同的文件系统它的 inodes 表区域是不一样的，以及不同的文件系统可能有不同的空闲磁盘块的管理方式，所以一种文件系统应该对应一种格式化</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802182153.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1482">文件系统获取一个空闲磁盘块号的过程</h3>
+<p>文件系统是知道整个磁盘的布局的，也就是说文件系统是知道这个磁盘的每个块的分区，以及超级块中存放的东西：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802182404.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这样文件系统就可以通过读取超级块中的 bitmap 部分，找到一个位图为 0 的 bit，假设是第 k 个 bit 为 0，那么文件系统就知道了第 k 个空闲块是空闲的</p>
+<p>然后文件系统就会继续去读超级块中的数据区开始块以及数据区块数的信息，从而知道第 k 个块在磁盘中的位置，这样就可以将第 k 磁盘块分配出去了</p>
+<p>文件系统就通过逻辑格式化来知道整个磁盘的布局</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802183126.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1503">逻辑格式化的工作</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802183126.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>逻辑格式化就是任意一个文件操作之前的动作</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802183510.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的 FAT 表和超级块是在文件系统挂载的时候进入内存</p>
+<p>此外根目录是由逻辑格式化创建的：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802183639.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1524">虚拟文件系统</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803164949.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>总的来说 VFS （虚拟文件系统），他是一个内核软件层，它给上层用户提供了统一访问文件的接口，让用户不用在乎各个文件系统的差异和实现方式，统一用 open 或者 write 等系统调用进行访问文件</p>
+<p>这样在用户看来，整个文件系好像就是一个完整的文件系统一样（反正用户的操作不用考虑差异性），这个就是虚拟文件系统</p>
+<h3 id="sec-1536">文件系统的挂载</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803171306.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这样原本 fs 2 系统中的文件 a 的路径是 <code>root/dir3/a</code>，可以在文件系统 fs 1 中用 <code>root/dir2/dir3/a</code> 来访问</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803171559.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上面都是在用户视角下的文件挂载</p>
+<h3 id="sec-1551">文件系统的层次结构</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803170426.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803170604.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803170613.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>VFS 层会根据用户的系统调用，根据用户访问文件的路径，分配给不同的文件系统，由不同的文件系统来进行处理，这个过程就相当于向用户隐去了各个文件系统的区别，又 VFS 虚拟文件系统来进行区分并分别处理</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803170849.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>文件系统其实也是软件，VFS 会根据用户不同的访问文件路径调用不同的文件系统处理函数，然后访问磁盘</p>
+<h4 id="sec-1572">文件系统的工作过程</h4>
+<p>假设有下面一个树形结构，挂载了两个文件系统：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803171857.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>对于用户来说他不用在乎文件系统的区别，他直接给出想要访问的路径 <code>root/dir1/fs1_1/a</code></p>
+<p>那么首先会进入 VFS 层，VSF 层会分析这个路径，会发现这个路径上的文件是属于 fs 1 系统的，所以 VFS 会将这个路径拆成 <code>root/fs1_1/a</code> 然后提供给 fs 1 系统，fs 1 原本就是将自己的 root 根目录挂载到 dir 1 的，所以 fs 1 获得了 <code>root/fs1_1/a</code> 这个路径之后，他就可以利用这个路径来访问文件 a 了</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803172421.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这个文件系统获得路径之后，就根据上文所述的过程，进行目录检索，确定要读取的盘块：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803172646.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>当然，此时不会直接读磁盘，而是先去读磁盘缓冲区，如果缓冲区没有，则再交给缓冲区，将磁盘调入到缓冲区：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803172843.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>磁盘缓存层在调入磁盘的时候会使用磁盘驱动提供的接口来读取磁盘块</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803173906.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>最后是磁盘物理层：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803173959.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1614">2^n 个数据的用 n 位二进制编号的问题</h3>
+<p>2^n 个数据必须用 n 位二进制来进行编号，这里可以用两个角度来理解</p>
+<p>（1）一串二进制编码对应一个数据，因此 2^n 个数据需要 2^n 种不同的二进制编码，所以需要 n 位二进制</p>
+<p>（2）2^n 个数据编号的话从 0 开始最大是 2^n - 1，因此必须得用 n 位数据才能表示 2^n - 1 这个十进制数，所以得 n 位二进制</p>
+<h3 id="sec-1626">访问计数值与链接计数值的含义和影响因素</h3>
+<p>访问计数值是在文件的 inode 元数据中的数据，是在文明的 inode 调入内存的时候新增加的字段</p>
+<p>当一个进程打开这个文明的时候访问计数值 + 1<br>
+当一个进程关闭这个文件的时候访问计数值 - 1<br>
+当访问计数值减到 0 的时候说明没有进程打开这个文件了，此时移除系统打开文件表中的这个表项，释放文件 inode 占用的内存空间</p>
+<p>链接计数值是磁盘中 inode 中的字段</p>
+<p>它的含义是指向这个 inode 的文件名的数量，即硬链接的数量，即指向这个文件 inode 的目录项数量</p>
+<p>创建一个新的目录项，这个目录项可以指定一个新的文件名，这个目录项的 inode 编号指向原来文件的 inode，此时硬链接 + 1，此时链接计数值 + 1</p>
+<p>当删除一个指向这个 inode 的目录项的时候硬链接 - 1</p>
+<p>当硬链接 = 0 的时候就说明这个文件你可以物理删除了，此时磁盘中的这个文件对应的 Inode 可以被释放了</p>
+<h2 id="sec-1650">题目</h2>
+<h3 id="sec-1653">1 open () 操作的理解 + open 操作与硬链接</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806151916.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A:<br>
+这里的意思是将文件的内容读入到了内存，但是 open 操作显然不是这样的，open 主要的操作是将文件的 inode 调入内存，创建进程打开文件表表项，同时返回文件描述符 fd</p>
+<p>B:<br>
+open 操作含有一个文件路径操作，文件路径中含有文件名，所以正确</p>
+<p>C：<br>
+408 认为只有文件第一次打开的时候回创建一个系统打开文件表表目</p>
+<p>D：</p>
+<p>对于硬链接来说，他会有自己的目录项，即可以有不同的文件名，只是这个目录项的 inode 编号是赋值的，但是文件名可以不同</p>
+<p>此时调用 open 操作打开硬链接的文件名的时候调入内存的其实还是这个 Inode，打开的是相同文件实体<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250801164448.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1677">2 close () 系统调用的过程 + 位示图的修改 + 超级块的修改和写入写回</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806152639.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>close 的操作有两个，它的输入参数是文件描述符 fd</p>
+<p>（1）移除进程打开文件表中的表项，释放当前进程拥有的文件描述符 fd<br>
+（2）只有所有的进程都关掉了这个文件，系统级打开文件表中的表项才会被移出<br>
+（3）只有所有的进程都关掉了文件，这个文件在内存中的控制信息比如 inode 结点才会被释放，同时，如果 inode 被修改的话，还需要将修改的内容写回原来的外存 Inode 结点中</p>
+<p>A：<br>
+这个并不是 close 的调用做得事情，而是 write 系统调用做的事情</p>
+<p>B：<br>
+正确，不过只有最后一个进程关闭了文件之后才会这样的操作</p>
+<p>C：<br>
+位示图是用来管理磁盘的空闲空间的，只有创建一个文件分配了磁盘块或者彻底删除了一个文件释放了一个磁盘块才会影响位示图，这里仅仅关闭一个文件与位示图无关</p>
+<p>D：<br>
+文件系统的超级块它包含了这个文件系统的所有关键信息，它在挂载的时候放入了内存，什么时候写回磁盘并不取决于文件关闭，文件关闭如有需要修改的信息它直接在内存修改超级快即可，至于超级快什么时候写回到磁盘，这个取决于各自的不同的操作系统</p>
+<h3 id="sec-1701">3 inode 放入内存之后的附加信息 + 访问计数字段</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806155708.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>当把文文件在磁盘中的索引结点拷贝到内存中的时候会增加一些字段，比如访问计数字段</p>
+<p>当有一个进程打开了这个文件，这个访问计数字段就会加一，它体现了当前有多少个进程访问这个文件</p>
+<h3 id="sec-1713">4 FAT 32 文件系统</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806160127.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这个文件系统没有引入索引结点，它的文件目录项包含了文件所有的控制信息</p>
+<p>所以 C 是错的，只有引入了索引结点的文件系统中的目录项才有 inode 编号，它指示了 inode 表中 inode 结点的位置</p>
+<h3 id="sec-1725">5 文件保护的一些方法</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806160624.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+口令，是指在创建文件的时候附上一个口令，同时在 FCB 中放入这个口令，告诉所有共享这个文件的用户口令，那么当进程想要访问文件的时候必须提供可以对的上的口令，这样才能访问文件</p>
+<p>B：<br>
+存取控制其实和用户权限表差不多，都是在逻辑上给用户和文件进行权限匹配</p>
+<p>C：<br>
+不多说</p>
+<p>D：<br>
+这个显然不是文件保护的方法，这个是进程操作文件之后的通用操作</p>
+<h3 id="sec-1743">6 文件保护 - 访问权限与文件属性的配合</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806161026.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+用户访问权限是系统识别用户可以对文件进行的操作</p>
+<p>文件属性，这个是 FCB 中文件的一些限制控制信息</p>
+<p>当然文件的保护需要这两者共同进行限制，需要看用户的身份与文件的属性是否匹配</p>
+<p>B：<br>
+这个优先级是用于多个用户同时访问文件先满足谁的问题，它跟文件访问权限不是配合使用的，而且优先级也不是文件保护的内容</p>
+<p>C：<br>
+同上，不是配合使用的</p>
+<p>D：<br>
+口令虽然是文件保护的内容，但是它并不是和文件属性配合进行文件保护的</p>
+<h3 id="sec-1767">7 文件系统性能提升的一些措施</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806161741.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+这里的目录项分解是指目录项分解成了索引结点，为了轻量化目录项的大小，你目录项更小了，那目录文件就更小，那么文件进行索引的时候目录文件调入内存的内容就更少，那当然可以减少一些 IO操作，提升文件系统的性能</p>
+<p>B：<br>
+文件高速缓存，高速缓存，也就是 Cache，这里是将一些常用的文件放入 Cache 中，这样比进入内存找文件更快，所以也可以提升文件系统的性能</p>
+<p>C：<br>
+磁盘调度算法就是优化读磁盘的磁头移动路径，这样可以减少寻道的时间，提高磁盘 IO 的效率，它提升的是文件系统读取物理磁盘的效率，当然提升了整个文件系统的效率</p>
+<p>D：<br>
+同步 IO 是指，进程发起 IO 请求之后，必须等到 IO 完成才可以继续进行，比如 read ()，write () 这些系统调用都是同步 IO 操作</p>
+<p>异步 IO 是指，进程发起 IO 请求之后，就完全不管 IO 过程了，进程转去执行别的操作，整个 IO 是完全由 OS 内核中的一些线程来执行的</p>
+<p>比如 IO 操作需要先将外存数据读入到内核缓冲区，然后拷贝到用户缓冲区才能由用户进程所使用</p>
+<p>在这个拷贝过程中，同步 IO 虽然是利用内核调用完成拷贝工作，但是此时进程是完全在场监督的，由进程自己主动发起一些调用进行</p>
+<p>异步 IO 则是，进程发起一个 IO 请求之后就不管了，转去执行别的事情，然后这些触发拷贝工作完全是内核中的一些线程代替这个进程完成的</p>
+<p>因此异步 IO 他是与文件系统无关的，它并没有减少文件系统或者增加文件系统的某些工作，也没有优化文件系统的某些工作，它只是替换了触发系统调用，即触发文件系统工作的对象，跟提升文件系统的性能无关</p>
+<p>异步 IO 影响的是进程的并发，在进程不用等待 IO 结果的场景中就可以使用异步 IO</p>
+<h3 id="sec-1803">8 文件的结构和分类</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806165018.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+连续文件是文件的物理结构，是给文件进行物理块分配的方式，与 C 一样，都是物理结构</p>
+<p>B：<br>
+这个是更上层的文件类型，跟文件结构无关</p>
+<p>D：<br>
+流式文件，这个文件以字节为单位，是属于逻辑结构</p>
+<h3 id="sec-1818">9 文件的逻辑结构 - 索引文件的优点的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806171137.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>索引结构用于可变长的记录的文件</p>
+<p>用户会认为在文件中有一个索引表，这个索引表的每一个表项（逻辑项）指明了文件中的某个记录的逻辑地址和长度</p>
+<p>对于定长记录结构的文件，用户可以将整个文件看作一个数组一样进行访问，比如如果用户想要访问第 i 个记录的话，用户可以直接用 i 乘记录的长度就得到第 i 个记录的起始地址了</p>
+<p>但是如果文件的记录变成了不定长的，那么用户就无法通过简单的数组计算来随机访问记录；但是，如果用一个索引表的话，每个不定长的记录会对应索引表中的索引项，而索引项长度是固定的，用户可以对索引项进行随机访问，在索引项中找到第 i 个记录的起始地址，这样可以大大加快访问速度了</p>
+<p>A:<br>
+错，索引项应该只有一个</p>
+<p>B：<br>
+正确</p>
+<p>C：<br>
+索引 inode 结点才是这个，索引表是文件自己本身中的内容，是逻辑结构，是为了快速找到记录的逻辑地址</p>
+<p>D：<br>
+并不是，建立索引是为了加快检索可变长记录的文件，并且增加了索引之后反而需要的存储空间变得更大了</p>
+<h3 id="sec-1848">10 索引顺序文件结构的最少查找次数和查找过程</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806172532.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的查找是<strong>在逻辑文件中根据关键字找到记录获得这个记录的逻辑地址的意思</strong>，与文件的实际物理存放无关，是用户在这个逻辑文件上的查找</p>
+<p>如果直接就是顺序结构的文件：</p>
+<p>查找第一条记录需要查找一次</p>
+<p>查找第二条记录需要查找两次</p>
+<p>查找第三条记录需要查找三次</p>
+<p>....</p>
+<p>查找第 10000 条记录需要查找 10000 次</p>
+<p>每条记录查找成功的可能性是 1/10000 所以总的平均查找记录次数就是 5 k 次</p>
+<p>索引顺序文件会给一个文件中的记录进行分组，组内的记录无序，但是组间的记录有序</p>
+<p>然后索引顺序文件结构仍然会有一个索引表，不过这个索引表的每个表项不是每一个记录的信息，而是一个分组第一个记录信息</p>
+<p>那么查找的过程就是先在索引表中找到一个分组的第一条记录的信息，然后找到这个分组之后再在分组中顺序查找</p>
+<p><strong>在这种查找模式中，当分组是总记录个数开根号的时候总的查找记录最少，就是总记录开根号次，即 100 次</strong></p>
+<h3 id="sec-1890">11 磁带存储器的存储结构特点</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806192205.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>磁带是顺序存取的存储器，比如听歌的时候只能将第 1 首，第 2 首听完之后才能听第 3 首</p>
+<p>因此文件的物理结构应该是顺序文件（这里是物理结构，其实是连续存放分配物理块的意思）</p>
+<h3 id="sec-1902">12 文件分配方式的随机存取问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806193105.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的随机存取的意思是，可以根据逻辑地址直接找到物理地址，然后访问这个物理块；与之相对的是只能一个个物理块按个访问才能找到逻辑地址所对应的物理地址</p>
+<p>A：<br>
+连续分配，连续分配方式中的物理块都是挨着存放的，并且每个物理块的大小是一样的，文件 inode 元数据中存放的是连续分配物理块的起始地址和总分配大小</p>
+<p>这样，当知道逻辑地址之后可以确定是哪个逻辑块，这同时也是顺序分配中第几块物理块，从而可以直接根据物理块组的起始地址和物理块大小直接访问到这个物理块，这当然就是随机存取的</p>
+<p>B：<br>
+链接分配方式的物理块的地址隐藏在上一块物理块中，就像单链表一样，你需要读入上一块磁盘才能知道下一块磁盘的地址</p>
+<p>因此虽然通过逻辑地址可以知道访问数据所在的是第几物理块，但是仍然需要按个访问物理块才能找到目标物理块</p>
+<p>这当然就不是随机存取方式</p>
+<p>但是显示链接是可以实现随机存取的，他通过一张 FAT 表来实现，FAT 表类似一个静态链表，文件元数据中存放这个文件盘块链的起始盘块号，然后去 FAT 表中查找盘块数据，可以通过 FAT 表直接知道第 i 个逻辑块对应的物理块，然后从外存中取出这个物理块，他不需要反复挨个读取物理块，所以是随机存取方式</p>
+<p>C：<br>
+索引分配方式是在元数据中存放一个索引表，这个索引表的序号就是逻辑块号，表项内容就是这个逻辑块号对应的物理块号</p>
+<p>当根据文件的逻辑地址知道了是哪个逻辑块之后当然可以直接访问物理块</p>
+<h3 id="sec-1935">13 文件分配方式的动态增长问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250806203455.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的动态增长就是文件扩展，需要给文明分配一个新的磁盘块</p>
+<p>A：</p>
+<p>连续结构你需要按顺序在这个文件分配的连续空间中紧挨着分配一个物理块，这个一般是不好实现的，万一文件后面就有别的文件占用的物理块，那整个文件所有的块需要整体迁移，显然成本非常大</p>
+<p>B：<br>
+这种方式类似单链表，直接找个空闲块分配即可，这里虽然可能需要遍历到最后一个磁盘块，但也只是遍历，相比连续方式所有的磁盘块都需要移动覆盖，这里成本还是低一些的</p>
+<p>C：<br>
+同理，只用找个空闲块，然后修改一下元数据即可，这种最方便</p>
+<p>D：<br>
+散列结构是逻辑结构，跟物理分配块无关</p>
+<h3 id="sec-1959">14 文件的物理组织形式的相关因素</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807144057.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>我们在选择文件的物理结构的时候是需要考虑存储介值的特性的</p>
+<p>比如磁带，磁带它只能顺序的存取，所以你文件最好就是连续的存放在磁带中，这样磁带按顺序存取的时候刚好可以将文件读取出来</p>
+<p>如果文件是离散的存放在磁带上，那么磁带要读取这个文件就会非常麻烦，从头到尾读多次，才能拼成一个完整的文件，还需要反复的倒带</p>
+<p>A：<br>
+这个是面向用户的，与外存的存放无关</p>
+<p>B：<br>
+正确，比如磁带就最好用连续分配的文件</p>
+<p>C：<br>
+文件是放到外存的，要读取的时候再读入内存，所以无关</p>
+<p>D：<br>
+这里的意思是外部硬件设备是怎么分配资源的，这个与文件的组织存放是无关的</p>
+<h3 id="sec-1986">15 增加一块物理块给文件（动态分配）各种分配方式的 IO 次数差别</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807144954.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+连续分配方式最不利于文件的动态增长，这是因为给这个文件末尾追加一个物理块的时候，有可能这个物理块被别的文件所占用</p>
+<p>所以此时需要在外存中找到另外一个连续的更大的空间</p>
+<p>然后需要先进行 IO 将原本的文件读入内存，然后再进行 IO 将这些文件写入这个更大的连续空间中</p>
+<p>它需要一组读物理块的 IO 和一组写物理块的 IO，它的 IO 次数是最多的</p>
+<p>B：<br>
+这种方式它需要将所有的物理块读入内存找到最后一个物理块，然后让最后一个物理块链接到新分配的物理块</p>
+<p>它只有一组读 IO 操作，显然比连续分配更容易一些</p>
+<p>C：<br>
+这种方式只用修改内存中的 FAT 表即可，显然更方便</p>
+<p>D：<br>
+索引分配方式，索引块在内存，同样只用修改内存中的索引表即可</p>
+<h3 id="sec-2016">16 隐式连续分配修改记录的过程</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807150731.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的意思是只对第 22 条记录进行修改，然后再写回磁盘</p>
+<p>成组分解技术，就是一个记录不能跨盘块存放，只能存放在一个盘块中</p>
+<p>因此第 22 条记录就是在第 5 块盘块（从 1 开始计数）</p>
+<p>那么首先应该读第 1 个盘块到内存，找到第 2 个盘块的地址，然后将第 2 个盘块放入内存...。一直到将第 5 块盘块放入内存</p>
+<p>以上进行了 5 次 IO 读盘块操作</p>
+<p>然后对第 22 条记录进行修改，此时写回的时候只用写回第 5 块盘块即可，所以还需要一次 IO 写操作</p>
+<p>一共就是 6 次 IO 操作</p>
+<h3 id="sec-2043">17 索引分配方式文件所占磁盘块数量的计算</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807154613.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的指针是指文件的 inode 元数据中存放的指针</p>
+<p>直接指针，那就是这个指针直接指向了一个存放文件数据的磁盘块</p>
+<p>一级间接指针，那就是这个指针指向的也是一个磁盘块，不过这个磁盘块中存放的不是文件数据，而是一堆的直接指针</p>
+<p>首先这个文件有 10 个直接指针，所以这些先占用了 10 个磁盘块</p>
+<p>然后说最多占用了多少个磁盘块，那就是一级间接指针指向的磁盘块中全部存放直接指针</p>
+<p>一个直接指针的大小是 32 bit，即 4 B，一个磁盘块是 4 KB，所以一个磁盘块最多存放 1 K 即 1024 个直接指针，这些直接指针对应了 1024 个磁盘块</p>
+<p>所以总的最多的磁盘块个数就是 1034 个</p>
+<h3 id="sec-2070">18 CD-ROM 存储介值的文件分配方式</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807161850.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>CDROM 就是光盘</p>
+<p>这道题目强调的是快速随机，所以先排除 B 的链式结构，因为链式结构默认是隐式链式链接，不支持随机</p>
+<p>然后是快速，显然连续结构更加快速，连续结构可以直接计算出在哪个物理磁盘块，直接索引和多级索引还需要查一下索引表相当于多了一个过程</p>
+<h3 id="sec-2085">19 磁盘分配中簇的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807163115.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>簇其实就是多个盘块，如没有簇，则分配的基本单位是盘块，但是如果有簇，则分配的基本单位是簇</p>
+<p>这道题目这个文件占用的是两个簇，所以必须是 2048 B</p>
+<h3 id="sec-2097">20 绝对路径与相对路径的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807171305.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>绝对路径是指从根目录开始一级级查找</p>
+<p>相对路径则是可以设置一个当前目录，从当前目录开始查找</p>
+<h3 id="sec-2109">21 多级目录的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807171530.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>多级目录其实可以类比电脑的多级文件夹，他的主要目的就是为了解决命名冲突，多级目录其实是增大了系统开销以及增多了存储空间的</p>
+<h3 id="sec-2118">22 文件的树形目录结构以及文件的保护存取控制矩阵方法理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807171854.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I：<br>
+并不是，如果是磁带的话应该采用的是连续分配的结构</p>
+<p>II:<br>
+并不是，应该是用户访问权限和文件本身的属性共同决定的，而不是用户优先级</p>
+<p>III：</p>
+<p>并不是，树形目录结构如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807173225.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图只是用户看到的目录逻辑结构，实际上根目录也是一个文件，这个文件的内容就是一个个的目录项，某一个目录项指向一个目录文件的 inode，或者指向一个实际的数据文件的 inode，所以形成了上面的结构</p>
+<p>在不同目录下的文件名是可以一样的</p>
+<p>IV:</p>
+<p>存取控制矩阵，就是上文的访问权限控制矩阵</p>
+<p>这个是用于文件权限控制保护的，而不是用于防止文件受损的，文件受损应该采用冗余备份</p>
+<h3 id="sec-2154">23 软链接或者硬链接的链接计数值的问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807175158.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的引用计数就是链接计数的意思，它指明了指向这个文件 F 1 的目录项的个数</p>
+<p>建立 F 1 的硬链接文件 F 2，意思就是建立了一个目录项，这个目录项中的文件名是 F 2，目录项中的 inode 编号是 F 1 的 Inode 编号，即指向 F 1 的 inode</p>
+<p>建立 F 1 的负号链接文件 F 3 的意思是新建立了一个文件 F 3，它的类型是 link 类型，它的内容是 F 1 文件的绝对路径，这个软链接文件 F 3 它也是文件，因此它也有自己的 inode 结点，也有一个 F 3 对应的目录项指向这个 F 3 文件的 inode 结点，所以 F 3 文件只要创建，硬链接的计数就是 1</p>
+<p>然后删除 F 2，表示移除了一个指向 F 2 inode 的目录项，所以硬链接应该-1</p>
+<p>所以结果应该是 A 正确</p>
+<h3 id="sec-2175">24 文件检索性能的影响因素</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807190602.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+文件检索只是会检索这个文件的目录项，将其放入到内存，跟文件的大小是没有关系的</p>
+<p>II:<br>
+文件的目录项在目录文件中，在目录文件中找文件的目录项是需要按照文件名字挨个对比的，如果目录项过多，当然查找这个文件的比较次数就更多（不管哪种查找方式都是这样的，而且一般按照文件名去检索是顺序查找）</p>
+<p>III：<br>
+目录项存放在目录文件中，目录文件也是文件，也是存放在外存的磁盘中的，如果目录项过大，那么一个磁盘可以存放的目录项个数就更少，那么对于相同目录项数目的目录文件，它就需要更多的磁盘来存放目录项，那么如果这个文件对应的目录项比较靠后的话，系统只能挨个读入前面的磁盘块到内存进行比较，那就需要更多次的 IO 才能把靠后的磁盘读入到内存中检索</p>
+<p>IV：<br>
+这个比较显然，目录项靠后的话，那么顺序比较就需要更多次磁盘 IO 读取目录文件的物理块</p>
+<h3 id="sec-2193">25 查找一个文件的目录项磁盘 IO 次数的计算</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250807191824.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>首先，查找文件目录项是顺序查找，即必须挨个比较所有的目录项</p>
+<p>第一题：</p>
+<p>一个盘块就是 1 KB，一个目录项，即一个 FCB 就是 64 B，因此一个磁盘块可以放入 16 个 FCB</p>
+<p>因此 3200 个目录项就需要 200 块磁盘来存放所有的目录项，一块磁盘 16 个目录项</p>
+<p>对于第一块磁盘，这 16 个目录项的访问磁盘次数都是 1，每个目录项被查找的概率是 1/3200，即查找这些目录项成功的概率都是 1/3200，所以他们对加权平均的贡献就是 16 * 1 * 1/3200</p>
+<p>第二块磁盘中的 16 个目录项，他们访问磁盘的次数都是 2，所以他们的加权平均贡献就是 16 * 2 * 1/3200</p>
+<p>....</p>
+<p>第 200 块磁盘的 16 个目录项，他们的贡献是 16 * 200 * 1/3200</p>
+<p>这样将这些全部加起来就是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">16</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3200</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∗</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">200</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">200</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">201</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord cjk_fallback">次</span></span></span></span></span></div><p>这里的 1 经常可以忽略，所以结果就是 100</p>
+<p>或者换一种角度理解，题目要求的是查找文件的平均次数，那么就是总的 IO 次数除以 3200</p>
+<p>对于第一个物理块中的所有目录项，查找他们的 IO 次数都是 1，所以总的就是 16</p>
+<p>对于第二个物理块中的所有目录项，查找他们的IO 次数都是 2，所以总的就是 2 * 16</p>
+<p>.... 依次类推还是上文的公式，结果仍然是 100</p>
+<p><mark>第二题</mark></p>
+<p>这个题单纯查找目录项，即读这个目录文件的过程与上一题一样，最后算的结果是 25 次</p>
+<p>但是你找到了这个文件的目录项之后，这个目录项里面不是 inode，而是 inode 编号，你还需要在磁盘中将这个 inode 读入到内存中，所以得增加一次，即 26 次</p>
+<p>这里默认目录文件的索引结点已经在内存中了</p>
+<h3 id="sec-2254">26 文件系统的层次结构和基本功能</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250809164220.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>文件系统的层次结构如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250809164819.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>逻辑文件系统，其实也就是上文的虚拟文件系统，它是直接面向用户的层次，提供给用户访问文件的接口，也就是让用户可以通过文件名，或者文件的路径去逻辑访问文件，不用在意下面的文件的物理实现细节</p>
+<p>所有用户可以获取的功能都是由逻辑文件系统所提供的</p>
+<p>文件组织模块：主要用于将文件的逻辑块转换成物理块地址，同时管理和跟踪那些空闲块等</p>
+<p>基本文件系统：检查内存缓冲区中是否有需要的数据，有则直接给出数据，没有的话就向设备驱动程序发送读取物理块的命令</p>
+<p>IO 控制：设备驱动程序受到命令，让磁盘干活</p>
+<p>这道题目的四个都是用户可以使用的功能，或者是与用户有联系的中间过程功能，并且IV 就是权限控制，所以这些都是逻辑文件系统提供的功能</p>
+<h3 id="sec-2284">27 对文件系统的理解 + 文件系统可以管理的文件数量和文件系统的容量 + 单个文件大小的取决因素</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250809170207.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+正确，文件数量就是取决于文件控制块的影响</p>
+<p>B：<br>
+并不是，磁盘上还有别的东西，而且，哪怕磁盘中有一整块的区域文件系统可以使用，但由于文件的数量受制于控制块的数量，如果控制块没有分配到足够的空间，那么哪怕文件系统有额外的空间也无法使用</p>
+<p>C：<br>
+并不是，这里还要看文件的物理组织分配方式，如果采用的是索引组织方式，那么文件大小还取决于是几级索引，如果是直接索引，那么哪怕磁盘剩余空间再大，文件大小也是有限的；还有连续分配方式，哪怕还有剩余空间，但是如果空间太小，文件也不能继续增大</p>
+<p>D:<br>
+并不是，计组中有个 RAID 技术，它可以数据交叉存放在磁盘上，这样可以提高数据的读取效率</p>
+<h3 id="sec-2302">28 文件存储空间管理的本质</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250809182240.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>文件的存储空间管理，其实就是怎么给文件分配空闲块以及怎么回收文件的一个一个物理块，这个当然是管理空闲区了</p>
+<h3 id="sec-2311">29 成组链接法中的空闲盘块栈</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250809184852.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>成组链接法中索引块 0 中存放的信息是下一组空闲盘块的总数和下一组物理块组成的空闲盘块号</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250802164425.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>索引块 0 的这些信息被放在内存的一个专用栈中，称为空闲盘块栈</p>
+<p>比如上图的分组 0 的 4 个盘块的盘块号会依次存放在这个栈中</p>
+<p>18 在栈底，从下往上依次是 18 30 6 9</p>
+<p>分配的时候 9 先出栈分配出去，然后 6 再出栈分配出去，回收的时候 6 先回收，然后 9 再回收</p>
+<h3 id="sec-2335">30 四种空闲空间管理的连续性 + 对连续空间的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250809191346.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>假设磁盘中有 1 2 3 4 5 这样连续的磁盘块，注意这 5 个磁盘块在外存是连续挨在一起的</p>
+<p>但是如果空闲管理中，比如空闲链表将这五个块的链接管理变成了 3-&gt; 4-&gt; 5 -&gt;1-&gt; 2</p>
+<p>假设这个时候来了一个需要五个磁盘块的文件，此时分配给这个文件的时候，按照链式空闲管理的规律，文件的前三个逻辑块内容分配在 3 4 5 ，然后文件的后两个逻辑块内容分配在 1 2</p>
+<p>但是物理块 1 2 在真实物理磁盘中是在 3 4 5 前面的，但是反而放了文件的后面部分，所以虽然确实存在连续的 5 个物理块，但是此时反而将文件拆成前后两个部分打散存放在 345 和 12 两个块中了，让空间不连续了</p>
+<p>A：</p>
+<p>空闲链表法，假如最开始 1-&gt;2-&gt; 3-&gt; 4-&gt; 5 是连续的，那么 12 先分配，再回收的时候就会变成 3-&gt;4-&gt;5-&gt;1-&gt;2，这样就从 5 这里断开了，变成不连续的空间了</p>
+<p>B：<br>
+空闲表法只会将连续空闲的区域放在表中，称为一个空闲区</p>
+<p>还是 A 中的例子，1 2 3 4 5 是连续的，12 先分配出去，然后 345 是一个新的空闲分区，然后又回收，345 再与 12 合并，变成了一个新的空闲分区，这 5 个物理块实际上还是连续的，如果一个文件需要 5 个磁盘块，此时这个文件得到的是 5 个物理块的整个连续的空间，文件内容也是连续存放的，没有断开</p>
+<p>C：<br>
+位示图其实和 B 差不多，1 2 3 45 是连续的，对应 5 个 bit</p>
+<p>12 先分配出去，剩下 345，然后 12 再回收，这样此时 12 3 4 5 这 5 个磁盘块对应的 bit 位与最开始没有变化，如果一个文件需要 5 个物理块，那么此时仍然会将连续的 5 个物理块分配给它</p>
+<p>D：</p>
+<p>成组链接法，1 2 3 4 5 会呈现一个栈的形式放在成组链接栈中，1 2 在栈顶，如果 1 2 先分配出去，然后 1 2 再回收回来，此时 1 2 还是在栈顶最上面两个，对于一个需要 5 个物理块的文件，仍然是按照 1 2 3 4 5 出栈序列分配物理块给这个文件，文件的连续性没有被打散</p>
+<p>不过成组链接法不一定可以保证，这个栈一定是连续的，如果 12 分配出去之后如果回收的时候是别的文件的物理块，此时栈也会被打乱，它只是相对空闲链表法更容易保证空间连续性</p>
+<p>而空闲表和位示图法回收的时候则一定会保证物理连续的空间仍然是连续的，不存在打乱的现象</p>
+<h3 id="sec-2383">31 管理空闲块的数据结构</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250809200400.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+显然使得</p>
+<p>II:<br>
+索引节点存放的是文件的元数据，它应该是存放的文件已经分配的磁盘块的信息，而不是空闲的磁盘块</p>
+<p>III:<br>
+空闲磁盘块链是将空闲磁盘块以链表的形式组织在一起，每个空闲磁盘块中存放下一个空闲块的地址，这样形成的数据结构就是空闲磁盘块链</p>
+<p>IV:<br>
+FAT 表虽然用于管理文件的分配，但是这个 FAT 表的整个所有表项其实包含了所有的磁盘块的块号的，如果一个文件想要动态分配一块磁盘，就在在 FAT 表中找到一个空闲盘块 a，然后让这个文件原本最后一个磁盘块号内容（原本是-1，表示最后一个磁盘块）写入 a，然后 a 对应的 FAT 表项再写 -1，所以 FAT 表其实也可以用于管理空闲磁盘块，你完全可以通过某个磁盘块号对应的 FAT 表项来判断这个磁盘是否被占用</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html"><span class="pager__label">← 上一篇</span><span class="pager__title">4 虚拟内存</span></a>
+    <a class="pager__item pager__item--next" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html"><span class="pager__label">下一篇 →</span><span class="pager__title">6 IO</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h2" href="#sec-3">文件的基本概念</a><a class="margin__link margin__link--h3" href="#sec-6">数据项（字段）是什么？</a><a class="margin__link margin__link--h3" href="#sec-12">记录是指什么？</a><a class="margin__link margin__link--h3" href="#sec-18">文件是指什么？</a><a class="margin__link margin__link--h3" href="#sec-24">文件名和类型是指什么？</a><a class="margin__link margin__link--h3" href="#sec-30">文件有哪些操作？分别是指什么？</a><a class="margin__link margin__link--h3" href="#sec-36">文件的访问矩阵是指什么？</a><a class="margin__link margin__link--h2" href="#sec-42">文件的逻辑结构</a><a class="margin__link margin__link--h3" href="#sec-45">文件的逻辑结构与逻辑地址是什么？</a><a class="margin__link margin__link--h3" href="#sec-60">无结构文件是什么？</a><a class="margin__link margin__link--h3" href="#sec-72">记录与记录的键值是什么？</a><a class="margin__link margin__link--h3" href="#sec-78">顺序结构顺序文件是什么？</a><a class="margin__link margin__link--h3" href="#sec-84">串结构顺序文件是什么？</a><a class="margin__link margin__link--h3" href="#sec-90">索引文件是什么？索引表是什么？</a><a class="margin__link margin__link--h3" href="#sec-96">索引顺序文件是什么？</a><a class="margin__link margin__link--h3" href="#sec-102">直接或散列文件是什么？</a><a class="margin__link margin__link--h3" href="#sec-108">文件的逻辑地址的划分</a><a class="margin__link margin__link--h3" href="#sec-123">对逻辑的理解</a><a class="margin__link margin__link--h2" href="#sec-147">文件的物理结构</a><a class="margin__link margin__link--h3" href="#sec-150">文件分配（物理结构）是什么？</a><a class="margin__link margin__link--h3" href="#sec-165">文件的连续分配是指什么？有什么优缺点？</a><a class="margin__link margin__link--h3" href="#sec-174">文件的隐式连接分配是什么？</a><a class="margin__link margin__link--h3" href="#sec-180">隐式连接的优缺点是指什么？</a><a class="margin__link margin__link--h3" href="#sec-186">文件的显示连接分配是指什么？（FAT 表）</a><a class="margin__link margin__link--h3" href="#sec-195">显示连接分配的优缺点是什么？</a><a class="margin__link margin__link--h3" href="#sec-207">单级索引分配方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-219">单级索引分配的优缺点是什么？</a><a class="margin__link margin__link--h3" href="#sec-225">多级索引分配方式是什么？</a><a class="margin__link margin__link--h3" href="#sec-234">多级索引的优缺点是什么？</a><a class="margin__link margin__link--h3" href="#sec-240">文件物理结构组织有哪些？分别支持什么访问方式（随机 or 不随机）</a><a class="margin__link margin__link--h3" href="#sec-255">文件控制块存放的与物理分配有关的信息是什么？（不同的物理分配方式存放的信息有什么区别？）</a><a class="margin__link margin__link--h3" href="#sec-270">如何根据多级索引访问文件的某个字节？（多级索引访问磁盘块的过程）</a><a class="margin__link margin__link--h3" href="#sec-276">一个多级索引的例题</a><a class="margin__link margin__link--h2" href="#sec-300">文件元数据和索引结点</a><a class="margin__link margin__link--h3" href="#sec-303">文件控制块是什么？包含哪些信息？</a><a class="margin__link margin__link--h3" href="#sec-312">文件控制块与文件目录的关系是什么？</a><a class="margin__link margin__link--h3" href="#sec-318">文件元数据是什么？</a><a class="margin__link margin__link--h3" href="#sec-324">索引结点 inode 与索引结点编号是什么？</a><a class="margin__link margin__link--h3" href="#sec-333">FCB 与索引结点的关系是什么？</a><a class="margin__link margin__link--h3" href="#sec-345">引入索引结点之后的目录和目录项是什么?</a><a class="margin__link margin__link--h3" href="#sec-363">索引结点的结构是什么？包含哪些信息？</a><a class="margin__link margin__link--h3" href="#sec-381">索引结点加载内存之后增加了哪些信息？</a><a class="margin__link margin__link--h3" href="#sec-411">在混合索引分配方式物理结构的文件，其索引结点中跟地址有关的字段是什么？</a><a class="margin__link margin__link--h3" href="#sec-426">文件目录检索的过程</a><a class="margin__link margin__link--h2" href="#sec-471">文件目录的种类</a><a class="margin__link margin__link--h3" href="#sec-474">单级文件目录是指什么？有什么缺点？</a><a class="margin__link margin__link--h3" href="#sec-483">两级文件目录是指什么？</a><a class="margin__link margin__link--h3" href="#sec-492">树形文件目录是指什么？</a><a class="margin__link margin__link--h3" href="#sec-504">路径名是什么？当前目录是指什么？</a><a class="margin__link margin__link--h3" href="#sec-513">文件硬链接是指什么？</a><a class="margin__link margin__link--h3" href="#sec-522">文件的软链接是什么？</a><a class="margin__link margin__link--h3" href="#sec-546">软链接和硬链接方式下 inode 的连接计数的改变是什么？</a><a class="margin__link margin__link--h2" href="#sec-564">文件的操作</a><a class="margin__link margin__link--h3" href="#sec-567">操作文件的是谁？</a><a class="margin__link margin__link--h3" href="#sec-573">文件是怎么保存在磁盘上的？</a><a class="margin__link margin__link--h3" href="#sec-579">inode 调入内存的时候增加了哪些信息？</a><a class="margin__link margin__link--h3" href="#sec-585">系统级打开文件表是什么？</a><a class="margin__link margin__link--h3" href="#sec-591">进程级打开文件表是什么？（进程的描述符表与 fd）</a><a class="margin__link margin__link--h3" href="#sec-597">文件的打开操作 open 系统调用</a><a class="margin__link margin__link--h3" href="#sec-618">read() 和 write() 系统调用</a><a class="margin__link margin__link--h3" href="#sec-633">close 系统调用</a><a class="margin__link margin__link--h3" href="#sec-642">用户打开文件表的线程共享问题</a><a class="margin__link margin__link--h3" href="#sec-648">文件创建的具体过程</a><a class="margin__link margin__link--h3" href="#sec-666">文件的删除操作（delete(root/x/y) 系统调用的过程）</a><a class="margin__link margin__link--h3" href="#sec-675">文件的关闭操作和删除操作的区别是什么？</a><a class="margin__link margin__link--h2" href="#sec-681">文件系统的结构</a><a class="margin__link margin__link--h3" href="#sec-684">文件系统的各个层次是什么？</a><a class="margin__link margin__link--h3" href="#sec-693">读取文件的过程中文件系统的工作流程是什么？</a><a class="margin__link margin__link--h3" href="#sec-699">磁盘的分区是指什么？</a><a class="margin__link margin__link--h3" href="#sec-705">一个分区中的内容有哪些？引导块，超级块，空闲空间管理，i 结点这些是什么？</a><a class="margin__link margin__link--h3" href="#sec-711">文件指针是什么？</a><a class="margin__link margin__link--h3" href="#sec-717">多个进程打开同一个文件是什么过程？</a><a class="margin__link margin__link--h3" href="#sec-723">系统级打开文件表的表项添加和删除的时候是什么？</a><a class="margin__link margin__link--h3" href="#sec-738">一个与文件打开表有关的例题</a><a class="margin__link margin__link--h2" href="#sec-759">虚拟文件系统</a><a class="margin__link margin__link--h3" href="#sec-762">虚拟文件系统是什么？</a><a class="margin__link margin__link--h3" href="#sec-771">虚拟文件系统中有哪四个对象类型？</a><a class="margin__link margin__link--h3" href="#sec-780">文件系统的挂载</a><a class="margin__link margin__link--h3" href="#sec-786">inode 的访问计数和连接计数的区别是什么？</a><a class="margin__link margin__link--h2" href="#sec-795">外存管理</a><a class="margin__link margin__link--h3" href="#sec-798">空闲表法是什么？</a><a class="margin__link margin__link--h3" href="#sec-807">空闲盘块链是什么？</a><a class="margin__link margin__link--h3" href="#sec-822">空闲盘区链是什么？</a><a class="margin__link margin__link--h3" href="#sec-831">位图法是什么？</a><a class="margin__link margin__link--h3" href="#sec-837">成组链接法是什么？</a><a class="margin__link margin__link--h3" href="#sec-852">成组链接法分配盘块的过程是什么样的？</a><a class="margin__link margin__link--h3" href="#sec-867">成组链接法的空闲盘块的回收</a><a class="margin__link margin__link--h3" href="#sec-882">一道例题，成组链接法</a><a class="margin__link margin__link--h3" href="#sec-918">成组链接法的优点是什么？</a><a class="margin__link margin__link--h3" href="#sec-933">系统级打开文件表 + 进程级打开文件表 + 文件描述符 fd 这些是什么？</a><a class="margin__link margin__link--h3" href="#sec-969">文件打开概念的理解</a><a class="margin__link margin__link--h3" href="#sec-981">文件的读写理解</a><a class="margin__link margin__link--h3" href="#sec-990">文件的两层保护</a><a class="margin__link margin__link--h3" href="#sec-1041">文件分配- 连续分配</a><a class="margin__link margin__link--h3" href="#sec-1056">文件分配 - 链式分配（隐式链接）</a><a class="margin__link margin__link--h3" href="#sec-1074">文件分配 - 链式分配（显示链接）（FAT 法，文件分配表法）</a><a class="margin__link margin__link--h3" href="#sec-1089">文件分配 - 索引分配 (直接索引)</a><a class="margin__link margin__link--h3" href="#sec-1107">文件分配 - 索引分配（一级索引）</a><a class="margin__link margin__link--h3" href="#sec-1125">文件分配 - 索引分配（多级索引）</a><a class="margin__link margin__link--h3" href="#sec-1131">文件分配 - 索引分配（混合索引）</a><a class="margin__link margin__link--h3" href="#sec-1176">文件分配方式的各种优缺点</a><a class="margin__link margin__link--h3" href="#sec-1197">磁盘块操作所需要的 IO 次数</a><a class="margin__link margin__link--h3" href="#sec-1341">文件系统的外存布局</a><a class="margin__link margin__link--h3" href="#sec-1362">空闲磁盘块管理与文件实现（分配）</a><a class="margin__link margin__link--h3" href="#sec-1368">成组链接法是什么？</a><a class="margin__link margin__link--h3" href="#sec-1395">索引块中存放的信息是什么？</a><a class="margin__link margin__link--h3" href="#sec-1410">成组链接法 - 空闲块的分配</a><a class="margin__link margin__link--h3" href="#sec-1425">成组链接法 - 文件块的回收</a><a class="margin__link margin__link--h3" href="#sec-1452">磁盘的格式化 - 低级（物理）格式化</a><a class="margin__link margin__link--h3" href="#sec-1458">磁盘的格式化 - 磁盘分区</a><a class="margin__link margin__link--h3" href="#sec-1464">磁盘的格式化 - 高级（逻辑）格式化</a><a class="margin__link margin__link--h3" href="#sec-1482">文件系统获取一个空闲磁盘块号的过程</a><a class="margin__link margin__link--h3" href="#sec-1503">逻辑格式化的工作</a><a class="margin__link margin__link--h3" href="#sec-1524">虚拟文件系统</a><a class="margin__link margin__link--h3" href="#sec-1536">文件系统的挂载</a><a class="margin__link margin__link--h3" href="#sec-1551">文件系统的层次结构</a><a class="margin__link margin__link--h3" href="#sec-1614">2^n 个数据的用 n 位二进制编号的问题</a><a class="margin__link margin__link--h3" href="#sec-1626">访问计数值与链接计数值的含义和影响因素</a><a class="margin__link margin__link--h2" href="#sec-1650">题目</a><a class="margin__link margin__link--h3" href="#sec-1653">1 open () 操作的理解 + open 操作与硬链接</a><a class="margin__link margin__link--h3" href="#sec-1677">2 close () 系统调用的过程 + 位示图的修改 + 超级块的修改和写入写回</a><a class="margin__link margin__link--h3" href="#sec-1701">3 inode 放入内存之后的附加信息 + 访问计数字段</a><a class="margin__link margin__link--h3" href="#sec-1713">4 FAT 32 文件系统</a><a class="margin__link margin__link--h3" href="#sec-1725">5 文件保护的一些方法</a><a class="margin__link margin__link--h3" href="#sec-1743">6 文件保护 - 访问权限与文件属性的配合</a><a class="margin__link margin__link--h3" href="#sec-1767">7 文件系统性能提升的一些措施</a><a class="margin__link margin__link--h3" href="#sec-1803">8 文件的结构和分类</a><a class="margin__link margin__link--h3" href="#sec-1818">9 文件的逻辑结构 - 索引文件的优点的理解</a><a class="margin__link margin__link--h3" href="#sec-1848">10 索引顺序文件结构的最少查找次数和查找过程</a><a class="margin__link margin__link--h3" href="#sec-1890">11 磁带存储器的存储结构特点</a><a class="margin__link margin__link--h3" href="#sec-1902">12 文件分配方式的随机存取问题</a><a class="margin__link margin__link--h3" href="#sec-1935">13 文件分配方式的动态增长问题</a><a class="margin__link margin__link--h3" href="#sec-1959">14 文件的物理组织形式的相关因素</a><a class="margin__link margin__link--h3" href="#sec-1986">15 增加一块物理块给文件（动态分配）各种分配方式的 IO 次数差别</a><a class="margin__link margin__link--h3" href="#sec-2016">16 隐式连续分配修改记录的过程</a><a class="margin__link margin__link--h3" href="#sec-2043">17 索引分配方式文件所占磁盘块数量的计算</a><a class="margin__link margin__link--h3" href="#sec-2070">18 CD-ROM 存储介值的文件分配方式</a><a class="margin__link margin__link--h3" href="#sec-2085">19 磁盘分配中簇的概念</a><a class="margin__link margin__link--h3" href="#sec-2097">20 绝对路径与相对路径的概念</a><a class="margin__link margin__link--h3" href="#sec-2109">21 多级目录的理解</a><a class="margin__link margin__link--h3" href="#sec-2118">22 文件的树形目录结构以及文件的保护存取控制矩阵方法理解</a><a class="margin__link margin__link--h3" href="#sec-2154">23 软链接或者硬链接的链接计数值的问题</a><a class="margin__link margin__link--h3" href="#sec-2175">24 文件检索性能的影响因素</a><a class="margin__link margin__link--h3" href="#sec-2193">25 查找一个文件的目录项磁盘 IO 次数的计算</a><a class="margin__link margin__link--h3" href="#sec-2254">26 文件系统的层次结构和基本功能</a><a class="margin__link margin__link--h3" href="#sec-2284">27 对文件系统的理解 + 文件系统可以管理的文件数量和文件系统的容量 + 单个文件大小的取决因素</a><a class="margin__link margin__link--h3" href="#sec-2302">28 文件存储空间管理的本质</a><a class="margin__link margin__link--h3" href="#sec-2311">29 成组链接法中的空闲盘块栈</a><a class="margin__link margin__link--h3" href="#sec-2335">30 四种空闲空间管理的连续性 + 对连续空间的理解</a><a class="margin__link margin__link--h3" href="#sec-2383">31 管理空闲块的数据结构</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>

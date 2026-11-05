@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>哈工大OS笔记 · 22408 备考笔记</title>
+<meta name="description" content="系统调用的本质是什么？为什么应用程序不能直接执行系统调用的程序？ 以下面的这份代码为例： 其实本质上 main () 这些用户的代码与 printf () 这个函数的实现代码都在内存中，但是用户调用 printf () 这些实现代码的时候就">
+<link rel="icon" href="../../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../../" data-note-id="c034">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../../math/index.html">数学</a><a href="../../../major/index.html" class="is-active">专业课</a><a href="../../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note is-active" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../../major/index.html">专业课 408</a><i>/</i><span>操作系统</span><i>/</i><span class="crumb__no">07</span></div>
+    <h1 class="doc__title">哈工大OS笔记</h1>
+    <div class="doc__meta"><span>9,102 字</span><span>约 22 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose"><h3 id="sec-0">系统调用的本质是什么？为什么应用程序不能直接执行系统调用的程序？</h3>
+<p>以下面的这份代码为例：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712142435.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>其实本质上 main () 这些用户的代码与 printf () 这个函数的实现代码都在内存中，但是用户调用 printf () 这些实现代码的时候就是不能直接调用，就是不能是普通的函数调用</p>
+<p>因为 printf () 的函数实现的指令中包含对硬件显示器的操控，用户程序就是不能直接使用这段对显示器操控的代码，因为一旦有恶意的用户程序能够直接操控计算机的硬件关键资源的话是一件非常危险的事情，如果应用程序可以随意执行 jmp 和 mov 指令的话，就可以随意查看计算机的密码和别人的硬盘内容了</p>
+<p>本质上应用程序的代码和操作系统的代码全部都在内存中，应用程序只能通过请求操作系统来完成 printf () 对显示器的操控，这个就是系统调用要完成的工作了</p>
+<h3 id="sec-18">CPU 是如何实现指令访问隔离的？</h3>
+<p><mark>CPL 的概念</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712144805.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>DPL 的概念</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712145006.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong>GDT（Global Descriptor Table，全局描述符表）表项</strong>是构成 GDT 的核心元素，通常被称为<strong>段描述符</strong>。它们是存储在 GDT 中的数据结构，每个描述符占用 <strong>8 字节</strong>，用于向 CPU 精确描述一个内存段的关键属性和访问控制信息。</p>
+<p><mark>RPL 的概念</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712145342.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>指令的访问隔离：</mark></p>
+<p>当用户程序想要通过 mov 或者 jmp 指令访问内存中的其他段的数据的时候，CPU 会进行检查当前指令的特权级，即 CS: IP 指向的指令的 CPL 与目标段的特权级即 DPL 的大小</p>
+<p>只有 CPL &lt;= DPL 的时候，表明当前指令的特权级比要访问的目标段的特权级更高，此时才能进行访问</p>
+<p>通常只用考虑 CPL 就行了，RPL 也可以显示设置，不过一般设置为 CPL 的值</p>
+<p>那么再看下面的这段代码：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250712142435.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在执行用户程序的时候此时 CPL = 3, 而 printf () 函数的实现在内核中，其 DPL = 0，当用户程序试图访问其实现的时候 CPU 就会进行检查，发现 CPL &gt; DPL，此时就拒绝访问了</p>
+<p>但是操作系统还是提供了一个访问目标端优先级更高的方法，那就是中断</p>
+<h3 id="sec-63">以 <code>printf()</code> 为例来说明系统调用的具体过程？</h3>
+<p><mark>（1）首先，用户使用了 <code>printf()</code> 函数</mark></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250714160617.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>（2）接着进入库函数具体实现的 <code>printf()</code> 中：</mark></p>
+<pre class="code-block" data-lang="c"><code class="hljs"><span class="hljs-comment">// 伪代码：printf 内部实现</span>
+<span class="hljs-type">void</span> <span class="hljs-title function_">printf</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *fmt, ...)</span> {
+    <span class="hljs-type">char</span> buffer[<span class="hljs-number">1024</span>];
+    <span class="hljs-comment">// 格式化处理</span>
+    <span class="hljs-built_in">vsprintf</span>(buffer, fmt, args);
+    <span class="hljs-comment">// 调用库函数 write</span>
+    write(STDOUT_FILENO, buffer, <span class="hljs-built_in">strlen</span>(buffer));
+}
+</code></pre>
+<p>它解析了用户输入的字符串，并写入缓冲区 buffer，同时调用了一个更底层的库函数 write</p>
+<p><mark>（3）库函数 <code>wirte()</code> 的具体实现</mark></p>
+<p>这个函数的实现其实只有一行代码：<code>_syscall3(int, write, int, fd, const char *, buf, off_t, count)</code></p>
+<p><code>_syscall3()</code> 其实是一个定义在头文件 <code>unistd.h</code> 中的一个函数宏，这里的 3 的意思是 3 个参数：</p>
+<pre class="code-block" data-lang="c"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">define</span> _syscall3(type, name, atype1, arg1, atype2, arg2, atype3, arg3) \
+type name(atype1 arg1, atype2 arg2, atype3 arg3) \
+{ \
+    long __res; \
+    __asm__ volatile (<span class="hljs-string">&quot;int $0x80&quot;</span> \
+        : <span class="hljs-string">&quot;=a&quot;</span> (__res) \
+        : <span class="hljs-string">&quot;0&quot;</span> (__NR_##name), <span class="hljs-string">&quot;b&quot;</span> ((long)(arg1)), <span class="hljs-string">&quot;c&quot;</span> ((long)(arg2)), <span class="hljs-string">&quot;d&quot;</span> ((long)(arg3))); \
+    return (type)__res; \
+}</span>
+</code></pre>
+<p>这个宏的作用其实就是方便的实现各种系统调用，使用的时候只用替换一下名字就好了，然后就会自己自动展开成具体的代码实现</p>
+<p><code>wirte()</code> 函数调用这个宏的时候，实际展开的实现其实是：</p>
+<pre class="code-block" data-lang="c"><code class="hljs"><span class="hljs-comment">/* 展开后生成的 write 函数 */</span>
+<span class="hljs-type">int</span> <span class="hljs-title function_">write</span><span class="hljs-params">(<span class="hljs-type">int</span> fd, <span class="hljs-type">const</span> <span class="hljs-type">char</span> * buf, <span class="hljs-type">off_t</span> count)</span> 
+{
+    <span class="hljs-type">long</span> __res;  <span class="hljs-comment">// 存储返回值的临时变量</span>
+    
+    <span class="hljs-comment">// 关键的内联汇编开始</span>
+    __asm__ <span class="hljs-title function_">volatile</span> <span class="hljs-params">(
+        <span class="hljs-string">&quot;int $0x80&quot;</span>  <span class="hljs-comment">// 触发系统调用的中断指令</span>
+        
+        <span class="hljs-comment">/* 输出部分（系统调用的返回值） */</span>
+        : <span class="hljs-string">&quot;=a&quot;</span> (__res)  <span class="hljs-comment">// 把 eax 寄存器的值存入 __res</span>
+        
+        <span class="hljs-comment">/* 输入部分（系统调用号和参数） */</span>
+        : <span class="hljs-string">&quot;0&quot;</span> (__NR_write),     <span class="hljs-comment">// &quot;0&quot; 表示使用和输出相同的寄存器 (eax)</span>
+          <span class="hljs-string">&quot;b&quot;</span> ((<span class="hljs-type">long</span>)(fd)),     <span class="hljs-comment">// 把 fd 放入 ebx 寄存器</span>
+          <span class="hljs-string">&quot;c&quot;</span> ((<span class="hljs-type">long</span>)(buf)),    <span class="hljs-comment">// 把 buf 放入 ecx 寄存器</span>
+          <span class="hljs-string">&quot;d&quot;</span> ((<span class="hljs-type">long</span>)(count))   <span class="hljs-comment">// 把 count 放入 edx 寄存器</span>
+    )</span>;
+    
+    <span class="hljs-keyword">return</span> (<span class="hljs-type">int</span>)__res;  <span class="hljs-comment">// 返回系统调用的结果</span>
+}
+</code></pre>
+<p>这是一段汇编内嵌 C 语言的代码，这里通过调用 <code>int 0x80</code> 触发了系统中断</p>
+<p>上述的内嵌汇编 <code>__NR_write</code> 就是具体的系统调用号，它封装在 <code>unistd.h</code> 这个文件中，这个不是中断号，INT 0 x 80 才是中断号，系统根据  0 x 80 号的中断处理函数根据__NR_write 系统调用号来调用具体的处理函数</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250714161641.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong><code>int 0x80</code> 这条指令的执行，就是中断响应的过程了，相应的最后一步就是从 IDT 表里找到中断处理程序去执行，执行完了再跳回来，这个就是大致过程</strong></p>
+<h3 id="sec-108">IDT 表和门描述符是什么？</h3>
+<p><mark>IDT 表</mark></p>
+<p>IDT 是一个由操作系统内核维护的​<strong>​数据结构数组​</strong>​，存储在内存中。每个条目（共 256 项）称为 ​<strong>​门描述符​</strong>​。</p>
+<p>​其职责就是告诉 CPU ​<strong>​发生中断/异常时该跳转到哪个处理函数​</strong>​，并指定执行所需的权限规则。</p>
+<p>IDT 表有点像中断向量表的意思</p>
+<p><mark>门描述符</mark></p>
+<p>一个 ​<strong>​8 字节（64 位）数据结构​</strong>​，存储在 IDT 表的每个条目中，定义了中断如何被处理。</p>
+<p>这个表项的作用是，提供​<strong>​特权级校验 + 安全跳转​</strong>​：<br>
+1. 验证调用者是否有权触发此中断（通过 <code>DPL</code> 字段）<br>
+2. 指定目标处理函数的地址（段选择符 <code>CS</code> + 偏移 <code>EIP</code>）<br>
+3. 控制执行时的行为（如是否屏蔽中断）</p>
+<p>它大致包含下面几个字段：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716171324.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>下面来具体说说这些字段含义</p>
+<p>比如，举个例子在 OS 内核初始化的时候就会调用下面函数，对确定的中断号 0 x 80 号中断对应的 IDT 表项进行设置初始化，也就是上图的实际中断门描述符内容：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716163254.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">define</span> set_system_gate(n, addr) \
+    _set_gate(&amp;idt[n],15,3,addr); <span class="hljs-comment">//idt是中断向量表基址</span></span>
+</code></pre>
+<p>n 就是中断号，比如 0 x 80，即设置 0 x 80 中断号对应的 IDT 的门描述符</p>
+<p>15 是门描述符中的 Type 字段，表示这个门描述符是陷阱门，对应系统调用和软中断，当 CPU 读取这个门描述符的时候会保持状态标志位的 IF 不变，表示允许中断嵌套</p>
+<p>3 是用来设置门描述符的 DPL，当应用程序触发系统调用，执行到 INT 0 x 80 的时候就会检查此时的 CPL = 3 &lt;= DPL = 3，所以可以继续去调用处理函数</p>
+<p>addr 用来设置门描述符中段中断处理程序地址，会将其拆成高地址和低地址放在门描述符中也就是 system_call 字段内容，这里就是实际初始化函数传递的参数值 addr，只是分成了高低字节</p>
+<p>关键是内核代码段选择符，上述设置 0 x 80 号中断的代码实际会进一步宏展开，将门描述符中的内核代码选择符设置为 0 x 0008</p>
+<p>这里的内核代码选择符的作用是，当中断发生之后 CPU 会自动读取 IDT 中的这个中断号对应的门描述符，其会将内核代码段选择符 0 x 0008 设置为 CS 寄存器的值，将 system_call 的地址设置为 EIP 的值，在保护模式下，CS 的值并不会与 EIP 简单偏移相加得到实际中断处理程序的物理地址，而是通过 CS 这里的 0 x 0008，将其作为一个索引去查找 GDT 表中实际的代码段基址，从而得到实际的物理地址：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716172835.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>另外，在根据 0 x 0008 去查找 GDT 表的时候会发现此时要执行的代码段的权限 DPL = 0，CPU 也会根据 0 x 0008 将 CPL 设置为 0，让其可以进入内核去执行中断处理函数代码</p>
+<p>这个就是内核代码段选择符的作用</p>
+<h3 id="sec-175"><code>INT 0x80</code> 的中断初始化是怎样的？</h3>
+<p><code>INT 0x80</code> 对应的中断处理初始化简单来说就是在 IDT 表中（保护模式中 IDT 表代替了中断向量表）设置一些权限和中断处理程序地址，即设置中断门描述符</p>
+<p>具体来说，其会在操作系统内核初始化阶段调用下面的函数：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716163254.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这个函数有两个参数，0 x 80 是中断号，&amp;system_call 是处理函数的地址</p>
+<p><code>set_system_gate</code> 这个函数实现在 linux/include/asm/system. h 这里，它也是一个库函数</p>
+<p>这个库函数本质展开了两个宏，第一个宏又是一行函数：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">define</span> set_system_gate(n, addr) \
+    _set_gate(&amp;idt[n],15,3,addr); <span class="hljs-comment">//idt是中断向量表基址</span></span>
+</code></pre>
+<p>这个函数中 <code>&amp;idt</code> 就是 IDT 表的基址</p>
+<p>n 就是中断号，即 0 x 80，用 0 x 80 找到这个 IDT 表对应的表项，可以看到这里的 IDT 表是以数组的形式组织的</p>
+<p>addr 就是处理这个中断的处理函数地址</p>
+<p>3 是要设置门描述符的 DPL 的值</p>
+<p>15 是要设置的门描述符的类型</p>
+<p>这个 <code>_set_gate</code> 函数会继续展开成一个宏函数：</p>
+<pre class="code-block" data-lang="c"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">define</span> _set_gate(gate_addr, type, dpl, addr) \
+__asm__ (<span class="hljs-string">&quot;movw %%dx,%%ax\n\t&quot;</span> \
+         <span class="hljs-string">&quot;movw %0,%%dx\n\t&quot;</span> \
+         <span class="hljs-string">&quot;movl %%eax,%1\n\t&quot;</span> \
+         <span class="hljs-string">&quot;movl %%edx,%2&quot;</span> \
+         : \
+         : <span class="hljs-string">&quot;i&quot;</span> ((short) (0x8000+(dpl&lt;&lt;13)+ (type&lt;&lt;8))), \
+           <span class="hljs-string">&quot;o&quot;</span> (*((char *) (gate_addr))),   \
+           <span class="hljs-string">&quot;o&quot;</span> (*(4+(char *) (gate_addr))), \
+           <span class="hljs-string">&quot;d&quot;</span> ((char *) (addr)),           \
+           <span class="hljs-string">&quot;a&quot;</span> (0x00080000))</span>
+</code></pre>
+<p>这是一个内嵌汇编的 C 语言程序，也是实际上对 IDT 表中对应的中断号的门描述符进行设置的代码</p>
+<p>参数含义如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716170638.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>具体代码不解释了，这个函数整体功能会构造一个下面的门描述符：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250716171324.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>当触发 INT 0 x 80 中断的时候 CPU 会自动读取 IDT 表中的这个门描述符表项，并自动根据这些数据设置寄存器，然后跳转到中断处理程序执行</p>
+<p>这个就是中断初始化的结果，构造一个与 0 x 80 号中断有关的门描述符在 IDT 表中</p>
+<h3 id="sec-237">中断处理函数 <code>system_call</code> 的基本结构是什么样的？</h3>
+<p>当系统调用执行了 <code>INT 0x80</code> 这条指令之后，CPU 会去读取这个中断号对应的 IDT 表的门描述符，根据门描述符的内容检查特权级，设置 CS 和 IP，设置 CPL = 0，然后跳转到 system_call 函数，即处理这个 INT 0 x 80 中断的函数处（进入内核空间）开始执行对应的 system_call</p>
+<p>它的基本结构如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250717160036.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>前面的几行不解释了，主要就是后面的几个部分</p>
+<h4 id="sec-252">（1）保护用户程序的现场：</h4>
+<pre class="code-block" data-lang="c"><code class="hljs">push %ds
+push %es
+push %fs
+pushl %edx
+pushl %ecx
+pushl %ebx
+</code></pre>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250717160601.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h4 id="sec-259">（2）设置内核数据段</h4>
+<pre class="code-block" data-lang="c"><code class="hljs">movl $<span class="hljs-number">0x10</span>,%edx
+mov %dx,%ds
+mov %dx,%es
+</code></pre>
+<p>这里将 0 x 10 这个东西赋给了 ds 和 es 这两个数据段寄存器</p>
+<p>这里的 0 x 10 不是简单的段地址，这里 0 x 10 实际上是作为一个访问 GDT 表的段选择子，也就是说 0 x 10 的二进制实际是：</p>
+<pre class="code-block" data-lang="c"><code class="hljs">| <span class="hljs-number">15</span>              <span class="hljs-number">3</span> | <span class="hljs-number">2</span>  | <span class="hljs-number">1</span> <span class="hljs-number">0</span> |
++-------------------+----+-----+
+|     索引号         | TI | RPL |
++-------------------+----+-----+
+</code></pre>
+<p>它的二进制分为了三个部分：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250717162133.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的 RPL 其实是和 CPL 以及 DPL 对应的东西，RPL 就是存在这样的段选择子末尾的数据，CPL 是当前 CPU 运行的特权级，DPL 是位于 GDT 表中段描述符的部分字段</p>
+<p>下面来说说这个段选择子的作用</p>
+<p>当程序通过 <code>mov [eax], ebx</code> 将 <code>ebx</code> 寄存器中的 ​<strong>​32 位值​</strong>​ 写入到内存地址为 <code>eax</code> 值的内存位置的时候，CPU 会根据事先传入 DS 的段选择子去访问 GDT 表，根据索引号来访问 GDT 表中的表项，比如上面就是访问了 GDT 表的第二个描述符表项，此时 RPL = 00，表示此时程序请求访问的是特权级为 0 的数据段，此时 CPU 会根据你此时段选择子指定的索引的表项的数据段的 DPL（要求的特权级） 与 CPL 和 RPL 进行比较，如果 DPL &gt;= MAX (CPL， RLP)，那么此时程序想要访问的数据段就是有效的，CPU 就会用 GDT 表的第二个描述符表项的段基址，与你这里 eax 的偏移地址进行计算得到真正的物理地址，这个时候才可以去访问这里的数据</p>
+<p>这个就是将 ds 设置 0 x 10 的作用，简单来说就是利用这个 0 x 10 去查 GDT 表，然后根据 GDT 表的得表项来进行权限判断和获得真实的段地址，从而计算真实的物理地址</p>
+<h4 id="sec-288">（3）设置用户数据段</h4>
+<pre class="code-block" data-lang="c"><code class="hljs">movl $<span class="hljs-number">0x17</span>,%edx
+mov %dx,%fs
+</code></pre>
+<p>这里与内核数据段设置类似，0 x 17 是用户数据段的段选择子，不过内核程序如果想要访问用户数据的得显式指明段寄存器是 fs，否则默认是 DS</p>
+<h4 id="sec-295">（4）调用具体的处理函数</h4>
+<pre class="code-block" data-lang="c"><code class="hljs">call _sys_call_table(,%eax,<span class="hljs-number">4</span>)
+</code></pre>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250717170223.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里 eax 中的值就是上层库函数的 write 函数展开一段内嵌汇编的 c 语言中传递给 eax 的实际调用函数的号，这里每个函数地址的是四个字节放在函数指针数组中</p>
+<h4 id="sec-305">（5）保存调用函数的返回值</h4>
+<pre class="code-block" data-lang="c"><code class="hljs">pushl %eax
+</code></pre>
+<p>你这里调用的具体函数处理完毕之后会将返回值放入到 eax 中，然后具体的处理函数返回之后会继续执行 system_call 中的一些代码，所以此处应该将 eax 放入栈中保存</p>
+<p>注意，eax 不仅在 write 库函数的宏展开的内嵌汇编的代码中用于放入具体的调用号，同时还在那串代码中存放最后处理函数的返回值：</p>
+<pre class="code-block" data-lang="c"><code class="hljs"><span class="hljs-comment">/* 展开后生成的 write 函数 */</span>
+<span class="hljs-type">int</span> <span class="hljs-title function_">write</span><span class="hljs-params">(<span class="hljs-type">int</span> fd, <span class="hljs-type">const</span> <span class="hljs-type">char</span> * buf, <span class="hljs-type">off_t</span> count)</span> 
+{
+    <span class="hljs-type">long</span> __res;  <span class="hljs-comment">// 存储返回值的临时变量</span>
+    
+    <span class="hljs-comment">// 关键的内联汇编开始</span>
+    __asm__ <span class="hljs-title function_">volatile</span> <span class="hljs-params">(
+        <span class="hljs-string">&quot;int $0x80&quot;</span>  <span class="hljs-comment">// 触发系统调用的中断指令</span>
+        
+        <span class="hljs-comment">/* 输出部分（系统调用的返回值） */</span>
+        : <span class="hljs-string">&quot;=a&quot;</span> (__res)  <span class="hljs-comment">// 把 eax 寄存器的值存入 __res</span>
+        
+        <span class="hljs-comment">/* 输入部分（系统调用号和参数） */</span>
+        : <span class="hljs-string">&quot;0&quot;</span> (__NR_write),     <span class="hljs-comment">// &quot;0&quot; 表示使用和输出相同的寄存器 (eax)</span>
+          <span class="hljs-string">&quot;b&quot;</span> ((<span class="hljs-type">long</span>)(fd)),     <span class="hljs-comment">// 把 fd 放入 ebx 寄存器</span>
+          <span class="hljs-string">&quot;c&quot;</span> ((<span class="hljs-type">long</span>)(buf)),    <span class="hljs-comment">// 把 buf 放入 ecx 寄存器</span>
+          <span class="hljs-string">&quot;d&quot;</span> ((<span class="hljs-type">long</span>)(count))   <span class="hljs-comment">// 把 count 放入 edx 寄存器</span>
+    )</span>;
+    
+    <span class="hljs-keyword">return</span> (<span class="hljs-type">int</span>)__res;  <span class="hljs-comment">// 返回系统调用的结果</span>
+}
+</code></pre>
+<h4 id="sec-316">（6）中断返回部分</h4>
+<pre class="code-block" data-lang="c"><code class="hljs">ret_from_sys_call: 
+  popl %eax   ; 恢复返回值
+  ...         ; 恢复其他寄存器
+  iret        ; 返回用户态
+</code></pre>
+<p>这里的 popl eax 的作用就是恢复 eax 在具体的调用结束后，执行处理函数部分其他代码之前，保存在栈中的返回值</p>
+<p>然后恢复现场，最后执行 iret 指令用于从内核态返回用户态，同时恢复用户栈和 CPU 标志寄存器（恢复断点）</p>
+<h3 id="sec-326">用户级线程以及切换过程？</h3>
+<p>用户级线程其实就是用户自己的程序管理的线程，它的创建，调度和切换都是用户程序进行的，不存在 OS 干预的过程（分配 TCB 可能需要系统调用，但是 TCB 的修改都是用户态下的程序指令完成的）</p>
+<p><mark>用户线程的创建</mark></p>
+<p>用户可以直接在自己的进程代码中调用线程库函数创建两个线程：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709102837.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图的 <code>pthread_create()</code> 函数就创建了一个线程，并将功能模块 GetData 或者 Show 与这个功能模块关联起来，这样这个进程就包含了两个线程，这两个线程分别负责 GetData 和 Show 这两个模块的执行</p>
+<p>线程的创建主要就负责三个部分，一个是线程自己的栈的创建，一个是线程自己的 TCB 的创建，一个是初始化 TCB，与线程的栈联系起来，这个就是 <code>pthread_create()</code> 函数负责的功能</p>
+<p>假设一个进程有两个线程：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709103406.png" alt="image.png300*300" loading="lazy" decoding="async" class="note-img"></p>
+<p>这两个线程可以看成两者执行序列的执行过程</p>
+<p>在 <code>pthread_create()</code> 函数中的具体实现如下：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ThreadCreate</span><span class="hljs-params">(A)</span> </span>{
+    TCB *tcb = <span class="hljs-built_in">ma11oc</span>();       <span class="hljs-comment">// 分配TCB内存</span>
+    *stack = <span class="hljs-built_in">ma11oc</span>();         <span class="hljs-comment">// 分配线程栈内存</span>
+    *stack = A;                <span class="hljs-comment">// 将函数地址存入栈顶，这里是A的地址，100</span>
+    tcb.esp = stack;           <span class="hljs-comment">// 设置TCB的栈指针</span>
+}
+</code></pre>
+<p>这里就是向 OS 申请了两块内存，分别当作线程的 TCB 和栈，然后程序将线程对应模块函数的地址放到栈中，同时让此时的 stack 的栈顶地址放到 TCB 的 ESP（相当于栈顶指针），这样就完成了一个线程的创建，这里 TCB 和用户栈都是用户态程序可以直接修改的，这里的 TCB 和用户栈其实都有点像用户程序自己创建的数组了，完全是用户态下直接控制的</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709104018.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>用户级线程的切换</mark></p>
+<p>用户级线程的切换是通过用户态使用 yield () 函数进行的，他的切换过程很像过程调用的时候的切换，也是压栈弹栈的过程，只是线程都有自己的用户栈，所以切换的时候要完成自己栈的切换</p>
+<p>一个具体的例子如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709110036.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A, B 分别是一个线程负责的功能模块；C，D 是另一个线程负责的功能模块，在这个例子中，函数 A 调用函数 B，然后在函数 B 中切换到另一个线程，这个线程执行函数 C，然后调用函数 D，然后 D 中执行 Yield () 函数再切换回第一个线程，然后 B 返回，继续执行 A</p>
+<p>它的过程是这样的，这里为了简化，不考虑函数调用过程中用户栈上的栈帧的切换，就先存放返回地址（其实栈帧也是压入栈存放）</p>
+<p>创建了左右两个线程之后他们的用户栈中都会存放一个自己模块的地址，左侧存放 100 右侧存放 300，放到栈的底部</p>
+<p>然后执行线程 A，从 A 函数开始执行，调用函数 B，此时 B () 的下一条指令地址 104 压入用户栈保存</p>
+<p>然后执行 B 函数，调用 Yield () 进行线程切换，此时 Yield () 下面一条指令地址 204 压入左侧线程的用户栈保存，然后执行 Yield（）函数，这里的 Yield () 函数的具体实现如下：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Yield</span><span class="hljs-params">()</span></span>{
+	TCB1.esp = esp;<span class="hljs-comment">//保存第一个线程的栈顶指针到自己的TCB中</span>
+	esp = TCB2.esp;<span class="hljs-comment">//将第二个栈的栈顶指针赋给esp寄存器，完成了栈的切换</span>
+	
+}<span class="hljs-comment">//Yield()函数返回会执行ret指令，自动弹栈，这里esp指向了第二个用户栈，弹栈是将C的函数地址弹出了，让其赋给IP从而此时指向了C函数，开始执行C函数，完成了线程的切换</span>
+</code></pre>
+<p>切换了线程的用户栈以及线程负责的模块代码，此时线程 2 接过 CPU 的控制权，开始执行自己的指令</p>
+<p>线程 2 执行函数 C，调用函数 D，将 304 压栈，然后执行 D 函数，D 函数中执行 Yield () 函数将 404 压栈，在这个 Yield 中执行与线程 1 类似的操作，切换用户栈（这里分辨两个线程的 TCB 可能需要在 Yield 函数中加入一些参数，这里细节不多说了），然后 Yield () 执行完毕之后从线程 1 的用户栈中弹出 204，即 B 函数中 Yield () 的后面一条指令，所以完成了线程 2 切换到线程 1 的工作，继续执行线程 1 后面的指令了</p>
+<p>以上就是用户级线程互相切换的过程了</p>
+<p><mark>用户级线程切换的优缺点</mark></p>
+<p><strong>优点：</strong></p>
+<p>（1）从上面的过程可以看到，用户级线程的控制几乎不怎么麻烦 OS 内核，那么用户级线程切换就可以做到非常的快，线程操作的效率更高，只用简单切换一下用户栈和 PC 指令指向即可</p>
+<p>（2）每个线程都有自己的用户栈和 TCB 块，这些都是由用户程序自己维护的（线程库函数）</p>
+<p>（3）并且用户线程完全可以根据自己的需求自定义自己的线程调度策略，因为线程调度也是用户线程自己决定并操作的，不会麻烦内核，这样就非常灵活</p>
+<p><strong>缺点：</strong></p>
+<p>根据上述过程分析，用户级线程的切换，创建其实都是一个进程的程序的执行过程，那么当一个用户级线程需要 IO 而进行阻塞的时候，它陷入了内核，它就无法执行后续的 Yield () 函数了，那么别的不需要 IO 操作的线程也就无法执行，这就相当于整个进程全部阻塞了</p>
+<p>同时，这些线程执行过程本质就是进程的执行一部分，他们的 TCB 和用户栈都是用户进程自己管理的，OS 无法明确感知他们，OS 只会将这个进程看作一个整体，发生陷入的时候 OS 不能分辨是哪个线程，那么 OS 也就不能调度他们到不同的 CPU 内核上去执行了，所以用户级线程无法利用处理器的并行能力</p>
+<p>以上是两个最大的缺点，当然因为是用户程序管理线程，也会出现程序复杂度过高的现象</p>
+<h3 id="sec-427">内核级线程以及切换过程？</h3>
+<p>线程就是进程的部分功能模块执行的动态整体，所以内核级线程跟用户级线程一样，也是一个进程的一个局部的动态过程，包含自己模块的代码的执行还有自己的栈和 TCB 等</p>
+<p>内核级线程与用户级线程的区别在于内核级线程的 TCB 是由内核程序控制的，并且线程的创建，终止和创建都是由内核处理的</p>
+<p>这样做的好处在于，内核可以通过线程的 TCB 块来感知线程的存在，这样内核就可以对线程进行调度，那么当一个进程的某个线程阻塞的时候内核就可以调度这个进程其他的线程继续执行，不至于整个进程阻塞；那为什么用户级线程不能在某个线程阻塞的时候调度别的线程运行呢？这是因为根据上文，用户级线程调度切换还是依赖用户进程程序，那么你现在用户程序整个都暂停了，当然就不能调度了；而内核级线程的调度是依赖内核程序，某个线程等待 IO 的时候阻塞，这个时候触发中断，由内核中断处理程序来调度内核中这个进程的别的 TCB 块，即别的线程继续执行，进程的线程程序被阻塞，但是内核程序没有，所以可以由内核完成调度</p>
+<p>为了实现这个功能，内核级线程就需要有两个栈，一个用户栈在用户空间由用户程序控制，一个内核栈在内核空间由内核程序控制，并且线程的 TCB 也是在内核空间由内核程序进行管理</p>
+<p><mark>内核栈与用户栈的关联</mark></p>
+<p>当一个线程想要访问 IO 的时候，它就会通过陷入指令进入内核态，将一些断点保存在内核栈中，这个过程就是内核栈与用户栈对应的过程，举一个例子如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709154727.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这个线程在用户态执行的时候执行函数 A，调用函数 B，将返回地址 104 压入用户栈，然后执行函数 B，在 B 中进行系统调用，将 204 压入用户栈保存</p>
+<p>系统调用接口函数中其实还有一些传参的过程，这里省去了，直接用软中断 INT 触发自陷进入内核态，进入内核态就是由中断触发的</p>
+<p>此时硬件会进行中断响应，保存程序的断点，比如用户栈的栈底和栈顶指针，PSW 标志寄存器，触发中断的指令的返回地址 304，还有线程的起始地址 cs 都保存在一个对应的内核栈中</p>
+<p>然后转入中断处理程序 system_call: 执行，这个中断处理程序再调用一个具体的过程 sys_read () 函数来处理线程想要调用外设的操作，所以还得保存一下中断处理程序调用 sys_read 的返回地址 1000 到内核栈中（这里先不考虑保护现场，简单起见）</p>
+<p>然后接着就是 sys_read () 来调用外设进行处理了，这就是一个内核级线程的用户栈和内核栈的关联过程</p>
+<p><mark>内核级线程的切换</mark></p>
+<p>当调用 sys_read () 的时候就是启动磁盘，然后当前线程阻塞，然后调度别的线程进行：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709160646.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上述的 switch_to 就是切换调度的函数，这里的参数 cur 和 next 就是当前线程的 TCB 和目标线程的 TCB</p>
+<p>这里的具体过程就是根据 next 的 TCB 找到要切换的线程的内核栈的栈顶指针，然后保存当前的栈顶指针 esp 到 cur 的 TCB 中，然后让当前的 esp 指向 next 线程对应的内核栈的栈顶</p>
+<p>然后再根据这个栈顶返回到 B 的用户态的线程代码中继续执行</p>
+<p>我们以一个连续的两个线程切换来详细说明这个切换过程（大概有 5 段）</p>
+<p>（1）首先是 B 线程触发中断陷入内核：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709163727.png" alt="image.png300*300" loading="lazy" decoding="async" class="note-img"></p>
+<p>在之前的中断响应中，就已经将 B 的断点保存到了 B 对应的内核栈中将内核栈与 B 的用户栈关联起来了，细节不说了</p>
+<p>这里进入中断入口之后先保存 B 的现场到内核栈中，然后调用中断处理程序，此时会将 call 下面的指令地址保存到内核栈中，这里细节不表</p>
+<p>（2）B 的具体中断处理过程，引发 B 的阻塞，并进行线程调度：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709164138.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<pre class="code-block"><code class="hljs">; 线程 B 的代码启动磁盘或者其他IO，线程B阻塞
+...
+call schedule   ; 地址 0x5000
+; 下一条指令地址: 0x5004
+</code></pre>
+<p>这里是具体的中断处理程序，启动响应 IO 之后 B 阻塞，然后进行线程调度，转到执行 schedule 函数，当然也会将下一条指令的地址 0 x 5004 压栈保存</p>
+<p>（3）进行进程调度找到下一个需要执行的线程，这里假设找到了 A 进行执行</p>
+<pre class="code-block"><code class="hljs">schedule:
+    mov eax, [next_thread]  ; 0x6000
+    call switch_to          ; 0x6004
+    ; 返回点地址: 0x6008
+    ret                     ; 0x600C
+</code></pre>
+<p>这里找到了线程 A 之后，调用 switch_to 函数，然后继续将下一条指令 0 x 6008 压入到内核栈保存</p>
+<p>此时 B 的内核栈的栈顶是指向 0 x 6008 的：</p>
+<pre class="code-block"><code class="hljs">(栈顶) 0x6008  &lt;-- ESP 指向这里
+...其他寄存器...
+</code></pre>
+<p>（4）执行 switch_to 函数，切换内核栈：</p>
+<pre class="code-block"><code class="hljs">switch_to:
+    ; 保存当前线程(B)的栈指针
+    mov [B_TCB.esp], esp  ; 0x7000
+    
+    ; 切换到线程A的栈
+    mov esp, [A_TCB.esp]  ; 0x7004
+    
+    ret                   ; 0x7008
+</code></pre>
+<p>注意，这里虽然是 B 线程的处理程序，但是你已经将内核栈的 esp 指针指向了 A 的内核栈了，因此这里的 ret 弹栈弹出的应该是 A 对应的内核栈的内容，为了具体说明这个过程，我们假设切换完了 A 之后 A 又进行了阻塞，此时调度 B，看看 switch_to 函数到底是怎么切换回线程的用户态程序的</p>
+<p>上述都是 B 切换的历史过程，当线程 A 想要进行切换的时候也是执行上面相同的步骤</p>
+<p>（5）当 A 执行到 switch_to 函数的时候：</p>
+<pre class="code-block"><code class="hljs">switch_to:
+    ; 保存线程A的栈指针
+    mov [A_TCB.esp], esp  ; 保存当前ESP (指向0x9008)
+    
+    ; 切换到线程B的栈
+    mov esp, [B_TCB.esp]  ; 加载B之前保存的ESP (指向0x6008)
+    
+    ret  ; 关键切换点！
+</code></pre>
+<p>此时 esp 指向了 B 的内核栈，然后执行 ret 实际弹出的是 B 的内核栈的栈顶元素：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709165743.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（6）线程 B 的内核程序层层返回：</p>
+<p>A 的 switch_to 函数执行了 ret 之后先返回到 B 的 schedule 函数，然后 B 的 schedule 继续返回，返回到调用 B 的具体中断处理程序（启动 IO 让 B 阻塞的那个程序）：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709164138.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这个中断处理继续 ret 返回，返回到保存线程 B 用户态程序线程的地方即中断入口：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250709163727.png" alt="image.png300*300" loading="lazy" decoding="async" class="note-img"></p>
+<p>然后在这里，恢复现场，执行 iret 指令，弹出线程 B 在用户态中的断点，然后继续执行 B 在用户态中的程序，完成了线程的切换</p>
+<p>这里在内核中切换的过程与用户级线程的切换比较类似，关键在于，当更改了 ESP 指针之后，就已经完成了栈的切换，那么接下来弹出的东西就是另外一个线程之前保存在自己的栈的东西了</p>
+<p>上述就是内核级线程 B 触发中断，切换到 A，然后再切换回自己继续执行的全部过程了</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html"><span class="pager__label">← 上一篇</span><span class="pager__title">6 IO</span></a>
+    <a class="pager__item pager__item--next" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html"><span class="pager__label">下一篇 →</span><span class="pager__title">计算机网络胡科大笔记</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h3" href="#sec-0">系统调用的本质是什么？为什么应用程序不能直接执行系统调用的程序？</a><a class="margin__link margin__link--h3" href="#sec-18">CPU 是如何实现指令访问隔离的？</a><a class="margin__link margin__link--h3" href="#sec-63">以 printf() 为例来说明系统调用的具体过程？</a><a class="margin__link margin__link--h3" href="#sec-108">IDT 表和门描述符是什么？</a><a class="margin__link margin__link--h3" href="#sec-175">INT 0x80 的中断初始化是怎样的？</a><a class="margin__link margin__link--h3" href="#sec-237">中断处理函数 system_call 的基本结构是什么样的？</a><a class="margin__link margin__link--h3" href="#sec-326">用户级线程以及切换过程？</a><a class="margin__link margin__link--h3" href="#sec-427">内核级线程以及切换过程？</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>

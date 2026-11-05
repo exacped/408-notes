@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PV操作 &amp; 死锁 · 22408 备考笔记</title>
+<meta name="description" content="互斥机制的软件实现 软件实现的含义以及四个原则含义 软件实现的意思就是不同的进程通过在自己的程序中设置一些代码来确保临界区的访问满足下面四个原则： 在软件实现中并没有哪一段程序代码必须放在一起一口气执行的说法 软件实现 - 单标志法 单标志">
+<link rel="icon" href="../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../" data-note-id="c027">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../math/index.html">数学</a><a href="../../major/index.html" class="is-active">专业课</a><a href="../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note is-active" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note" href="../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../major/index.html">专业课 408</a><i>/</i><span>408强化与真题</span><i>/</i><span class="crumb__no">06</span></div>
+    <h1 class="doc__title">PV操作 &amp; 死锁</h1>
+    <div class="doc__meta"><span>1.5 万字</span><span>约 37 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose"><h2 id="sec-0">互斥机制的软件实现</h2>
+<h3 id="sec-3">软件实现的含义以及四个原则含义</h3>
+<p>软件实现的意思就是不同的进程通过在自己的程序中设置一些代码来确保临界区的访问满足下面四个原则：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251019195218.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在软件实现中并没有哪一段程序代码必须放在一起一口气执行的说法</p>
+<h3 id="sec-15">软件实现 - 单标志法</h3>
+<p>单标志法使用了一个变量 turn 作为谦让的动作，即每个进程会在自己的代码中将 turn 设置为另一个进程来表示谦让，也就是说 turn = i 表示第 i 个进程可以访问临界资源了</p>
+<p>如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718171645.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在进程 P 0 中将 turn 设置为 1 表示将临界资源的访问权谦让给进程 P 1，同理，在进程 P 1 中将 turn 设置为 0 表示将临界资源的访问权谦让给进程 P 0</p>
+<p>它的实现互斥机制的逻辑是，初始时刻 turn = 0 表示进程 P 0 可以访问临界资源，进程 P 0 进入 while 循环，while 循环是用来阻拦进程进入临界区的，这里可以直接跳出 while 循环 P 0 进入临界区</p>
+<p>当 P 0 在临界区并发被强行停止然后调度 P 1 进程的时候，P 1 进程虽然可以占用 CPU 并且到了 while 循环执行自己的指令，发现 turn = 0 自己不能进入临界区，所以会一直执行 while 循环被循环拦住，直到自己的时间片用完，然后调度进程 P 0 继续执行临界区，然后将 turn 设置为 1，表示谦让给进程 P 1，此时进程 P 1 才可以进入临界区</p>
+<p>这种方式的缺陷在于，当 turn = 0 的时候，P 0 迟迟不访问临界区，此时临界资源是空闲的，但是 turn 始终没有被 P 0 谦让给 P 1，那么 P 1 也无法访问临界区，所以不满足空闲让进的原则</p>
+<h3 id="sec-39">软件实现 - 双标志先检查法</h3>
+<p>这种方式是对单标志法的改进，两个进程各自占用一个变量，每个变量表示了这个进程对于进入临界区的意愿，比如 <code>flag[0] = true</code> 就表示 P 0 进程想要进入临界区，while 循环仍然是作为阻拦的作用，while 循环会检查对方的意愿，如果对方有意愿进入临界区，则当前进程被阻拦：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718172844.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这样就很好的解决了单标志法不满足空闲让进的原则，同时这个方法实现了互斥访问机制</p>
+<p>但是，这种方法无法满足忙则等待的原则，也就是两个进程可能会同时进入临界区；这是因为 while () 这一行没有做到很好的阻拦作用</p>
+<p>比如两个进程并发执行，此时两个进程都没有表达自己进入临界区的意愿，P 0 进程执行到 while，没有被阻拦，然后当 P 0 想要设置 flag[0] = true 的时候它突然被暂停，然后调度 P 1 进程执行，P 1 执行到 while 的时候也没有被阻拦，因为 P 0 还没有设置自己的意愿转去执行 P 1 了</p>
+<p>然后 P 1 顺利进入临界区，然后又暂停 P 1 调度 P 0 执行，P 0 从 flag[0] = ture 开始执行，也可以顺利进入临界区</p>
+<p>这样两个进程就同时可以进入临界区了，显然不满足临界区忙则等待的原则</p>
+<p><strong>这种方式不能实现互斥机制</strong></p>
+<h3 id="sec-66">软件实现 - 双标志后检查法</h3>
+<p>这种方式是对双标志先检查法的简单改进，它将表达进入临界区的意愿放在 while 阻拦的前面：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718183930.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这样就不可能会出现两个进程同时进入临界区的现象了，满足了忙则等待的原则</p>
+<p>但是，这种方式会导致两个进程都无法进入临界区的现象</p>
+<p>比如 P 0 进程执行完第一行指令，表达了自己进入临界区的意愿，接着被暂停去执行 p 1，P 1 执行了第 5 行代码，也表达了自己进入临界区的意愿</p>
+<p>但是往后，两者都会被 while 循环阻拦，两个都无法进入临界区，相当于两个卡 bug 被卡死了</p>
+<p>这就不满足空闲让进和有限等待的原则了</p>
+<p><strong>这种方式会让两个进制饥饿</strong></p>
+<h3 id="sec-93">软件实现 - Peterson 算法</h3>
+<p>这种算法结合了单标志法和双标志后检查法，它用一个 turn 变量来表示进程的谦让，同时用一个变量表示进程的意愿，while 仍然表示阻拦的作用</p>
+<p>两个进程在表达了自己的意愿的同时会做一次谦让，如果两者都表达了自己对临界区的意愿，那么遇到 while 被阻拦的时候，最后一次谦让的进程会丧失临界资源的有限访问权</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718184752.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+执行顺序（1）（2）（3）（6）（7）（8）：<br>
+进程 P 0，执行（1）（2），它表达了自己的意愿，但是会谦让一次，虽然谦让，但是 P 1 没有表达自己的意愿，所以执行（3）的时候没有被阻拦，直接进入临界区；<br>
+然后进程调度 P 1 执行，（6）（7）它也会表达自己的意愿，同时谦让一次，执行（8）的时候双方都表达了自己的意愿，但是 P 1 是最后谦让的，所以丧失了进入临界区的权限，只能被阻拦卡死</p>
+<p>执行顺序（1）（6）（2）（3）<br>
+进程 P 0，表达了自己的意愿，然后进程 P 1，表达了自己的意愿，然后进程 P 0 谦让一次，遇到阻拦，由于 P 0 是遇到阻拦前最后一次谦让的，它会被卡死，不能先进入临界区</p>
+<p>这个算法很好的实现了空闲让进，忙则等待，有限等待三个原则，但是没有解决让权等待的问题，也就是当进程 P 1 最后一次谦让执行（8）的时候如果临界区是忙的，那么 P 1 会一直卡死在 while 循环中，一直等待自己的时间片用完，而不是直接让出 CPU 的使用权，这个就是忙等</p>
+<p>（1）表达自己的意愿<br>
+（2）谦让一次<br>
+（3）如果是别人的条件就卡死<br>
+（4）进入临界区<br>
+（5）撤回自己的意愿</p>
+<h2 id="sec-114">互斥机制的硬件实现</h2>
+<p>硬件实现的含义是不同的进程通过一些硬件操作保证临界区的访问满足下面四个原则：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251019195218.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这些进程执行的硬件操作在下文中按照C语言的形式给出，但是他们需要一口气全部执行完毕，是为原子操作</p>
+<h3 id="sec-126">硬件实现  - 中断屏蔽方法</h3>
+<p>由于进程调度需要内核执行，需要通过中断进入内核态</p>
+<p>那么一个进程在进入临界区之前直接把中断给关了，那么它在临界区的时候 CPU 就无法调度别的进程了，那它当然就是独占临界区了</p>
+<p>但是这种方法不适于多处理机，因为你进程关中断只能关自己正在占据的 CPU 的中断，别的 CPU 的中断还是无法关，别的 CPU 还是可以调度进程来跟你同时访问临界资源</p>
+<p>也不适用于用户进程，用户进程掌握了开关中断比较危险</p>
+<h3 id="sec-141">硬件实现 - TestAndSet 指令</h3>
+<p>这个指令用 C 语言的逻辑说明如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718190846.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong>首先，这里虽然用 C 语言说明逻辑，但实际上上述指令是由硬件一口气全部执行的，并且不被允许打断</strong>，上图右边就是进程利用TestAndSet指令实现的临界区访问示例</p>
+<p>它的输入是一个共享变量 lock</p>
+<p>Test 的意思是检查各 lock 变量的旧值，即返回被别的进程设置的旧值<br>
+Set 的意思是将 lock 设置成 true，即上锁</p>
+<p>TestAndSet 的指令整体的作用就是返回别的进程给 lock 设置的旧值，同时自己给 lock 设置成 ture，即上锁</p>
+<p>这样，当遇到 while 阻拦的时候，它会检查 lock 是否被别人上锁，如果别人上锁了，它虽然也会将 lock 上锁，但是返回值是别人被 lock 上的锁，即 true，所以会被 while 卡死，一直到时间片到期，然后转去执行别的进程，别的进程访问完了临界区，给 lock 解锁，设置成 false；然后再调度当前进程执行的时候它返回的就是 false ，然后通过 while，执行自己的临界区代码</p>
+<p>while 在这些互斥机制实现中就是检查别人作为阻拦作用的</p>
+<p>这种硬件实现可以很好满足忙则等待，空闲让进，有限等待；然是仍然不满足让权等待，对于单 CPU 来说，它仍然会卡死在 while 阻拦上，只能等待自己的时间片用完才会让出 CPU，然后去执行别的进程</p>
+<h3 id="sec-171">硬件实现 - Swap 指令</h3>
+<p>这个指令功能和 TestAndSet 指令是完全一样的，仍然是进程自己维护一个 old 变量，然后 lock 变量是共享的：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718192737.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在这个指令中，进程会先将 old 设置为 ture，然后进入一次阻拦循环，在这个循环中执行 swap 指令，这个指令的作用就是交换 lock 变量和 old 的变量的值，其实就是和 TestAndSet 完全一样</p>
+<p>将 old 的值赋给 lock，也就是 Set，即就是将 lock 设置为 true，即上锁，同时将 lock 赋值给 old，即 Test，获得别的进程给 lock 设置的值，然后 while 会检查 old，也就是检查别的进程给 lock 设置的值</p>
+<p>它的功能与 TestAndSet 完全一样，所以也不满足让权等待的原则</p>
+<h2 id="sec-189">锁</h2>
+<h3 id="sec-192">锁是什么？</h3>
+<p>（1）锁其实是一种定义的数据结构，对于进程来说，只有第一个获得锁的进程才可以进入临界区，其他进程必须等待<br>
+（2）锁更像是对上文的进程互斥进入临界区动作的归纳，包括一个申请锁的动作，释放锁的动作，以及锁有关的数据结构<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251111110813.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-198">锁分为哪两类？</h3>
+<p>（1）自旋锁，进程申请锁失败会一直申请，卡死在 while 循环，直到成功，上文的各种例子基本上都属于自旋锁<br>
+（2）无忙等待锁，进程申请锁失败会阻塞，释放掉 CPU</p>
+<h3 id="sec-204">TSL 指令实现无忙等待锁的例子是什么？</h3>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">TestAndSet</span><span class="hljs-params">(<span class="hljs-type">bool</span>* lock)</span></span>{
+	<span class="hljs-type">bool</span> old = *lock;
+	*lock  = <span class="hljs-literal">true</span>;
+	<span class="hljs-keyword">return</span> old;
+
+}
+
+
+<span class="hljs-keyword">while</span>(<span class="hljs-built_in">TestAnsSet</span>(lock)){
+	进程阻塞;
+}
+进入临界区;
+*lock = <span class="hljs-literal">false</span>;
+唤醒一个阻塞队列的进程;
+</code></pre>
+<p>这里将自旋锁中的循环等待改成进程阻塞即可，同时在退出临界区的时候唤醒进程</p>
+<h2 id="sec-211">管程</h2>
+<h3 id="sec-214">管程是什么？</h3>
+<p>其实就是用高级语言实现进程之间的同步与互斥</p>
+<h3 id="sec-220">管程包含哪两个主要的功能？</h3>
+<p>（1）互斥访问：确保不同的线程对共享变量的互斥访问，同一时间只能有一个线程访问共享资源<br>
+（2）条件等待和通知：线程可以通过条件变量等待满足某个条件之后继续执行；或者通过条件变量通知其他线程某个条件已经满足<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251111145205.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-226">管程的组成部分有哪些？</h3>
+<p>（1）共享变量，管程实现了对共享变量的封装，多个进程需要通过管程访问共享变量<br>
+（2）互斥锁，用来确保同一时间只能有一个进程访问共享变量，实际上就是管程对于上文互斥锁的模拟<br>
+（3）条件变量，它是管程实现的一种机制，线程通过条件变量在条件不足的时候进行等待；同时，通过条件变量在条件满足的时候唤醒通知别的进程<br>
+（4）管程接口，管程暴露给外部调用管程所实现的方法的接口</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251111150417.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-235">管程实现消费者生产者同步的例子</h3>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Monitor</span>{
+	<span class="hljs-type">int</span> n, count;<span class="hljs-comment">//共享变量count以及共享变量的最大值n</span>
+	Condition producer, consumer;<span class="hljs-comment">//条件变量，这些条件变量也是一些类，用来提供等待和通知的方法</span>
+	Lock lock;<span class="hljs-comment">//互斥锁</span>
+
+	<span class="hljs-comment">//管程是一个大类，这个大类中实现了基本的生产和消费方法，用于外部进程调用</span>
+	<span class="hljs-comment">//外部的进程可以直接调用这些方法来实现同步和互斥</span>
+	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">produce</span><span class="hljs-params">()</span></span>{
+			
+		Lock.<span class="hljs-built_in">getlock</span>();<span class="hljs-comment">//加锁避免别的进程进入临界区</span>
+		<span class="hljs-keyword">if</span>(count == n)
+			producer.<span class="hljs-built_in">wait</span>(lock);<span class="hljs-comment">//如果缓冲区满了，则调用条件变量让自己等待</span>
+			<span class="hljs-comment">//这里wait操作必须将lock锁也传过去，因为wait还包括调度操作，在调度别的进程之前自己必须释放这个锁</span>
+		count ++;
+		consumer.<span class="hljs-built_in">signal</span>();<span class="hljs-comment">//生产完了，通知消费者进程</span>
+		Lock.<span class="hljs-built_in">release</span>();<span class="hljs-comment">//释放锁，让别的进程可以访问共享变量</span>
+	}
+	
+	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">consumer</span><span class="hljs-params">()</span></span>{
+		Lock.<span class="hljs-built_in">getlock</span>();
+		<span class="hljs-keyword">if</span>(count == <span class="hljs-number">0</span>)
+			consumer.<span class="hljs-built_in">wait</span>(lock);
+		count --;
+		producer.<span class="hljs-built_in">signal</span>();
+		Lock.<span class="hljs-built_in">release</span>();
+	}
+	
+	<span class="hljs-comment">//条件变量的实现</span>
+	<span class="hljs-keyword">class</span> <span class="hljs-title class_">Condition</span>{
+		<span class="hljs-type">int</span> num;<span class="hljs-comment">//这个数字表示当前处于阻塞队列的进程数量多少个</span>
+		queue&lt;&gt; bolckq;<span class="hljs-comment">//条件变量所对应的阻塞队列</span>
+		
+		<span class="hljs-comment">//wait方法实现</span>
+		<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">wait</span><span class="hljs-params">(Lock lock)</span></span>{
+			num ++;<span class="hljs-comment">//进入阻塞态队列的进程个数加一</span>
+			将进程加入到blockq队列中;
+			<span class="hljs-comment">//这里在将当前线程阻塞，调度别的进程执行的时候必须释放锁，否则别的进程无法访问管程中的共享变量了</span>
+			lock.<span class="hljs-built_in">release</span>();
+			进程调度，调度别的进程执行;
+			<span class="hljs-comment">//被唤醒后再拿到锁</span>
+			lock.<span class="hljs-built_in">getlock</span>();
+		}
+		
+		<span class="hljs-comment">//signal方法实现，用于唤醒条件变量阻塞队列上的一个进程</span>
+		<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">signal</span><span class="hljs-params">()</span></span>{
+			<span class="hljs-keyword">if</span>(num &gt; <span class="hljs-number">0</span>){
+				唤醒一个进程;
+				num --;
+			}
+		}
+		<span class="hljs-comment">//signal这里没有锁的问题，因为signal调用完毕之后回到consumer()函数中，就会直接将锁释放了</span>
+		<span class="hljs-comment">//锁释放了之后回到别的被唤醒的进程，这个进程被唤醒后拿到锁，可以重新进入临界区了</span>
+	}
+}
+
+
+<span class="hljs-comment">//对于外部的进程来说只用执行下面两行代码就可以实现同步与互斥了</span>
+Moniter m;
+m.<span class="hljs-built_in">produce</span>();<span class="hljs-comment">//外部进程函数直接调用管程中的方法，不用自己再进行PV操作</span>
+</code></pre>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251111151155.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-242">互斥机制的信号量实现</h2>
+<h3 id="sec-245">信号量实现 - 记录型信号量</h3>
+<p>先介绍一下什么是记录型信号量</p>
+<p>记录型信号量主要是对 value 的理解，这里记录型信号量的数据结构定义如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718203410.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>关键是对 value，value 其实表示的是一种状态</p>
+<p><strong>value &gt;= 0 的含义是，在所有进程都没有进行 PV 操作的时候，value 的绝对值表示可以分配的资源数</strong></p>
+<p><strong>value &lt; 0 的含义是，在所有进程都没有进行 PV 操作的时候，value 的绝对值表示正在等待的进程数</strong></p>
+<p>以上两个当作结论记住</p>
+<p>那么 PV 操作就比较容易理解了：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718203614.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<strong>上图两边对S的更改操作必须是原子化的，不允许中断</strong>（2021年真题），实际上这里的变量S也是临界资源，不同的变量就利用这个变量S来进行临界区的访问，实际上这种方式有点像硬件和软件结合的方式</p>
+<p>这里 P 操作之所以不加等号是因为在进入 P 操作之前 value = 1，表示还剩下一个资源，然后这个进程进入 P 操作，value --，表示资源分配给了它，所以进行判断的时候 value = 0，但是它仍然分配到了资源，可以进入临界区</p>
+<p>这里 V 操作之所以加上等号是因为在进入 V 操作之前 value = -1，表示有一个进程处于等待队列，此时当前进程进入 V 操作表示释放了一个资源，value ++ ，那么这个等待的进程就可以得到一个资源了，于是就可以被唤醒使用这个资源了</p>
+<p>所以这里的 value 只是表示两种状态，它为负的时候并不意味着被阻塞的进程无法获得资源，它为负，其绝对值只是表示被阻塞等待资源的进程的个数</p>
+<p>这样这种基于记录行信号量的 PV 操作，就可以保证在进程无法获得资源的时候直接自我阻塞，即满足了让权等待，而不是像上文的实现一样卡死在那里</p>
+<p>上文是对记录型信号量的介绍</p>
+<p>下面来说说怎么用记录型信号量来实现两个进程的互斥</p>
+<p>其实非常简单，只要将 mutex. value 的初值设置为 1 就可以了，表示临界资源只有一份，然后在每个进程的临界区代码的前后分别加上 PV 操作即可，并且对不同临界资源的访问，临界区前后的 PV 操作的信号量应该设置成不一样的：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718211445.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-299">记录型信号量实现同步机制</h3>
+<p>同步机制的实现也很简单</p>
+<p>假设有两个进程，P 1 的一部分代码 A 必须在 P 2 的一部分代码 B 之前执行，此时只用将信号量 value 设置为 0</p>
+<p>然后在 A 之后设置 V 操作，在 B 之前设置 P 操作即可，那么此时“系统资源”天然就是只有 0 份，P 2 的 B 代码之前想要 P 一下获得资源那就是不可能的，只能自己阻塞，然后 value 变成-1</p>
+<p>只有 P 1 执行完了 A 之后 V 一下，释放一个系统资源，此时 P 2 进程才能被唤醒继续执行：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718212117.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>对于多个层级，多个进程的多个代码之间的同步也非常简单，如下所示：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718212216.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图的 S 1 和 S 6 分别表示不同进程的不同代码，这些代码的执行必须按照上图所示的顺序执行</p>
+<p>我们只需要满足上图任意相邻一对前驱关系顺序就行了，如果任意一对相邻的前后关系都满足了，那其他的前后关系，比如 S 1 和 S 6 的前后关系就天然满足了，因为当满足了任意相邻的前后关系之后，S 6 就不可能会处于 S 2 之前执行，因为 S 6 必须在 S 1, S 5, S 3 之后执行，而 S 1 和 S 5 必须在 S 2 之后执行，所以 S 6 也就必须在 S 2 之后执行了</p>
+<p>所以我们可以对任意一对前后关系设置一个信号量，在每个代码之后分别进行一次这个信号量的 V 操作，在每个代码之前进行这个信号量的 P 操作：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250718212821.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这样就完美保证了每一对相邻前后代码的执行顺序</p>
+<p>注意你每个进程中的代码之后的一堆 V 操作，以及代码之前的一堆 P 操作，这些 V 操作或者 P 操作之间的顺序是无所谓的，比如 P 1 进程，你无论是先对 a 信号量 V 操作还是先对 b 信号量 V 操作，都不会改变每一对相邻代码之间的执行顺序，都不会改变此时 S 1 在 S 2 和 S 3 之前执行的事实（其他的就更不用多说），只要这个不改变，那整个上述流程图的代码执行顺序就是正确的</p>
+<h2 id="sec-341">死锁</h2>
+<h3 id="sec-344">死锁产生的 4 个必要条件是什么？分别是什么含义？</h3>
+<p>（1）互斥条件：资源只能自己占用，别的进程不能同时拥有<br>
+（2）请求和保持：请求别的被占用的资源的时候阻塞，但是自己占用的资源不释放<br>
+（3）不可抢占：占有的资源只能自己释放，不能被抢占<br>
+（4）循环等待：形成了一个等待链条</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250821161424.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-353">死锁的三个处理方法是什么？</h3>
+<p>（1）预防和避免死锁：确保系统不会出现死锁的情况<br>
+（2）检测并解除死锁：<br>
+（3）直接忽略死锁，装作没看见</p>
+<h3 id="sec-359">预防死锁-破坏互斥资源是什么？</h3>
+<p>让某些互斥访问的资源变得共享，但是对于特定的资源这个方法不行</p>
+<h3 id="sec-365">预防死锁-破坏请求保持条件是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250821161911.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）让进程一次性申请所有资源，如果不满足进程，则不给他分配，这样进程运行的时候就不会请求了<br>
+（2）一开始分配一点资源让其运行，让进程释放它所有的资源之后再允许它申请别的资源</p>
+<h3 id="sec-374">预防死锁-破坏不可抢占条件是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250821162225.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）申请不满足的时候，必须释放自己保持的所有资源，需要时再进行申请</p>
+<h3 id="sec-383">预防死锁-破坏循环等待条件是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250821162507.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）对资源进行编序号<br>
+（2）进程必须按照序号递增的顺序申请<br>
+（3）如果拥有高序号但是想要申请低序号，则必须释放高序号</p>
+<p>这样当两个进程拥有不同的资源 A ，B 之后，就不可能出现拥有 A 等待 B，拥有 B 等待 A 的循环等待的现象了</p>
+<h3 id="sec-395">避免死锁-安全状态和不安全状态是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250821162944.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>避免死锁与预防死锁还要更靠前一些</p>
+<p>处于安全状态的系统，当下一定没有死锁进程，这个是显然的，因为它可以按照一个安全序列进行推进，当然此刻没有死锁进程</p>
+<p>处于不安全状态的系统，并不一定马上就会发生死锁，可能进程还会正常进行推进，但是随着时间推移一定会出现死锁，比如只有 3 台打印机，进程 A 需要 2 台，B 需要 1 台，C 需要 5 台，如果一直不执行 C，虽然此时系统处于不安全状态，但是如果系统一直不执行 C 进程，那就不会出现死锁</p>
+<h3 id="sec-410">避免死锁 - 银行家算法是什么？</h3>
+<p>银行家算法其实超级简单，一般来说会有下面这样一个表格：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251031165333.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>找到一个不会发生死锁的序列即可</p>
+<p>这里采取的策略是让能运行的进程尽可能的运行，这些进程运行完了之后就会释放自己所占有的资源，然后找下一个能运行的进程将资源分配给它运行即可</p>
+<p>这里可以先分配给 P 1，然后 P 1 执行完毕之后会释放所有的资源，所以资源会变成 2 2 1</p>
+<p>然后分配给 P 2，然后 P 2 执行完毕之后会释放所有的资源，所以资源会变成 2 2 2</p>
+<p>后续剩余的进程都无法得到自己想要的资源，反正就是这样尝试，P 1 先执行的话不行就执行 P 4，但是剩余的进程都不能最先执行，所以这个系统不可能存在一个安全的序列</p>
+<h3 id="sec-434">检测死锁 - 资源分配图是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250822172746.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）进程画圆圈，资源画方框中的圆圈<br>
+（2）进程指向方框说明是资源请求，方框指向进程是资源分配</p>
+<h3 id="sec-443">检测死锁 - 资源分配图的化简规则是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250822173027.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里不阻塞的意思是将进程所需的资源分配给他的话他可以顺序执行</p>
+<p>不独立的意思是他有一个请求边或者分配边，不是一个单独的点</p>
+<p>这里的化简思想跟银行家算法很像，就是找一个可以获得资源运行的进程，将它申请的资源分配给它，它运行完毕之后就可以去掉它相关的边，比如这里的进程 P 1：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250822172746.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里可以将 R 2 方框中的资源给进程 P 1，让其执行，于是可以去掉 P 1 相关的所有边，相当于 P 1 将它拥有的资源全部释放，然后 P 2 就可以执行了，P 2 可以执行，那么图中的所有边就都可以化简去掉了：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250822173027.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-461">解除死锁-三个解除死锁的办法是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250822173340.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+（1）进程回退<br>
+（2）挂起进程，抢占资源<br>
+（3）撤销进程，回收资源</p>
+<h2 id="sec-467">PV 操作分析</h2>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250719155337.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><strong>（1）PV 操作无论是在同步问题中还是互斥问题中一定是成对出现的</strong></p>
+<p><strong>（2）在同步问题中的 PV 操作，更像是进程在某种资源存在前后的约束关系，而不是简单的进程间的行为的严格前后关系</strong></p>
+<p>P 操作是用来检查这种资源是否存在，拿走资源，如果没有则进程阻塞；<br>
+V 操作是用来形成这个资源让这个资源存在，放入资源到缓冲区，同时唤醒阻塞的进程</p>
+<p>比如生产者和消费者的一对同步关系，消费者必须在缓冲区有产品之后才能取走产品，那这里的资源存在就是产品在缓冲区的存在，消费者必须在资源存在之后才能执行自己的动作，所以消费者进程就得在自己的动作之前执行 P 操作，来检查产品是否存在的情况，这样才能保证自己后续的实际访问资源拿走并消费的动作在产品存在这个状态之后</p>
+<p>而 V 操作与这个 P 操作是成对的，它是让这个资源存在，所以当然放在生产者生产并放入产品到缓冲区动作之后</p>
+<p>而对于上文那种某个进程 P 2 的动作执行必须在另外一个进程 P 1 执行之后也可以用这里的资源存在来解释，这里其实就是资源存在初始为 0 嘛，P 2 的代码之前放一个 P 操作，初始的时候就没有资源，所以它只能等 P 1 进程执行完代码之后进行 V 操作生产一个资源让资源存在，然后 P 2 的动作代码才能执行，所以就保证了 P 1 的代码动作一定在 P 2 之前了</p>
+<p><strong>（3）资源存在是一个很抽象的东西，它可以指实际的产品存在情况，也可以指空闲资源的存在情况</strong></p>
+<p>比如消费者拿走资源并消费必须在产品存在之后，那这里的资源存在就是产品存在；比如生产者生产资源并放入缓冲，那这里的资源存在就是空闲资源的存在，生产者生产资源并放入缓冲的动作必须在空闲资源存在之后</p>
+<p><strong>（4）资源存在的初值就按照系统初始情况的设置就好，不用考虑太多</strong></p>
+<p>比如生产者 - 消费者问题的产品存在，初始就是 0，因此就设置为 0；空闲资源存在，初始就是 N 个块都空闲，所以设置为 N</p>
+<p><strong>（5）一个资源存在问题对应的是一个同步问题，并且实际上是对应了两类相对的进程，即一类进程需要在资源存在之后，拿走资源；另一类进程则是生产资源保证资源存在，本质还是生产者和消费者问题</strong></p>
+<p>是两类相对的进程而不是两个相对的进程</p>
+<p>这两类相对的所有进程的 PV 操作都是对同一个资源进行的，在资源存在之后拿走资源的这类进程全部都是相同的 P 操作；生产资源保证资源存在的这类进程全部都是相同的 V 操作</p>
+<p>比如在多个生产者 - 消费者问题中，苹果资源的存在，对应了父亲和女儿的一对关系，父亲是属于生产苹果的这类进程，女儿是拿走苹果的这类进程，这类资源存在同步问题相对的两类进程各只有一个</p>
+<p>比如空盘子资源的存在将父母两个进程划分成了同一类，即拿走空盘资源的这类进程；儿女两个进程划分成了同一类，即生产空盘子资源，那么这两类资源就是围绕空盘子资源进行 PV 操作，父母都是 P 操作，是完全一样的 P 操作；儿女都是 V 操作，都是完全一样的 V 操作；这里围绕空盘子资源的同步关系其实就跟生产者消费者问题一样了，儿女进程都是生产空盘子资源的生产者进程，父母都是消费空盘子资源的消费者进程</p>
+<h3 id="sec-518">单生产者 - 单消费者，单缓冲，单次取出类问题（最经典的问题）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250719182923.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>生产者和消费者问题是最原始的最经典的 PV 操作问题，它包含一个互斥，即各个进程必须互斥访问临界资源；两个同步问题，一个同步问题是产品资源的存在，一个同步问题是空闲资源的存在</p>
+<p>所以生产者和消费者问题要有三个信号量来控制</p>
+<p>（1）mutex 信号量，用来控制所有的进程互斥访问缓冲区<br>
+（2）full 信号量，用来表示缓冲区产品的存在情况，初始是 0<br>
+（3）empty 信号量，用来表示缓冲区空闲块的存在情况，初始是 n</p>
+<p>首先，对于互斥问题，生产者和消费者以及所有的进程都必须互斥访问缓冲区，所以互斥的 PV 操作每个进程都在进入临界区之前和之后进行，相当于 PV 操作将临界区夹住</p>
+<p>对于缓冲区产品存在的同步问题，消费者必须在缓冲区产品存在之后才能取走资源，所以 P (full) 就在消费者从缓冲区取走产品之前，PV 成对出现，V 操作就应该在形成这个资源（缓冲区产品存在）动作之后，因此 V (full) 就放在生产者放入产品到缓冲区动作之后</p>
+<p>对于缓冲区空闲资源存在的同步问题，生产者必须在缓冲区空闲块存在的时候才能放入产品到缓冲区，所以 P (empty) 就应该放在生产者放入缓冲区产品动作之前，用来表示检查缓冲区空前块是否存在，PV 成对出现，V (empty) 操作就应该在形成者空闲资源的动作之后，即消费者从缓冲区拿走一个产品的动作之后</p>
+<p>这样就可以很轻易的写出下面的代码：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-type">int</span> n;                                  <span class="hljs-comment">// 缓冲区大小</span>
+semaphore mutex = <span class="hljs-number">1</span>;                    <span class="hljs-comment">// 互斥信号量：实现缓冲区的互斥访问</span>
+semaphore full = <span class="hljs-number">0</span>;                      <span class="hljs-comment">// 同步信号量：非空缓冲区数量（产品数）</span>
+semaphore empty = n;                     <span class="hljs-comment">// 同步信号量：空缓冲区数量</span>
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {                       <span class="hljs-comment">// 生产者循环</span>
+        生产一个产品(数据);               <span class="hljs-comment">// 生产数据（非临界区操作）</span>
+        <span class="hljs-built_in">p</span>(empty);                        <span class="hljs-comment">// 请求空缓冲区（若无则阻塞）</span>
+        <span class="hljs-built_in">p</span>(mutex);                        <span class="hljs-comment">// 请求进入临界区（互斥访问缓冲区）</span>
+        将产品(数据)放入缓冲区;           <span class="hljs-comment">// 临界区操作：数据放入缓冲区</span>
+        <span class="hljs-built_in">v</span>(mutex);                        <span class="hljs-comment">// 释放临界区</span>
+        <span class="hljs-built_in">v</span>(full);                         <span class="hljs-comment">// 增加一个产品（唤醒等待的消费者）</span>
+    }
+}
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">consumer</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {                       <span class="hljs-comment">// 消费者循环</span>
+        <span class="hljs-built_in">p</span>(full);                         <span class="hljs-comment">// 请求产品（若无则阻塞）</span>
+        <span class="hljs-built_in">p</span>(mutex);                        <span class="hljs-comment">// 请求进入临界区</span>
+        从缓冲区取出数据;                 <span class="hljs-comment">// 临界区操作：取出数据</span>
+        <span class="hljs-built_in">v</span>(mutex);                        <span class="hljs-comment">// 释放临界区</span>
+        <span class="hljs-built_in">v</span>(empty);                        <span class="hljs-comment">// 释放空缓冲区（唤醒等待的生产者）</span>
+        消费产品;                        <span class="hljs-comment">// 消费数据（非临界区操作）</span>
+    }
+}
+</code></pre>
+<p>需要注意事项：</p>
+<p><strong>（1）mutex 的 P 操作，无论是生产者还是消费者进程，都不能放在 P (empty) 或者 P (full) 操作之前</strong></p>
+<p>因为如果消费者的 P (mutex) 放在 P (full) 之前的话，假如消费者进程先执行，执行 P (mutex)，然后执行 P (full)，发现 full 原本 = 0，自己阻塞等待生产者放入产品到缓冲区；然后转到生产者执行，生产者执行 P (empty) 发现 empty = n 空闲块资源充足，所以继续执行，P (mutex)，发现已经被锁上了，所以生产者又阻塞等待消费者</p>
+<p>这样就会导致生产者和消费者互相等待，出现死锁问题</p>
+<p><strong>（2）mutex 的 V 操作可以与 V (empty) 或者 V (full) 两个操作互换</strong></p>
+<p>这是因为 V 操作不会导致进程阻塞</p>
+<p>假如生产者的 V (full) 操作在 V (mutex) 的后面；最开始仍然是消费者进程先执行，阻塞在 P (full) 上面</p>
+<p>生产者执行 V (full) 之后唤醒了消费者进程，生产者执行完毕 V (full)，然后突然调度去执行消费者的 P (mutex)，虽然消费者仍然会被卡死在这里，但是时间片用完之后生产者继续执行 V (mutex)，这样消费者就被唤醒了，等到生产者执行完了调度消费者执行，消费者同样可以顺利进入临界区</p>
+<p><strong>（3）消费产品的动作最好是放在两个 V 操作的之后；同理生产产品的动作也最好是放在两个 P 操作之前</strong></p>
+<p>理论上来说，消费产品的动作其实放在从缓冲区取走了一个产品之后就行了，但是如果 V (mutex) 或者 V (empty) 在消费产品之后的话会导致临界资源和空闲资源释放太慢，因为你从缓冲区取走一个产品就可以释放临界资源以及释放一个空闲块，从而唤醒别的进程工作了，但是你非要再插入一个消费产品在释放操作 V 之前，这样别的进程还得等你享受完才能获得资源被唤醒，没必要</p>
+<p>同理生产产品也是这样的，理论上只用在临界区放入资源动作之前就可以了，但是如果你 P 操作提前就把资源锁定了，那别的进程还得等你慢慢生产资源才能访问临界区以及你提前锁定了一个空闲块，但是在生产产品这个时间没有使用，那这个生产产品的时间就是白白占据资源不使用浪费掉了</p>
+<h3 id="sec-579">双生产者 - 双消费者，单缓冲区，单取出类问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250722174121.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这个问题涉及三个同步资源：</p>
+<p>（1）空闲盘子资源，这个资源存在将进程分为了两类，一类是父母进程，消费空闲盘子资源；一类是子女进程，产生空闲盘子资源</p>
+<p>（2）苹果资源，这个资源只涉及父进程和女儿进程，父进程产生这个苹果资源，女儿进程消费这个苹果资源</p>
+<p>（3）橘子资源，这个资源只涉及母进程和儿子进程，母亲进程产生橘子资源，儿子进程消费橘子资源</p>
+<p>同样涉及一个互斥问题：</p>
+<p>所有进程不能同时访问盘子</p>
+<p>所以有三个同步信号量，plate, apple, orange</p>
+<p>一个互斥信号量，mutex</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250722174849.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<pre class="code-block" data-lang="c"><code class="hljs"><span class="hljs-comment">// 父亲进程 (生产者-苹果)</span>
+dad (){
+    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+        准备一个苹果;
+        P(plate);      <span class="hljs-comment">// 申请空盘子资源</span>
+        P(mutex);      <span class="hljs-comment">// 申请临界区锁</span>
+        把苹果放入盘子;
+        V(mutex);      <span class="hljs-comment">// 释放临界区锁</span>
+        V(apple);      <span class="hljs-comment">// 增加苹果资源计数</span>
+    }
+}
+
+<span class="hljs-comment">// 母亲进程 (生产者-橘子)</span>
+mom (){
+    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+        准备一个橘子;
+        P(plate);      <span class="hljs-comment">// 申请空盘子资源</span>
+        P(mutex);      <span class="hljs-comment">// 申请临界区锁</span>
+        把橘子放入盘子;
+        V(mutex);      <span class="hljs-comment">// 释放临界区锁</span>
+        V(orange);     <span class="hljs-comment">// 增加橘子资源计数</span>
+    }
+}
+
+<span class="hljs-comment">// 女儿进程 (消费者-苹果)</span>
+daughter (){
+    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+        P(apple);      <span class="hljs-comment">// 申请苹果资源</span>
+        P(mutex);      <span class="hljs-comment">// 申请临界区锁</span>
+        从盘中取出苹果;
+        V(mutex);      <span class="hljs-comment">// 释放临界区锁</span>
+        V(plate);      <span class="hljs-comment">// 释放空盘子资源</span>
+        吃掉苹果;
+    }
+}
+
+<span class="hljs-comment">// 儿子进程 (消费者-橘子)</span>
+son (){
+    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+        P(orange);     <span class="hljs-comment">// 申请橘子资源</span>
+        P(mutex);      <span class="hljs-comment">// 申请临界区锁</span>
+        从盘中取出橘子;
+        V(mutex);      <span class="hljs-comment">// 释放临界区锁</span>
+        V(plate);      <span class="hljs-comment">// 释放空盘子资源</span>
+        吃掉橘子;
+    }
+}
+</code></pre>
+<p>这个问题本质上还是消费者问题，唯一需要注意的是空闲盘子这个资源虽然涉及的是四个进程，但是这四个进程其实只有两类，父母进程消费空闲盘子资源是一类，儿女进程生产空闲盘子资源是一类，同一类进程互相之前的 P 操作或者 V 操作都是相同的</p>
+<h3 id="sec-616">双生产者 - 单消费者 - 双缓冲区 - 单次取出类问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250722181921.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里有两个互斥问题：</p>
+<p>（1）A 车间和装配车间不能同时访问 F 1<br>
+（2）B 车间和装配车间不能同时访问 F 2</p>
+<p>有四个同步问题：</p>
+<p>（1）产品 A 资源存在引起的同步，装配车间必须在 F 1 有了 A 资源之后才能拿走<br>
+（2）F 1 空闲资源存在引起的同步，A 车间必须等到 F 1 空闲了才能放入 A 产品<br>
+（3）产品 B 资源存在引起的同步，装配车间必须在 F 2 有了 B 资源之后才能拿走<br>
+（4）F 2 空闲资源存在引起的同步，B 车间必须等到 F 2 空闲了才能放入 B 产品</p>
+<p>因此需要 6 个信号量：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250722183229.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A 车间的代码如下：</p>
+<pre class="code-block" data-lang="c"><code class="hljs">A_Workshop() {
+    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>) {
+        生产一个A零件;
+        P(empty_F1);      <span class="hljs-comment">// 申请F1空位</span>
+        P(mutex_F1);      <span class="hljs-comment">// 申请F1货架锁</span>
+        将A放入货架F1;     <span class="hljs-comment">// 临界区操作</span>
+        V(mutex_F1);      <span class="hljs-comment">// 释放F1货架锁</span>
+        V(full_F1);       <span class="hljs-comment">// 增加F1零件计数</span>
+    }
+}
+</code></pre>
+<p>B 车间的代码如下：</p>
+<pre class="code-block" data-lang="c"><code class="hljs">B_Workshop() {
+    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>) {
+        生产一个B零件;
+        P(empty_F2);      <span class="hljs-comment">// 申请F2空位</span>
+        P(mutex_F2);      <span class="hljs-comment">// 申请F2货架锁</span>
+        将B放入货架F2;     <span class="hljs-comment">// 临界区操作</span>
+        V(mutex_F2);      <span class="hljs-comment">// 释放F2货架锁</span>
+        V(full_F2);       <span class="hljs-comment">// 增加F2零件计数</span>
+    }
+}
+</code></pre>
+<p>装配车间的代码如下：</p>
+<pre class="code-block" data-lang="c"><code class="hljs">Assembly_Workshop() {
+    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>) {
+        P(full_F1);      <span class="hljs-comment">// 申请A零件资源</span>
+        P(mutex_F1);     <span class="hljs-comment">// 申请F1货架锁</span>
+        从F1取出A零件;     <span class="hljs-comment">// 临界区操作</span>
+        V(mutex_F1);     <span class="hljs-comment">// 释放F1货架锁</span>
+        V(empty_F1);     <span class="hljs-comment">// 释放F1空位</span>
+        
+        P(full_F2);      <span class="hljs-comment">// 申请B零件资源</span>
+        P(mutex_F2);     <span class="hljs-comment">// 申请F2货架锁</span>
+        从F2取出B零件;     <span class="hljs-comment">// 临界区操作</span>
+        V(mutex_F2);     <span class="hljs-comment">// 释放F2货架锁</span>
+        V(empty_F2);     <span class="hljs-comment">// 释放F2空位</span>
+        
+        组装A+B为产品;     <span class="hljs-comment">// 非临界区操作</span>
+    }
+}
+</code></pre>
+<p>在装配车间的代码中 <code>P(full_F2)</code> 它的位置可以紧接着放在 <code>P(full_F1)</code> 之后，调换了一下顺序整个系统的代码也是正确的，因为缓冲 F 2 涉及的互斥和同步与缓冲 F 1 涉及的互斥与同步时完全独立的，信号量也是独立的，只要你能保证单个缓冲涉及的互斥和同步是正确的，那么每个缓冲区涉及的同步与互斥问题之间的代码顺序是随意的</p>
+<p>你甚至可以将 <code>P(full_F2)</code> 直接放在装配车间的临界区代码中，虽然装配进程会阻塞在访问 F 1 的临界区，但是 B 车间仍然可以访问 F 2，仍然可以生产 B 产品放入 F 2 然后唤醒装配进程，并不会出现死锁的现象，这种代码顺序只可能影响了 A 车间放入产品的效率</p>
+<h3 id="sec-658">单生产者-单消费者-单缓冲区-连续取出问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250722190116.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+有两个同步问题：</p>
+<p>（1）缓冲区的空闲资源必须存在，生产者才能放入资源到缓冲区中<br>
+（2）缓冲区必须有产品资源存在，消费者才能从缓冲区取走产品</p>
+<p>有两个互斥问题：</p>
+<p>（1）生产者和消费者对临界区的访问必须是互斥的<br>
+（2）生产者之间在某个进程连续取 10 件的其间是互斥的</p>
+<p>所以信号量：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250722191303.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>生产者的代码写法与经典的完全一样：</p>
+<pre class="code-block" data-lang="c"><code class="hljs"><span class="hljs-type">void</span> <span class="hljs-title function_">producer</span><span class="hljs-params">()</span> {
+    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {                       <span class="hljs-comment">// 生产者循环</span>
+        生产一个产品(数据);               <span class="hljs-comment">// 生产数据（非临界区操作）</span>
+        p(empty);                        <span class="hljs-comment">// 请求空缓冲区（若无则阻塞）</span>
+        p(mutex1);                        <span class="hljs-comment">// 请求进入临界区（互斥访问缓冲区）</span>
+        将产品(数据)放入缓冲区;           <span class="hljs-comment">// 临界区操作：数据放入缓冲区</span>
+        v(mutex1);                        <span class="hljs-comment">// 释放临界区</span>
+        v(full);                         <span class="hljs-comment">// 增加一个产品（唤醒等待的消费者）</span>
+    }
+}
+</code></pre>
+<p>这里消费者之间也用了一个锁 turn_lock</p>
+<p>其实关于互斥问题，更进一步的理解是保证</p>
+<pre class="code-block"><code class="hljs">void consumer() {
+    while(true) {
+        // 申请连续取特权（整个10次操作独占）
+        P(turn_lock);
+        
+        for(int i=0; i&lt;10; i++) {
+            P(full);        // 确保有产品
+            P(mutex);       // 申请缓冲区锁
+            取出一个产品;    // 临界操作
+            V(mutex);       // 释放缓冲区锁
+            V(empty);      // 释放空槽
+        }
+        
+        // 释放连续取特权
+        V(turn_lock);
+        
+        // 可在此处消费10个产品（非临界区）
+    }
+}
+</code></pre>
+<h3 id="sec-690">读者 - 写者问题（读者优先）</h3>
+<p>（1）一个变量 count 用来记录访问文件的读者个数，这个变量本身应该互斥访问，用来明确谁是第一个读文件进程，谁是最后一个读文件进程<br>
+（2）读者与写者之间的互斥关系，应该将所有的读者看成一个整体，第一个读者读的时候 P (mutex)，最后一个读者走的时候 V (mutex)<br>
+（3）这种方式如果一直有读者不停到来，写者会被饿死</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250814172220.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>问题背景就是：<br>
+（1）允许多个读者可以同时读，读进程之间没有互斥<br>
+（2）但是只能有一个写者进行写操作，写进程与写进程，写进程与读进程之间都有互斥<br>
+（3）写进程写的时候只有等到所有读进程全部退出才能写</p>
+<p>这个问题需要一个变量 count 来记录访问文件的读者的数量，并且此时 count 也变成了临界资源，需要互斥访问</p>
+<p>另外一个互斥关系是写者和读者写者的文件访问互斥</p>
+<p>这里没有同步关系，count 变量是用来处理这里的条件关系的，他不是互斥量</p>
+<p>因此就是两个互斥信号量：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">semaphore mutex = <span class="hljs-number">1</span>;<span class="hljs-comment">//用来对count 进行互斥访问</span>
+semaphore mutexSW = <span class="hljs-number">1</span>;<span class="hljs-comment">//用来写者与读者和写着进行互斥访问文件</span>
+
+<span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<span class="hljs-comment">//用来记录访问文件的读者个数</span>
+</code></pre>
+<p>首先，读者进程在读文件之前需要修改 count 变量的值，所以会在 reading 操作前后进行互斥修改 count 变量：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-built_in">reader</span>(){
+	<span class="hljs-built_in">P</span>(mutex);
+	count ++;
+	<span class="hljs-built_in">V</span>(mutex);
+	
+	reading;
+	
+	<span class="hljs-built_in">P</span>(mutex);
+	count --;
+	<span class="hljs-built_in">V</span>(mutex);
+}
+</code></pre>
+<p>然后是读者与写着的互斥问题，这里需要用到信号量 mutexSW，这个信号量的 PV 操作不能简单加到 reading 的前后，因为如果这样做了，那么读者之间也变成互斥访问文件了，这个与题意不符，所以这里也就是 count 变量的作用了，为了保证读者与写者进行互斥，用 count 变量来判断此时是否可能有写者访问文件：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-built_in">reader</span>(){
+
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		<span class="hljs-built_in">P</span>(mutex);
+		<span class="hljs-comment">//如果此时文件区没有读者，说明此时写者可能访问文件，此时需要进行互斥</span>
+		<span class="hljs-keyword">if</span>(count == <span class="hljs-number">0</span>){
+		<span class="hljs-comment">//count用来表示当前有多少个进程在读，如果是第一个进程的话，此时还没读呢，所以if语句应该放在count ++前面</span>
+			<span class="hljs-built_in">P</span>(mutexSW);
+		}
+		<span class="hljs-comment">//如果此时文件区有读者，说明不可能写者正在访问文件，那么此时读者直接修改count进入文件区即可	</span>
+		count ++;
+		<span class="hljs-built_in">V</span>(mutex);
+
+		reading;
+
+		<span class="hljs-built_in">P</span>(mutex);
+		count --;
+		<span class="hljs-comment">//如果是最后一个进程，此时进程都读完了，所以if应该放在count--后面</span>
+		<span class="hljs-keyword">if</span>(count == <span class="hljs-number">0</span>){
+			<span class="hljs-built_in">V</span>(mutexSW);<span class="hljs-comment">//最后一个读进程走的时候才会解锁，此时允许写进程进去写数据</span>
+		}
+		<span class="hljs-built_in">V</span>(mutex);
+	}
+
+}
+</code></pre>
+<p>简而言之，就是第一个读进程敲门要读的时候会加锁，这样其他的读进程可以来读文件，但是写进程不行</p>
+<p>等到所有的进程读完之后，某个进程发现自己是最后一个读的进程，这个时候才会解锁，允许写进程进来写数据</p>
+<p><strong>第一个读进程来的时候要加锁，最后一个读进程走的时候要解锁，将正在读的所有进程看成一个整体</strong></p>
+<p>对于写进程来说，他不需要通过 count 变量来判断文件里面是否有读进程或者写进程，他统一用 mutexSW 这个互斥信号量来判断，因为第一个进程进去的时候会加锁，这样写进程再 P (mutexSW) 就知道有读进程在文件里面了，最后一个读进程走的时候解锁，这样写进程就可以用不必卡死了</p>
+<p>同时写进程之间也可以用 mutexSW 这个信号量来完成互斥操作，因此写进程就非常简单了，只用 mutexSW 即可</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs"><span class="hljs-built_in">write</span>(){
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		<span class="hljs-built_in">P</span>(mutexSW);
+
+		writing;
+
+		<span class="hljs-built_in">V</span>(mutexSW);
+	}
+
+}
+</code></pre>
+<h3 id="sec-739">哲学家进餐问题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250816132110.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250816132747.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在哲学家问题中，如果所有的哲学家，比如上图的 5 个哲学家都同时拿了自己左边的筷子，那就会陷入死锁状态，谁也不能吃饭</p>
+<p>我们要做的就是解决这类死锁的问题，这类问题解决的话有常见的 2 中做法</p>
+<p>几个规定<br>
+（1）哲学家的左边和右边相对于哲学家而言的<br>
+（2）哲学家的编号与其右边的编号是一样的<br>
+（3）筷子的编号沿着顺时针递增</p>
+<h4 id="sec-757">第一种做法：最多只允许有 n - 1 名哲学家同时拿左边的筷子</h4>
+<p>其实也就是只有 n - 1 个哲学家可以获得拿筷子的资格</p>
+<p>这里用一个 count 来表示获取右边筷子的资格这样一个资源存在，在这个问题中，count 的初始值就是 4，只有前 4 个哲学家才能获得拿右边筷子的资格</p>
+<p>同时有 5 根筷子，每 根筷子对应了相邻的两个哲学家，这两个哲学家访问这个筷子是互斥的</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">semaphore count = <span class="hljs-number">4</span>;
+semaphore chopsticks[<span class="hljs-number">5</span>] = {<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>};
+<span class="hljs-built_in">process</span>(){<span class="hljs-comment">//第i个哲学家</span>
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		<span class="hljs-built_in">P</span>(count);
+		<span class="hljs-built_in">P</span>(chopsticks[i]);<span class="hljs-comment">//拿右边的筷子</span>
+		<span class="hljs-built_in">P</span>(chopsticks[(i + <span class="hljs-number">1</span>)%<span class="hljs-number">5</span>]);<span class="hljs-comment">//拿左边的筷子</span>
+		eat;
+		<span class="hljs-built_in">V</span>(chopsticks[i]);<span class="hljs-comment">//释放右边的筷子</span>
+		<span class="hljs-built_in">V</span>(chopsticks[(i + <span class="hljs-number">1</span>)%<span class="hljs-number">5</span>]);<span class="hljs-comment">//释放左边的筷子</span>
+		
+		<span class="hljs-built_in">V</span>(count);<span class="hljs-comment">//释放获得左边筷子的资格</span>
+	}
+}
+</code></pre>
+<p>在这种情况下，一个极端的情况是有 4 个哲学家同时拿了右边的筷子，最后一个哲学家无法获得右边的筷子资格，被卡死在 P (count) 上面</p>
+<p>此时一定会有一个哲学家可以获得 2 个筷子，可以进餐，他可以释放筷子资源，别的哲学家也可以进餐，这样就不会死锁了</p>
+<h4 id="sec-776">第二种做法：仅当哲学家两边的筷子都可用的时候，才允许他进餐</h4>
+<p>换句话就是，在同一时刻只能有一个哲学家可以拿筷子，他拿筷子的动作不可以被打断，相当于将哲学家先拿做筷子再拿右筷子当作了临界区</p>
+<p><strong>让进程一口气获得所有的资源，这个思想更常用一些</strong></p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">semaphore mutex = <span class="hljs-number">1</span>;
+semaphore chopsticks[<span class="hljs-number">5</span>] = {<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>};
+<span class="hljs-built_in">process</span>(){<span class="hljs-comment">//第i个哲学家</span>
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		<span class="hljs-built_in">P</span>(mutex);
+		<span class="hljs-built_in">P</span>(chopsticks[i]);<span class="hljs-comment">//拿左边的筷子</span>
+		<span class="hljs-built_in">P</span>(chopsticks[(i + <span class="hljs-number">1</span>)%<span class="hljs-number">5</span>]);<span class="hljs-comment">//拿右边的筷子</span>
+		<span class="hljs-built_in">V</span>(mutex);
+		
+		eat;
+		
+		<span class="hljs-built_in">V</span>(chopsticks[i]);<span class="hljs-comment">//释放左边的筷子</span>
+		<span class="hljs-built_in">V</span>(chopsticks[(i + <span class="hljs-number">1</span>)%<span class="hljs-number">5</span>]);<span class="hljs-comment">//释放右边的筷子</span>
+		
+		think;
+	}
+	
+}
+</code></pre>
+<h3 id="sec-786">吸烟者问题（轮流关系控制）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251211190545.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里其实是 4 个同步关系的综合<br>
+（1）供应者提供了烟草和纸之后，拥有火柴的吸烟者才能吸烟，对于一个同步关系量 SYN 1<br>
+（2）供应者提供了烟草和火柴之后，拥有纸的吸烟者才能吸烟，对应一个同步关系量 SYN 2<br>
+（3）供应者提供了火柴和纸之后，拥有烟草的吸烟者才能吸烟，对应一个同步关系量 SYN 3<br>
+（4）某个吸烟者吸了烟之后，供应者才能供应下一次材料</p>
+<p>这里体现了一个轮流关系，即供应者先供应材料，然后吸烟者吸烟，吸烟者吸完烟之后供应者才能继续供应，这种轮流动作一般是用两个信号量控制，比如要求两个进程分别执行动作 A 和动作 B 并且交替执行：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">
+semaphore SYN1 = <span class="hljs-number">1</span>;<span class="hljs-comment">//设定为1，让A先执行</span>
+semaphore SYN2 = <span class="hljs-number">0</span>;
+
+process A{
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		<span class="hljs-built_in">P</span>(SYN1);
+		执行A动作;
+		<span class="hljs-built_in">V</span>(SYN2);
+	}
+}
+
+process B{
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		<span class="hljs-built_in">P</span>(SYN2);
+		执行动作B;
+		<span class="hljs-built_in">V</span>(SYN1);
+	
+	}
+}
+</code></pre>
+<p>吸烟者问题本质上是一个轮流问题，即供应者执行动作 A，然后有 3 个对象某一个执行动作 B，B 执行完了之后供应者再执行 A，执行动作 A 的只有一个，所以用一个 finish 变量即可；执行动作 B 的有 3 个，所以分别需要三个 SYN 1, SYN 2, SYN 3 信号量，分别与 finish 信号量组合，分别形成两个信号量来控制轮流关系：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">semaphore SYN1 = <span class="hljs-number">0</span>;
+semaphore SYN2 = <span class="hljs-number">0</span>;
+semaphore SYN3 = <span class="hljs-number">0</span>;
+semaphore finish = <span class="hljs-number">1</span>;
+
+process giver{
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		
+		<span class="hljs-built_in">P</span>(finish);
+		
+		<span class="hljs-type">int</span> random = <span class="hljs-built_in">get_random</span>(生成一个随机数);
+		<span class="hljs-keyword">if</span>(random % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>){
+			提供了烟草和纸
+			<span class="hljs-built_in">V</span>(SYN1);
+		} 
+		<span class="hljs-keyword">if</span>(random % <span class="hljs-number">3</span> == <span class="hljs-number">1</span>){
+			提供了烟草和火柴
+			<span class="hljs-built_in">V</span>(SYN2);
+		} 
+		<span class="hljs-keyword">if</span>(random % <span class="hljs-number">3</span> == <span class="hljs-number">2</span>) {
+			提供了火柴和纸
+			<span class="hljs-built_in">V</span>(SYN3);
+		}
+	
+	}
+
+}
+
+process somoker1{
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		<span class="hljs-built_in">P</span>(SYN1);
+		smoke;
+		<span class="hljs-built_in">V</span>(finish);
+	}
+}
+process somoker2{
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		<span class="hljs-built_in">P</span>(SYN2);
+		smoke;
+		<span class="hljs-built_in">V</span>(finish);
+	}
+}
+
+process somoker3{
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		<span class="hljs-built_in">P</span>(SYN3);
+		smoke;
+		<span class="hljs-built_in">V</span>(finish);
+	}
+}
+</code></pre>
+<h2 id="sec-803">408 真题</h2>
+<h3 id="sec-806">2009 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250819204400.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<pre class="code-block" data-lang="c"><code class="hljs">semaphore empty = N;
+semaphore fullOdd = <span class="hljs-number">0</span>;
+semaphore fullEven = <span class="hljs-number">0</span>;
+semaphore mutex = <span class="hljs-number">1</span>;
+
+P1(){
+
+	<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>){
+		<span class="hljs-type">int</span> num = produce();
+		P(empty);
+		P(mutex);
+		put();
+		<span class="hljs-keyword">if</span>(num % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>){
+			V(fullEven);
+		}<span class="hljs-keyword">else</span>{
+			V(fullOdd);
+		}
+		V(mutex);
+	}
+	
+}
+
+P2(){
+	<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>){
+		P(mutex);
+		P(fullOdd);
+		getodd();
+		V(mutex);
+		V(empty);
+		countodd();
+	}
+}
+
+P3(){
+	<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>){
+		P(mutex);
+		P(fullEven);
+		geteven();
+		V(mutex);
+		V(empty);
+		counteven();
+	
+	}
+}
+</code></pre>
+<p>一个互斥关系：所有进程访问这个区域互斥</p>
+<p>一个资源存在同步关系：空闲资源存在问题</p>
+<p>一个资源存在同步关系：奇数资源存在</p>
+<p>一个资源存在同步关系：偶数资源存在</p>
+<p>互斥关系：针对所有进程</p>
+<p>空闲资源存在：P 2 和 P 3 是生产者，P 1 是消费者</p>
+<p>奇数资源存在：P 1 是生产者，P 2 是消费者</p>
+<p>偶数资源存在：P 1 是生产者，P 3 是消费者</p>
+<p><strong>然后将这些互斥同步关系想办法弄在一起即可</strong>，一个进程如果涉及多个同步关系，最简单的就是按序进行 PV 操作，这里进程 P 1 涉及两个同步关系，但不是按序，因为 P 1 生产数字是可能分奇偶的，所以 P 1 的每次 V 数字操作需要对数字进行区分，V 操作的时候用 if 语句区分一下即可</p>
+<p>P 2 和 P 3 好写，就是常见的消费者进程模板，只不过消费的是各自的数字类型资源</p>
+<h3 id="sec-843">2011 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250814171342.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<pre class="code-block"><code class="hljs">semaphore mutex_num = 1;
+semaphore seat = 10;
+semaphore mutex_service = 0;
+semaphore mutex_call = 0;
+
+cobegin
+{
+	process 顾客i
+	{
+		P(seat);
+		P(mutex_num);
+		从叫号机取一个号码
+		V(mutex_num);
+		
+		
+		等待叫号
+		V(mutex_call);
+		
+		
+		P(mutex_service);
+		V(seat);
+		获取服务
+		
+	}
+	
+	process 营业员
+	{
+		while(true)
+		{
+			P(mutex_call);
+			叫号;
+			V(mutex_service);
+			给顾客服务;
+			
+		}
+	}
+}
+</code></pre>
+<p>一个互斥关系：每个顾客取号的时候叫号机是互斥的</p>
+<p>一个资源存在同步关系：座位资源存在，用户进程是消费者，也是生产者，用户会在获得服务之前释放座位 （或者营业员在给顾客服务之间会释放一个座位）</p>
+<p>一个前后同步关系：顾客必须等待叫号之后，营业员才能叫号，也就是没有人等待叫号的时候营业员是空闲的卡死在叫号之前才行</p>
+<p>一个前后同步关系：营业员必须叫号之后，顾客才能获得服务</p>
+<h3 id="sec-862">2013 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250821154058.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>一个互斥关系：门，进门出门都需要互斥访问</p>
+<p>一个资源存在：参观博物馆，只允许 500 人参观，每个参观者既是生产者也是消费者</p>
+<pre class="code-block" data-lang="c"><code class="hljs">
+semaphore mutex_door = <span class="hljs-number">1</span>;
+semaphore people = <span class="hljs-number">500</span>;
+
+cobegin
+	参观者进程i:
+{
+	P(people);
+	
+	P(mutex_door);
+	进门;
+	V(mutex_door);
+	
+	参观;
+	
+	P(mutex_door);
+	出门;
+	V(mutex_door);
+	
+	V(people);
+}
+coend
+</code></pre>
+<h3 id="sec-875">2015 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250814163026.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<pre class="code-block" data-lang="C"><code class="hljs"><span class="hljs-type">int</span> mutexA = <span class="hljs-number">1</span>;<span class="hljs-comment">//A信箱的互斥资源</span>
+<span class="hljs-type">int</span> mutexB = <span class="hljs-number">1</span>;<span class="hljs-comment">//B信箱的互斥资源</span>
+<span class="hljs-type">int</span> fullA = x;<span class="hljs-comment">//A信箱有信件的资源</span>
+<span class="hljs-type">int</span> emptyA = M - x;<span class="hljs-comment">//A信箱的空闲资源</span>
+<span class="hljs-type">int</span> fullB = y;<span class="hljs-comment">//B信箱有信件的资源</span>
+<span class="hljs-type">int</span> emptyB = N - x;<span class="hljs-comment">//B信箱的空闲资源</span>
+
+A{
+	P(fullA);<span class="hljs-comment">//A取出一个信件，需要消耗一个信件资源</span>
+	P(mutexA);
+	从A的信箱种取出一个邮件;
+	V(mutexA);
+	V(emptyA);<span class="hljs-comment">//A取出一个信件会生产一个空闲资源</span>
+	
+	
+	P(emptyB);<span class="hljs-comment">//A放入B信箱会消耗一个空闲资源</span>
+	P(mutexB);
+	将新的信件放入B的信箱;
+	V(mutexB);
+	V(fullB);<span class="hljs-comment">//A放入B的信箱会生成一个B的信件资源</span>
+}
+
+B{
+	P(fullB);<span class="hljs-comment">//B取出一个信件，消耗一个信件资源</span>
+	P(mutexB);
+	从B的信箱种取出一个信件;
+	V(mutexB);
+	V(emptyB);<span class="hljs-comment">//B取出一个信件，会生成一个空闲资源</span>
+	
+	P(emptyA);<span class="hljs-comment">//B放入一个信件到A信箱会消耗一个A的空闲资源</span>
+	P(mutexA);
+	将新的信件放入A的信箱;
+	V(mutexA);
+	V(fullA);<span class="hljs-comment">//B放入A的信箱会生成一个A的信件资源</span>
+
+}
+</code></pre>
+<h3 id="sec-882">2017 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250815142503.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这是一个读者写者问题，三个全局变量看成三个临界资源，分别进行分析</p>
+<p>对于变量 x，只有进程 1 读，所以不用互斥关系</p>
+<p>对于变量 y，进程 1 读，进程 2 读，进程 3 写，这是一个读者写者的互斥关系，允许多个进程读，允许一个进程写</p>
+<p>对于变量 z，进程 2 读，进程 3 写，这就是一个普通的互斥关系</p>
+<p>所以对变量 y 和变量 z 者两组关系结合在一起就行了</p>
+<pre class="code-block"><code class="hljs">semaphore mutex_y = 1;
+semaphore mutex_z = 1;
+int count = 0;
+semaphore mutex_count = 1;
+</code></pre>
+<pre class="code-block" data-lang="c"><code class="hljs">thread1{
+	
+	P(mutex_count);
+	<span class="hljs-keyword">if</span>(count == <span class="hljs-number">0</span>){
+		P(mutex_y);
+	}
+	count ++;
+	V(mutex_count);
+	
+	w = add(x, y);
+	
+	P(mutex_count);
+	count --;
+	<span class="hljs-keyword">if</span>(count == <span class="hljs-number">0</span>){
+		V(mutex_y);
+	}
+	V(mutex_count);
+
+}
+</code></pre>
+<pre class="code-block" data-lang="c"><code class="hljs">thread2{
+	
+	P(mutex_count);
+	<span class="hljs-keyword">if</span>(count == <span class="hljs-number">0</span>){
+		P(mutex_y);
+	}
+	count ++;
+	V(mutex_count);
+	
+	P(mutex_z);
+	w = add(y, z);
+	V(mutex_z);
+	
+	P(mutex_count);
+	count --;
+	<span class="hljs-keyword">if</span>(count == <span class="hljs-number">0</span>){
+		V(mutex_y);
+	}
+	V(mutex_count);
+
+}
+</code></pre>
+<pre class="code-block" data-lang="c"><code class="hljs">thread3{
+	
+	P(mutex_z);
+	z = add(z, w);
+	V(mutex_x);
+	
+	P(mutex_y);
+	y = add(y, w);
+	V(mutex_y);
+
+}
+</code></pre>
+<p><mark>或者另外一种做法</mark></p>
+<p>单纯用普通的互斥关系来做</p>
+<p>对于变量 x，没有互斥关系</p>
+<p>对于变量 y，线程 1 和线程 2 之间没有互斥，线程 1 和线程 3 之间互斥，线程 2 和线程 3 之间互斥，所以关于这个资源的互斥得有两个互斥变量</p>
+<p>对于变量 z，就是线程 2 和线程 3 之间的互斥</p>
+<p>所以总的来说就建立三个互斥信号量即可</p>
+<pre class="code-block"><code class="hljs">semaphore mutex_13 = 1;
+semaphore mutex_23 = 1;
+semaphore mutex_23z = 1;
+</code></pre>
+<pre class="code-block" data-lang="c"><code class="hljs">thread1(){
+	P(mutex_13);
+	
+	w = add(x, y);
+	
+	V(mutex_13)
+}
+
+thread2(){
+	P(mutex_23);
+	
+	P(mutex_23z);
+	w = add(y, z);
+	V(mutex_23z);
+	
+	V(mutex_23);
+
+}
+
+thread3(){
+	
+	P(mutex_23z);
+	z = add(z, w);
+	V(mutex_23z);
+	
+	P(mutex_13);
+	P(mutex_23);
+	y = add(y, w);
+	V(mutex_23);
+	V(mutex_13);
+	
+}
+
+</code></pre>
+<h3 id="sec-927">2019 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250816143025.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250816143157.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>（1）第一种做法，保证只有 n - 1 个哲学家可以获得拿筷子的资格</mark></p>
+<p>所以设一个 count 变量，作为拿筷子资格资源的存在，其值设为 n - 1</p>
+<p>然后碗资源是另一个资源，你把这个资源加入到这个问题中就行了</p>
+<pre class="code-block"><code class="hljs">semaphore count = n - 1;
+semaphore chopsticks[n] = {1,1,1...1};
+semaphore bowl = m;
+
+process{
+	P(count);
+	P(chopsticks[i]);
+	P(chopsticks[(i + 1)%5]);
+	P(bowl);
+	
+	eat;
+	V(bowl);
+	V(chopsticks[(i + 1)%5]);
+	V(chopsticks[i]);
+	V(count);
+}
+</code></pre>
+<p>或者另一种思考方式，这里将碗可以作为 count 变量来对哲学家进行限制</p>
+<p>不过这里的碗的个数是 m 个，需要对 m 的大小进行一个分类讨论</p>
+<p>如果 m &lt;= n - 1，那此时可以直接将 bowl  = m作为 count 变量来使用，这些哲学家先拿碗再拿筷子，这样就可以保证不会有 n 个哲学家同时拿到左边的筷子了，这里的碗就和上文中的资格是作为相同功能的资源，让这些哲学家先拿碗再拿筷子，同样不会出现 n 个哲学家同时拿到左边筷子的情况死锁出现</p>
+<p>如果 m &gt; n - 1，即 m &gt;= n，那此时碗这个资源在这个题目中就是多余的，反正每个人都可以分配到一个碗，他同步同步互不互斥就是无所谓的，那此时 bowl 这个变量就当作 count 变量来用，设置成 n - 1，退化成了普通的哲学家问题</p>
+<p>将这两种情况综合一下，于是可以将 bowl 变量设置成 min (m, n - 1)，那么无论哪种情况都可以满足了</p>
+<p>这里将碗作为资格的原因主要是哲学家在吃饭的时候一定是碗和筷子同时存在的，同理上文中用资格来限制的时候哲学家在吃饭的时候一定是资格和筷子同时存在的，所以就可以将碗作为资格就可以了</p>
+<h3 id="sec-964">2020 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250821155516.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这是一个非常简单的前后同步问题</p>
+<pre class="code-block"><code class="hljs">semaphore mutex_ac = 0;
+semaphore mutex_bc = 0;
+semaphore mutex_ce = 0;
+semaphore mutex_de = 0;
+
+P1{
+	A
+	V(mutex_ac);
+	
+}
+
+P2{
+	B
+	V(mutex_bc);
+}
+
+P3{
+	P(mutex_ac);
+	P(mutex_bc);
+	C
+	V(mutex_ce);
+}
+
+P4{
+	D
+	V(mutex_de);
+
+}
+
+P5{
+	P(mutex_ce);
+	P(mutex_de);
+	E
+}
+</code></pre>
+<h3 id="sec-974">2021 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250821160322.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-980">2022 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250821160438.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-986">2023 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250821160520.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-992">2024 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250821160554.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-998">2025 年</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251212095716.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>一个互斥关系：甲和乙对铁锹的互斥</p>
+<p>甲可以看成生产者，乙可以看成消费者；甲是生产树坑的生产者，乙是消费树坑的消费者</p>
+<p>因此有两个同步关系：<br>
+（1）存放树坑的空闲资源存在（甲只能生产 3 个树坑）<br>
+（2）树坑资源存在（甲生产树坑，乙消费树坑）</p>
+<p>最后剩下的就是乙和丙的前后同步关系，乙种完树苗之后，丙才能浇水</p>
+<p>所以：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">semaphore mutex = <span class="hljs-number">1</span>;
+semaphore empty = <span class="hljs-number">3</span>;<span class="hljs-comment">//存放树坑的资源，一开始只有3个，类比生产者消费者问题中的empty用于存放生产者生产的产品，这里生产者是甲，产品是树坑</span>
+semaphore pit = <span class="hljs-number">0</span>;<span class="hljs-comment">//树坑资源，甲生产树坑资源，乙消费树坑资源</span>
+semaphore syn = <span class="hljs-number">0</span>;<span class="hljs-comment">//乙和丙的前后同步关系</span>
+
+</code></pre>
+<p>进程甲：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">process 甲
+{
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		<span class="hljs-built_in">wait</span>(empty);<span class="hljs-comment">//消费一个存放树坑的资源</span>
+		<span class="hljs-built_in">wait</span>(mutex);
+		挖坑;
+		<span class="hljs-built_in">signal</span>(mutex);
+		<span class="hljs-built_in">signal</span>(pit);<span class="hljs-comment">//生产树坑</span>
+	}
+}
+</code></pre>
+<p>进程乙：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">process 乙
+{
+	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+		<span class="hljs-built_in">wait</span>(pit);<span class="hljs-comment">//消费一个树坑</span>
+		<span class="hljs-built_in">wait</span>(mutex);
+		放树苗，填坑;
+		<span class="hljs-built_in">signal</span>(empty);<span class="hljs-comment">//生产一个存放树坑的空闲资源</span>
+		<span class="hljs-built_in">signal</span>(mutex);
+		<span class="hljs-built_in">signal</span>(syn);<span class="hljs-comment">//统治丙可以浇水了</span>
+	}
+}
+</code></pre>
+<p>进程丙：</p>
+<pre class="code-block" data-lang="cpp"><code class="hljs">process 丙
+{
+	<span class="hljs-built_in">wait</span>(syn);
+	浇水;
+}
+</code></pre>
+<h3 id="sec-1032">relax 模拟题</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251211192330.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-1038">PV问题写法规范</h2>
+<p>（1）信号量定义必须是 semaphore，并且这个不能当作数字进行 if 语句判断等等<br>
+（2）别忘记了进程内部的 while 循环<br>
+（3）注意看题目是 wait（P 操作） 还是 signal（V 操作）；还是 P 操作和 V 操作</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html"><span class="pager__label">← 上一篇</span><span class="pager__title">MIPS与过程调用</span></a>
+    <a class="pager__item pager__item--next" href="../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html"><span class="pager__label">下一篇 →</span><span class="pager__title">1 计算机系统概述</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h2" href="#sec-0">互斥机制的软件实现</a><a class="margin__link margin__link--h3" href="#sec-3">软件实现的含义以及四个原则含义</a><a class="margin__link margin__link--h3" href="#sec-15">软件实现 - 单标志法</a><a class="margin__link margin__link--h3" href="#sec-39">软件实现 - 双标志先检查法</a><a class="margin__link margin__link--h3" href="#sec-66">软件实现 - 双标志后检查法</a><a class="margin__link margin__link--h3" href="#sec-93">软件实现 - Peterson 算法</a><a class="margin__link margin__link--h2" href="#sec-114">互斥机制的硬件实现</a><a class="margin__link margin__link--h3" href="#sec-126">硬件实现 - 中断屏蔽方法</a><a class="margin__link margin__link--h3" href="#sec-141">硬件实现 - TestAndSet 指令</a><a class="margin__link margin__link--h3" href="#sec-171">硬件实现 - Swap 指令</a><a class="margin__link margin__link--h2" href="#sec-189">锁</a><a class="margin__link margin__link--h3" href="#sec-192">锁是什么？</a><a class="margin__link margin__link--h3" href="#sec-198">锁分为哪两类？</a><a class="margin__link margin__link--h3" href="#sec-204">TSL 指令实现无忙等待锁的例子是什么？</a><a class="margin__link margin__link--h2" href="#sec-211">管程</a><a class="margin__link margin__link--h3" href="#sec-214">管程是什么？</a><a class="margin__link margin__link--h3" href="#sec-220">管程包含哪两个主要的功能？</a><a class="margin__link margin__link--h3" href="#sec-226">管程的组成部分有哪些？</a><a class="margin__link margin__link--h3" href="#sec-235">管程实现消费者生产者同步的例子</a><a class="margin__link margin__link--h2" href="#sec-242">互斥机制的信号量实现</a><a class="margin__link margin__link--h3" href="#sec-245">信号量实现 - 记录型信号量</a><a class="margin__link margin__link--h3" href="#sec-299">记录型信号量实现同步机制</a><a class="margin__link margin__link--h2" href="#sec-341">死锁</a><a class="margin__link margin__link--h3" href="#sec-344">死锁产生的 4 个必要条件是什么？分别是什么含义？</a><a class="margin__link margin__link--h3" href="#sec-353">死锁的三个处理方法是什么？</a><a class="margin__link margin__link--h3" href="#sec-359">预防死锁-破坏互斥资源是什么？</a><a class="margin__link margin__link--h3" href="#sec-365">预防死锁-破坏请求保持条件是什么？</a><a class="margin__link margin__link--h3" href="#sec-374">预防死锁-破坏不可抢占条件是什么？</a><a class="margin__link margin__link--h3" href="#sec-383">预防死锁-破坏循环等待条件是什么？</a><a class="margin__link margin__link--h3" href="#sec-395">避免死锁-安全状态和不安全状态是什么？</a><a class="margin__link margin__link--h3" href="#sec-410">避免死锁 - 银行家算法是什么？</a><a class="margin__link margin__link--h3" href="#sec-434">检测死锁 - 资源分配图是什么？</a><a class="margin__link margin__link--h3" href="#sec-443">检测死锁 - 资源分配图的化简规则是什么？</a><a class="margin__link margin__link--h3" href="#sec-461">解除死锁-三个解除死锁的办法是什么？</a><a class="margin__link margin__link--h2" href="#sec-467">PV 操作分析</a><a class="margin__link margin__link--h3" href="#sec-518">单生产者 - 单消费者，单缓冲，单次取出类问题（最经典的问题）</a><a class="margin__link margin__link--h3" href="#sec-579">双生产者 - 双消费者，单缓冲区，单取出类问题</a><a class="margin__link margin__link--h3" href="#sec-616">双生产者 - 单消费者 - 双缓冲区 - 单次取出类问题</a><a class="margin__link margin__link--h3" href="#sec-658">单生产者-单消费者-单缓冲区-连续取出问题</a><a class="margin__link margin__link--h3" href="#sec-690">读者 - 写者问题（读者优先）</a><a class="margin__link margin__link--h3" href="#sec-739">哲学家进餐问题</a><a class="margin__link margin__link--h3" href="#sec-786">吸烟者问题（轮流关系控制）</a><a class="margin__link margin__link--h2" href="#sec-803">408 真题</a><a class="margin__link margin__link--h3" href="#sec-806">2009 年</a><a class="margin__link margin__link--h3" href="#sec-843">2011 年</a><a class="margin__link margin__link--h3" href="#sec-862">2013 年</a><a class="margin__link margin__link--h3" href="#sec-875">2015 年</a><a class="margin__link margin__link--h3" href="#sec-882">2017 年</a><a class="margin__link margin__link--h3" href="#sec-927">2019 年</a><a class="margin__link margin__link--h3" href="#sec-964">2020 年</a><a class="margin__link margin__link--h3" href="#sec-974">2021 年</a><a class="margin__link margin__link--h3" href="#sec-980">2022 年</a><a class="margin__link margin__link--h3" href="#sec-986">2023 年</a><a class="margin__link margin__link--h3" href="#sec-992">2024 年</a><a class="margin__link margin__link--h3" href="#sec-998">2025 年</a><a class="margin__link margin__link--h3" href="#sec-1032">relax 模拟题</a><a class="margin__link margin__link--h2" href="#sec-1038">PV问题写法规范</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

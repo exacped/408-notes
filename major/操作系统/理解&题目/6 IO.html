@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>梳理 · 22408 备考笔记</title>
+<meta name="description" content="梳理 IO 系统的基本功能 IO 系统的基本功能有哪 6 个？这 6 个分别代表什么含义？ IO 软件的层次结构 IO 软件的层次结构是哪些？ IO 软件指的是什么？ 操作系统关于 IO 部分的软件 IO 软件主要包括哪三个部分？（IO 子">
+<link rel="icon" href="../../../assets/seal.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="page-doc" data-root="../../../" data-note-id="c033">
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="masthead">
+  <a class="brand" href="../../../index.html" aria-label="回到首页">
+    <span class="brand__mark">22408</span>
+    <span class="brand__rule"></span>
+    <span class="brand__name">备考笔记</span>
+  </a>
+  <nav class="nav" aria-label="主导航">
+    <a href="../../../math/index.html">数学</a><a href="../../../major/index.html" class="is-active">专业课</a><a href="../../../exams.html">真题台账</a>
+  </nav>
+  <div class="tools">
+    <button class="tool" id="searchOpen" type="button">检索<kbd>/</kbd></button>
+    <button class="tool" id="nightToggle" type="button" aria-label="切换夜读模式">夜读</button>
+    <button class="tool tool--rail" id="railToggle" type="button">目录</button>
+  </div>
+</header>
+<aside class="rail" id="rail" aria-label="笔记目录">
+  <div class="rail__head">目录<span>148 篇</span></div>
+  <div class="rail__scroll"><section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">壹</span><a href="../../../math/index.html">数学（一）</a><span class="rail-subject__latin">MATHEMATICS</span></div>
+  <details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览与专题</span><em>13</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/%E5%A4%9A%E5%85%83%E5%BE%AE%E5%88%86%E4%B8%80%E4%BA%9B%E9%9A%BE%E7%82%B9%E9%A2%98%E7%9B%AE.html" data-note="m053">
+      <span class="rail-note__no">01</span><span class="rail-note__title">绕晕题目</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%A7%AF%E5%88%86%E5%A4%A7%E8%A7%82.html" data-note="m054">
+      <span class="rail-note__no">02</span><span class="rail-note__title">积分大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%BF%85%E8%83%8C%E7%BB%93%E8%AE%BA.html" data-note="m055">
+      <span class="rail-note__no">03</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95.html" data-note="m056">
+      <span class="rail-note__no">04</span><span class="rail-note__title">高数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%90%86%E8%A7%A3.html" data-note="m057">
+      <span class="rail-note__no">05</span><span class="rail-note__title">数学理解</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E6%98%93%E9%94%99%E7%82%B9.html" data-note="m058">
+      <span class="rail-note__no">06</span><span class="rail-note__title">数学易错点</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%95%B0%E5%AD%A6%E7%9C%9F%E9%A2%98%E5%A4%A7%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m059">
+      <span class="rail-note__no">07</span><span class="rail-note__title">数学真题大题大观</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%B3%95.html" data-note="m060">
+      <span class="rail-note__no">08</span><span class="rail-note__title">微分算子法</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E7%BA%BF%E4%BB%A3%E5%A4%A7%E8%A7%82.html" data-note="m061">
+      <span class="rail-note__no">09</span><span class="rail-note__title">行列式与矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E9%99%90%E6%97%B6%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7.html" data-note="m062">
+      <span class="rail-note__no">10</span><span class="rail-note__title">目的是拿下自己会做的分数</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E5%90%91%E9%87%8F%E6%9C%89%E5%85%B3%E7%9A%84%E7%BB%93%E8%AE%BA%E6%B1%87%E6%80%BB.html" data-note="m063">
+      <span class="rail-note__no">11</span><span class="rail-note__title">向量有关的结论汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E6%9C%89%E7%96%91%E9%97%AE%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m064">
+      <span class="rail-note__no">12</span><span class="rail-note__title">有疑问的东西</span>
+    </a>
+    <a class="rail-note" href="../../../math/%E8%AF%81%E6%98%8E%E9%A2%98%E5%A4%A7%E8%A7%82.html" data-note="m065">
+      <span class="rail-note__no">13</span><span class="rail-note__title">数列极限</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">1 基础</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/1%20%E5%87%BD%E6%95%B0%EF%BC%8C%E6%9E%81%E9%99%90%EF%BC%8C%E8%BF%9E%E7%BB%AD.html" data-note="m001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数，极限，连续</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/2%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/3%20%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元函数积分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/4%20%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">多元函数微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/5%20%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86.html" data-note="m005">
+      <span class="rail-note__no">05</span><span class="rail-note__title">二重积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/6%20%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B.html" data-note="m006">
+      <span class="rail-note__no">06</span><span class="rail-note__title">微分方程</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/7%20%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0.html" data-note="m007">
+      <span class="rail-note__no">07</span><span class="rail-note__title">无穷级数</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/8%20%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E5%92%8C%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95.html" data-note="m008">
+      <span class="rail-note__no">08</span><span class="rail-note__title">向量代数和空间解析几何</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/9%20%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BA%BF%E9%9D%A2%E7%A7%AF%E5%88%86.html" data-note="m009">
+      <span class="rail-note__no">09</span><span class="rail-note__title">三重积分与线面积分</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/10%20%E8%A1%8C%E5%88%97%E5%BC%8F.html" data-note="m010">
+      <span class="rail-note__no">10</span><span class="rail-note__title">行列式</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/11%20%E7%9F%A9%E9%98%B5.html" data-note="m011">
+      <span class="rail-note__no">11</span><span class="rail-note__title">矩阵</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/12%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m012">
+      <span class="rail-note__no">12</span><span class="rail-note__title">线性方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/13%20%E5%90%91%E9%87%8F%E4%B8%8E%E6%96%B9%E7%A8%8B%E7%BB%84.html" data-note="m013">
+      <span class="rail-note__no">13</span><span class="rail-note__title">向量与方程组</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/15%20%E4%BA%8C%E6%AC%A1%E5%9E%8B.html" data-note="m014">
+      <span class="rail-note__no">15</span><span class="rail-note__title">二次型</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/17%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83.html" data-note="m015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">随机变量及其分布</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/18%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81.html" data-note="m016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">随机变量的数字特征</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/19%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E9%97%B4%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B.html" data-note="m017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">大数定律与中间极限定律</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/20%20%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="m018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">数理统计的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E5%A4%8D%E7%9B%98%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB.html" data-note="m019">
+      <span class="rail-note__no">19</span><span class="rail-note__title">复盘题目汇总</span>
+    </a>
+    <a class="rail-note" href="../../../math/1%20%E5%9F%BA%E7%A1%80/%E6%98%93%E9%94%99%E7%82%B9%20%26%26%20%E9%9C%80%E8%A6%81%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%9C%E8%A5%BF.html" data-note="m020">
+      <span class="rail-note__no">20</span><span class="rail-note__title">易错点 &amp;&amp; 需要理解的东西</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">2 强化</span><em>3</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/1%20%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90.html" data-note="m021">
+      <span class="rail-note__no">01</span><span class="rail-note__title">函数与极限</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/2%20%E4%B8%80%E5%85%83%E5%BE%AE%E5%88%86%E5%AD%A6.html" data-note="m022">
+      <span class="rail-note__no">02</span><span class="rail-note__title">一元微分学</span>
+    </a>
+    <a class="rail-note" href="../../../math/2%20%E5%BC%BA%E5%8C%96/3%20%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6.html" data-note="m023">
+      <span class="rail-note__no">03</span><span class="rail-note__title">一元积分学</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">3 真题&amp;模拟</span><em>29</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2011%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m024">
+      <span class="rail-note__no">01</span><span class="rail-note__title">2011年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2013%E5%B9%B4%E5%A4%A7%E9%A2%98%EF%BC%88%E6%9C%AA%E8%AE%A1%E6%97%B6.html" data-note="m025">
+      <span class="rail-note__no">02</span><span class="rail-note__title">2013年大题（未计时</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2018%E5%B9%B4%EF%BC%882h30min%EF%BC%8C114%EF%BC%89.html" data-note="m026">
+      <span class="rail-note__no">03</span><span class="rail-note__title">2018年（2h30min，114）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2019%E5%B9%B4%EF%BC%882h30min%EF%BC%8C95%EF%BC%89.html" data-note="m027">
+      <span class="rail-note__no">04</span><span class="rail-note__title">2019年（2h30min，95）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2021%E5%B9%B4%EF%BC%88143min%EF%BC%8C130%EF%BC%89.html" data-note="m028">
+      <span class="rail-note__no">05</span><span class="rail-note__title">2021年（143min，130）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2022%E5%B9%B4%EF%BC%88150min%EF%BC%8C100%EF%BC%89.html" data-note="m029">
+      <span class="rail-note__no">06</span><span class="rail-note__title">2022年（150min，100）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2023%E5%B9%B4%EF%BC%88149min%EF%BC%8C120%EF%BC%89.html" data-note="m030">
+      <span class="rail-note__no">07</span><span class="rail-note__title">2023年（149min，120）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2024%E5%B9%B4%EF%BC%88150min%EF%BC%8C96%EF%BC%89.html" data-note="m031">
+      <span class="rail-note__no">08</span><span class="rail-note__title">2024年（150min，96）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/2025%E5%B9%B4%EF%BC%88150min%EF%BC%8C108%EF%BC%89(%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA%E6%80%9D%E6%83%B3%EF%BC%89.html" data-note="m032">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2025年（150min，108）(分类讨论思想）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%974%20-%202%EF%BC%8880min%EF%BC%8C70%EF%BC%89.html" data-note="m033">
+      <span class="rail-note__no">10</span><span class="rail-note__title">李林4 - 2（80min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-1%EF%BC%88180min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF.html" data-note="m034">
+      <span class="rail-note__no">11</span><span class="rail-note__title">李林6-1（180min，依托西</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-5.html" data-note="m035">
+      <span class="rail-note__no">12</span><span class="rail-note__title">李林6-5</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%976-6%EF%BC%8880min%EF%BC%8C75%EF%BC%89.html" data-note="m036">
+      <span class="rail-note__no">13</span><span class="rail-note__title">李林6-6（80min，75）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E6%9E%97%E7%B2%BE%E9%80%891%EF%BC%882h52min%EF%BC%8C125%EF%BC%89.html" data-note="m037">
+      <span class="rail-note__no">14</span><span class="rail-note__title">李林精选1（2h52min，125）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E6%9D%8E%E5%9B%9B-1.html" data-note="m038">
+      <span class="rail-note__no">15</span><span class="rail-note__title">李四-1</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A1-%EF%BC%8885min%20-%2070%EF%BC%89.html" data-note="m039">
+      <span class="rail-note__no">16</span><span class="rail-note__title">选填模拟-25超越1-（85min - 70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A2%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m040">
+      <span class="rail-note__no">17</span><span class="rail-note__title">选填模拟-25超越2（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A3-%EF%BC%8880min%EF%BC%8C60%EF%BC%89.html" data-note="m041">
+      <span class="rail-note__no">18</span><span class="rail-note__title">选填模拟-25超越3-（80min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A4-%EF%BC%8885min%EF%BC%8C50%EF%BC%89.html" data-note="m042">
+      <span class="rail-note__no">19</span><span class="rail-note__title">选填模拟-25超越4-（85min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A5-(85min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m043">
+      <span class="rail-note__no">20</span><span class="rail-note__title">选填模拟-25超越5-(85min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A6%20-%EF%BC%8890min%EF%BC%8C70%EF%BC%89.html" data-note="m044">
+      <span class="rail-note__no">21</span><span class="rail-note__title">选填模拟-25超越6 -（90min，70）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A7-%EF%BC%8885min%EF%BC%8C55%EF%BC%89.html" data-note="m045">
+      <span class="rail-note__no">22</span><span class="rail-note__title">选填模拟-25超越7-（85min，55）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-25%E8%B6%85%E8%B6%8A8-(80min%2C%2065).html" data-note="m046">
+      <span class="rail-note__no">23</span><span class="rail-note__title">选填模拟-25超越8-(80min, 65)</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A1-%EF%BC%8880min%EF%BC%8C50%EF%BC%89.html" data-note="m047">
+      <span class="rail-note__no">24</span><span class="rail-note__title">选填模拟-26超越1-（80min，50）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A6%20%EF%BC%8890min%EF%BC%8C%E4%BE%9D%E6%89%98%E8%A5%BF%EF%BC%89.html" data-note="m048">
+      <span class="rail-note__no">25</span><span class="rail-note__title">选填模拟-26超越6 （90min，依托西）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E8%B6%85%E8%B6%8A8-%EF%BC%8885min-65%EF%BC%89.html" data-note="m049">
+      <span class="rail-note__no">26</span><span class="rail-note__title">选填模拟-26超越8-（85min-65）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-2%EF%BC%8880min%EF%BC%8C80%EF%BC%89.html" data-note="m050">
+      <span class="rail-note__no">27</span><span class="rail-note__title">选填模拟-26李林6-2（80min，80）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-3%20(90min%EF%BC%8C60%EF%BC%89.html" data-note="m051">
+      <span class="rail-note__no">28</span><span class="rail-note__title">选填模拟-26李林6-3 (90min，60）</span>
+    </a>
+    <a class="rail-note" href="../../../math/3%20%E7%9C%9F%E9%A2%98%26%E6%A8%A1%E6%8B%9F/%E9%80%89%E5%A1%AB%E6%A8%A1%E6%8B%9F-26%E6%9D%8E%E6%9E%976-4.html" data-note="m052">
+      <span class="rail-note__no">29</span><span class="rail-note__title">选填模拟-26李林6-4</span>
+    </a>
+  </div>
+</details>
+</section>
+<section class="rail-subject">
+  <div class="rail-subject__head"><span class="rail-subject__numeral">贰</span><a href="../../../major/index.html">专业课 408</a><span class="rail-subject__latin">COMPUTER SCIENCE</span></div>
+  <details class="rail-sec">
+  <summary><span class="rail-sec__idx">01</span><span class="rail-sec__name">总览</span><em>2</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.html" data-note="c062">
+      <span class="rail-note__no">01</span><span class="rail-note__title">模拟查漏补缺</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E4%B8%93%E4%B8%9A%E8%AF%BE%E6%98%93%E9%94%99%E7%82%B9.html" data-note="c083">
+      <span class="rail-note__no">02</span><span class="rail-note__title">专业课易错点</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">02</span><span class="rail-sec__name">408强化与真题</span><em>27</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%B9%98%E9%99%A4%E6%B3%95%E5%8F%8A%E5%85%B6%E7%A1%AC%E4%BB%B6%E5%8E%9F%E7%90%86.html" data-note="c001">
+      <span class="rail-note__no">01</span><span class="rail-note__title">乘除法及其硬件原理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E4%BB%A3%E7%A0%81%E6%B1%87%E6%80%BB.html" data-note="c002">
+      <span class="rail-note__no">02</span><span class="rail-note__title">答题规范</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E9%94%AE%E7%9B%98%E8%B0%83%E7%94%A8%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%88IO%E4%B8%8E%E4%B8%AD%E6%96%AD%E5%85%A8%E6%B5%81%E7%A8%8B%EF%BC%89.html" data-note="c003">
+      <span class="rail-note__no">03</span><span class="rail-note__title">键盘调用全流程（IO与中断全流程）</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%B5%81%E6%B0%B4%E7%BA%BF.html" data-note="c004">
+      <span class="rail-note__no">04</span><span class="rail-note__title">数据通路与流水线</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/MIPS%E4%B8%8E%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8.html" data-note="c026">
+      <span class="rail-note__no">05</span><span class="rail-note__title">MIPS与过程调用</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/PV%E6%93%8D%E4%BD%9C%20%26%20%E6%AD%BB%E9%94%81.html" data-note="c027">
+      <span class="rail-note__no">06</span><span class="rail-note__title">PV操作 &amp; 死锁</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/408%E5%A4%A7%E9%A2%98%E5%A4%84%E7%90%86%E6%B1%87%E6%80%BB.html" data-note="c005">
+      <span class="rail-note__no">07</span><span class="rail-note__title">408大题处理汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2009%E5%B9%B4.html" data-note="c006">
+      <span class="rail-note__no">08</span><span class="rail-note__title">知识速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2010%E5%B9%B4.html" data-note="c007">
+      <span class="rail-note__no">09</span><span class="rail-note__title">知识点速查</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2011%E5%B9%B4.html" data-note="c008">
+      <span class="rail-note__no">10</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2012%E5%B9%B4.html" data-note="c009">
+      <span class="rail-note__no">11</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2013%E5%B9%B4.html" data-note="c010">
+      <span class="rail-note__no">12</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2014%E5%B9%B4.html" data-note="c011">
+      <span class="rail-note__no">13</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2015%E5%B9%B4.html" data-note="c012">
+      <span class="rail-note__no">14</span><span class="rail-note__title">DS</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2016%E5%B9%B4.html" data-note="c013">
+      <span class="rail-note__no">15</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2017%E5%B9%B4.html" data-note="c014">
+      <span class="rail-note__no">16</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2018%E5%B9%B4.html" data-note="c015">
+      <span class="rail-note__no">17</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2019%E5%B9%B4.html" data-note="c016">
+      <span class="rail-note__no">18</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2020%E5%B9%B4.html" data-note="c017">
+      <span class="rail-note__no">19</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2021%E5%B9%B4.html" data-note="c018">
+      <span class="rail-note__no">20</span><span class="rail-note__title">知识梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2022%E5%B9%B4.html" data-note="c019">
+      <span class="rail-note__no">21</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2023%E5%B9%B4.html" data-note="c020">
+      <span class="rail-note__no">22</span><span class="rail-note__title">知识点梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2024%E5%B9%B4.html" data-note="c021">
+      <span class="rail-note__no">23</span><span class="rail-note__title">2024年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/2025%E5%B9%B4.html" data-note="c022">
+      <span class="rail-note__no">24</span><span class="rail-note__title">2025年</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98DS.html" data-note="c023">
+      <span class="rail-note__no">25</span><span class="rail-note__title">绪论</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98OS.html" data-note="c024">
+      <span class="rail-note__no">26</span><span class="rail-note__title">虚拟存储</span>
+    </a>
+    <a class="rail-note" href="../../../major/408%E5%BC%BA%E5%8C%96%E4%B8%8E%E7%9C%9F%E9%A2%98/%E7%9C%9F%E9%A2%98/relax%E6%A8%A1%E6%8B%9F%E9%A2%98.html" data-note="c025">
+      <span class="rail-note__no">27</span><span class="rail-note__title">知识梳理</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec" open>
+  <summary><span class="rail-sec__idx">03</span><span class="rail-sec__name">操作系统</span><em>7</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c028">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.html" data-note="c029">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html" data-note="c030">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.html" data-note="c031">
+      <span class="rail-note__no">04</span><span class="rail-note__title">虚拟内存</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html" data-note="c032">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note is-active" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20IO.html" data-note="c033">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html" data-note="c034">
+      <span class="rail-note__no">07</span><span class="rail-note__title">哈工大OS笔记</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">04</span><span class="rail-sec__name">计网</span><em>4</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%83%A1%E7%A7%91%E5%A4%A7%E7%AC%94%E8%AE%B0.html" data-note="c035">
+      <span class="rail-note__no">01</span><span class="rail-note__title">计算机网络胡科大笔记</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%90%84%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AF%A6%E8%A7%A3.html" data-note="c036">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.html" data-note="c037">
+      <span class="rail-note__no">03</span><span class="rail-note__title">计网每日一题</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96%E7%AC%94%E8%AE%B0.html" data-note="c038">
+      <span class="rail-note__no">01</span><span class="rail-note__title">概述</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">05</span><span class="rail-sec__name">计组</span><em>23</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.html" data-note="c039">
+      <span class="rail-note__no">01</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/2%20%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c040">
+      <span class="rail-note__no">02</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/3%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.html" data-note="c041">
+      <span class="rail-note__no">03</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/4%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c042">
+      <span class="rail-note__no">04</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/5%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c043">
+      <span class="rail-note__no">05</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/6%20%E6%80%BB%E7%BA%BF.html" data-note="c044">
+      <span class="rail-note__no">06</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/7%20IO%E4%B8%8E%E4%B8%AD%E6%96%AD.html" data-note="c045">
+      <span class="rail-note__no">07</span><span class="rail-note__title">梳理</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/%E7%90%86%E8%A7%A3%20%26%20%E9%A2%98%E7%9B%AE/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E6%80%AA%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93.html" data-note="c046">
+      <span class="rail-note__no">08</span><span class="rail-note__title">C语言中的奇怪操作总结</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/2%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c047">
+      <span class="rail-note__no">09</span><span class="rail-note__title">2-指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/3%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c048">
+      <span class="rail-note__no">10</span><span class="rail-note__title">第三章 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/4%20%E6%80%BB%E7%BA%BF%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F.html" data-note="c049">
+      <span class="rail-note__no">11</span><span class="rail-note__title">第四章 - 总线与输入/输出系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/5%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97.html" data-note="c050">
+      <span class="rail-note__no">12</span><span class="rail-note__title">数据表示</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/6%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c051">
+      <span class="rail-note__no">13</span><span class="rail-note__title">分散互联CPU</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/7%20%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.html" data-note="c052">
+      <span class="rail-note__no">07</span><span class="rail-note__title">微程序控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%20%E7%AC%94%E8%AE%B0/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95%E4%B8%9C%E8%A5%BF.html" data-note="c053">
+      <span class="rail-note__no">15</span><span class="rail-note__title">一些记录东西</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/1%20%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6.html" data-note="c054">
+      <span class="rail-note__no">01</span><span class="rail-note__title">第一章习题 - 基本框架</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/2%20%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F.html" data-note="c055">
+      <span class="rail-note__no">17</span><span class="rail-note__title">第二章习题 - 指令系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/3%20%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E5%AD%98%E5%82%A8%E5%99%A8.html" data-note="c056">
+      <span class="rail-note__no">18</span><span class="rail-note__title">第三章习题 - 存储器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/4%20%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F.html" data-note="c057">
+      <span class="rail-note__no">19</span><span class="rail-note__title">第四章习题-总线与IO系统</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/5%20%E7%AC%AC%E4%BA%94%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97.html" data-note="c058">
+      <span class="rail-note__no">05</span><span class="rail-note__title">第五章习题 - 数据表示与运算</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/6%20%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8.html" data-note="c059">
+      <span class="rail-note__no">06</span><span class="rail-note__title">第六章习题 - 中央处理器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/7%20%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%20-%20%E6%8E%A7%E5%88%B6%E5%99%A8.html" data-note="c060">
+      <span class="rail-note__no">07</span><span class="rail-note__title">控制器</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E8%AE%A1%E7%BB%84/XJTU%E4%B9%A0%E9%A2%98/%E7%AE%80%E7%AD%94%E9%A2%98%20%26%20%E8%AE%A1%E7%AE%97%E9%A2%98.html" data-note="c061">
+      <span class="rail-note__no">23</span><span class="rail-note__title">简答题</span>
+    </a>
+  </div>
+</details>
+<details class="rail-sec">
+  <summary><span class="rail-sec__idx">06</span><span class="rail-sec__name">数据结构</span><em>20</em></summary>
+  <div class="rail-list">
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/1%20%E5%A4%8D%E6%9D%82%E5%BA%A6.html" data-note="c063">
+      <span class="rail-note__no">1.2</span><span class="rail-note__title">算法和算法评价</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/2%20%E7%BA%BF%E6%80%A7%E8%A1%A8.html" data-note="c064">
+      <span class="rail-note__no">02</span><span class="rail-note__title">第二章习题顺序表和链表</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/3%20%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97%EF%BC%8C%E6%95%B0%E7%BB%84.html" data-note="c065">
+      <span class="rail-note__no">03</span><span class="rail-note__title">栈，队列，数组</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/4%20%E4%B8%B2.html" data-note="c066">
+      <span class="rail-note__no">04</span><span class="rail-note__title">串</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%A0%91.html" data-note="c067">
+      <span class="rail-note__no">05</span><span class="rail-note__title">题目</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/6%20%E5%9B%BE.html" data-note="c068">
+      <span class="rail-note__no">06</span><span class="rail-note__title">图的存储和基本操作</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/7%20%E6%9F%A5%E6%89%BE.html" data-note="c069">
+      <span class="rail-note__no">07</span><span class="rail-note__title">查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/8%20%E6%8E%92%E5%BA%8F.html" data-note="c070">
+      <span class="rail-note__no">08</span><span class="rail-note__title">排序</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BF%AB%E9%80%9F%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2.html" data-note="c071">
+      <span class="rail-note__no">09</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/DS%E5%BC%BA%E5%8C%96%E5%A4%8D%E4%B9%A0.html" data-note="c072">
+      <span class="rail-note__no">10</span><span class="rail-note__title">复杂度</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DS%20%E4%BB%A3%E7%A0%81%E5%92%8CC%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB.html" data-note="c082">
+      <span class="rail-note__no">11</span><span class="rail-note__title">DS 代码和C语言汇总</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE.html" data-note="c073">
+      <span class="rail-note__no">12</span><span class="rail-note__title">查找 - 基本概念与顺序查找</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F.html" data-note="c074">
+      <span class="rail-note__no">13</span><span class="rail-note__title">十种排序算法</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%20%E6%8E%92%E5%BA%8F%E4%B8%8E%E8%BF%9B%E4%BD%8D%E5%88%B6.html" data-note="c075">
+      <span class="rail-note__no">14</span><span class="rail-note__title">数据结构笔记（1）- 排序与进位制</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%20%E9%93%BE%E8%A1%A8%EF%BC%8C%E6%97%A5%E6%9C%9F.html" data-note="c076">
+      <span class="rail-note__no">15</span><span class="rail-note__title">数据结构（2）- 链表，日期</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%20%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97.html" data-note="c077">
+      <span class="rail-note__no">16</span><span class="rail-note__title">数据结构（3）- 栈与队列</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html" data-note="c078">
+      <span class="rail-note__no">17</span><span class="rail-note__title">数据结构（4）树的基本概念</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%A0%91.html" data-note="c079">
+      <span class="rail-note__no">18</span><span class="rail-note__title">数据结构（5）：二叉排序树和平衡树</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89%EF%BC%9AHuffman%E6%A0%91%E5%92%8CHuffman%E7%BC%96%E7%A0%81.html" data-note="c080">
+      <span class="rail-note__no">19</span><span class="rail-note__title">数据结构（6）：Huffman树和Huffman编码</span>
+    </a>
+    <a class="rail-note" href="../../../major/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA.html" data-note="c081">
+      <span class="rail-note__no">20</span><span class="rail-note__title">图的基本概念</span>
+    </a>
+  </div>
+</details>
+</section></div>
+</aside>
+<div class="rail-scrim" id="railScrim"></div>
+<main class="paper paper--doc">
+  <div class="doc">
+    <div class="crumb"><a href="../../../major/index.html">专业课 408</a><i>/</i><span>操作系统</span><i>/</i><span class="crumb__no">06</span></div>
+    <h1 class="doc__title">梳理</h1>
+    <div class="doc__meta"><span>2 万字</span><span>约 48 分钟</span><span>2026-07-29</span><span class="doc__state" id="readState"></span></div>
+    <article class="prose" id="prose">
+<h2 id="sec-3">IO 系统的基本功能</h2>
+<h3 id="sec-6">IO 系统的基本功能有哪 6 个？这 6 个分别代表什么含义？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926164839.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-12">IO 软件的层次结构</h2>
+<h3 id="sec-15">IO 软件的层次结构是哪些？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926164938.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-21">IO 软件指的是什么？</h3>
+<p>操作系统关于 IO 部分的软件</p>
+<h3 id="sec-27">IO 软件主要包括哪三个部分？（IO 子系统哪三个部分？）</h3>
+<p>其实就是 IO 软件层次的中间三层：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926165001.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-36">用户层软件部分</h2>
+<h3 id="sec-39">用户层软件的功能有哪些？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251216103005.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-45">假脱机中的输入井和输出井是什么？分别有什么作用？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926165715.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）这两个都是磁盘上开辟的两个存储区域<br>
+（2）输入井：收容 IO 设备输入的数据，数据流动： IO-&gt;内存-&gt;输入井-&gt;内存<br>
+（3）输出井：收容用户程序输出数据，数据流动：内存-&gt;输出井-&gt;内存-&gt;IO</p>
+<h3 id="sec-54">假脱机中输入缓冲区和输出缓冲区是什么？他们在什么位置？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926170253.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）都是内存中的区域<br>
+（2）一个负责外设之间数据交换，一个负责 CPU 和磁盘之间的数据交换</p>
+<h3 id="sec-63">假脱机中的输入进程和输出进程分别有什么功能？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926170456.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）输入进程（预输入进程），将数据从输入设备送到内存输入缓冲区再到输入井<br>
+（2）输出进程（缓输出进程），将数据输出井送到内存输出缓冲区再送到输出设备</p>
+<h3 id="sec-72">假脱机中的井管理程序负责什么功能？</h3>
+<p>负责进程与输入和输出井的数据交换，OS 通过执行井管理程序来完成进程的数据放到输出井，或者将输入井中的数据读入到进程，当然这个过程都需要经过内存</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926170712.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-81">假脱机中输入进程和输出进程在输入和输出过程中控制的数据流动方向是什么？</h3>
+<p>磁盘和外设之间的信息交换需要经过内存，这点记住即可</p>
+<h3 id="sec-87">假脱机中输入井和输出井中的数据组织方式是怎样的？</h3>
+<p>一般以文件的方式进行组织，称为井文件</p>
+<h3 id="sec-93">SPOOLing 有什么特点？</h3>
+<p>（1）提高了 IO 速度<br>
+（2）将独占的设备改成了共享的设备，实现了设备虚拟功能<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926171256.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-99">假脱机打印机系统由哪些部分组成？分别表示什么功能？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926172214.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）磁盘缓冲区，暂存所有用户的数据<br>
+（2）打印缓冲区，暂存由磁盘送来的数据，交给设备打印，用于处理速度问题<br>
+（3）假脱机管理进程，为每个用户创建假脱机文件，放到文件队列<br>
+（4）假脱机打印进程，从文件队列中取出文件，然后从磁盘找到用户数据（输出井），交给打印机打印</p>
+<h3 id="sec-108">假脱机打印机系统打印的过程是什么？</h3>
+<p>（1）进程提交打印数据，假脱机管理程序在输出井（磁盘）中暂存数据<br>
+（2）假脱机管理进程创建一个请求表放到打印队列中，此时用户认为完成，自己可以干别的事情了<br>
+（3）假脱机打印进程从队列中取出申请表，从输出井中取出数据到内存，然后放到 IO 进行打印</p>
+<p>首先，进程提交打印的数据，然后假脱机管理进程在磁盘中申请空闲盘块暂存数据：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926172314.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>接着，假脱机管理进程会申请一个用户请求打印表，放在内存的假脱机文件队列中：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926172543.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>此时用户认为自己已经打印完成，然后进程就可以去干别的事情了：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926172618.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>对于用户而言，它认为到达输出井就已经完成了，后续的操作是假脱机打印进程从文件队列摘下请求打印表，然后打印数据：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926172803.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h2 id="sec-138">应用程序接口</h2>
+<h3 id="sec-141">块设备接口是什么？</h3>
+<p>这个接口位于用户程序之下以及子程序之上：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926173231.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-150">块设备是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926173448.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-156">流设备接口是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926181711.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-162">流设备是什么？（字符设备）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926181915.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-168">块设备接口和流设备接口可以看成什么？</h3>
+<p>其实就可以看作是特殊的系统调用，块设备接口就是块设备管理软件提供给高层使用的操控块设备的 API，比如可以理解为 read () 和 write () 以及 seek () 这一类的系统调用</p>
+<p>流设备接口就是流设备管理层软件提供给上层使用的 API</p>
+<h2 id="sec-177">设备独立性软件部分</h2>
+<h3 id="sec-180">设备独立性软件（无关性软件）的含义是什么？</h3>
+<p>意思是这里的软件与外设具体的实现是无关的</p>
+<h3 id="sec-186">设备独立性软件主要负责哪些功能？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926182350.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-192">外设的逻辑设备名是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926182127.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250818192441.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果是物理设备名，那么进程在打印的时候只会指定一个具体的物理设备，如果采用逻辑设备名，那么一堆打印机都可以对应这个逻辑设备名，然后由设备独立性软件给进程分配一个空闲的打印机，这样进程就不必阻塞了</p>
+<p>（1）其实就是 OS 指定给用户的一个名字，可以是文件名<br>
+（2）这个文件名可以对应不同的实际物理打印机，由 OS 决定将哪一个分配给用户<br>
+（3）这样可以让设备得到充分的利用</p>
+<h3 id="sec-207">IO 重定向是指什么？</h3>
+<p>这也是设备独立性软件实现的功能，它通过修改逻辑设备表，可以让进程的输出到另一个外设中</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926182309.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-216">逻辑设备表是指什么？</h3>
+<p>这是完成逻辑设备名到物理设备名转换的一个表</p>
+<h3 id="sec-222">设备分配分别有哪些表？</h3>
+<p>SDT：<br>
+（1）记录所有设备的情况，每个设备对应一个表目<br>
+（2）表目中有设备的 DCT 表地址和驱动程序入口</p>
+<p>DCT：<br>
+用来记录设备的各种状态的表</p>
+<p>COCT：<br>
+用来记录控制器各种状态的表</p>
+<h3 id="sec-234">分配设备的具体过程是什么？如何使用 SDT, DCT, COCT 这三个表的？（使用物理设备名，没有引入逻辑设备名的时候）</h3>
+<p>（1）利用物理设备名查找 SDT 表，找到对应的表项，以及表项中的 DCT 表地址<br>
+（2）查设备的 DCT 表，如果设备忙，则将进程的 PCB 插入到队列中等待，如果空闲则进行安全性检查<br>
+（3）如果通过了安全性检查，则根据 DCT 表找到 COCT 表，看一下控制器的状态<br>
+（4）如果控制器空闲，则会分配控制器，然后分配通道，整个设备分配完成</p>
+<p>首先，根据设备的物理设备名查找 SDT 表，找到这个设备对应的表项：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926183017.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>从这个表项中找到 DCT 的位置，然后去找这个设备所对应的 DCT 表，检查这个设备的各种状态：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926183113.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果设备忙，则将这个进程的 PCB 插入到设备队列中，如果不忙，则进行安全性检查</p>
+<p>如果通过了安全性检查，可以分配设备，则此时还有去检查一下控制设备的控制器表。来检查一下控制器的各种状态</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926183321.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>当然，其实还有一个通道表，但是大纲已删，后续如果控制器空闲则会分配控制器，然后去查看通道表，如果通道表空闲则会分配通道，这样才算整个设备分配完成</p>
+<h3 id="sec-264">使用的如果是逻辑设备名，是怎么查找 SDT 表的？</h3>
+<p>如果使用的是逻辑设备名，则会根据 SDT 表项中的设备类字段，找所有同类的设备，查好几个表目，看哪一个设备空闲</p>
+<h3 id="sec-270">逻辑设备表 LUT 建立表目的时机是什么？LUT 的一个表目内容是什么？表目有什么作用？</h3>
+<p>在使用逻辑设备名分配 IO 设备的时候会创建一个表目，记录逻辑设备与物理设备名的对应关系</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926183846.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>一个表目的内容就是逻辑设备名，物理设备名，还有驱动入口地址；这里表目的作用主要是记录当前进程用的是哪一个物理设备名，那么下一次进程再利用逻辑设备名请求 IO 的时候，就不是重新分配一个同类的设备了，而是继续使用这个设备</p>
+<p>（1）使用逻辑设备名分配 IO 设备的时候创建一个表目，记录逻辑设备和物理设备的对应关系<br>
+（2）包括逻辑设备名，物理设备名，驱动程序入口地址</p>
+<h3 id="sec-285">两种设置 LUT 表的方式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926184026.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）整个系统设置一张 LUT 表，此时用户使用逻辑设备名不能重复<br>
+（2）每个用户使用一张 LUT 表，放入进程PCB 中</p>
+<h2 id="sec-294">设备独立性软件部分-缓冲区</h2>
+<h3 id="sec-297">引入缓冲区的目的是什么？</h3>
+<p>（1）解决两者速度不匹配的问题</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926184123.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果生产者的生产速度比消费者快，在没有引入缓冲区之前生产者生产完数据之后必须等待消费者消费才能继续生产；但是引入缓冲区之后生产者可以直接将数据放到缓冲区，然后生产者就可以继续生产东西，这样就解决了两者速度不匹配带来的效率底下的问题</p>
+<h3 id="sec-309">缓冲区问题中的 C，M, T 分别是什么？</h3>
+<p>C 是 CPU 处理数据的时间</p>
+<p>M 是从缓冲区移动数据到 CPU 的时间</p>
+<p>T 是从 IO 设备传递数据到缓冲区的时间</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250811143406.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-324">单缓冲区</h3>
+<p>（1）C 和 T 进行比较<br>
+（2）稳定情况下 M + Max (C, T) 就会完成一块数据处理</p>
+<h3 id="sec-330">双缓冲区</h3>
+<p>（1）M + C 和 T 进行比较<br>
+（2）稳定情况下 Max (M + C, T) 就会完成一块数据处理</p>
+<p>以上两种</p>
+<h3 id="sec-339">例题</h3>
+<h4 id="sec-342">1</h4>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251215094243.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里说明进程总能取到 IO 的设备，因此缓冲区几乎无效了，反而会导致 IO 过缓 buffer 溢出</p>
+<h4 id="sec-351">2</h4>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251215094408.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>B 正确</p>
+<p>这里在思考最后一块的时候可以通过观察 T 有多少个从而知道后续不用再进行 T 了</p>
+<h4 id="sec-363">3</h4>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251215094421.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>C 正确</p>
+<p>单缓冲</p>
+<h2 id="sec-375">设备驱动程序部分</h2>
+<h3 id="sec-378">设备驱动程序是什么？</h3>
+<p>其实就是控制外设的程序，它负责将上层软件发过来的命令和参数转换成硬件可以懂得具体要求，然后检查 IO 是否合法，然后利用控制器去控制硬件</p>
+<h3 id="sec-384">设备驱动程序的功能有哪些？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926195355.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）简而言之，所有与硬件直接相关的操作，都由驱动程序完成<br>
+（2）逻辑地址转换成物理地址<br>
+（3）了解 IO 设备状态<br>
+（4）发出 IO 命令<br>
+（5）响应中断请求，调度响应中断处理程序处理</p>
+<h3 id="sec-393">设备驱动程序的特点有哪些？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926195625.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>设备驱动程序跟管理硬件非常紧密，但是不会直接管理硬件，而是通过中间的控制器来控制管理硬件</p>
+<p>（1）实现在设备无关性软件和控制器之间通信的程序<br>
+（2）与 IO 硬件和控制方式联系紧密<br>
+（3）一部分必须由汇编语言编写<br>
+（4）允许可重入</p>
+<h3 id="sec-405">设备驱动程序可重入的含义是什么？</h3>
+<p>（1）意思是可以允许多个进程同时安全调用设备驱动程序<br>
+（2）驱动程序的执行结果不会因为被打断而发生错误</p>
+<h2 id="sec-411">硬件部分 - IO 接口</h2>
+<h3 id="sec-414">IO 的基本职能有哪些？（4 个）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921114422.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-420">IO 接口（设备控制器）是什么？</h3>
+<p>其实就是设备控制器，位于 CPU 和外设之间</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926195838.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-429">IO 接口的通用结构是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921114604.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-435">数据缓冲寄存器和状态/控制寄存器的功能是是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921115424.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）数据寄存器用来与主存和 CPU 传送数据<br>
+（2）状态寄存器用于存放来自 CPU 的控制命令（命令字），这个同样用数据总线进行传输</p>
+<h3 id="sec-444">连接 IO 接口的地址线的作用是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250921115606.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>当 IO 准备好了数据之后放在了数据缓冲寄存器中，然后 CPU 发出地址线读取数据缓冲寄存器中某个寄存器地址中的数据</p>
+<h3 id="sec-453">CPU 如何根据 IO 接口控制外设?</h3>
+<p>控制逻辑，用于实现对设备的控制，CPU 通过数据线将命令传到控制寄存器，通过地址线转到 IO 接口，控制逻辑对地址进行译码，根据命令来控制外设</p>
+<h3 id="sec-459">IO 接口的两种模式，阻塞 IO 和非阻塞 IO 分别是什么含义？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926200015.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-465">IO 端口是指什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926200026.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-471">IO 端口有哪三类？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926200043.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>控制和状态寄存器可以混用</p>
+<h3 id="sec-480">IO 端口有哪两种编址方式？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926200102.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-486">IO 端口的独立编址模式是什么？与主存的编址有什么区别？如何使用 IO 端口的独立编址？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926200155.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这种编址方式使用的是与主存不同的两个地址空间，通过特殊的指令来访问 IO 端口</p>
+<p>这种编址方式 IO 端口地址可以与主存中某个存储单元的地址一样，但是用 IO 指令使用的这个指令访问的是 IO 端口</p>
+<h3 id="sec-498">IO 端口的统一编址是什么？与主存的编址有什么联系？如何区分是主存地址还是 IO 地址？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926200247.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-504">一个完整的 IO 软件系统调度过程是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250819203358.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>如果一个用户想要读外设的内容，他会首先进行一个系统调用 read ()，然后到达了设备独立性软件层次，这个层次会解析用户的 IO 请求，同时设备独立性软件层会根据用户使用的逻辑号会映射到不同的物理设备，当然独立性软件部分还负责保护，分块，以及缓冲等功能，这里的分块是指独立性软件会将用户传递的数据（比如用户使用了write 调用）数据进行逻辑分块来对应磁盘中的一个块，比如 8 KB 的数据会被分成两个 4 KB 的逻辑块（磁盘一个块是 4 KB）</p>
+<p>设备独立性软件解析完这个命令之后继续往下传递，设备驱动程序会将上层传下的抽象的 IO 请求进一步转化成硬件看懂的命令，比如将用户要读的磁盘的地址转化成切实的哪个盘面，哪个磁道等等，总的来说就是设备驱动程序会将上层命令解析成硬件（IO 接口）可以看懂的命令</p>
+<p>驱动程序会继续将命令往下传递，具体来说，驱动程序会调动中断处理程序</p>
+<p>再到中断处理程序，这个部分严格来说与设备驱动程序很难分开，以中断方式控制传递数据为例，进行中断响应，切换 CPU 状态，然后保护现场之后，通过一些特殊的 IO 指令控制控制器，开启 IO 让其准备数据，并阻塞当前进程，调度别的进程执行之后，IO 和 CPU 并行工作，当外设准备好了一个数据之后就触发中断，由驱动程序收到中断信号，并调用中断服务程序控制 IO 接口读取一个数据，往上递交，然后中断返回，CPU 继续执行被打断的进程，IO 继续准备数据</p>
+<h2 id="sec-522">磁盘</h2>
+<h3 id="sec-525">硬盘的格式化</h3>
+<p>（1）低级格式化（物理格式化）：分扇区，磁道，校验码位数等等<br>
+（2）磁盘分区：分成 D 盘，C 盘等等<br>
+（3）高级格式化：与文件系统相关的操作，比如加载初始文件系统，初始化一些分区管理表等等</p>
+<h3 id="sec-531">FCFS 调度算法是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915191525.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-537">SSTF 调度算法是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915191552.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-543">磁头寻道中的饥饿现象是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915191631.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-549">SCAN 算法是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915191728.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-555">CSCAN 调度算法是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250915191951.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>移动到最底端的时候再回到最开始的起始端，这两个都是最远边界，这个是CSCAN</p>
+<p>如果是 CLOOK 调度，则往右或者往左的时候都不会到达边界，而只是到达最远的发出请求的磁道，此时CSCAN就变成了CLOOK</p>
+<h3 id="sec-567">LOOK 调度和 CLOOK 调度是什么？</h3>
+<p>408 默认都是 LOOK 和 CLOOK 调度<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251017180753.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-573">硬盘的结构是什么？</h3>
+<p>（1）磁盘控制器，这个是磁盘外设的 IO 接口，用于并-串转换和串并转换<br>
+（2）磁盘驱动器，这个磁盘外设的一部分，用于磁头驱动等操作<br>
+（3）存储区域，包括若干磁道组成的柱面，以及盘面</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911163828.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911163952.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-585">磁盘块和磁盘扇区的区别是什么？</h3>
+<p>（1）磁盘扇区是磁盘实际读写的时候的基本单位<br>
+（2）磁盘块是上层操作系统抽象的基本单位，也可以说是上层文件系统操作文件的最小单位</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251020210614.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251020210621.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251020210831.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251020210841.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251020210921.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251020210934.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251020211033.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251020211102.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在上层文件系统，磁盘是按照磁盘块组织起来的，一个磁盘块可能包含多个实际的物理扇区，哪怕一个文件大小小于一个扇区，在逻辑层面也会将整个磁盘块分配给这个文件，即将相邻的多个扇区分配给这个文件</p>
+<p>不过在更下层的物理层面，如果文件的大小小于一个扇区，虽然可能相邻的扇区在逻辑上按照磁盘块大小分配给了这个文件，但是驱动程序可能也只会读写一个扇区将文件放入磁盘，因此扇区是磁盘的基本读写单位，而磁盘块（或者说簇）是文件系统操作文件的最小单位</p>
+<h3 id="sec-603">磁盘的基本读写单位是什么？这里以扇区为基本读写单位是什么含义？</h3>
+<p>（1）基本读写单位是扇区<br>
+（2）基本读写单位的含义就是，哪怕要读取的数据小于一个扇区，此时读也会完整读整个扇区，而不是单纯读扇区中的数据<br>
+（3）上层文件系统按照逻辑上的磁盘块来操作分配文件，一个磁盘块可能对应多个扇区，哪怕一个文件大小小于一个扇区，OS 也会直接将整个磁盘块分配给这个文件，即文件系统操作的最小单位就是磁盘块；但是在实际读的时候，底层磁盘实际上只会读这个文件所占的一个扇区，即磁盘基本读写单位是扇区</p>
+<p>扇区是磁盘最小的物理存储单元，是磁头从磁盘中读取数据的最小单位（一般 512 B），即磁头每次从磁盘中读取数据，都是一个扇区一个扇区读的</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251020205935.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+比如这样一个例子，一个逻辑磁盘块大小是 8 KB，一个物理扇区的大小是 4 KB，此时需要写入 2 KB 的文件</p>
+<p>那么在文件系统逻辑层面，它一定会分配一个 8 KB 的完整磁盘块给这个文件，哪怕会留下 6 KB 的磁盘块内部碎片</p>
+<p>但是这 2 KB 的数据继续往下，实际驱动程序知道这 2 KB 只占了一个扇区，所以它其实只会操作一个扇区进行写入，即磁盘的基本读写单位是一个扇区，哪怕写入的数据小于一个扇区</p>
+<p>但是在逻辑上，相邻的两个扇区都是属于这 2 KB 的文件的</p>
+<p>以上就是逻辑磁盘块与扇区的区别的联系</p>
+<h3 id="sec-627">簇是什么？</h3>
+<p>簇就是磁盘块</p>
+<h3 id="sec-633">磁盘的容量和平均存取时间是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911164412.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的传输时间，在有的题目中会直接当作磁头划过这个扇区的时间</p>
+<p>比如一个磁道有 500 个扇区的话，转一圈的时间是 500 ms，那么这里的传输时间可以认为是 1 ms = 500 ms/500</p>
+<p>如果这里的寻道时间是 5 ms</p>
+<p>那么整个的平均存取时间就是 5 ms + 500 ms/2 + 1 ms = 256 ms</p>
+<h3 id="sec-651">磁盘的数据传输率和地址格式是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250911164503.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-657">例题</h3>
+<h4 id="sec-660">1 22 年真题</h4>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251205093100.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）</p>
+<p>这三个字段是磁道 - 盘面 - 扇区，这是扇区地址的结构</p>
+<p>磁道有 20000 个，所以至少占 15 bit</p>
+<p>盘面有 8 个，所以至少占 3 bit</p>
+<p>500 个扇区，所以扇区占 9 bit</p>
+<p>（2）</p>
+<p>5 ms + 转一圈时间的一半 + 转一个扇区的时间 = 5 ms + 25/6 ms + 25/(6 * 500) = 5 + 4.17  + 0.008 = 9.18 ms</p>
+<p>（3）</p>
+<p>缓冲区大小是 8 B</p>
+<p>一个扇区的大小是 512 B</p>
+<p>缓冲区每满了一次就需要进行一次 DMA 传送，所以发送了 64 次总线请求</p>
+<p>DMA 必须获得总线使用权，因为此时数据缓冲区已满，DMA 如果不及时将数据拿走放到主存，那么此时外设仍然在工作，仍然在往缓冲区写数据，这就会造成没有被拿走的数据被覆盖</p>
+<h4 id="sec-702">2 19 年真题</h4>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20251205093200.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-708">连续递增存储单元地址规律</h3>
+<h4 id="sec-711">类似主存块号 + 块内偏移（每一级地址包含存储单元个数是 2 的次幂个）</h4>
+<p>假设主存地址是 8 bit，按字节编址</p>
+<p>一块物理块有 8 个存储单元</p>
+<p>存储单元是递增编号的，即从 0 ~ 255</p>
+<p>有以下几个规律：<br>
+（1）存储单元十进制编号写成二进制形式，同样对应自己的地址编号<br>
+（2）二进制地址编号的前 5 bit 是存储单元所在的块号，后 3 bit 是存储单元所在块中的偏移（简便方法）<br>
+（3）如果想要根据存储单元的编号计算在哪个物理块，在物理块中的偏移，它的通法是：</p>
+<p>假设是 244 <code>11110100</code> 号，编号从 0 开始</p>
+<p>i  先弄清楚每个地址级别所含有的个数：整个内存一共 32 个物理块，一个物理块 8 个存储单元</p>
+<p>ii 加上第 244 号，存储单元总数其实是 245 个（从 1 开始），一个物理块 8 个存储单元，所以总共占满了 30 个存储单元，并且多了一个，这个存储单元在前面 30 个之后的第 31 个物理块中（从 1 开始），但是由于物理块编号是从 0 开始的，<strong>所以这里的物理块号就是 30</strong>；245 % 8 = 5，即占满了 30 个物理块之后在第 31 块物理块中有 5 个存储单元（第 5 个存储单元，从 1 开始），由于在物理块中也是从 0 开始编号的，<strong>所以偏移就是 4</strong></p>
+<h4 id="sec-735">类似磁盘地址（每一级包含地址不是 2 的次幂个）</h4>
+<p>磁盘地址分为：</p>
+<p>柱面号（磁道号） + 盘面号  + 扇区号</p>
+<p>这里磁盘地址结构与上文的主存地址结构的区别就是<strong>每一级的地址包含的存储单元个数并不是 2 的幂次方个，它不能按照上文的简便方法</strong>，即将扇区号写成二进制的形式，通过哪些比特是属于柱面号，哪些比特属于盘面号直接判断这个扇区在哪个柱面或者盘面</p>
+<p>上文简便方法的基本原理是由于每一级的地址包含存储单元个数都是 2 的幂次方个，那么当低一级的地址增长满了之后进入下一级，刚好上一级的递增也能跟上<br>
+比如上文 8 位地址的递增，一个物理块 8 个存储单元，0 号物理块内部的递增规律是：<br>
+00000 000 ~ 00000 111，这些是从 0 号存储单元到 7 号存储单元，当进入 8 号存储单元的时候，编号进入了 00001 000，而刚好 8 号存储单元就是在第 1 号物理块中，物理块也同步递增</p>
+<p>这样的对应规律决定了对于每级地址是 2 的次幂的存储结构，可以直接写出连续递增的存储单元的编号，通过编号中每一级地址所对应的比特直接知道这个存储单元在哪个块中</p>
+<p>但是对于磁盘地址，假设 5 个磁道，一个磁道 5 个盘面，一个盘面 3 个扇区，那么磁盘地址所对应的比特分别是</p>
+<p>3 + 3 + 2</p>
+<p>3 bit 磁道号，3 bit 盘面号，2 bit 盘面内的扇区偏移</p>
+<p>当扇区进行递增的时候<br>
+000 000 00 ~ 000 000 10 是第 0 个盘面中的扇区编号，从 0 号到 2 号；但是当扇区编号是 3 的时候，它的二进制是 000 000 11，按照盘面含有 3 个扇区，此时这个扇区应该在 1 号盘面，但是二进制并没有同步递增，因此不符合上文的规律，所以当然不能按照写出二进制来直接判断这个编号的扇区在哪个盘面，哪个柱面</p>
+<p>因此对于一个给定的扇区号，它仍然是连续增长的，判断它在哪个盘面，哪个柱面<strong>只能用通法，即</strong></p>
+<p>假设给定是的扇区是 37 号（从 0 开始）</p>
+<p>i 后续先统一从 1 开始，最后写结果的时候再减 1</p>
+<p>ii 分清每一级地址包含的存储单元个数，这里一个盘面包含 3 个扇区，一个磁道包含 15 个扇区</p>
+<p>iii 扇区是 37 号，因此是第 38 个扇区（从 1 开始），38/15 = 2. X，所以 38 个扇区中前面的 30 个扇区沾满了 2 个柱面，因此这个扇区就在第 3 柱面上（从 1 开始）</p>
+<p>iv 第 3 个柱面上还有 8 个扇区，而每个盘面有 3 个扇区，8/3 = 2. X，所以这 8 个扇区的前 6 个扇区占满了 2 个盘面，因此第 37 号扇区就在第 3 个盘面上（从 1 开始）</p>
+<p>v 最后剩下 2 个扇区，因此 37 号就是在第 3 个盘面上的第 2 个扇区偏移处（从 1 开始）</p>
+<p>因此对于编号是 37 的扇区来说</p>
+<p>占满了 2 个柱面，在第 3 个柱面上（从 1 开始），所以柱面号是 2（从 0 开始编号）<br>
+占满了 2 个盘面，在第 3 个盘面上（从 1 开始），所以盘面号是 2（从 0 开始编号）<br>
+还剩下 2 个扇区，是第 3 个盘面上的第 2 个扇区（从 1 开始），所以扇区号是 1（从 0 开始编号）</p>
+<h4 id="sec-792">分页式请求地址拼接与分段式地址相加的区别</h4>
+<p><mark>分页式</mark></p>
+<p>虚拟存储空间分页，实际物理空间也分页</p>
+<p>虚拟地址分为页号 + 页内偏移<br>
+物理地址也分为页框号  + 页内偏移</p>
+<p>页表记录页号和页框号的对应关系</p>
+<p>地址转换的时候直接将虚拟地址中的页号替换为页框号，页内偏移保持不变</p>
+<p>这是因为将页调入内存的时候是整个页调入的，某个页中的存储单元在页中的偏移在调入某个页框之后偏移不变</p>
+<p>这里的正确性就在于，分页式的各个地址级别所包含的存储单元个数是 2 的幂次方，因此连续增长的存储单元，存储单元的十进制编号，写成二进制形式，二进制对应的比特位数就直接是相应的页框号，以及页内偏移</p>
+<p><mark>分段式</mark></p>
+<p>虚拟存储空间分段，实际物理空间不划分</p>
+<p>虚拟地址分为段号  + 段内偏移<br>
+物理地址不划分</p>
+<p>段表记录段号和段的内存起始地址以及段长</p>
+<p>地址转换的时候通过段内偏移 + 段的起始地址得到物理地址，而不是拼接</p>
+<p>因为实际物理内存完全没有段的概念，都没有段号，并且虚拟存储空间中的每个段的长度还不一样，包含的存储单元个数也不一定是 2 的幂次方，不满足二进制的对应关系，所以不能简单进行拼接，拼接毫无意义</p>
+<h4 id="sec-834">总结</h4>
+<p>（1）对于连续递增的存储单元，对其进行十进制编号递增才是本质，按照通法计算它每个级别的地址是什么才是本质<br>
+（2）对于包含了 2 的次幂个数的地址排布，将每个存储单元十进制编号写成二进制才有意义，此时可以通过观察每级地址对应的 bit 位直接得到编号<br>
+（3）对于不是包含了 2 的次幂个数的地址排布，将每个存储单元十进制编号写成二进制没有意义，存储单元递增与每一级地址递增不符合对应二进制增长规律</p>
+<h1 id="sec-840">理解</h1>
+<h3 id="sec-843">单缓冲传输和处理连续两个数据的时间是多少？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250811143406.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>缓存区每次只能执行一个动作，要么接收输入，要么传送，不能传送和输入同时进行</p>
+<p>工作区每次只能执行一个动作，要么接收输入，要么执行，不能执行和接收输入同时进行</p>
+<p>工作区的执行处理和 IO 设备输入到缓存是可以并行的</p>
+<p>第一个阶段：IO 向缓存输入数据，时间为 T，这个时间不能省</p>
+<p>第二个阶段：缓存向工作区输入数据，此时 IO 不能向缓存输入，所以必须花费 M 时间，不能省略</p>
+<p>第三个阶段：工作区处理数据，以及 IO 向缓存区输入数据，这个可以并行，但是无论哪个先完成，都必须等待另外一个完成，比如 C 的时间大于 T，那么 IO 输入到缓存花费 T 先完成，但是工作区还在处理数据，此时 IO 无法向缓存继续输入数据，缓存也无法输入数据到工作区；同理如果 T &gt; C 也是这样，工作区的数据处理完了之后必须等待 IO 输入数据到缓存区才行，因此这个阶段的时间必须是 Max (C, T），第三阶段结束，缓存区有了第二个数据</p>
+<p>第四个阶段：缓存区输入数据到工作区，M 时间</p>
+<p>第五个阶段：工作区处理，C 时间</p>
+<p>所以连续处理两个数据的时间就是 T + M + Mac (C, T) + M + C</p>
+<h3 id="sec-876">单缓冲传输和处理连续 n 个数据的时间是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250811143406.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>第一个阶段：IO 向缓存输入数据，时间为 T，这个时间不能省</p>
+<p>第二个阶段：缓存向工作区输入数据，此时 IO 不能向缓存输入，所以必须花费 M 时间，不能省略</p>
+<p>第三个阶段：工作区处理数据，以及 IO 向缓存区输入数据，这个可以并行，但是无论哪个先完成，都必须等待另外一个完成，比如 C 的时间大于 T，那么 IO 输入到缓存花费 T 先完成，但是工作区还在处理数据，此时 IO 无法向缓存继续输入数据，缓存也无法输入数据到工作区；同理如果 T &gt; C 也是这样，这个阶段工作区的数据处理完了之后必须等待 IO 输入数据到缓存区才行，因此这个阶段的时间必须是 Max (C, T），第三阶段结束，缓存区有了第二个数据</p>
+<p>由于接下来 IO 设备仍然想要继续传数据，所以此时的情况实际是回到了第一个阶段的结束，下面的过程就是第二个阶段和第三个阶段周期循环</p>
+<p>再经过 M + Max (C, T)，第二个数据处理完毕，并且第三个数据进入缓存区</p>
+<p>再经过 M + Max (C, T)，第三个数据处理完毕，并且第四个数据进入缓存区</p>
+<p>如果画图的话如下所示（下图是 T &gt; C）：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250811145848.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>所以第 n 个数据传输到缓冲区的时间是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mclose">))</span></span></span></span>，然后再由缓冲区传送到工作区，然后执行，再需要 M + C 的时间，按照上图的 T &gt; C，所以 n 个数据的传输执行时间就是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span></span></span></div><h3 id="sec-910">单缓冲区稳定情况下处理一块数据的时间是什么？</h3>
+<p>根据下面的流水线图可以发现，稳定的时候，每隔 M + Max (C, T) 的时间就会完成一块数据的处理</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926184948.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926185059.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-919">双缓冲传输和处连续理两个数据的时间是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250811143406.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250811144251.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>第一个阶段：IO 向某个缓冲区传数据，假设向缓冲区 1 传数据，这个时间必须得花费，所以是 T</p>
+<p>第二个阶段：缓冲区 1 向工作区传数据以及工作区处理数据，还有 IO 设备向缓冲区 2 传数据，这两个可以并行，并且不管谁先结束，都得等到另外的一方结束；比如缓冲区 1 向工作区传数据以及工作区处理数据先结束，即 C + M &lt; T，那么还是得等到 IO 向缓冲区 2 传送完数据才能进行下一步操作；所以这个阶段的时间就是 T；当 M + C &gt; T 的时候，此时由于只传两个数据，第二个数据传送到缓冲区 2 之后 M + C 仍在执行，所以得等到工作区执行完毕，缓冲区 2 才能继续向工作区传送数据，所以这个阶段的时间就是 M + C，这个阶段结束缓冲区 2 有了一块数据</p>
+<p>第三个阶段：缓冲区 2 向工作区传数据，M 时间</p>
+<p>第四个阶段：工作区处理数据，C 时间</p>
+<p>所以总的时间就是 T + Max (M + C, T) + M + C</p>
+<h3 id="sec-943">双缓冲传输和处理 n 个数据的时间计算</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250811143406.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250811144251.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><mark>假设 M +C &lt; T</mark></p>
+<p>第一个阶段：IO 向某个缓冲区传数据，假设向缓冲区 1 传数据，这个时间必须得花费，所以是 T</p>
+<p>第二个阶段：缓冲区 1 向工作区传数据以及工作区处理数据，还有 IO 设备向缓冲区 2 传数据，这两个可以并行，缓冲区 1 向工作区传数据以及工作区处理数据先结束，即 C + M &lt; T，那么还是得等到 IO 向缓冲区 2 传送完数据才能进行下一步操作；所以这个阶段的时间就是 T</p>
+<p>那么当第二阶段结束的时候，缓冲区 2 满了，缓冲区 1 空了，又回到了第一阶段结束的情况，然后剩下的时间就是不停循环第二阶段了：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250811153507.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>因此 n 个数据传输并处理完毕是，首先 IO 花费 T 传送第一个数据到第一个缓冲区，然后经过 (n - 1) T 个循环保证前 n - 1 数据处理完毕，并且最后一个数据被送到一个缓冲区，接着最后一个数据只用缓冲区传送到工作区，然后执行的时间 M + C 即可：</p>
+<p>T + (n - 1) T + M + C</p>
+<p><mark>假设 M + C &gt; T</mark></p>
+<p>这种情况下上文的循环思想就不行了，此时必须画图来进行分析</p>
+<p>第一个阶段：IO 向某个缓冲区传数据，假设向缓冲区 1 传数据，这个时间必须得花费，所以是 T</p>
+<p>假设从此时开始画图，缓冲区 1 向工作区传输数据以及工作区执行可以并行</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250811154920.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>上图中第一个 T 结束表示 IO 设备向缓冲区 2 传输数据结束，由于此时缓冲区 1 是空的，所以 IO 可以紧接着继续传输数据到缓冲区 1 中</p>
+<p>上图中第一个 C 结束表示工作区处理完毕第一个数据，此时由于缓冲区 2 是满的所以缓冲区 2 可以向工作区传输第二个数据</p>
+<p><strong>不过不管怎样，上图的一个 M + C 表示执行完毕一个数据</strong></p>
+<p>所以第一阶段结束之后，每经过 M + C 表示处理完毕一个数据， n 个数据就是：</p>
+<p>T + (n - 1) (M + C) + M + C</p>
+<p><mark>综上</mark></p>
+<p>传输 n 个数据并执行的时间就是：</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span></span></span></div><h3 id="sec-1007">双缓冲区在稳定情况下处理一块数据的时间是多少？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926192546.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里为例分析记忆方便将上文的情况简化，用一个比较夸张的时间例子来分析</p>
+<p>当 M + C &lt; T 的时候就让 T 非常长，此时处理一块数据的时间就是 T</p>
+<p>当 M + C &gt; T 的时候就让 C 非常长，此时处理一块数据的时间就是 M  + C</p>
+<p>当 M + C &lt; T 的时候，此时缓冲区传数据到 CPU 以及 CPU 处理数据的时间非常快，也就是外设传完一个数据之后，这个数据就立刻被处理了，因此这个时候外设可以保持连续的传输数据</p>
+<p>当 M + C &gt; T 并且 C 远大于 T 的时候，首先 T 1 和 T 2 快速填满缓冲区，然后取一个之后 M 1，接着 T 跟上继续快速填满缓冲区，然后按照这个规律执行</p>
+<p>在这种情况下，如果外设有一定的数据传输速率（不能停下等待），那么此时如果 C 太长，外设又一直不断的传，这就会造成数据被覆盖而出错</p>
+<h3 id="sec-1031">缓冲区如何实现全双工通信？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926194515.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1037">循环缓冲区是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926194851.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>in 指针会指向一个空的缓冲区，out 会指向一个满的缓冲区，IO 设备存数据的时候就会往 in 指针指向的地方存，CPU 取设备就从 out 指向的区域取</p>
+<h3 id="sec-1046">缓冲池管理是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926195148.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1052">设备控制表 DCT 是用来干什么的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926182633.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>（1）用来记录设备的情况的表</p>
+<h3 id="sec-1061">设备控制表 DCT 的各个字段以及含义是什么？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926182633.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1067">控制器控制表 COCT 是用来干什么的？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926182732.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里的控制器其实说的就是 IO 接口，比如 DMA 控制器等等</p>
+<p>（1）用来记录控制器情况的的表</p>
+<h3 id="sec-1079">系统设备表 SDT 以及功能是什么？一个表目内容有哪些？</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926182825.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1085">SPOOLing 技术是怎么提高 IO 速度的？</h3>
+<p>进程在输入或者输出的时候可以不用一直阻塞等待低速的 IO 硬件，进程直接将数据交付到输出井，或者直接从输入井取走数据就行了，此时进程就认为自己完成了输出或者拿到了数据，然后进程就可以干别的事情了，剩下的负责输入输出井与实际 IO 设备的交互则由输入输出进程负责，主要是减少了进程阻塞等待 IO 的时间</p>
+<p><strong>简单来说就是不用阻塞等待 IO，而是直接交给输出井存起来，自己就可以干别的事情了</strong></p>
+<h3 id="sec-1094">假脱机技术是怎么实现虚拟设备的功能的？</h3>
+<p>磁盘的输入输出井中有很多个作业输入或者输出的空间，那么对于不同的作业，它们不直接与 IO 设备打交道，而是放到磁盘的各个作业的输入输出空间中，所以它们两个就可以同时输入输出数据，因此它们都会认为是自己独占了设备，从而实现了设备的共享，以及设备的虚拟；实际上它们只是独占了磁盘中的井文件，后续由输入输出进程负责磁盘井文件与 IO 外设的交互，而这些操作对于进程来说都是透明的</p>
+<p>（1）对于进程来说自己输入输出井中的空间是独占的，每个进程只是与这些空间打交道，于是进程就误以为自己独占了 IO 设备<br>
+（2）实际上在内部由输入输出进程负责处理这些空间的数据与 IO 的交互</p>
+<h3 id="sec-1103">假脱机技术的最基本原理是什么？（脱机技术 -&gt; 假脱机技术的原理？）</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250926165416.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>虚拟设备就是将一台物理设备虚拟出多台供进程独立使用的逻辑设备，这个就是 SPOOLing 实现的东西</p>
+<p>虚拟设备主要靠 SPOOLing 技术实现，它可以让多个进程在一段时间内都去申请打印机，都去提交自己的打印任务，但是这些打印任务并没有提交给真实的打印机，而只是提交给了磁盘，然后由系统去协调调度打印任务上打印机打印，但是用户会认为他自己独占了打印机</p>
+<p>SPOOLing 技术的主要目的就是将独占的物理设备虚拟成多个共享设备，从而提高独占设备的利用率</p>
+<p>如果没有 SPOOLing，那么就是 A 使用打印机打印，然后 B 也想使用打印机，但是 B 阻塞，打印机打印完 A 的任务，然后空闲等待 B 提交自己的任务，然后打印 B 的任务</p>
+<p>而有了 SPOOLing 技术，A 和 B 都会提交自己的任务到磁盘中，然后由系统调度这些任务上打印机打印，此时 A 和 B 都认为自己打印完了，可以继续执行他们后面的事情不用等待（实际上没有被打印，只不过提交磁盘了 AB 认为打印完成了）打印机统一打印系统调度的任务，不存在等待提交的情况，没有空闲，这当然就提高了打印机的利用率了</p>
+<p>SPOOLing 技术是典型的空间换时间的技术</p>
+<p>（1）增加了一些输入和输出的空间，将独占的设备虚拟成多个共享的设备，提高设备利用率</p>
+<h3 id="sec-1130">用户缓冲区与内核缓冲区</h3>
+<p>对于中断方式的 IO 控制，中断服务程序会先将数据读入到 CPU 的通用寄存器，然后再将数据放入到内核缓冲区，此时中断服务例程结束</p>
+<p>当用户进程需要数据的时候再从内核缓冲区中取数据，此时需要 CPU 变态才能访问内核中的数据</p>
+<p>为了避免频繁的 CPU 变态，引入了用户缓冲区，当内核缓冲区的数据写入到用户缓冲区的时候会提前写入一些用户当前不需要但是可能后续需要的数据，这样当用户后面再需要数据的时候就不用 CPU 变态再去访问内核缓冲区了，只用访问用户缓冲区即可</p>
+<h3 id="sec-1142">设备独立性的概念（设备无关性）</h3>
+<p>是指 OS 可以不依赖于硬件设备的具体实现细节的情况下，给用户提供一个统一的标准化访问设备接口</p>
+<p>只要有了设备独立性，那么这个用户就可以通过这个同样类型的接口来访问不同类型的硬件设备，用户或者进程不需要关心设备的实现细节，用户通过 IO 系统（OS）提供的抽象，自己访问设备的时候与具体的设备无关，用同一的访问方法进行访问，然后 IO 系统根据用户的访问，再进行转换来访问不同的设备</p>
+<h3 id="sec-1151">设备独立性软件的概念以及与设备驱动程序的一些区别</h3>
+<p>设备独立性软件有两个重要的功能：</p>
+<p>（1）管理外设，实现设备的分配与回收</p>
+<p>（2）缓冲区的管理</p>
+<p>设备独立性软件与实际硬件外设之间还隔了一层设备驱动程序，设备驱动程序才是根据外设不同的结构来发送具体命令的程序</p>
+<h3 id="sec-1166">设备驱动程序</h3>
+<p>设备驱动程序是 OS 中管理外设的一些代码，它负责配置硬件设备，告诉外设执行一些操作，负责处理与设备相关的中断处理过程等，所有与具体的硬件操作有关的，比如磁盘的调度，他都是设备驱动程序完成的</p>
+<p>设备驱动程序会注册处理外设所需的中断处理程序，这些处理程序的入口地址会被 OS 编到中断向量表中，中断处理程序由设备驱动程序注册和调用，可以认为外设的中断处理程序就是由设备驱动程序提供的</p>
+<p>驱动程序大部分是 C 语言编写的，设备驱动程序会在上层与 OS 内核有接口，不同的操作系统接口是不一样的，设备驱动程序不能混用在各种操作系统中</p>
+<h3 id="sec-1178">设备驱动程序与 IO 控制方式的阻塞情况</h3>
+<p>如果是程序查询方式，CPU 会反复执行查询查询设备控制器的指令，此时当前进程不会被阻塞</p>
+<p>如果是中断方式，外设在准备数据的过程中，当前进程就会被阻塞转去执行别的任务，然后数据准备好了之后由中断处理程序传输数据到存储器中</p>
+<h3 id="sec-1187">设备驱动程序负责的功能</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812181155.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1193">缓冲池概念以及引入缓冲池的原因</h3>
+<p>缓冲池其实是由很多的内存缓冲块构成的，这些缓冲块是由操作系统来分配和管理的，缓冲池与通常意义的缓冲区的区别在于，缓冲区一般都是一个进程独有的，为单独一个进程开辟的一块区域，而缓冲池则是由 OS 软件来分配给各个进程缓冲块的一片共享的区域</p>
+<p>对于单缓冲或者双缓冲或者循环缓冲，他们其实只针对单个特定的任务而创建的缓冲；如果这个系统是一个多任务系统，那么每个任务都会分配一个缓冲，这样会导致缓冲区过多；于是这样就引入了缓冲池，OS 划分了一片共享的内存区域，每个任务按序索取里面的内存块作为缓冲即可</p>
+<p>缓冲区是一定放在内存的，只有放在内存才能让 CPU 取数据加速，如果缓冲区放在外存，那完全毫无意义</p>
+<h3 id="sec-1205">双缓冲区在双向传送设备中的意义</h3>
+<p>双缓冲区，一个缓冲区用于接收数据，一个缓冲区用于发送数据</p>
+<p>比如网卡设备，他的缓冲区就设置在内存，一个发送缓冲区和一个接收缓冲区</p>
+<p>当 CPU 处理好了数据之后就把数据放到发送缓冲区即可，CPU 就可以转头执行别的操作，等到网卡有空取走数据即可；同理当网卡受到数据时先放到接收缓冲区中，然后 CPU 有空取走即可</p>
+<p>这样 CPU 与网卡之间不仅仅可以并行工作，实现数据的并行传输，同时 CPU 取数据从内存中取，也大大减少了 IO 等待时间，</p>
+<h3 id="sec-1220">块设备和字符设备</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812143816.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812143824.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1229">设备分配需要考虑的一些问题 + 设备分配的常用算法</h3>
+<p>（1）公平，让每个进程都可以公平使用设备</p>
+<p>（2）安全，要避免死锁的现象发生</p>
+<p>（3）合理</p>
+<p>外设是非常笨的设备，不能随意的进行切换，所以一般采用的就是 FCFS 算法来进行分配</p>
+<h3 id="sec-1244">一些需要用到缓冲的 IO 操作</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812154456.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>I:<br>
+鼠标移动其实是先存放到缓冲区的，可能每秒有几百个移动，这些并不会立即反应在屏幕上，我们看到的屏幕鼠标移动其实是取决于屏幕刷新的，每一次屏幕刷新都需要将鼠标存放在缓冲区中的移动反应出来</p>
+<p>II, III:<br>
+磁盘驱动器其实就是磁盘的意思，磁盘使用缓冲区就是为了解决多个进程读磁盘磁盘处理不过来的问题，磁盘可以将一些进程需要的数据放到缓冲区中，这样就不是所有进程同时访问磁盘了</p>
+<p>IV:<br>
+这个其实就是显卡，显然是需要显存的</p>
+<p>比如 GPU 绘图会很快，但是显示器刷新可能很慢，那显卡就将数据放到显存中，等到刷新的时候就放到屏幕上</p>
+<h3 id="sec-1262">设备的一些分配方式（静态分配和动态分配）</h3>
+<p>独享分配：只能将设备分配给一个进程让其独占，等到进程完成自己的操作才释放设备</p>
+<p>共享分配：比如磁盘的分配，可以有多个进程在同一段时间并发访问，进程并不独占设备，在一段时间内通过分时来进行并发访问设备</p>
+<p>虚拟分配：将一台物理设备变成几个逻辑设备，然后分配给进程</p>
+<p>静态分配：也就是固定的把某个设备分配给某个进程，在进程完成它的任务之前都不会释放这个设备或者分配给其他的进程，因此对于独占设备往往采用的就是静态分配（其实就是独享分配）</p>
+<p>动态分配：对于磁盘来说，进程 A 的磁道请求可能是 100 200 500，进程 B 的磁道请求可能是 300 150 160；对于磁盘的调度算法来说，它可能先响应 100 的磁道请求，然后再响应 150 的磁道请求，这样磁盘其实是在两个进程请求之间轮转，这个就是动态分配；而静态分配则是先将 A 进程的请求 100 200 500 处理完再去处理 B 的请求；对于磁盘这样的共享设备往往就采用动态分配方式</p>
+<h3 id="sec-1280">设备分配的各个表数据结构以及过程</h3>
+<p>首先是访问SDT 表，这个表会记录所有外设的信息，是设备管理的入口，根据进程请求设备的名称去找这个表</p>
+<p>在 SDT 表中，找到设备对应的 DCT 表，这个是设备自己的控制表，会记录设备自己的状态信息，此时会检查这个设备是否是忙的，根据情况是让进程排队还是分配给进程</p>
+<p>如果进程成功分配到了这个设备，此时就会顺着 DCT 上的指针，找到 COCT 表，下面就是找到设备对应的控制器，控制器通过 COCT 表来对设备进行控制和管理，从 COCT 中的状态字段来判断这个控制器是否忙碌，从而决定是否分配给进程</p>
+<p>如果进程分配到了控制器，下面就是找 CHCT，即通道控制表，来找这个通道，利用通道技术来进行 IO 操作（设备分配默认使用通道技术）</p>
+<h3 id="sec-1295">一些设备类型</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812160805.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>打印机和磁带机都不是共享设备，这两者都必须等到进程使用完毕主动释放，才能被别的进程使用，他们不支持一段时间内共享并发，他们都是独占设备</p>
+<p>因为打印机如果并发使用，那某个进程使用到一半突然被中止另一个进程使用，那打印出来的东西就混乱；同理，磁带是顺序访问的设备，这是他的物理构造，如果某个进程访问到一般被打断，那么再回到这个进程的时候只能重新从开头访问，非常麻烦</p>
+<p>只有磁盘是共享设备</p>
+<h3 id="sec-1310">虚拟设备与SPOOLing 技术</h3>
+<p>虚拟设备就是将一台物理设备虚拟出多台供进程独立使用的逻辑设备，这个就是 SPOOLing 实现的东西</p>
+<p>虚拟设备主要靠 SPOOLing 技术实现，它可以让多个进程在一段时间内都去申请打印机，都去提交自己的打印任务，但是这些打印任务并没有提交给真实的打印机，而只是提交给了磁盘，然后由系统去协调调度打印任务上打印机打印，但是用户会认为他自己独占了打印机</p>
+<p>SPOOLing 技术的主要目的就是将独占的物理设备虚拟成多个共享设备，从而提高独占设备的利用率</p>
+<p>如果没有 SPOOLing，那么就是 A 使用打印机打印，然后 B 也想使用打印机，但是 B 阻塞，打印机打印完 A 的任务，然后空闲等待 B 提交自己的任务，然后打印 B 的任务</p>
+<p>而有了 SPOOLing 技术，A 和 B 都会提交自己的任务到磁盘中，然后由系统调度这些任务上打印机打印，此时 A 和 B 都认为自己打印完了，可以继续执行他们后面的事情不用等待（实际上没有被打印，只不过提交磁盘了 AB 认为打印完成了）打印机统一打印系统调度的任务，不存在等待提交的情况，没有空闲，这当然就提高了打印机的利用率了</p>
+<p>SPOOLing 技术是典型的空间换时间的技术</p>
+<h3 id="sec-1331">SPOOLing 技术的构成</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812171143.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812171012.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1340">共享打印机原理</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812165953.png" alt="" loading="lazy" decoding="async" class="note-img"><br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250812170007.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<h3 id="sec-1346">磁盘工作机制和读写数据过程</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250803180835.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>磁盘扇区的三元组中柱面其实也就是磁道号，柱面是每个磁盘相同的磁道形成的一个圆柱面</p>
+<p>磁盘读取数据的时候，首先磁头会向着磁盘的圆心或者远离圆心移动定位到相应的磁道，其实也就是定位到期望的柱面，这个时间称为寻道时间</p>
+<p>然后磁头需要旋转到数据所在的扇区，很显然，访问连续的扇区或者磁盘的时候效率更高</p>
+<h3 id="sec-1361">计算机中的编址规律</h3>
+<p>这里以一个含有 8 个物理块，每个物理块中有 8 个存储单元的内存为例</p>
+<p>他的地址格式是 AAA BBB</p>
+<p>AAA 表示物理块号，BBB 表示块内的存储单元号</p>
+<p>最开始的存储单元号一定是 000 000，它在第 0 个物理块中，当其不断递增，变成了 000 111，这是第 0 个物理块的最后一个存储单元号，然后再+1，地址变成了 001 000，变成了第 1 个物理块的第 0 个存储单元</p>
+<p>这样的情况下，可以发现地址递增的过程中，前 3 位刚好与物理块号完全一样，后 3 位刚好与块内存储单元编号一样，也可以说是块内偏移</p>
+<p>这个就是规律，在指明某个存储单元在整个内存的地址的时候完全可以用物理块号和块内偏移拼接在一起</p>
+<p>对于磁盘也是这样，假设磁盘有 8 个柱面，每个柱面有 8 个磁道，即对应 8 个盘面，一个盘面有 8 个磁道，每个磁道有 8 个扇区</p>
+<p>磁盘地址格式是【柱面号，盘面号，扇区号】，或者【磁道号，盘面号，扇区号】</p>
+<p>那么总体第 9 个扇区的地址是 000 001 001，它就在第 0 号磁道，第 1 个盘面，第 1 个扇区上了</p>
+<h3 id="sec-1391">固态硬盘 SSD</h3>
+<p>其是基于闪存的存储技术，由于没有寻道和旋转时间，所以随机读写性能优于磁盘；固态硬盘写之前需要先进行擦除，所以写要比读更慢</p>
+<p>有磨损，容易磨损</p>
+<h3 id="sec-1400">提前读和延迟写</h3>
+<p>这两个都是内存缓冲区的特性</p>
+<p>提前读是指在读磁盘的时候提前将磁盘附近的数据读入内存的缓冲区，这样进程在下次访问的时候可以不用访问磁盘，直接访问缓冲区就可以了</p>
+<p>延迟写是指进程需要写入磁盘的数据延迟写入磁盘，而是先写入到缓冲区中；这样做有两个好处，第一个是进程下次访问的数据可能是这些需要写入磁盘的数据，那么访问这些延迟写入的数据的时候就不用进行 IO 操作了；另外一个好处是延迟写入的数据可以攒在一起统一写入磁盘，这样进一步减少了 IO 次数</p>
+<p>提前读和延迟写都可以减少访问文件的时间以及 IO 次数</p>
+<h2 id="sec-1415">题目</h2>
+<h3 id="sec-1418">1 共享设备的可寻址和可随机访问的理解 + 共享设备与独占性的理解</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250810151355.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+字符设备不支持寻址</p>
+<p>B：<br>
+共享设备，也就是在一段时间中可允许多个进程通过分时同时访问的设备，既然你支持一段时间多个进程可以同时访问，那么你就必须知道进程访问的地址在哪里才行，否则不同进程写入的东西放在一起就会乱套，因此必须是可寻址的</p>
+<p>可随机访问也是这个意思，假如只能支持顺序访问，那么就必须等到某个进程访问完了下个进程才能继续访问，那就不能支持共享了，否则如果分时共享的话，而又是顺序访问，各种进程的数据又堆在一起，也就乱套了</p>
+<p>C：<br>
+并不是同一时刻，而是同一时间段</p>
+<p>D：<br>
+共享设备不会出现死锁，因为共享设备不是独占的资源，并不会出现进程 P 1 拿到 a 资源，等待 b 资源，然后 P 2 进程拿到 b 资源等待 a 资源，这样一直等待的情况，因为 a，b 都是可共享的，一定会出现某个时刻 P 1 必须放弃 a 资源 a 资源分配给了 P 2或者 P 2 放弃了 b 资源，b 资源被分配给了 P 1的情况出现</p>
+<p>共享资源不是临界资源，临界资源是进程独占的，这里的独占是指进程独自占用一个设备或者资源，直到进程完成任务主动释放，这个设备或者资源才能被别的进程所用；而非独占或者共享，进程使用这个设备是由 OS 安排的，按照一定的算法，比如给他一些时间片，到时间了 OS 就强行停止这个进程的使用，然后响应别的进程，让别的进程使用设备，这个就是共享，因此共享是不会出现死锁的</p>
+<h3 id="sec-1442">2 对虚拟设备与统一接口</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250810163619.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>B：</p>
+<p>这里是统一接口的作用，他的意思是，用户不用根据不同外设的构造来发送请求，而是利用 OS 提供给用户的一个接口，根据 OS 提供的接口参数来提交自己的请求，而与外设的硬件的交互则交给 OS 进行处理，这样的好处在于可以方便用户的操作；这里不是虚拟设备的作用</p>
+<p>C：<br>
+这就是虚拟设备的定义</p>
+<h3 id="sec-1457">3 块设备与块设备接口</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250810164218.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>磁盘设备是属于块设备，块设备的含义是数据的存取和接收是以块为单位进行的设备</p>
+<p>而 DMA 的信息交换单位就是块</p>
+<p>剩下的 ABC 都不是 IO 控制方式</p>
+<h3 id="sec-1472">4 IO 接口（设备控制器）的结构</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250810170451.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>这里便于上层软件的编制的意思就是便于上层设备驱动程序的控制</p>
+<p>IO 设备控制器的结构如下：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250810170820.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>实际上是 CPU 执行设备驱动程序，然后由设备驱动程序来控制 IO 设备</p>
+<p>为了方便设备驱动程序来控制 IO，IO 控制器需要提供状态寄存器和控制寄存器，这两个不多说，同时还有 IO 逻辑；事实上，上层软件可以使用的控制 IO 的命令其实都是由 IO 控制器提供的，上层软件使用这些命令来控制这个 IO 控制器，所以控制命令其实也是设备控制器提供的</p>
+<p>B：<br>
+IO 地址寄存器完全没有这样的寄存器</p>
+<p>C：<br>
+中断寄存器一般指中断控制器中的那些寄存器，但是这些寄存器其实有多种，这里太宽泛了，而且与通常意义上的 IO 接口是无关的，中断寄存器一般是集成在 CPU 中的</p>
+<p>D：<br>
+完全是瞎说的</p>
+<h3 id="sec-1502">5 缓冲池的概念</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250810172114.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>缓冲池其实是由很多的内存缓冲块构成的，这些缓冲块是由操作系统来分配和管理的，缓冲池与通常意义的缓冲区的区别在于，缓冲区一般都是一个进程独有的，为单独一个进程开辟的一块区域，而缓冲池则是由 OS 软件来分配给各个进程缓冲块的一片共享的区域，所以它这里还是需要在硬件基础之上使用软件的进行管理的</p>
+<p>CD 都需要软件程序干活来进行控制</p>
+<h3 id="sec-1514">6 整个 DMA 的传输过程</h3>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250810173201.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>首先用户会执行一个 read () 函数，然后进入内核，进入内核之后会执行一段例程，这个时候当前进程其实并没有被阻塞，仍然是在用户进程的大背景下，只不过是换到了内核中去执行另外一个函数，但是实际上还是在执行用户进程的一部分程序，只不过这部分程序在内核中，这个例程只不过是一段代码</p>
+<p>由于是 DMA 方式，这个例程函数会继续调用一个预处理程序，预处理程序实际上是设备驱动程序中关于预处理的一部分，CPU 通过执行预处理程序来进行 DMA 的预处理过程</p>
+<p>CPU 在完成预处理，填好各种参数之后，就可以启动外设了，<strong>只有在这个时刻用户进程才真正被阻塞了</strong>，如下所示，下图是一个简单的例程，包含了预处理的过程：<br>
+<img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250630210507.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>在预处理之后，当前进程才处于等待磁盘数据的阶段，此时进程才被阻塞，这个时候 CPU 去执行别的进程了</p>
+<p>然后当数据传输完毕之后，DMA 发起中断，让 CPU 去执行中断服务程序来进行后处理，这里的后处理并不是最开始发起 IO 的进程程序，而是系统中用于处理 DMA 中断的中断服务程序（并且此时这个发起 IO 的进程还是处于阻塞状态）</p>
+<p>然后再看这个选项：</p>
+<p><img src="https://typora-1310242472.cos.ap-nanjing.myqcloud.com/typora_img/20250810173201.png" alt="" loading="lazy" decoding="async" class="note-img"></p>
+<p>A：<br>
+预处理程序运行在核心态，而不是用户态</p>
+<p>B：<br>
+后处理程序是 OS 中的中断服务程序，并不是最开始请求 IO 的进程</p>
+<p>C：<br>
+预处理也是 CPU 执行预处理程序的，当然需要 CPU 参与，后处理当然也需要 CPU 参与</p>
+<p>D：<br>
+正确</p>
+</article>
+    <nav class="pager">
+    <a class="pager__item pager__item--prev" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/5%20%E6%96%87%E4%BB%B6.html"><span class="pager__label">← 上一篇</span><span class="pager__title">5 文件</span></a>
+    <a class="pager__item pager__item--next" href="../../../major/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%90%86%E8%A7%A3%26%E9%A2%98%E7%9B%AE/%E5%93%88%E5%B7%A5%E5%A4%A7OS%E7%AC%94%E8%AE%B0.html"><span class="pager__label">下一篇 →</span><span class="pager__title">哈工大OS笔记</span></a>
+  </nav>
+    <div class="doc__end" aria-hidden="true"><span>◆</span></div>
+  </div>
+  <aside class="margin" aria-label="本页目录">
+    <div class="margin__head">本页</div>
+    <nav class="margin__list"><a class="margin__link margin__link--h2" href="#sec-3">IO 系统的基本功能</a><a class="margin__link margin__link--h3" href="#sec-6">IO 系统的基本功能有哪 6 个？这 6 个分别代表什么含义？</a><a class="margin__link margin__link--h2" href="#sec-12">IO 软件的层次结构</a><a class="margin__link margin__link--h3" href="#sec-15">IO 软件的层次结构是哪些？</a><a class="margin__link margin__link--h3" href="#sec-21">IO 软件指的是什么？</a><a class="margin__link margin__link--h3" href="#sec-27">IO 软件主要包括哪三个部分？（IO 子系统哪三个部分？）</a><a class="margin__link margin__link--h2" href="#sec-36">用户层软件部分</a><a class="margin__link margin__link--h3" href="#sec-39">用户层软件的功能有哪些？</a><a class="margin__link margin__link--h3" href="#sec-45">假脱机中的输入井和输出井是什么？分别有什么作用？</a><a class="margin__link margin__link--h3" href="#sec-54">假脱机中输入缓冲区和输出缓冲区是什么？他们在什么位置？</a><a class="margin__link margin__link--h3" href="#sec-63">假脱机中的输入进程和输出进程分别有什么功能？</a><a class="margin__link margin__link--h3" href="#sec-72">假脱机中的井管理程序负责什么功能？</a><a class="margin__link margin__link--h3" href="#sec-81">假脱机中输入进程和输出进程在输入和输出过程中控制的数据流动方向是什么？</a><a class="margin__link margin__link--h3" href="#sec-87">假脱机中输入井和输出井中的数据组织方式是怎样的？</a><a class="margin__link margin__link--h3" href="#sec-93">SPOOLing 有什么特点？</a><a class="margin__link margin__link--h3" href="#sec-99">假脱机打印机系统由哪些部分组成？分别表示什么功能？</a><a class="margin__link margin__link--h3" href="#sec-108">假脱机打印机系统打印的过程是什么？</a><a class="margin__link margin__link--h2" href="#sec-138">应用程序接口</a><a class="margin__link margin__link--h3" href="#sec-141">块设备接口是什么？</a><a class="margin__link margin__link--h3" href="#sec-150">块设备是什么？</a><a class="margin__link margin__link--h3" href="#sec-156">流设备接口是什么？</a><a class="margin__link margin__link--h3" href="#sec-162">流设备是什么？（字符设备）</a><a class="margin__link margin__link--h3" href="#sec-168">块设备接口和流设备接口可以看成什么？</a><a class="margin__link margin__link--h2" href="#sec-177">设备独立性软件部分</a><a class="margin__link margin__link--h3" href="#sec-180">设备独立性软件（无关性软件）的含义是什么？</a><a class="margin__link margin__link--h3" href="#sec-186">设备独立性软件主要负责哪些功能？</a><a class="margin__link margin__link--h3" href="#sec-192">外设的逻辑设备名是什么？</a><a class="margin__link margin__link--h3" href="#sec-207">IO 重定向是指什么？</a><a class="margin__link margin__link--h3" href="#sec-216">逻辑设备表是指什么？</a><a class="margin__link margin__link--h3" href="#sec-222">设备分配分别有哪些表？</a><a class="margin__link margin__link--h3" href="#sec-234">分配设备的具体过程是什么？如何使用 SDT, DCT, COCT 这三个表的？（使用物理设备名，没有引入逻辑设备名的时候）</a><a class="margin__link margin__link--h3" href="#sec-264">使用的如果是逻辑设备名，是怎么查找 SDT 表的？</a><a class="margin__link margin__link--h3" href="#sec-270">逻辑设备表 LUT 建立表目的时机是什么？LUT 的一个表目内容是什么？表目有什么作用？</a><a class="margin__link margin__link--h3" href="#sec-285">两种设置 LUT 表的方式是什么？</a><a class="margin__link margin__link--h2" href="#sec-294">设备独立性软件部分-缓冲区</a><a class="margin__link margin__link--h3" href="#sec-297">引入缓冲区的目的是什么？</a><a class="margin__link margin__link--h3" href="#sec-309">缓冲区问题中的 C，M, T 分别是什么？</a><a class="margin__link margin__link--h3" href="#sec-324">单缓冲区</a><a class="margin__link margin__link--h3" href="#sec-330">双缓冲区</a><a class="margin__link margin__link--h3" href="#sec-339">例题</a><a class="margin__link margin__link--h2" href="#sec-375">设备驱动程序部分</a><a class="margin__link margin__link--h3" href="#sec-378">设备驱动程序是什么？</a><a class="margin__link margin__link--h3" href="#sec-384">设备驱动程序的功能有哪些？</a><a class="margin__link margin__link--h3" href="#sec-393">设备驱动程序的特点有哪些？</a><a class="margin__link margin__link--h3" href="#sec-405">设备驱动程序可重入的含义是什么？</a><a class="margin__link margin__link--h2" href="#sec-411">硬件部分 - IO 接口</a><a class="margin__link margin__link--h3" href="#sec-414">IO 的基本职能有哪些？（4 个）</a><a class="margin__link margin__link--h3" href="#sec-420">IO 接口（设备控制器）是什么？</a><a class="margin__link margin__link--h3" href="#sec-429">IO 接口的通用结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-435">数据缓冲寄存器和状态/控制寄存器的功能是是什么？</a><a class="margin__link margin__link--h3" href="#sec-444">连接 IO 接口的地址线的作用是什么？</a><a class="margin__link margin__link--h3" href="#sec-453">CPU 如何根据 IO 接口控制外设?</a><a class="margin__link margin__link--h3" href="#sec-459">IO 接口的两种模式，阻塞 IO 和非阻塞 IO 分别是什么含义？</a><a class="margin__link margin__link--h3" href="#sec-465">IO 端口是指什么？</a><a class="margin__link margin__link--h3" href="#sec-471">IO 端口有哪三类？</a><a class="margin__link margin__link--h3" href="#sec-480">IO 端口有哪两种编址方式？</a><a class="margin__link margin__link--h3" href="#sec-486">IO 端口的独立编址模式是什么？与主存的编址有什么区别？如何使用 IO 端口的独立编址？</a><a class="margin__link margin__link--h3" href="#sec-498">IO 端口的统一编址是什么？与主存的编址有什么联系？如何区分是主存地址还是 IO 地址？</a><a class="margin__link margin__link--h3" href="#sec-504">一个完整的 IO 软件系统调度过程是什么？</a><a class="margin__link margin__link--h2" href="#sec-522">磁盘</a><a class="margin__link margin__link--h3" href="#sec-525">硬盘的格式化</a><a class="margin__link margin__link--h3" href="#sec-531">FCFS 调度算法是什么？</a><a class="margin__link margin__link--h3" href="#sec-537">SSTF 调度算法是什么？</a><a class="margin__link margin__link--h3" href="#sec-543">磁头寻道中的饥饿现象是什么？</a><a class="margin__link margin__link--h3" href="#sec-549">SCAN 算法是什么？</a><a class="margin__link margin__link--h3" href="#sec-555">CSCAN 调度算法是什么？</a><a class="margin__link margin__link--h3" href="#sec-567">LOOK 调度和 CLOOK 调度是什么？</a><a class="margin__link margin__link--h3" href="#sec-573">硬盘的结构是什么？</a><a class="margin__link margin__link--h3" href="#sec-585">磁盘块和磁盘扇区的区别是什么？</a><a class="margin__link margin__link--h3" href="#sec-603">磁盘的基本读写单位是什么？这里以扇区为基本读写单位是什么含义？</a><a class="margin__link margin__link--h3" href="#sec-627">簇是什么？</a><a class="margin__link margin__link--h3" href="#sec-633">磁盘的容量和平均存取时间是什么？</a><a class="margin__link margin__link--h3" href="#sec-651">磁盘的数据传输率和地址格式是什么？</a><a class="margin__link margin__link--h3" href="#sec-657">例题</a><a class="margin__link margin__link--h3" href="#sec-708">连续递增存储单元地址规律</a><a class="margin__link margin__link--h3" href="#sec-843">单缓冲传输和处理连续两个数据的时间是多少？</a><a class="margin__link margin__link--h3" href="#sec-876">单缓冲传输和处理连续 n 个数据的时间是什么？</a><a class="margin__link margin__link--h3" href="#sec-910">单缓冲区稳定情况下处理一块数据的时间是什么？</a><a class="margin__link margin__link--h3" href="#sec-919">双缓冲传输和处连续理两个数据的时间是什么？</a><a class="margin__link margin__link--h3" href="#sec-943">双缓冲传输和处理 n 个数据的时间计算</a><a class="margin__link margin__link--h3" href="#sec-1007">双缓冲区在稳定情况下处理一块数据的时间是多少？</a><a class="margin__link margin__link--h3" href="#sec-1031">缓冲区如何实现全双工通信？</a><a class="margin__link margin__link--h3" href="#sec-1037">循环缓冲区是什么？</a><a class="margin__link margin__link--h3" href="#sec-1046">缓冲池管理是什么？</a><a class="margin__link margin__link--h3" href="#sec-1052">设备控制表 DCT 是用来干什么的？</a><a class="margin__link margin__link--h3" href="#sec-1061">设备控制表 DCT 的各个字段以及含义是什么？</a><a class="margin__link margin__link--h3" href="#sec-1067">控制器控制表 COCT 是用来干什么的？</a><a class="margin__link margin__link--h3" href="#sec-1079">系统设备表 SDT 以及功能是什么？一个表目内容有哪些？</a><a class="margin__link margin__link--h3" href="#sec-1085">SPOOLing 技术是怎么提高 IO 速度的？</a><a class="margin__link margin__link--h3" href="#sec-1094">假脱机技术是怎么实现虚拟设备的功能的？</a><a class="margin__link margin__link--h3" href="#sec-1103">假脱机技术的最基本原理是什么？（脱机技术 -&gt; 假脱机技术的原理？）</a><a class="margin__link margin__link--h3" href="#sec-1130">用户缓冲区与内核缓冲区</a><a class="margin__link margin__link--h3" href="#sec-1142">设备独立性的概念（设备无关性）</a><a class="margin__link margin__link--h3" href="#sec-1151">设备独立性软件的概念以及与设备驱动程序的一些区别</a><a class="margin__link margin__link--h3" href="#sec-1166">设备驱动程序</a><a class="margin__link margin__link--h3" href="#sec-1178">设备驱动程序与 IO 控制方式的阻塞情况</a><a class="margin__link margin__link--h3" href="#sec-1187">设备驱动程序负责的功能</a><a class="margin__link margin__link--h3" href="#sec-1193">缓冲池概念以及引入缓冲池的原因</a><a class="margin__link margin__link--h3" href="#sec-1205">双缓冲区在双向传送设备中的意义</a><a class="margin__link margin__link--h3" href="#sec-1220">块设备和字符设备</a><a class="margin__link margin__link--h3" href="#sec-1229">设备分配需要考虑的一些问题 + 设备分配的常用算法</a><a class="margin__link margin__link--h3" href="#sec-1244">一些需要用到缓冲的 IO 操作</a><a class="margin__link margin__link--h3" href="#sec-1262">设备的一些分配方式（静态分配和动态分配）</a><a class="margin__link margin__link--h3" href="#sec-1280">设备分配的各个表数据结构以及过程</a><a class="margin__link margin__link--h3" href="#sec-1295">一些设备类型</a><a class="margin__link margin__link--h3" href="#sec-1310">虚拟设备与SPOOLing 技术</a><a class="margin__link margin__link--h3" href="#sec-1331">SPOOLing 技术的构成</a><a class="margin__link margin__link--h3" href="#sec-1340">共享打印机原理</a><a class="margin__link margin__link--h3" href="#sec-1346">磁盘工作机制和读写数据过程</a><a class="margin__link margin__link--h3" href="#sec-1361">计算机中的编址规律</a><a class="margin__link margin__link--h3" href="#sec-1391">固态硬盘 SSD</a><a class="margin__link margin__link--h3" href="#sec-1400">提前读和延迟写</a><a class="margin__link margin__link--h2" href="#sec-1415">题目</a><a class="margin__link margin__link--h3" href="#sec-1418">1 共享设备的可寻址和可随机访问的理解 + 共享设备与独占性的理解</a><a class="margin__link margin__link--h3" href="#sec-1442">2 对虚拟设备与统一接口</a><a class="margin__link margin__link--h3" href="#sec-1457">3 块设备与块设备接口</a><a class="margin__link margin__link--h3" href="#sec-1472">4 IO 接口（设备控制器）的结构</a><a class="margin__link margin__link--h3" href="#sec-1502">5 缓冲池的概念</a><a class="margin__link margin__link--h3" href="#sec-1514">6 整个 DMA 的传输过程</a></nav>
+  </aside>
+</main>
+<div class="finder" id="finder" hidden>
+  <div class="finder__panel" role="dialog" aria-modal="true" aria-label="全站检索">
+    <div class="finder__bar">
+      <span class="finder__label">检 索</span>
+      <input id="finderInput" type="search" autocomplete="off" spellcheck="false" placeholder="公式、概念、题型……">
+      <button class="finder__close" id="finderClose" type="button">ESC</button>
+    </div>
+    <div class="finder__body" id="finderResults"></div>
+    <div class="finder__foot"><span>↑ ↓ 选择</span><span>Enter 打开</span><span id="finderCount"></span></div>
+  </div>
+</div>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>
